@@ -7,7 +7,7 @@ class OrbitingNodes {
     this.nodeTitles = new Map([
       ['strivr', 'Strivr: "Immersive Lobby" Upgrade'],
       ['local-hive', '"Local Hive": A Human-Centered AI Project'],
-      ['node3', 'Node Three'],
+      ['orgasmr', '"orgASMR": A Head-Scratching Musical Interface'],
     ]);
     
     this.nodes = [];
