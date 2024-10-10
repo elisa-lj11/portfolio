@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
 
-import fullAppVideoUrl from '../assets/images/local-hive/full-app.mp4';
 import needfindingInterviewsImageUrl from '../assets/images/local-hive/needfinding-interviews.png';
 import initialSynthesisImageUrl from '../assets/images/local-hive/initial-synthesis.jpg';
 import affinityMapImageUrl from '../assets/images/local-hive/affinity-map.jpg';
@@ -33,15 +32,17 @@ import heuristicViolationsImageUrl from '../assets/images/local-hive/heuristic-v
 import medFi1HomeImageUrl from '../assets/images/local-hive/med-fi-1-home.png';
 import medFi2HomeImageUrl from '../assets/images/local-hive/med-fi-2-home.png';
 import medFi3HomeImageUrl from '../assets/images/local-hive/med-fi-3-home.png';
+import fullAppVideoUrl from '../assets/images/local-hive/full-app.mp4';
 import appWebsiteImageUrl from '../assets/images/local-hive/app-website.png';
 import posterImageUrl from '../assets/images/local-hive/poster.png';
 
+const FIGMA_EMBED_URL = 'https://embed.figma.com/proto/3kFM2Rku8FVGHng69FMslw/MidFi-(Final-Draft)?node-id=7-8&node-type=canvas&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share&client-id=W0bOyp7s8UCjcCHJYXANQr';
+const HCI_CLASS_URL = 'https://hci.stanford.edu/courses/cs377e/2019/sp/';
 const FIGMA_MEDFI_1_URL = 'https://www.figma.com/proto/ISM4ITEIjEmCWPJzAwXgneCa/MidFi?node-id=46-8&node-type=canvas&t=UM1cFDasWXdlhJmJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
 const FIGMA_MEDFI_2_URL = 'https://www.figma.com/proto/bNHJX5jYid0RXOPx7Y1bab/MidFi-2?node-id=153-90&node-type=canvas&t=UXP0hEhQLf8r8pON-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
 const FIGMA_MEDFI_3_URL = 'https://www.figma.com/proto/VYpOKOfXgN9EMJZHS87aiP/MidFi-3-(Decluttered-on-right)?node-id=153-90&node-type=canvas&t=4Ji7p1jIXveXk3MW-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
 const FIGMA_FINAL_URL = 'https://www.figma.com/proto/3kFM2Rku8FVGHng69FMslw/MidFi-(Final-Draft)?node-id=7-8&node-type=canvas&t=qu5Y3ct7QZOm2kf1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
 const APP_WEBSITE_URL = 'https://hci.stanford.edu/courses/cs377e/2019/sp/projects/ResQ/';
-const FIGMA_EMBED_URL = 'https://embed.figma.com/proto/3kFM2Rku8FVGHng69FMslw/MidFi-(Final-Draft)?node-id=7-8&node-type=canvas&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share&client-id=W0bOyp7s8UCjcCHJYXANQr'
 // Figma Embed API 1.0, outdated // const FIGMA_EMBED_URL = 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/3kFM2Rku8FVGHng69FMslw/MidFi-(Final-Draft)?node-id=7-8&node-type=canvas&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share';
 
 const LocalHive = () => {
@@ -72,7 +73,7 @@ const LocalHive = () => {
         
       <br></br>
       <p>
-        In my Senior Spring quarter at Stanford in 2019, I took "<a target='_blank' rel='noopener noreferrer' href="https://hci.stanford.edu/courses/cs377e/2019/sp/">CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI." In this class, I worked with a team of 4 on a quarter-long project applying design thinking, processes, and tools to the intersection of healthcare and smart technology. Over the course of 10 weeks, we underwent the design journey from ideation to iterating on prototypes to presenting our final product in a public fair, in which we received special recognition for our work.
+        In my Senior Spring quarter at Stanford in 2019, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI." In this class, I worked with a team of 4 on a quarter-long project applying design thinking, processes, and tools to the intersection of healthcare and smart technology. Over the course of 10 weeks, we underwent the design journey from ideation to iterating on prototypes to presenting our final product in a public fair, in which we received special recognition for our work.
         <br></br>
         <br></br>
         Our final product was an app-hosted platform that fostered community cohesion and social capital through a marketplace of projects and skills that allow community members to create and join projects, volunteer time, and further community involvement. Not only was the project fun to work on, but it gave me a fantastic template for how to design and build out a product. I detail this process in the sections below.
