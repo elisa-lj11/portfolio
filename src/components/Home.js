@@ -128,30 +128,32 @@ const Home = () => {
 
         const hoveredNode = orbitingNodes.getHoveredNode(); // Get the hovered node
 
-        // If on desktop, only display node labels when one node is hovered
-        if (!isMobile) {
-          if (hoveredNode) {
-            document.body.style.cursor = 'pointer'; // Change the cursor to pointer if hovering over a node
-            nodeLabelDiv.style.display = 'block'; // Show node labels
-          } else {
-            nodeLabelDiv.style.display = 'none'; // Hide node labels when not hovered
-          }
-        }
-
         // Update the raycaster with the camera and mouse position
         raycaster.setFromCamera(mouse, camera);
 
         // Check for intersections with the galaxy model
         const intersects = raycaster.intersectObject(galaxyModel.model);
 
-        if (intersects.length > 0) {
-          if (isMouseDown) {
-            document.body.style.cursor = 'grabbing'; // Galaxy click -> 'grabbing'
+        // If on desktop, handle node and galaxy interactions separately
+        if (!isMobile) {
+          if (hoveredNode) {
+            // Handle node hover
+            document.body.style.cursor = 'pointer'; // Prioritize node hover -> 'pointer'
+            nodeLabelDiv.style.display = 'block'; // Show node labels
           } else {
-            document.body.style.cursor = 'grab'; // Galaxy hover -> 'grab'
+            // Handle galaxy hover only if no node is hovered
+            if (intersects.length > 0) {
+              if (isMouseDown) {
+                document.body.style.cursor = 'grabbing'; // Galaxy click -> 'grabbing'
+              } else {
+                document.body.style.cursor = 'grab'; // Galaxy hover -> 'grab'
+              }
+            } else {
+              document.body.style.cursor = 'default'; // Reset cursor if no node or galaxy interaction
+            }
+
+            nodeLabelDiv.style.display = 'none'; // Hide node labels if no node is hovered
           }
-        } else if (!hoveredNode) { // Ensure galaxy hover only changes cursor if no node is hovered
-          document.body.style.cursor = 'default'; // Reset cursor
         }
       });
 
@@ -293,6 +295,7 @@ const Home = () => {
           console.log(`Clicked node: ${nodeId}`);
           // The nodeId is set in OrbitingNodes
           navigate(`/${nodeId}`);
+          document.body.style.cursor = 'default'; // Reset cursor
         };
         orbitingNodes.enableMouseEvents(renderer, camera, handleNodeClick);
         resolve(); // Resolve after the nodes are set up
