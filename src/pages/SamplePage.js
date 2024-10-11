@@ -21,11 +21,14 @@ const SamplePage = () => {
       generateRefsFromDOM={generateRefsFromDOM}
     >
       <h3>Date completed</h3>
-      <img src={sampleImageUrl} alt='Sample Image' width='100%'/>
-      <br></br>
-      <p>
-        This is the introduction for Sample Page.
-      </p>
+      <div className="section" id='overview'>
+        <h2 style={{ display: 'none' }}>Overview</h2>
+        <img src={sampleImageUrl} alt='Sample Image' width='100%'/>
+        <br></br>
+        <p>
+          This is the introduction for Sample Page.
+        </p>
+      </div>
       <br></br>
       <hr className="solid"></hr>
       <br></br>
