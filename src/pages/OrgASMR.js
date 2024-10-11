@@ -1,12 +1,29 @@
 // src/pages/OrgASMR.js
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+
 import PageTemplate from '../components/PageTemplate';
+import STLModel from '../components/STLModel'; // Import the STL model component
 
 import firstSketchImageUrl from '../assets/images/orgasmr/first-sketch.jpg';
 import protoboard1ImageUrl from '../assets/images/orgasmr/protoboard-1.jpg';
 import protoboard1VideoUrl from '../assets/images/orgasmr/protoboard-1.mp4';
 import protoboard2ImageUrl from '../assets/images/orgasmr/protoboard-2.jpg';
+import printImageUrl from '../assets/images/orgasmr/print.jpg';
+import topBottomImageUrl from '../assets/images/orgasmr/top-bottom.jpg';
+import solidworksWireframeImageUrl from '../assets/images/orgasmr/solidworks-wireframe.png';
+import solidworksRingsImageUrl from '../assets/images/orgasmr/solidworks-rings.png';
+import illustratorRingImageUrl from '../assets/images/orgasmr/illustrator-ring.png';
+import laserCutterImageUrl from '../assets/images/orgasmr/laser-cutter.jpg';
+import ringsImageUrl from '../assets/images/orgasmr/rings.jpg';
+import ringsInHandleImageUrl from '../assets/images/orgasmr/rings-in-handle.jpg';
 import solderingImageUrl from '../assets/images/orgasmr/soldering.jpg';
+import finalProtoboardImageUrl from '../assets/images/orgasmr/final-protoboard.jpg';
+import almostAssembledImageUrl from '../assets/images/orgasmr/almost-assembled.jpg';
+import fullyAssembledImageUrl from '../assets/images/orgasmr/fully-assembled.jpg';
+
+import handleModelUrl from '../assets/models/orgasmr-handle.stl';
 
 const ORGASMR_DEMO_URL = 'https://www.youtube.com/embed/6NVlh2iXAhg?si=TpFMYwpbAOgr7bNq';
 const CCRMA_CLASS_URL = 'https://ccrma.stanford.edu/courses/250a-winter-2019/';
@@ -157,17 +174,135 @@ const OrgASMR = () => {
       <div className="section" id='modeling'>
         <h2>Modeling</h2>
         <p>
-          I aimed to design a sleek handle that would both conceal the functional but less aesthetically pleasing components of the orgASMR and complement the instrument's unique concept. To achieve this, I used <a target='_blank' rel='noopener noreferrer' href={SOLIDWORKS_URL}>SolidWorks</a>, a 3D CAD design software, to design the handle.
+          I aimed to design a sleek handle that would both conceal the functional but less aesthetically pleasing components of the orgASMR and complement the instrument's unique concept. To achieve this, I used <a target='_blank' rel='noopener noreferrer' href={SOLIDWORKS_URL}>SolidWorks</a>, a 3D CAD design software, to design the handle. The handle is divided into top and bottom sections, allowing for easy installation of the protoboard, sensors, and Teensy inside.
         </p>
-        
+        <p>
+          <b>Interact with the model below.</b>
+        </p>
+        <Canvas 
+          camera={{
+            position: [5, 5, 5], // Change these values to better see your model
+            fov: 50, // Field of view (adjust as necessary)
+          }}
+          style={{ height: '75vh', width: '100%' }}
+          onCreated={({ gl }) => {
+            return () => {
+              // Dispose WebGL context when Canvas unmounts
+              gl.dispose();
+            };
+          }}
+        >
+          {/* Ambient light provides soft global illumination */}
+          <ambientLight intensity={1} />
+          
+          {/* Directional light to cast shadows */}
+          <directionalLight position={[-5, 5, 5]} intensity={1} />
+          
+          {/* Load model with a fallback */}
+          <Suspense fallback={null}>
+            <STLModel 
+              modelPath={handleModelUrl} 
+              scale={[0.0275, 0.0275, 0.0275]} 
+              rotation={[2, 3, 0.5]} 
+            />
+          </Suspense>
+          
+          {/* OrbitControls to enable zoom and rotation */}
+          <OrbitControls />
+        </Canvas>
+        <p>
+          The SolidWorks design was realized using a 3D printer.
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+              <img
+              src={printImageUrl}
+              alt='3D print in progress'
+              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
+            />
+            <figcaption>3D print in progress</figcaption>
+          </figure>
+          <figure>
+            <img
+              src={topBottomImageUrl}
+              alt='Top and bottom handle parts'
+              style={{ width: '90%', display: 'inline-block' }}
+            />
+            <figcaption>Top and bottom handle parts</figcaption>
+          </figure>
+        </div>
+        <p>
+          In addition to the custom 3D-printed handle, I added ring inserts to the top section to securely fasten the head scratcher. Using the SolidWorks model dimensions, I designed two rings in Adobe Illustrator and then used a laser cutter to precisely cut them from a resin board.
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+            <img
+              src={solidworksWireframeImageUrl}
+              alt='SolidWorks wireframe'
+              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
+            />
+            <figcaption>SolidWorks wireframe</figcaption>
+          </figure>
+          <figure>
+            <img
+              src={solidworksRingsImageUrl}
+              alt='Rings in wireframe'
+              style={{ width: '90%', display: 'inline-block' }}
+            />
+            <figcaption>Rings in wireframe</figcaption>
+          </figure>
+        </div>
+        <br></br>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+            <img
+              src={illustratorRingImageUrl}
+              alt='Illustrator ring design'
+              style={{ width: '70%', display: 'inline-block' }}
+            />
+            <figcaption>Illustrator ring design</figcaption>
+          </figure>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+            <img
+              src={laserCutterImageUrl}
+              alt='Laser cutter in progress'
+              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
+            />
+            <figcaption>Laser cutter in progress</figcaption>
+          </figure>
+          <figure>
+            <img
+              src={ringsImageUrl}
+              alt='Rings result'
+              style={{ width: '90%', display: 'inline-block' }}
+            />
+            <figcaption>Rings result</figcaption>
+          </figure>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+            <img
+              src={ringsInHandleImageUrl}
+              alt='Rings placed in handle'
+              style={{ width: '50%', display: 'inline-block', marginRight: '2%' }}
+            />
+            <figcaption>Head scratcher secured to handle with rings</figcaption>
+          </figure>
+        </div>
+        <p>
+          By this point, I had prepared all of the individual physical parts and software. All that remained was to assemble everything together.
+        </p>
       </div>
       <br></br>
       <hr className="solid"></hr>
       <br></br>
       <div className="section" id='assembly'>
         <h2>Assembly</h2>
+        <img src={solderingImageUrl} alt='Soldering' width='60%'/>
         <p>
-
+          
         </p>
       </div>
       <br></br>

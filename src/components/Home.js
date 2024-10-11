@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three-stdlib';
 import { useNavigate } from 'react-router-dom';
 import OrbitingNodes from './OrbitingNodes'; // Import the OrbitingNodes class
-import Model from './Model'; // Import the Model class
+import GLTFModel from './GLTFModel'; // Import the Model class
 import '../assets/style/Home.css'; // Import the external CSS file
 
 // Purchased from https://sketchfab.com/3d-models/galaxy-space-portal-black-hole-773ae44fc994471b85679236a36c0918
@@ -71,8 +71,8 @@ const Home = () => {
   const mountRef = useRef(null);
   const orbitingNodesRef = useRef(null);
 
-  const galaxyModel = new Model(GALAXY_MODEL, 2.8); // Instantiate the galaxy with the Model class
-  const skyboxModel = new Model(SKYBOX, 100); // Instantiate the galaxy skybox with the Model class
+  const galaxyModel = new GLTFModel(GALAXY_MODEL, 2.8); // Instantiate the galaxy with the Model class
+  const skyboxModel = new GLTFModel(SKYBOX, 100); // Instantiate the galaxy skybox with the Model class
   const orbitingNodes = new OrbitingNodes(); // Instantiate the nodes with the OrbitingNodes class
 
   const [isFading, setIsFading] = useState(true); // State to control fade

@@ -1,8 +1,8 @@
-// src/components/Model.js
+// src/components/GLTFModel.js
 import * as THREE from 'three';
 import { GLTFLoader } from 'three-stdlib'; // GLTFLoader for loading the .gltf/.glb files
 
-class Model {
+class GLTFModel {
   constructor(modelName, scale) {
     this.modelName = modelName;
     this.model = null;
@@ -54,4 +54,4 @@ class Model {
   }
 }
 
-export default Model;
+export default GLTFModel;

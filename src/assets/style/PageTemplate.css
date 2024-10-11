@@ -86,6 +86,10 @@ main {
   box-sizing: border-box; /* Include padding in height calculation */
 }
 
+figcaption {
+  font-style: italic;
+}
+
 .video {
   position: relative;
   overflow: hidden;

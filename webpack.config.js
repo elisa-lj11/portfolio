@@ -75,6 +75,17 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.stl$/, // Match .stl files
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]', // Keep original path and name
+            },
+          },
+        ],
+      }
     ],
   },
   plugins: [
