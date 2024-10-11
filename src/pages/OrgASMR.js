@@ -25,7 +25,8 @@ import fullyAssembledImageUrl from '../assets/images/orgasmr/fully-assembled.jpg
 
 import handleModelUrl from '../assets/models/orgasmr-handle.stl';
 
-const ORGASMR_DEMO_URL = 'https://www.youtube.com/embed/6NVlh2iXAhg?si=TpFMYwpbAOgr7bNq';
+const ORGASMR_DEMO_EMBED_URL = 'https://www.youtube.com/embed/6NVlh2iXAhg?si=TpFMYwpbAOgr7bNq';
+const ORGASMR_DEMO_SHOWCASE_URL = 'https://youtu.be/6NVlh2iXAhg?si=H1KOo8NMJasDySEF&t=76'
 const CCRMA_CLASS_URL = 'https://ccrma.stanford.edu/courses/250a-winter-2019/';
 const ARDUINO_URL = 'https://www.arduino.cc/en/about';
 const FAUST_URL = 'https://faust.grame.fr/';
@@ -53,7 +54,7 @@ const OrgASMR = () => {
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <div className="video">
-          <iframe className="responsive-iframe" src={ORGASMR_DEMO_URL} title="orgASMR Demo" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <iframe className="responsive-iframe" src={ORGASMR_DEMO_EMBED_URL} title="orgASMR Demo" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <br></br>
         <p>
@@ -292,7 +293,7 @@ const OrgASMR = () => {
           </figure>
         </div>
         <p>
-          By this point, I had prepared all of the individual physical parts and software. All that remained was to assemble everything together.
+          Up to this point, I had prepared all of the individual physical parts and software. All that remained was to assemble everything together.
         </p>
       </div>
       <br></br>
@@ -302,8 +303,39 @@ const OrgASMR = () => {
         <h2>Assembly</h2>
         <img src={solderingImageUrl} alt='Soldering' width='60%'/>
         <p>
-          
+          I only had a bit of soldering left to finish the orgASMR, as the flex sensor was designed to extend from the base and attach to one of the head scratcher's arms.
         </p>
+        <p>
+          With everything properly connected, I could finally piece the whole instrument together.
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+            <img
+              src={finalProtoboardImageUrl}
+              alt='Finalized protoboard'
+              style={{ width: '80%', display: 'inline-block', marginRight: '2%' }}
+            />
+            <figcaption>Finalized protoboard with Teensy and sensors</figcaption>
+          </figure>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+            <img
+              src={almostAssembledImageUrl}
+              alt='Almost assembled orgASMR'
+              style={{ width: '80%', display: 'inline-block', marginRight: '2%' }}
+            />
+            <figcaption>Functional componentns ready to be loaded into the handle</figcaption>
+          </figure>
+          <figure>
+            <img
+              src={fullyAssembledImageUrl}
+              alt='Fully assembled orgASMR'
+              style={{ width: '80%', display: 'inline-block', marginRight: '2%' }}
+            />
+            <figcaption>Fully assembled orgASMR with a final touch of galaxy duct tape</figcaption>
+          </figure>
+        </div>
       </div>
       <br></br>
       <hr className="solid"></hr>
@@ -311,8 +343,25 @@ const OrgASMR = () => {
       <div className="section" id='showcase'>
         <h2>Instrument Showcase</h2>
         <p>
-          Add more specific content here.
+          The <a target='_blank' rel='noopener noreferrer' href={ORGASMR_DEMO_SHOWCASE_URL}>final performance</a> (same link as embedded video above but starting at 1:16) took place at Stanford's CCRMA building, where dozens of curious attendees explored the orgASMR alongside 16 other student-designed hybrid instruments. The orgASMR withstood the hands and heads of many users throughout the event. The culmination of my work was performing a musical "piece" in front of the audience to showcase the novelty of my instrument. Even my dad attended, and I think he may have cried with what I only hope were tears of joy.
         </p>
+      </div>
+      <br></br>
+      <hr className="solid"></hr>
+      <br></br>
+      <div className="section" id='learnings'>
+        <h2>Learnings</h2>
+        <ul>
+          <li>
+            <b>It's okay to get crafty on creative projects.</b> I hadn't originally planned to design rings to secure the head scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had plenty of resources available such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
+          </li>
+          <li>
+            <b>It's also okay to lean into the craziness.</b> I spent many late nights in the product realization lab at CCRMA, which admittedly was not good for my sleep schedule, but perhaps disinhibited me enough to entertain otherwise silly ideas such as using a head scratcher as a musical instrument. With such an open-ended final project, I felt free to explore how far I could push this quirky idea into reality.
+          </li>
+          <li>
+            <b>Feedback is essential along every design iteration step.</b> I was grateful to work alongside such creative, talented, and dedicated students and professors who were forthcoming with their suggestions for improvement. Not only did they lean into the craziness with me, but they helped me see the ways in which I could take the orgASMR to the next level. A great product emerges from a great team.
+          </li>
+        </ul>
       </div>
     </PageTemplate>
   );
