@@ -34,6 +34,8 @@ const LucidDreaming = () => {
         <div className="video">
           <iframe className="responsive-iframe" src={VIDEO_EMBED_URL} title="Lucid Dreaming 360" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
+        <br></br>
+        <i style={{ display: 'flex', justifyContent: 'center' }}>Drag the video to rotate the viewpoint</i>
         <p>
           "Lucid Dreaming 360" is a quick and interactive guide to lucid dreaming based on sleep study research. The 7-minute video, produced back in 2016, used at-the-time cutting-edge 360-video capture technology to create an immersive experience that used the principles of immersive learning to the practice of lucid dreaming.
         </p>
