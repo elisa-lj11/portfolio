@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
 
-import sampleImageUrl from "";
+//import sampleImageUrl from "";
 
 const SamplePage = () => {
   const [refs, setRefs] = useState([]);
@@ -23,7 +23,7 @@ const SamplePage = () => {
       <h3>Date completed</h3>
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
-        <img src={sampleImageUrl} alt='Sample Image' width='100%'/>
+        {/*<img src={sampleImageUrl} alt='Sample Image' width='100%'/>*/}
         <br></br>
         <p>
           This is the introduction for Sample Page.

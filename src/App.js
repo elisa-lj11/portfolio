@@ -1,11 +1,14 @@
 // src/App.js
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Home from './components/Home';
 import Strivr from './pages/Strivr';
 import LocalHive from './pages/LocalHive';
 import OrgASMR from './pages/OrgASMR';
+import LucidDreaming from './pages/LucidDreaming';
 import NotFound from './pages/NotFound';
+
 import './assets/style/fonts.css';
 
 const App = () => {
@@ -18,6 +21,7 @@ const App = () => {
           <Route path="/strivr" element={< Strivr />} />
           <Route path="/local-hive" element={< LocalHive />} />
           <Route path="/orgasmr" element={< OrgASMR />} />
+          <Route path="/lucid-dreaming" element={< LucidDreaming />} />
           {/* Catch-all route for 404 Not Found */}
           <Route path="*" element={<NotFound />} />
         </Routes>
