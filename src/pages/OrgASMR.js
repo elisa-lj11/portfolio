@@ -67,7 +67,7 @@ const OrgASMR = () => {
       <div className="section" id='background'>
         <h2>Background</h2>
         <p>
-          In my Senior Winter quarter at Stanford in 2019, I took "<a target='_blank' rel='noopener noreferrer' href={CCRMA_CLASS_URL}>MUSIC 250A</a>: Physical Interaction Design for Music." In this class, we explored how we can physically interact with real-time electronic sound by using and designing sensors, circuits, embedded computers, communication protocols and sound synthesis. For my final project, I designed and built a hybrid musical instrument that integrated both acoustic and electronic components, which I showcased during a final performance alongside other student inventions. I implemented the "orgASMR," which I will describe in more detail in the sections below.
+          In my Senior Winter quarter at Stanford, I took "<a target='_blank' rel='noopener noreferrer' href={CCRMA_CLASS_URL}>MUSIC 250A</a>: Physical Interaction Design for Music." In this class, we explored how we can physically interact with real-time electronic sound by using and designing sensors, circuits, embedded computers, communication protocols and sound synthesis. For my final project, I designed and built a hybrid musical instrument that integrated both acoustic and electronic components, which I showcased during a final performance alongside other student inventions. I implemented the "orgASMR," which I will describe in more detail in the sections below.
         </p>
       </div>
       <br></br>

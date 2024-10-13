@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Strivr from './pages/Strivr';
 import LocalHive from './pages/LocalHive';
 import OrgASMR from './pages/OrgASMR';
+import RVVR from './pages/RVVR';
 import LucidDreaming from './pages/LucidDreaming';
 import NotFound from './pages/NotFound';
 
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/strivr" element={< Strivr />} />
           <Route path="/local-hive" element={< LocalHive />} />
           <Route path="/orgasmr" element={< OrgASMR />} />
+          <Route path="/rv-vr" element={< RVVR />} />
           <Route path="/lucid-dreaming" element={< LucidDreaming />} />
           {/* Catch-all route for 404 Not Found */}
           <Route path="*" element={<NotFound />} />

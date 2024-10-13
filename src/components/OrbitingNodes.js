@@ -8,7 +8,8 @@ class OrbitingNodes {
       ['strivr', 'Strivr: "Immersive Lobby" Upgrade'],
       ['local-hive', '"Local Hive": A Human-Centered AI Project'],
       ['orgasmr', '"orgASMR": A Head-Scratching Musical Interface'],
-      ['lucid-dreaming', '"Lucid Dreaming": A 360-Degree Video Experience'],
+      ['rv-vr', '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis'],
+      ['lucid-dreaming', '"Lucid Dreaming": A 360° Video Experience'],
     ]);
     
     this.nodes = [];
