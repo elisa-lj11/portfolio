@@ -1,7 +1,6 @@
 // src/pages/NotFound.js
 import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../assets/style/NotFound.css'; // Import the CSS file
 
 import galaxyImageUrl from '../assets/images/galaxy.png';
 
@@ -23,11 +22,33 @@ const NotFound = () => {
         onMouseEnter={() => setIsHovered(true)} 
         onMouseLeave={() => setIsHovered(false)}
         style={{
+          padding: '5px 10px',
+          fontSize: '16px',
+          cursor: 'pointer',
+          marginTop: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          margin: '0 auto',
+          height: '10vh', // Set button height to a certain percentage of the viewport height
+          whiteSpace: 'nowrap', // Prevent text from wrapping
+          overflow: 'hidden', // Hide overflow to keep a single line
+          maxWidth: '90%', // Limit width to fit better on smaller screens
+          border: 'none', // Remove default button border
+          backgroundColor: '#2d2d2d', // Set background color
+          color: 'white', // Set text color
+          borderRadius: '5px', // Add border radius for aesthetics
           fontWeight: isHovered ? 'bold' : 'normal', // Change font weight on hover
+          transition: 'font-weight 0.2s' // Smooth transition for font weight change
         }}
       >
         <img 
           src={galaxyImageUrl} 
+          style={{
+            width: '40px', // Set a specific width for the image
+            height: 'auto', // Maintain aspect ratio
+            marginRight: '5px' // Add space between the image and text
+          }} 
           alt="Galaxy Icon" 
         />
         Go back in time
