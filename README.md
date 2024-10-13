@@ -11,6 +11,5 @@ To run the site locally:
 - Visit http://localhost:5000 to see the website hosted locally
 
 To deploy a build to production:
-`npm run build`
 `npm run deploy`
 - Visit https://elisa-lj11.github.io/portfolio to see the public website
