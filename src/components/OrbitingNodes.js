@@ -18,7 +18,7 @@ class OrbitingNodes {
     this.numNodes = this.nodeTitles.size;
     this.orbitRadius = this.startRadius; // Orbit radius starts from 0 and expands
 
-    this.baseRotationSpeed = 0.5; // Base rotation speed
+    this.baseRotationSpeed = 0.3; // Base rotation speed
     this.slowRotationSpeed = 0.05; // Slower speed when hovering
     this.targetRotationSpeed = this.baseRotationSpeed; // Add a target for smooth lerping
     this.rotationSpeed = this.baseRotationSpeed; // This is the rotation speed that controls current node motion
