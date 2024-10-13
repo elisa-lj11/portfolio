@@ -6,6 +6,7 @@ import goProRigImageUrl from '../assets/images/lucid-dreaming/go-pro-rig.png';
 import kolorSoftwareImageUrl from '../assets/images/lucid-dreaming/kolor-software.jpg'
 
 const VIDEO_EMBED_URL = 'https://www.youtube.com/embed/YvZp26yt0Uk?si=Lkc-dawIaNcBuq0N';
+const VIDEO_URL = 'https://youtu.be/YvZp26yt0Uk?si=USMMEbfPDtPW9916';
 const SLEEP_AND_DREAMS_CLASS_URL = 'https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&page=0&catalog=&q=PSYC+135:+Sleep+and+Dreams&collapse=';
 const VHIL_URL = 'https://vhil.stanford.edu/';
 const VHIL_LEARNING_URL = 'https://vhil.stanford.edu/publications/learning';
@@ -22,6 +23,8 @@ const LucidDreaming = () => {
     generateRefsFunction();  // Call the function that scans the DOM and sets the refs
   };
 
+  const isMobile = window.matchMedia('(pointer:none), (pointer:coarse)').matches;
+
   return (
     <PageTemplate
       title='"Lucid Dreaming": A 360&deg; Video Experience' 
@@ -33,6 +36,25 @@ const LucidDreaming = () => {
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <div className="video">
+          {/* Overlay div for click handling */}
+          {isMobile && (
+            <a
+              href={VIDEO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                zIndex: 1, // Ensure this is on top of the iframe
+                textDecoration: 'none', // Remove underline
+                color: 'transparent', // Hide text if any
+              }}
+            >
+            </a>
+          )}
           <iframe className="responsive-iframe" src={VIDEO_EMBED_URL} title="Lucid Dreaming 360" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <br></br>

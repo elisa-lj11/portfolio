@@ -5,6 +5,7 @@ import PageTemplate from '../components/PageTemplate';
 import ricohImageUrl from '../assets/images/rv-vr/ricoh-theta-s.jpg';
 
 const VIDEO_EMBED_URL = 'https://www.youtube.com/embed/oDeCHxmh2_8?si=UX632hSjpJd3nykh';
+const VIDEO_URL = 'https://youtu.be/oDeCHxmh2_8?si=joE0MeWDsj4K6VbB';
 const ARTICLE_URL = 'https://peninsulapress.com/2019/03/19/the-bay-areas-housing-crisis-in-360-video/';
 const COMM_CLASS_URL = 'https://explorecourses.stanford.edu/search?q=COMM+280%3a+Virtual+Reality+Journalism+in+the+Public+Sphere&view=catalog&page=0&filter-coursestatus-Active=on&collapse=&academicYear=20182019';
 const RICOH_URL = 'https://us.ricoh-imaging.com/product/theta-s/';
@@ -19,6 +20,8 @@ const RVVR = () => {
     generateRefsFunction();  // Call the function that scans the DOM and sets the refs
   };
 
+  const isMobile = window.matchMedia('(pointer:none), (pointer:coarse)').matches;
+
   return (
     <PageTemplate
       title='"RV VR": An Immersive Perspective on the Bay Area Housing Crisis'
@@ -30,6 +33,25 @@ const RVVR = () => {
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <div className="video">
+          {/* Overlay div for click handling */}
+          {isMobile && (
+            <a
+              href={VIDEO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                zIndex: 1, // Ensure this is on top of the iframe
+                textDecoration: 'none', // Remove underline
+                color: 'transparent', // Hide text if any
+              }}
+            >
+            </a>
+          )}
           <iframe className="responsive-iframe" src={VIDEO_EMBED_URL} title="RV VR" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <br></br>
