@@ -53,7 +53,7 @@ const OrgASMR = () => {
       <h3>Completed March 2019</h3>
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
-        <div className="video">
+        <div className="video-youtube">
           <iframe className="responsive-iframe" src={ORGASMR_DEMO_EMBED_URL} title="orgASMR Demo" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <br></br>

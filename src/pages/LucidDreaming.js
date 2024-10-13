@@ -35,7 +35,7 @@ const LucidDreaming = () => {
       <h3>Completed May 2016</h3>
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
-        <div className="video">
+        <div className="video-youtube">
           {/* Overlay div for click handling */}
           {isMobile && (
             <a

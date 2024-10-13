@@ -31,7 +31,7 @@ const HiFi = () => {
       <h3>Summer 2016, 2017-2018</h3>
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
-        <div className="video">
+        <div className="video-youtube">
           <iframe className="responsive-iframe" src={HIFI_OVERVIEW_EMBED_URL} title="High Fidelity Highlights" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <br></br>
@@ -44,7 +44,7 @@ const HiFi = () => {
       <br></br>
       <div className="section" id='clara'>
         <h2>Clara.io Integration</h2>
-        <div className="video">
+        <div className="video-youtube">
           <iframe className="responsive-iframe" src={CLARA_EMBED_URL} title="Clara.io Integration" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <p>
@@ -56,7 +56,7 @@ const HiFi = () => {
       <br></br>
       <div className="section" id='google-blocks'>
         <h2>Google Blocks Integration</h2>
-        <div className="video">
+        <div className="video-youtube">
           <iframe className="responsive-iframe" src={BLOCKS_EMBED_URL} title="Google Blocks Integration" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <i style={{ display: 'flex', justifyContent: 'center' }}>High Fidelity featured at 1:20</i>
@@ -69,7 +69,7 @@ const HiFi = () => {
       <br></br>
       <div className="section" id='other-content'>
         <h2>Other Content</h2>
-        <div className="video" style={{ height: '60%' }}>
+        <div className="video" style={{ height: '30%' }}>
           <video controls muted>
             <source src={PILL_VIDEO_URL} type="video/mp4" />
           </video>
