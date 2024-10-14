@@ -20,7 +20,8 @@ class OrbitingNodes {
     this.orbitRadius = this.startRadius; // Orbit radius starts from 0 and expands
 
     this.baseRotationSpeed = 0.3; // Base rotation speed
-    this.slowRotationSpeed = 0.05; // Slower speed when hovering
+    this.mobileRotationSpeed = 0.05; // Rotation speed on mobile
+    this.slowRotationSpeed = 0; // Slower speed when hovering
     this.targetRotationSpeed = this.baseRotationSpeed; // Add a target for smooth lerping
     this.rotationSpeed = this.baseRotationSpeed; // This is the rotation speed that controls current node motion
     this.lerpSpeed = 0.02; // Adjusted to make lerping smoother
@@ -66,9 +67,9 @@ class OrbitingNodes {
 
     // Nodes should always rotate slowly on mobile
     if (isMobile) {
-      this.rotationSpeed = this.slowRotationSpeed;
-      this.targetRotationSpeed = this.slowRotationSpeed;
-      this.baseRotationSpeed = this.slowRotationSpeed;
+      this.rotationSpeed = this.mobileRotationSpeed;
+      this.targetRotationSpeed = this.mobileRotationSpeed;
+      this.baseRotationSpeed = this.mobileRotationSpeed;
     }
 
     const geometry = new THREE.SphereGeometry(0.2, 32, 32);
