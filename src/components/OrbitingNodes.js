@@ -15,9 +15,9 @@ class OrbitingNodes {
     
     this.nodes = [];
     this.startRadius = 0.0;
-    this.finalRadius = 3.2;
+    this.radiusIncrement = 3.2; // Space between orbit levels
     this.numNodes = this.nodeTitles.size;
-    this.orbitRadius = this.startRadius; // Orbit radius starts from 0 and expands
+    this.nodesPerLevel = 3; // Number of nodes per orbit level
 
     this.baseRotationSpeed = 0.3; // Base rotation speed
     this.mobileRotationSpeed = 0.05; // Rotation speed on mobile
@@ -33,6 +33,7 @@ class OrbitingNodes {
     this.hoveredNode = null; // Track the currently hovered node
 
     this.clock = new THREE.Clock();
+    this.levelOffsetAngle = Math.PI / this.nodesPerLevel; // Offset each level by half of the angle spacing
     this.angles = []; // Store the current angle for each node
 
     this.heightMultiplier = -2; // Controls how much the nodes "climb" the cone vertically
@@ -75,24 +76,50 @@ class OrbitingNodes {
     const geometry = new THREE.SphereGeometry(0.2, 32, 32);
     const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
+    let finalRadius = this.startRadius;
+    let orbitLevel = 1;
+
     let i = 0;
     for (const [nodeId, nodeTitle] of this.nodeTitles) {
       const node = new THREE.Mesh(geometry, material);
 
+      // Update the orbit level after the level is filled
+      if (i > 0 && i % this.nodesPerLevel === 0) {
+        orbitLevel++;
+      }
+
+      finalRadius = this.startRadius + orbitLevel * this.radiusIncrement; // Increase the orbit radius
+
       node.position.set(
-        this.startRadius * Math.cos((i / this.numNodes) * 2 * Math.PI),
+        this.startRadius * Math.cos((i / (this.numNodes % this.nodesPerLevel)) * 2 * Math.PI),
         this.startHeight,
-        this.startRadius * Math.sin((i / this.numNodes) * 2 * Math.PI)
+        this.startRadius * Math.sin((i / (this.numNodes % this.nodesPerLevel)) * 2 * Math.PI)
       );
 
       // Assign a unique ID to each node, this is used as the route path to navigate to in Home.js
-      node.userData = { id: `${nodeId}` };
+      // Also assign an orbit radius to each node
+      node.userData = { id: `${nodeId}`, currentRadius: this.startRadius, finalRadius: finalRadius };
       this.nodes.push(node);
 
       scene.add(node);
 
-      // Store an initial angle offset for each node
-      this.angles.push((i / this.numNodes) * 2 * Math.PI);
+      // Adjust to store an initial angle offset for each node based on its level
+      this.nodes.forEach((node, i) => {
+        // Calculate which level this node is on (integer division)
+        const level = Math.floor(i / this.nodesPerLevel);
+        
+        // Calculate how many nodes are on the current level
+        const nodesOnCurrentLevel = Math.min(this.nodesPerLevel, this.numNodes - level * this.nodesPerLevel);
+        
+        // Evenly distribute the nodes on this level (in radians)
+        const baseAngle = (i % this.nodesPerLevel) * (2 * Math.PI / nodesOnCurrentLevel);
+
+        // Apply an offset to the level's angles so they don't align vertically with the previous level
+        const angle = baseAngle + level * this.levelOffsetAngle;
+
+        // Store the angle for this node
+        this.angles[i] = angle;
+      });
 
       i++;
     }
@@ -217,12 +244,6 @@ class OrbitingNodes {
     // Smoothly lerp the rotation speed toward the target speed every frame
     this.rotationSpeed = THREE.MathUtils.lerp(this.rotationSpeed, this.targetRotationSpeed, this.lerpSpeed);
 
-    // Update orbitRadius based on time, for outward movement
-    this.orbitRadius =
-      this.startRadius +
-      (this.finalRadius - this.startRadius) *
-        (2 / (1 + 2 ** (-3 * Math.max(0, elapsedTime - this.rotationStartDelay))) - 1); // Sigmoid-like smooth expansion
-
     // Swirl nodes around and update positions along the upside-down cone, starting from below
     this.nodes.forEach((node, i) => {
       // Increment the angle based on the current rotation speed and deltaTime
@@ -231,12 +252,25 @@ class OrbitingNodes {
       // Make sure the angle wraps around between 0 and 2*PI (360 degrees)
       this.angles[i] = this.angles[i] % (2 * Math.PI);
 
+      // Use the node's specific orbit radius (stored in userData)
+      let currentRadius = node.userData.currentRadius;
+      let finalRadius = node.userData.finalRadius;
+
+      // Update orbitRadius based on time, for outward movement
+      currentRadius =
+        this.startRadius +
+        (finalRadius - this.startRadius) *
+        (2 / (1 + 2 ** (-3 * Math.max(0, elapsedTime - this.rotationStartDelay))) - 1); // Sigmoid-like smooth expansion
+
       // Cone motion: x and z expand outward, y starts below the center and rises
-      node.position.x = this.orbitRadius * Math.cos(this.angles[i]);
-      node.position.z = this.orbitRadius * Math.sin(this.angles[i]);
+      node.position.x = currentRadius * Math.cos(this.angles[i]);
+      node.position.z = currentRadius * Math.sin(this.angles[i]);
+
+      // Update the current radius for the node
+      node.userData.currentRadius = currentRadius;
 
       // Calculate the y-position for upward movement, simulating an upside-down cone
-      const normalizedRadius = this.orbitRadius / this.finalRadius; // 0 at start, 1 at max
+      const normalizedRadius = currentRadius / finalRadius; // 0 at start, 1 at max
       node.position.y = this.startHeight + normalizedRadius * this.heightMultiplier; // Rising upward
     });
   }
