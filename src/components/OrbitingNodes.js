@@ -246,8 +246,10 @@ class OrbitingNodes {
 
     // Swirl nodes around and update positions along the upside-down cone, starting from below
     this.nodes.forEach((node, i) => {
+      // Rotation speed slows on each subsequent level
+      const speedMultiplier = 1 / Math.floor((i / this.nodesPerLevel) + 1);
       // Increment the angle based on the current rotation speed and deltaTime
-      this.angles[i] += this.rotationSpeed * deltaTime;
+      this.angles[i] += this.rotationSpeed * deltaTime * speedMultiplier;
 
       // Make sure the angle wraps around between 0 and 2*PI (360 degrees)
       this.angles[i] = this.angles[i] % (2 * Math.PI);
