@@ -304,8 +304,8 @@ const Home = () => {
 
     // Add OrbitControls for camera interaction
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.minDistance = 0.1;
-    controls.maxDistance = 1000;
+    controls.minDistance = 3;
+    controls.maxDistance = 100;
     controls.enableDamping = true;
 
     // Wait for all models and nodes to load using Promise.all
