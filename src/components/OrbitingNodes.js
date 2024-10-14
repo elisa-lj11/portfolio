@@ -12,6 +12,16 @@ class OrbitingNodes {
       ['rv-vr', '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis'],
       ['lucid-dreaming', '"Lucid Dreaming": A 360° Video Experience'],
     ]);
+
+    // Map for node page titles on mobile
+    this.nodeTitlesMobile = new Map([
+      ['strivr', 'Work: Strivr'],
+      ['local-hive', 'Stanford: "Local Hive"'],
+      ['orgasmr', 'Stanford: "orgASMR"'],
+      ['hifi', 'Work: High Fidelity'],
+      ['rv-vr', 'Stanford: "RV VR"'],
+      ['lucid-dreaming', 'Stanford: "Lucid Dreaming"'],
+    ]);
     
     this.nodes = [];
     this.startRadius = 0.0;
@@ -129,9 +139,9 @@ class OrbitingNodes {
   getNodesInfoArray() {
     let nodesInfoArray = [];
     this.nodes.forEach((node, index) => {
-      let nodeLabel = this.nodeTitles.get(node.userData.id);
+      let nodeTitle = this.isMobile ? this.nodeTitlesMobile.get(node.userData.id) : this.nodeTitles.get(node.userData.id);
 
-      let nodeInfo = { node, nodeLabel };
+      let nodeInfo = { node, nodeTitle };
       nodesInfoArray.push(nodeInfo);
     });
 

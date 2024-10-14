@@ -106,7 +106,7 @@ const Home = () => {
       orbitingNodes.updateNodes(camera);
 
       // Iterate through each node
-      nodesInfoArray.forEach(({ node, nodeLabel }) => {
+      nodesInfoArray.forEach(({ node, nodeTitle }) => {
         // Check if a labelDiv already exists for this node
         let nodeLabelDiv = labelMap.get(node.userData.id);
 
@@ -123,7 +123,7 @@ const Home = () => {
         // Update the label position and content
         nodeLabelDiv.style.left = `${x}px`;
         nodeLabelDiv.style.top = `${y}px`;
-        nodeLabelDiv.textContent = nodeLabel;
+        nodeLabelDiv.textContent = nodeTitle;
         nodeLabelDiv.style.display = 'block'; // Ensure the label is visible
 
         const hoveredNode = orbitingNodes.getHoveredNode(); // Get the hovered node
