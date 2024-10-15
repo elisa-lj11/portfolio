@@ -148,6 +148,16 @@ h1, h2, h3 {
   margin-top: 0; /* Remove top margin from headings */
 }
 
+.section-accessible {
+  padding: 20px; /* Add padding to space the content from the border */
+  transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.section-accessible:hover {
+  border: 2px solid #db13bd; /* Add a pink border */
+  box-shadow: 0px 0px 10px 2px #db13bd; /* Optional: Add a subtle pink shadow for emphasis */
+}
+
 p, ol, ul {
   line-height: 1.6; /* Increase line height for better readability */
 }

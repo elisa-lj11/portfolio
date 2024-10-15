@@ -66,15 +66,25 @@ body, html, #root {
   pointer-events: none;
   z-index: 2;
   user-select: none;
-  display: flex;
+  display: block;
   justify-content: flex-end;
   text-align: right;
   width: auto;
   height: auto;
 }
 
+#instruction-text a {
+  pointer-events: auto; /* Ensure the link is clickable */
+  text-align: right;
+}
+
 #instruction-text-mobile {
   display: none;
+}
+
+#instruction-text-mobile a {
+  pointer-events: auto; /* Ensure the link is clickable */
+  text-align: left;
 }
 
 @media (pointer:none), (pointer:coarse) {
@@ -125,7 +135,7 @@ body, html, #root {
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-tap-highlight-color:rgba(0,0,0,0);
-    display: flex;
+    display: block;
     justify-content: flex-start; /* Align to start */
     text-align: left; /* Left align the text */
     max-width: 90%; /* Limit width for better responsiveness */
