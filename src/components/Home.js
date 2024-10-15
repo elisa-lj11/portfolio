@@ -372,6 +372,9 @@ const Home = () => {
       // Dispose of the renderer and remove the DOM element
       renderer.dispose();
 
+      // Dispose of OrbitControls
+      controls.dispose();
+
       // Remove the div elements for each node label
       labelMap.forEach((labelDiv, nodeId) => {
         document.body.removeChild(labelDiv);
