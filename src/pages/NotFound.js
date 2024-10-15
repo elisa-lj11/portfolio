@@ -30,7 +30,7 @@ const NotFound = () => {
           alignItems: 'center',
           justifyContent: 'center',
           margin: '0 auto',
-          height: '10vh', // Set button height to a certain percentage of the viewport height
+          height: '50px', // Set button height to be slightly larger than the image
           whiteSpace: 'nowrap', // Prevent text from wrapping
           overflow: 'hidden', // Hide overflow to keep a single line
           maxWidth: '90%', // Limit width to fit better on smaller screens
@@ -45,8 +45,8 @@ const NotFound = () => {
         <img 
           src={galaxyImageUrl} 
           style={{
-            width: '40px', // Set a specific width for the image
-            height: 'auto', // Maintain aspect ratio
+            width: 'auto', // Set a specific width for the image
+            height: '40px', // Maintain aspect ratio
             marginRight: '5px' // Add space between the image and text
           }} 
           alt="Galaxy Icon" 
