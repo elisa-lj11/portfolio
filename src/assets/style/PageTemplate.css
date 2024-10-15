@@ -148,14 +148,55 @@ h1, h2, h3 {
   margin-top: 0; /* Remove top margin from headings */
 }
 
-.section-accessible {
-  padding: 20px; /* Add padding to space the content from the border */
-  transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 buttons per row */
+  gap: 30px; /* Space between buttons */
+  padding: 20px; /* Padding around the grid */
 }
 
-.section-accessible:hover {
-  border: 2px solid #db13bd; /* Add a pink border */
-  box-shadow: 0px 0px 10px 2px #db13bd; /* Optional: Add a subtle pink shadow for emphasis */
+.button-accessible {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Use the inherited color */
+}
+
+.button-title {
+  display: flex;
+  text-align: center;
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
+  width: 100%; /* Full width of the parent */
+  height: 100px; /* Fixed height for square buttons */
+  background-size: cover; /* Cover the button with the background image */
+  background-position: center; /* Center the image */
+  border: 2px solid transparent; /* Default border */
+  border-radius: 8px; /* Rounded corners */
+  transition: border 0.3s ease; /* Smooth transition for border */
+  position: relative; /* Positioning context for the overlay */
+  color: white; /* Change text color */
+  font-weight: normal; /* Make text bold */
+}
+
+.button-title::after {
+  content: ""; /* Empty content for the overlay */
+  position: absolute; /* Position it absolutely within the button */
+  top: 0; /* Cover the top */
+  left: 0; /* Cover the left */
+  right: 0; /* Cover the right */
+  bottom: 0; /* Cover the bottom */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  border-radius: 8px; /* Match button border radius */
+  z-index: 1; /* Layer above the background but below the text */
+}
+
+.button-title span {
+  z-index: 2; /* Bring text above the overlay */
+  position: relative; /* Positioning context for text */
+}
+
+.button-accessible:hover .button-title {
+  border: 2px solid #db13bd; /* Change border color on hover */
+  font-weight: bold; /* Make text bold */
 }
 
 p, ol, ul {

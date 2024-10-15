@@ -2,7 +2,12 @@
 import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
 
-import newLobbyImageUrl from '../assets/images/new-lobby.png';
+import strivrImageUrl from '../assets/images/accessible/strivr.png';
+import localHiveImageUrl from '../assets/images/accessible/local-hive.png';
+import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
+import hifiImageUrl from '../assets/images/accessible/hifi.png';
+import rvvrImageUrl from '../assets/images/accessible/rv-vr.png';
+import lucidDreamingImageUrl from '../assets/images/accessible/lucid-dreaming.png';
 
 const Accessible = () => {
   const [refs, setRefs] = useState([]);
@@ -11,6 +16,16 @@ const Accessible = () => {
   const generateRefsFromDOM = (generateRefsFunction) => {
     generateRefsFunction();  // Call the function that scans the DOM and sets the refs
   };
+
+  // Define your sections
+  const sections = [
+    { id: 'strivr', title: 'Strivr: "Immersive Lobby" Upgrade', imageUrl: strivrImageUrl },
+    { id: 'local-hive', title: '"Local Hive": A Human-Centered AI Project', imageUrl: localHiveImageUrl },
+    { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
+    { id: 'hifi', title: 'High Fidelity: Content Prototyping', imageUrl: hifiImageUrl },
+    { id: 'rv-vr', title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis', imageUrl: rvvrImageUrl },
+    { id: 'lucid-dreaming', title: '"Lucid Dreaming": A 360° Video Experience', imageUrl: lucidDreamingImageUrl },
+  ];
 
   return (
     <PageTemplate
@@ -23,94 +38,21 @@ const Accessible = () => {
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h3>(Accessible view)</h3>
         <p>
-          A far-out portfolio of my projects from work, school, and leisure. Select a section to get a deeper look. 
+          A far-out portfolio of my projects from work, school, and leisure. Select a button to get a deeper look. 
         </p>
       </div>
-      <br></br>
-      <hr className="solid"></hr>
-      <br></br>
-      <a href='/#/strivr' style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div className="section-accessible">
-          <div className="section" id='strivr'>
-            <h2>Strivr</h2>
-            <h3>"Immersive Lobby" Upgrade</h3>
-            <img src={newLobbyImageUrl} alt='Sample Image' width='100%'/>
-            <p>
-              Add more specific content here.
-            </p>
-          </div>
-        </div>
-      </a>
-      <br></br>
-      <hr className="solid"></hr>
-      <br></br>
-      <a href='/#/local-hive' style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div className="section-accessible">
-          <div className="section" id='local-hive'>
-            <h2>"Local Hive"</h2>
-            <h3>A Human-Centered AI Project</h3>
-            <p>
-              Add more specific content here.
-            </p>
-          </div>
-        </div>
-      </a>
-      <br></br>
-      <hr className="solid"></hr>
-      <br></br>
-      <a href='/#/orgasmr' style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div className="section-accessible">
-          <div className="section" id='orgasmr'>
-            <h2>"orgASMR"</h2>
-            <h3>A Head-Scratching Musical Interface</h3>
-            <p>
-              Add more specific content here.
-            </p>
-          </div>
-        </div>
-      </a>
-      <br></br>
-      <hr className="solid"></hr>
-      <br></br>
-      <a href='/#/hifi' style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div className="section-accessible">
-          <div className="section" id='hifi'>
-            <h2>High Fidelity</h2>
-            <h3>Content Prototyping</h3>
-            <p>
-              Add more specific content here.
-            </p>
-          </div>
-        </div>
-      </a>
-      <br></br>
-      <hr className="solid"></hr>
-      <br></br>
-      <a href='/#/rv-vr' style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div className="section-accessible">
-          <div className="section" id='rv-vr'>
-            <h2>"RV VR"</h2>
-            <h3>An Immersive Perspective on the Bay Area Housing Crisis</h3>
-            <p>
-              Add more specific content here.
-            </p>
-          </div>
-        </div>
-      </a>
-      <br></br>
-      <hr className="solid"></hr>
-      <br></br>
-      <a href='/#/lucid-dreaming' style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div className="section-accessible">
-          <div className="section" id='lucid-dreaming'>
-            <h2>"Lucid Dreaming"</h2>
-            <h3>A 360° Video Experience</h3>
-            <p>
-              Add more specific content here.
-            </p>
-          </div>
-        </div>
-      </a>
+      <br />
+      <hr className="solid" />
+      <br />
+      <div className="grid-container">
+        {sections.map(section => (
+          <a key={section.id} href={`/#/${section.id}`} className="button-accessible">
+            <div className="button-title" style={{ backgroundImage: `url(${section.imageUrl})` }}>
+              <span>{section.title}</span>
+            </div>
+          </a>
+        ))}
+      </div>
     </PageTemplate>
   );
 };
