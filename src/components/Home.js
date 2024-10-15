@@ -7,7 +7,7 @@ import OrbitingNodes from './OrbitingNodes'; // Import the OrbitingNodes class
 import GLTFModel from './GLTFModel'; // Import the Model class
 import '../assets/style/Home.css'; // Import the external CSS file
 
-// Purchased from https://sketchfab.com/3d-models/galaxy-space-portal-black-hole-773ae44fc994471b85679236a36c0918
+// Purchased from https://skfb.ly/pr8Kx
 import GALAXY_MODEL from '../assets/models/galaxy_HD.glb';
 // "Sky Pano - Milkyway" (https://skfb.ly/6BZ67) by MozillaHubs is licensed under CC Attribution-NonCommercial-ShareAlike (http://creativecommons.org/licenses/by-nc-sa/4.0/).
 import SKYBOX from '../assets/models/milkyway.glb';
