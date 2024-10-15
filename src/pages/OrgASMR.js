@@ -22,6 +22,7 @@ import solderingImageUrl from '../assets/images/orgasmr/soldering.jpg';
 import finalProtoboardImageUrl from '../assets/images/orgasmr/final-protoboard.jpg';
 import almostAssembledImageUrl from '../assets/images/orgasmr/almost-assembled.jpg';
 import fullyAssembledImageUrl from '../assets/images/orgasmr/fully-assembled.jpg';
+import finalFormImageUrl from '../assets/images/orgasmr/final-form.jpg';
 
 import handleModelUrl from '../assets/models/orgasmr-handle.stl';
 
@@ -342,6 +343,7 @@ const OrgASMR = () => {
       <br></br>
       <div className="section" id='showcase'>
         <h2>Instrument Showcase</h2>
+        <img src={finalFormImageUrl} alt='Final form of orgASMR' width='80%'/>
         <p>
           The <a target='_blank' rel='noopener noreferrer' href={ORGASMR_DEMO_SHOWCASE_URL}>final performance</a> (same link as embedded video above but starting at 1:16) took place at Stanford's CCRMA building, where dozens of curious attendees explored the orgASMR alongside 16 other student-designed hybrid instruments. The orgASMR withstood the hands and heads of many users throughout the event. The culmination of my work was performing a musical "piece" in front of the audience to showcase the novelty of my instrument. Even my dad attended, and I think he may have cried with what I only hope were tears of joy.
         </p>
