@@ -91,6 +91,13 @@ const Home = () => {
   // Will be set in useEffect()
   let isMobile;
 
+  // Check for development build to set correct accessible path
+  const isDevelopment = process.env.NODE_ENV === 'development';
+
+  const accessiblePagePath = isDevelopment 
+    ? '/#/accessible' 
+    : '/portfolio/#/accessible';
+
   // Used in camera view smooth reset functionality
   let shouldSmoothReset = false;
   let tapCount = 0;
@@ -423,7 +430,7 @@ const Home = () => {
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and scroll to navigate the space<br></br>
           &gt; Press the "Space" key to reset the view<br></br>
-          <a href='/#/accessible'>&gt; Accessible site</a>
+          <a href={accessiblePagePath}>&gt; Accessible site</a>
         </p>
       </div>
       <div id="instruction-text-mobile">
@@ -431,7 +438,7 @@ const Home = () => {
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and zoom to navigate the space<br></br>
           &gt; Triple-tap to reset the view<br></br>
-          <a href='/#/accessible'>&gt; Accessible site</a>
+          <a href={accessiblePagePath}>&gt; Accessible site</a>
         </p>
       </div>
     </div>
