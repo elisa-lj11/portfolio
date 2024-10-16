@@ -17,6 +17,8 @@ const Accessible = () => {
     generateRefsFunction();  // Call the function that scans the DOM and sets the refs
   };
 
+  const rootName = process.env.NODE_ENV === 'development' ? '' : '/portfolio';
+
   // Define your sections
   const sections = [
     { id: 'strivr', title: 'Strivr: "Immersive Lobby" Upgrade', imageUrl: strivrImageUrl },
@@ -46,7 +48,7 @@ const Accessible = () => {
       <br />
       <div className="grid-container">
         {sections.map(section => (
-          <a key={section.id} href={`/#/${section.id}`} className="button-accessible">
+          <a key={section.id} href={`${rootName}/#/${section.id}`} className="button-accessible">
             <div className="button-title" style={{ backgroundImage: `url(${section.imageUrl})` }}>
               <span>{section.title}</span>
             </div>
