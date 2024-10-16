@@ -27,14 +27,14 @@ const LucidDreaming = () => {
 
   return (
     <PageTemplate
-      title='"Lucid Dreaming": A 360&deg; Video Experience' 
       refs={refs} 
       setRefs={setRefs} 
       generateRefsFromDOM={generateRefsFromDOM}
     >
-      <h3>Completed May 2016</h3>
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
+        <h1>"Lucid Dreaming": A 360&deg; Video Experience</h1>
+        <h3>Completed May 2016</h3>
         <div className="video-youtube">
           {/* Overlay div for click handling */}
           {isMobile && (

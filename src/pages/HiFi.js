@@ -24,14 +24,14 @@ const HiFi = () => {
 
   return (
     <PageTemplate
-      title="High Fidelity: Content Prototyping" 
       refs={refs} 
       setRefs={setRefs} 
       generateRefsFromDOM={generateRefsFromDOM}
     >
-      <h3>Summer 2016, 2017-2018</h3>
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
+        <h1>High Fidelity: Content Prototyping</h1>
+        <h3>Summer 2016, 2017-2018</h3>
         <div className="video-youtube">
           <iframe className="responsive-iframe" src={HIFI_OVERVIEW_EMBED_URL} title="High Fidelity Highlights" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>

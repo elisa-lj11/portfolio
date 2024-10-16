@@ -5,7 +5,7 @@ import '../assets/style/PageTemplate.css'; // Import the CSS file
 
 import galaxyImageUrl from '../assets/images/galaxy.png';
 
-const PageTemplate = ({ title, refs, setRefs, children, generateRefsFromDOM }) => {
+const PageTemplate = ({ refs, setRefs, children, generateRefsFromDOM }) => {
   const navigate = useNavigate(); // Hook to programmatically navigate
   const [selectedSection, setSelectedSection] = useState(''); // To keep track of the selected section
   const [jumpScroll, setJumpScroll] = useState(false); // Track if a scroll is manual
@@ -133,7 +133,6 @@ const PageTemplate = ({ title, refs, setRefs, children, generateRefsFromDOM }) =
       </header>
       <main>
         <div className="content">
-          <h1>{title}</h1>
           {children} {/* This is where the specific page content will be rendered */}
         </div>
       </main>

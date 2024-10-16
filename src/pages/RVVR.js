@@ -24,14 +24,14 @@ const RVVR = () => {
 
   return (
     <PageTemplate
-      title='"RV VR": An Immersive Perspective on the Bay Area Housing Crisis'
       refs={refs} 
       setRefs={setRefs} 
       generateRefsFromDOM={generateRefsFromDOM}
     >
-      <h3>Completed March 2019</h3>
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
+        <h1>"RV VR": An Immersive Perspective on the Bay Area Housing Crisis</h1>
+        <h3>Completed March 2019</h3>
         <div className="video-youtube">
           {/* Overlay div for click handling */}
           {isMobile && (
