@@ -85,8 +85,8 @@ const RVVR = () => {
       <br></br>
       <hr className="solid"></hr>
       <br></br>
-      <div className="section" id='learnings'>
-        <h2>Learnings</h2>
+      <div className="section" id='reflections'>
+        <h2>Reflections</h2>
         <ul>
           <li>
             <b>360&deg; video capture technology has come a long way!</b> Back when I produced my <a target='_blank' rel='noopener noreferrer' href={LUCID_DREAMING_RELATIVE_URL}>"Lucid Dreaming 360" video</a>, I had to rely on numerous technical hacks to make the video look good. In just three years, the technology had advanced significantly, which was exciting to witness, especially as someone deeply immersed in the virtual reality industry. It was reassuring to see such progress being made toward technological advancement and wider public access.

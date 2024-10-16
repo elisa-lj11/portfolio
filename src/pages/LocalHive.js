@@ -924,8 +924,8 @@ const LocalHive = () => {
       <br></br>
       <hr className="solid"></hr>
       <br></br>
-      <div className="section" id='learnings'>
-        <h2>Learnings</h2>
+      <div className="section" id='reflections'>
+        <h2>Reflections</h2>
         <ul>
           <li>
             Needfinding is a crucial step in product development, but it can easily be overlooked if you're too focused on your initial idea of a solution. To apply human-centered design effectively, it's essential to step outside your own perspective and listen objectively to the needs of your target users before forming assumptions about how they think or what they need.</li>

@@ -98,8 +98,8 @@ const LucidDreaming = () => {
       <br></br>
       <hr className="solid"></hr>
       <br></br>
-      <div className="section" id='learnings'>
-        <h2>Learnings</h2>
+      <div className="section" id='reflections'>
+        <h2>Reflections</h2>
         <ul>
           <li>
             <b>The more working parts, the more room for error.</b> With so many moving parts to produce a 360&deg; video in 2016, it was very easy to make mistakes early on that could snowball down the production pipeline. My patience was tested through this production due to fickle technology and lengthy export times, but I was proud that I could publish a working 360&deg; video, even if it took longer than expected.

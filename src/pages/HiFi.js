@@ -152,7 +152,7 @@ const HiFi = () => {
       <br></br>
       <hr className="solid"></hr>
       <br></br>
-      <div className="section" id='extras'>
+      <div className="section" id='reflections'>
         <h2>Reflections</h2>
         <ul>
           <li>

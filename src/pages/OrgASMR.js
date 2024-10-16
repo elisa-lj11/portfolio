@@ -351,8 +351,8 @@ const OrgASMR = () => {
       <br></br>
       <hr className="solid"></hr>
       <br></br>
-      <div className="section" id='learnings'>
-        <h2>Learnings</h2>
+      <div className="section" id='reflections'>
+        <h2>Reflections</h2>
         <ul>
           <li>
             <b>It's okay to get crafty on creative projects.</b> I hadn't originally planned to design rings to secure the head scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had plenty of resources available such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
