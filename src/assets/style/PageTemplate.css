@@ -7,7 +7,8 @@ body {
   height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column; /* Ensure body content flows vertically */
-  overflow: hidden; /* Prevent body scrolling */
+  overflow-y: auto; /* Prevent body scrolling */
+  --vh: 100vh;
 }
 
 .page-template {
@@ -22,6 +23,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  height: 50px;
   width: 100%; /* Make header span the full width */
   padding: 5px 20px;
   background: black;
@@ -83,6 +85,7 @@ main {
   padding-top: 5%;
   padding-left: 20%; /* Padding around the content */
   padding-right: 20%; /* Padding around the content */
+  padding-bottom: 20px;
   box-sizing: border-box; /* Include padding in height calculation */
 }
 
@@ -244,6 +247,10 @@ hr.solid {
 
 /* Media query for small screens */
 @media (pointer:none), (pointer:coarse) {
+  body {
+    --vh: calc(var(--vh, 1vh) * 100); /* Recalculate */
+  }
+
   header {
     flex-direction: row; /* Stack elements horizontally */
     align-items: flex-start; /* Align to the left */
@@ -254,6 +261,7 @@ hr.solid {
     padding-top: 5%;
     padding-left: 5%; /* Padding around the content */
     padding-right: 5%; /* Padding around the content */
+    padding-bottom: 20px;
     box-sizing: border-box; /* Include padding in height calculation */
   }
 
