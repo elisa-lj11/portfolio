@@ -12,6 +12,8 @@ import GALAXY_MODEL from '../assets/models/galaxy_HD.glb';
 // "Sky Pano - Milkyway" (https://skfb.ly/6BZ67) by MozillaHubs is licensed under CC Attribution-NonCommercial-ShareAlike (http://creativecommons.org/licenses/by-nc-sa/4.0/).
 import SKYBOX from '../assets/models/milkyway.glb';
 
+import rocketCursor from '../assets/images/rocketship-cursor.png';
+
 // To track cursor intersection
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
@@ -149,7 +151,7 @@ const Home = () => {
                 document.body.style.cursor = 'grab'; // Galaxy hover -> 'grab'
               }
             } else {
-              document.body.style.cursor = 'default'; // Reset cursor if no node or galaxy interaction
+              document.body.style.cursor = `url(${rocketCursor}), auto`; // Reset cursor if no node or galaxy interaction
             }
 
             nodeLabelDiv.style.display = 'none'; // Hide node labels if no node is hovered
@@ -252,6 +254,9 @@ const Home = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
+    // Set custom cursor
+    document.body.style.cursor = `url(${rocketCursor}), auto`;
+
     // Media query to check for devices with no precise pointer or coarse pointer (e.g., touchscreens)
     isMobile = window.matchMedia('(pointer:none), (pointer:coarse)').matches;
 
@@ -295,7 +300,7 @@ const Home = () => {
           console.log(`Clicked node: ${nodeId}`);
           // The nodeId is set in OrbitingNodes
           navigate(`/${nodeId}`);
-          document.body.style.cursor = 'default'; // Reset cursor
+          document.body.style.cursor = `url(${rocketCursor}), auto`; // Reset cursor
         };
         orbitingNodes.enableMouseEvents(renderer, camera, handleNodeClick);
         resolve(); // Resolve after the nodes are set up
