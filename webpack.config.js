@@ -86,17 +86,6 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        test: /\.ico$/, // Match .ico files
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]', // Keep original path and name
-            },
-          },
-        ],
       }
     ],
   },
