@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -85,6 +86,17 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.ico$/, // Match .ico files
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]', // Keep original path and name
+            },
+          },
+        ],
       }
     ],
   },
@@ -92,6 +104,11 @@ module.exports = {
     new CleanWebpackPlugin(), // This will clear out the build folder before each new build
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html')
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/assets/images/favicon.ico', to: isDevelopment ? '' : 'src/assets/images/' },
+      ],
     }),
   ]
 };
