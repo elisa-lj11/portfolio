@@ -1,9 +1,12 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
+const developmentRootPath = '/';
+const productionRootPath = '/portfolio/';
 
 module.exports = {
   entry: './index.js',
@@ -11,7 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './build'),
     filename: 'index_bundle.js',
-    publicPath: isDevelopment ? '/' : '/portfolio/',
+    publicPath: isDevelopment ? developmentRootPath : productionRootPath,
   },
   target: 'web',
   devServer: {
@@ -99,6 +102,9 @@ module.exports = {
         { from: 'src/assets/images/favicon.ico', to: isDevelopment ? '' : 'src/assets/images/' },
         { from: '404.html', to: '404.html' } // Ensure the 404.html file is copied to the build folder
       ],
+    }),
+    new webpack.DefinePlugin({
+      'process.env.PUBLIC_PATH': JSON.stringify(isDevelopment ? developmentRootPath : productionRootPath)
     }),
   ]
 };

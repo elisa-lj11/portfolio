@@ -5,14 +5,13 @@ import App from './src/App.js'
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-const isDevelopment = process.env.NODE_ENV === 'development';
-
-const faviconPath = isDevelopment ? 'src/assets/images/favicon.ico?' : '/portfolio/src/assets/images/favicon.ico?';
+// Custom favicon asset generated with ChatGPT
+const faviconPath =  'src/assets/images/favicon.ico?';
 
 const link = document.createElement('link');
 link.rel = 'icon';
 link.type = 'image/x-icon';
-link.href = faviconPath;
+link.href = `${process.env.PUBLIC_PATH}${faviconPath}`;
 document.head.appendChild(link);
 
 root.render(<App/>);

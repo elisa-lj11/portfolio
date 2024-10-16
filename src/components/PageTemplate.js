@@ -10,7 +10,6 @@ const PageTemplate = ({ title, refs, setRefs, children, generateRefsFromDOM }) =
   const [selectedSection, setSelectedSection] = useState(''); // To keep track of the selected section
   const [jumpScroll, setJumpScroll] = useState(false); // Track if a scroll is manual
 
-  const rootName = process.env.NODE_ENV === 'development' ? '' : '/portfolio';
   const projectName = window.location.hash.split('#/')[1].split('#')[0];
 
   const goHome = () => {
@@ -45,14 +44,14 @@ const PageTemplate = ({ title, refs, setRefs, children, generateRefsFromDOM }) =
 
       // Scroll and update hash without delay
       targetElement.scrollIntoView({ behavior: 'smooth' });
-      window.history.replaceState(null, '', `${rootName}/#/${projectName}#${targetId}`);
+      window.history.replaceState(null, '', `${process.env.PUBLIC_PATH}#/${projectName}#${targetId}`);
       setSelectedSection(targetId);
 
       // Reset manual scroll flag after a delay
       setTimeout(() => setJumpScroll(false), 800);
     } else {
       // If target section doesn't exist, redirect to the base project URL
-      window.history.replaceState(null, '', `${rootName}/#/${projectName}`);
+      window.history.replaceState(null, '', `${process.env.PUBLIC_PATH}#/${projectName}`);
     }
   };
 
@@ -78,7 +77,7 @@ const PageTemplate = ({ title, refs, setRefs, children, generateRefsFromDOM }) =
         // If at least one section is visible, set the selected section
         const visibleSection = visibleSections[0].target.id;
         setSelectedSection(visibleSection);
-        window.history.replaceState(null, '', `${rootName}/#/${projectName}#${visibleSection}`); // Update the URL hash
+        window.history.replaceState(null, '', `${process.env.PUBLIC_PATH}#/${projectName}#${visibleSection}`); // Update the URL hash
       }
     };
 
