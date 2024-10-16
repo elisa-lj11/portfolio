@@ -27,7 +27,7 @@ class GLTFModel {
         const action = this.mixer.clipAction(animations[0]);
         action.play();
       } else {
-        console.log('No animations found in this model: ' + this.modelName);
+        if (process.env.IS_DEVELOPMENT) console.log('No animations found in this model: ' + this.modelName);
       }
 
       // Invoke the callback once the model is loaded

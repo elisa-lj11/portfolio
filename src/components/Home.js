@@ -174,8 +174,6 @@ const Home = () => {
 
       // Render the scene
       renderer.render(scene, camera);
-
-      //console.log("Camera position: x: " + camera.position.x + ", y: " + camera.position.y + ", z: " + camera.position.z);
     };
 
     // Start the animation loop and trigger fade-in
@@ -216,7 +214,7 @@ const Home = () => {
   const handleSpaceUp = (event) => {
     if (event.code === 'Space') {
       shouldSmoothReset = true;
-      console.log('Camera view has been reset');
+      if (process.env.IS_DEVELOPMENT) console.log('Camera view has been reset');
     }
   }
 
@@ -233,7 +231,7 @@ const Home = () => {
   
     if (tapCount === 3) {
       shouldSmoothReset = true;
-      console.log('Camera view has been reset (triple-tap)');
+      if (process.env.IS_DEVELOPMENT) console.log('Camera view has been reset (triple-tap)');
       tapCount = 0; // Reset tap count after triple tap
     }
   
@@ -277,7 +275,7 @@ const Home = () => {
     const loadGalaxyModel = () => {
       return new Promise((resolve) => {
         galaxyModel.loadModel(scene, () => {
-          console.log('Galaxy model loaded and added to scene');
+          if (process.env.IS_DEVELOPMENT) console.log('Galaxy model loaded and added to scene');
           galaxyModel.setSpeed(-0.3); // Galaxy orbits in reverse
           resolve();
         });
@@ -287,7 +285,7 @@ const Home = () => {
     const loadSkyboxModel = () => {
       return new Promise((resolve) => {
         skyboxModel.loadModel(scene, () => {
-          console.log('Skybox model loaded and added to scene');
+          if (process.env.IS_DEVELOPMENT) console.log('Skybox model loaded and added to scene');
           resolve();
         });
       });
@@ -297,11 +295,11 @@ const Home = () => {
       return new Promise((resolve) => {
         orbitingNodes.createNodes(scene, isMobile);
         orbitingNodesRef.current = orbitingNodes;
-        console.log('Orbiting nodes created and added to scene');
+        if (process.env.IS_DEVELOPMENT) console.log('Orbiting nodes created and added to scene');
 
         // Set up mouse events for clicking on nodes
         const handleNodeClick = (nodeId) => {
-          console.log(`Clicked node: ${nodeId}`);
+          if (process.env.IS_DEVELOPMENT) console.log(`Clicked node: ${nodeId}`);
           // The nodeId is set in OrbitingNodes
           navigate(`/${nodeId}`);
           document.body.style.cursor = `url(${rocketCursor}), auto`; // Reset cursor
@@ -320,13 +318,13 @@ const Home = () => {
     // Wait for all models and nodes to load using Promise.all
     Promise.all([loadGalaxyModel(), loadSkyboxModel(), loadOrbitingNodes()])
       .then(() => {
-        console.log('All assets loaded. Starting animation.');
+        if (process.env.IS_DEVELOPMENT) console.log('All assets loaded. Starting animation.');
 
         // Start animation loop once all assets are loaded
         animate(scene, camera, controls, renderer, galaxyModel);
       })
       .catch((error) => {
-        console.error('An error occurred while loading assets:', error);
+        if (process.env.IS_DEVELOPMENT) console.error('An error occurred while loading assets:', error);
       });
 
     // Handle window resize

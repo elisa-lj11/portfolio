@@ -104,7 +104,8 @@ module.exports = {
       ],
     }),
     new webpack.DefinePlugin({
-      'process.env.PUBLIC_PATH': JSON.stringify(isDevelopment ? developmentRootPath : productionRootPath)
+      'process.env.PUBLIC_PATH': JSON.stringify(isDevelopment ? developmentRootPath : productionRootPath),
+      'process.env.IS_DEVELOPMENT': JSON.stringify(isDevelopment)
     }),
   ]
 };

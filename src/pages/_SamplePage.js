@@ -1,4 +1,4 @@
-// src/pages/SamplePage.js
+// src/pages/_SamplePage.js
 // Copy this page to create a new project page using standard formatting
 import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
