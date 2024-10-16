@@ -97,6 +97,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/assets/images/favicon.ico', to: isDevelopment ? '' : 'src/assets/images/' },
+        { from: '404.html', to: '404.html' } // Ensure the 404.html file is copied to the build folder
       ],
     }),
   ]
