@@ -326,7 +326,7 @@ const OrgASMR = () => {
               alt='Almost assembled orgASMR'
               style={{ width: '80%', display: 'inline-block', marginRight: '2%' }}
             />
-            <figcaption>Functional componentns ready to be loaded into the handle</figcaption>
+            <figcaption>Functional components ready to be loaded into the handle</figcaption>
           </figure>
           <figure>
             <img
