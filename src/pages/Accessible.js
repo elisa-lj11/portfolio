@@ -29,16 +29,19 @@ const Accessible = () => {
 
   return (
     <PageTemplate
-      title="You have warped to Elisa's space" 
       refs={refs} 
       setRefs={setRefs} 
       generateRefsFromDOM={generateRefsFromDOM}
     >
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
+        <h1>You have warped to Elisa's space</h1>
         <h3>(Accessible view)</h3>
         <p>
           A far-out portfolio of my projects from work, school, and leisure. Select a button to get a deeper look. 
+        </p>
+        <p>
+          <a href={`${process.env.PUBLIC_PATH}#/who-am-i`}>Who am I?</a>
         </p>
       </div>
       <br />
