@@ -9,6 +9,8 @@ import OrgASMR from './pages/OrgASMR';
 import HiFi from './pages/HiFi';
 import RVVR from './pages/RVVR';
 import LucidDreaming from './pages/LucidDreaming';
+
+import WhoAmI from './pages/WhoAmI';
 import Accessible from './pages/Accessible';
 import NotFound from './pages/NotFound';
 
@@ -27,6 +29,8 @@ const App = () => {
           <Route path="/hifi" element={< HiFi />} />
           <Route path="/rv-vr" element={< RVVR />} />
           <Route path="/lucid-dreaming" element={< LucidDreaming />} />
+          {/* About Me page */}
+          <Route path="/who-am-i" element={< WhoAmI />} />
           {/* Accessibility page */}
           <Route path="/accessible" element={< Accessible />} />
           {/* Catch-all route for 404 Not Found */}

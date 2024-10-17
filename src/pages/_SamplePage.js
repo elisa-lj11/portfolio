@@ -15,14 +15,14 @@ const SamplePage = () => {
 
   return (
     <PageTemplate
-      title="Sample Page Title" 
       refs={refs} 
       setRefs={setRefs} 
       generateRefsFromDOM={generateRefsFromDOM}
     >
-      <h3>Date completed</h3>
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
+        <h1>Sample Page Title</h1>
+        <h3>Completed January 2010</h3>
         {/*<img src={sampleImageUrl} alt='Sample Image' width='100%'/>*/}
         <br></br>
         <p>

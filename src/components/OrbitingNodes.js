@@ -22,6 +22,8 @@ class OrbitingNodes {
       ['rv-vr', 'Stanford: "RV VR"'],
       ['lucid-dreaming', 'Stanford: "Lucid Dreaming"'],
     ]);
+
+    this.whoAmINode = ['who-am-i', 'Who am I?'];
     
     this.nodes = [];
     this.startRadius = 0.0;
