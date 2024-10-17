@@ -23,9 +23,11 @@ class OrbitingNodes {
       ['lucid-dreaming', 'Stanford: "Lucid Dreaming"'],
     ]);
 
-    this.whoAmINode = ['who-am-i', 'Who am I?'];
+    this.whoAmINodeInfo = {id: 'who-am-i', title: 'Who am I?'};
+    this.whoAmINode;
     
-    this.nodes = [];
+    this.orbitingNodes = []; // Only includes nodes with movement
+    this.allNodes = [];
     this.startRadius = 0.0;
     this.radiusIncrement = 3.2; // Space between orbit levels
     this.numNodes = this.nodeTitles.size;
@@ -74,6 +76,17 @@ class OrbitingNodes {
     }
   }
 
+  // "Who am I" node doesn't follow orbit calculations, must be instantiated separately
+  createWhoAmINode(scene, geometry, material) {
+    this.whoAmINode = new THREE.Mesh(geometry, material);
+
+    this.whoAmINode.position.set(0, this.startHeight, 0); // Permanent placement
+
+    this.whoAmINode.userData = { id: this.whoAmINodeInfo.id, currentRadius: 0, finalRadius: 0 };
+
+    scene.add(this.whoAmINode);
+  }
+
   // Function to create orbiting nodes with unique IDs
   createNodes(scene, isMobile) {
     this.isMobile = isMobile;
@@ -87,6 +100,8 @@ class OrbitingNodes {
 
     const geometry = new THREE.SphereGeometry(0.2, 32, 32);
     const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+    this.createWhoAmINode(scene, geometry, material);
 
     let finalRadius = this.startRadius;
     let orbitLevel = 1;
@@ -111,12 +126,12 @@ class OrbitingNodes {
       // Assign a unique ID to each node, this is used as the route path to navigate to in Home.js
       // Also assign an orbit radius to each node
       node.userData = { id: `${nodeId}`, currentRadius: this.startRadius, finalRadius: finalRadius };
-      this.nodes.push(node);
+      this.orbitingNodes.push(node);
 
       scene.add(node);
 
       // Adjust to store an initial angle offset for each node based on its level
-      this.nodes.forEach((node, i) => {
+      this.orbitingNodes.forEach((node, i) => {
         // Calculate which level this node is on (integer division)
         const level = Math.floor(i / this.nodesPerLevel);
         
@@ -135,18 +150,26 @@ class OrbitingNodes {
 
       i++;
     }
+
+    // Store all nodes in one array for calculating mouse intersections
+    this.allNodes = this.orbitingNodes.concat([this.whoAmINode])
   }
 
   // Returns all the nodes and their associated label to Home.js
   getNodesInfoArray() {
     let nodesInfoArray = [];
-    this.nodes.forEach((node, index) => {
+    this.orbitingNodes.forEach((node, index) => {
       let nodeTitle = this.isMobile ? this.nodeTitlesMobile.get(node.userData.id) : this.nodeTitles.get(node.userData.id);
 
       let nodeInfo = { node, nodeTitle };
       nodesInfoArray.push(nodeInfo);
     });
 
+    // Add "Who Am I" node separately
+    let whoAmINode = this.whoAmINode;
+    let whoAmINodeTitle = this.whoAmINodeInfo.title;
+    let whoAmINodeInfo = { node: whoAmINode, nodeTitle: whoAmINodeTitle};
+    nodesInfoArray.push(whoAmINodeInfo);
     return nodesInfoArray;
   }
 
@@ -193,7 +216,7 @@ class OrbitingNodes {
     this.raycaster.setFromCamera(this.mouse, camera);
 
     // Find intersected objects
-    const intersects = this.raycaster.intersectObjects(this.nodes);
+    const intersects = this.raycaster.intersectObjects(this.allNodes);
 
     if (intersects.length == 0 && !isMouseUp) {
       // When mouse is clicked down on something that is not a node, block
@@ -224,7 +247,9 @@ class OrbitingNodes {
 
     // Set raycaster from camera perspective
     this.raycaster.setFromCamera(this.mouse, camera);
-    const intersects = this.raycaster.intersectObjects(this.nodes);
+
+    // Include "Who Am I" node in intersects list
+    const intersects = this.raycaster.intersectObjects(this.allNodes);
 
     // Lerp rotation speed based on mouse hover
     if (intersects.length > 0) {
@@ -257,7 +282,7 @@ class OrbitingNodes {
     this.rotationSpeed = THREE.MathUtils.lerp(this.rotationSpeed, this.targetRotationSpeed, this.lerpSpeed);
 
     // Swirl nodes around and update positions along the upside-down cone, starting from below
-    this.nodes.forEach((node, i) => {
+    this.orbitingNodes.forEach((node, i) => {
       // Rotation speed slows on each subsequent level
       const speedMultiplier = 1 / Math.floor((i / this.nodesPerLevel) + 1);
       // Increment the angle based on the current rotation speed and deltaTime
