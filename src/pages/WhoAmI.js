@@ -3,6 +3,14 @@
 import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
 
+// Social media icons sourced from https://www.cleanpng.com/
+import linkedInIconUrl from '../assets/images/who-am-i/linkedin-logo.png';
+import gitHubIconUrl from '../assets/images/who-am-i/github-logo.png';
+import resumeIconUrl from '../assets/images/who-am-i/resume-icon.png';
+import emailIconUrl from '../assets/images/who-am-i/email-icon.png';
+import soundCloudIconUrl from '../assets/images/who-am-i/soundcloud-logo.png';
+import spotifyIconUrl from '../assets/images/who-am-i/spotify-logo.png';
+
 import spacedOutImageUrl from '../assets/images/who-am-i/spaced-out.jpg';
 import spaceGradImageUrl from '../assets/images/who-am-i/space-grad.png';
 import spacePetsImageUrl from '../assets/images/who-am-i/space-pets.jpg';
@@ -61,19 +69,37 @@ const WhoAmI = () => {
       <br></br>
       <div className="section" id='Links'>
         <h2>Links</h2>
-        <p>
-          <a target='_blank' rel='noopener noreferrer' href={LINKEDIN_URL}>LinkedIn</a>
+        <div className='social-media-container'>
+          <a className='social-media' target='_blank' rel='noopener noreferrer' href={LINKEDIN_URL}>
+            <img className='social-media' src={linkedInIconUrl} />
+            LinkedIn
+          </a>
           <br />
-          <a target='_blank' rel='noopener noreferrer' href={GITHUB_URL}>GitHub</a>
+          <a className='social-media' target='_blank' rel='noopener noreferrer' href={GITHUB_URL}>
+            <img className='social-media' src={gitHubIconUrl} />
+            GitHub
+          </a>
           <br />
-          <a target='_blank' rel='noopener noreferrer' href={RESUME_URL}>Resume</a>
+          <a className='social-media' target='_blank' rel='noopener noreferrer' href={RESUME_URL}>
+            <img className='social-media' src={resumeIconUrl} />
+            Resume
+          </a>
           <br />
-          <a target='_blank' rel='noopener noreferrer' href={EMAIL_LINK}>Email</a>
+          <a className='social-media' target='_blank' rel='noopener noreferrer' href={EMAIL_LINK}>
+            <img className='social-media' src={emailIconUrl} />
+            Email
+          </a>
           <br />
-          <a target='_blank' rel='noopener noreferrer' href={SOUNDCLOUD_URL}>SoundCloud</a>
+          <a className='social-media' target='_blank' rel='noopener noreferrer' href={SOUNDCLOUD_URL}>
+            <img className='social-media' src={soundCloudIconUrl} />
+            SoundCloud
+          </a>
           <br />
-          <a target='_blank' rel='noopener noreferrer' href={SPOTIFY_URL}>Spotify Playlists</a>
-        </p>
+          <a className='social-media' target='_blank' rel='noopener noreferrer' href={SPOTIFY_URL}>
+            <img className='social-media' src={spotifyIconUrl} />
+            Spotify Playlists
+          </a>
+        </div>
       </div>
       <br></br>
       <hr className="solid"></hr>

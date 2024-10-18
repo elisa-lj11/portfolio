@@ -210,12 +210,39 @@ a {
   color: #db13bd;
 }
 
+.social-media-container {
+  display: flex;
+  justify-content: space-around; /* Evenly space out items */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Wrap items if they overflow */
+  padding: 20px; /* Add padding around the container */
+  width: 100%; /* Full width container */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+a.social-media {
+  width: auto;
+  display: inline-flex;
+  align-items: center;  /* Vertically aligns the image and text */
+  justify-content: flex-start;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 img {
   max-width: 100%;  /* Ensure the image scales down */
   height: auto;     /* Maintain aspect ratio */
   display: block;   /* Remove potential extra space */
   margin: 0 auto;   /* Center the image horizontally */
   border-radius: 5px; /* Add some rounded corners */
+}
+
+img.social-media {
+  margin: 0; /* Override the parent img setting */
+  width: 20px;
+  height: auto;
+  display: inline-block;
+  margin-right: 5px;
 }
 
 button.home {
