@@ -62,7 +62,6 @@ const LocalHive = () => {
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h1>"Local Hive": A Human-Centered AI Project</h1>
-        <h3>Completed June 2019</h3>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <iframe
             style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
@@ -75,7 +74,7 @@ const LocalHive = () => {
       </div>
       <br></br>
       <p>
-        In my Senior Spring quarter at Stanford in 2019, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI." In this class, I worked with a team of 4 on a quarter-long project applying design thinking, processes, and tools to the intersection of healthcare and smart technology. Over the course of 10 weeks, we underwent the design journey from ideation to iterating on prototypes to presenting our final product in a public fair, in which we received special recognition for our work.
+        In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI." In this class, I worked with a team of 4 on a quarter-long project applying design thinking, processes, and tools to the intersection of healthcare and smart technology. Over the course of 10 weeks, we underwent the design journey from ideation to iterating on prototypes to presenting our final product in a public fair, in which we received special recognition for our work.
         <br></br>
         <br></br>
         Our final product was an app-hosted platform that fostered community cohesion and social capital through a marketplace of projects and skills that allow community members to create and join projects, volunteer time, and further community involvement. Not only was the project fun to work on, but it gave me a fantastic template for how to design and build out a product. I detail this process in the sections below.

@@ -34,7 +34,6 @@ const LucidDreaming = () => {
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h1>"Lucid Dreaming": A 360&deg; Video Experience</h1>
-        <h3>Completed May 2016</h3>
         <div className="video-youtube">
           {/* Overlay div for click handling on 360 videos on mobile*/}
           {isMobile && (
@@ -69,7 +68,7 @@ const LucidDreaming = () => {
       <div className="section" id='background'>
         <h2>Background</h2>
         <p>
-          I took Stanford's <a target='_blank' rel='noopener noreferrer' href={SLEEP_AND_DREAMS_CLASS_URL}>"Sleep and Dreams"</a> course led by Dr. William Dement and Dr. Rafael Pelayo, both renowned pioneers in sleep medicine research. For our final project, we were tasked with creating an outreach video that creatively communicated some of the key concepts from the class. At the time, I had just begun working at <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>VHIL</a>, Stanford's virtual reality lab where I was learning about the effectiveness of <a target='_blank' rel='noopener noreferrer' href={VHIL_LEARNING_URL}>immersive learning</a> and how to operate 360&deg; video capture technology. I saw this Sleep Outreach project as a opportunity to experiment with immersive technology and produce an engaging yet informative lesson on lucid dreaming, a concept that has fascinated me ever since I was a kid. I also felt that the immersive nature of a 360&deg;e video would beautifully complement the theme of dreaming, allowing viewers to fully experience the sensation of being inside a dream. 
+          As an undergrad at Stanford, I took Stanford's <a target='_blank' rel='noopener noreferrer' href={SLEEP_AND_DREAMS_CLASS_URL}>"Sleep and Dreams"</a> course led by Dr. William Dement and Dr. Rafael Pelayo, both renowned pioneers in sleep medicine research. For our final project, we were tasked with creating an outreach video that creatively communicated some of the key concepts from the class. At the time, I had just begun working at <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>VHIL</a>, Stanford's virtual reality lab where I was learning about the effectiveness of <a target='_blank' rel='noopener noreferrer' href={VHIL_LEARNING_URL}>immersive learning</a> and how to operate 360&deg; video capture technology. I saw this Sleep Outreach project as a opportunity to experiment with immersive technology and produce an engaging yet informative lesson on lucid dreaming, a concept that has fascinated me ever since I was a kid. I also felt that the immersive nature of a 360&deg;e video would beautifully complement the theme of dreaming, allowing viewers to fully experience the sensation of being inside a dream. 
         </p>
       </div>
       <br></br>

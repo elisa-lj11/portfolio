@@ -31,7 +31,6 @@ const RVVR = () => {
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h1>"RV VR": An Immersive Perspective on the Bay Area Housing Crisis</h1>
-        <h3>Completed March 2019</h3>
         <div className="video-youtube">
           {/* Overlay div for click handling on 360 videos on mobile*/}
           {isMobile && (
@@ -57,7 +56,7 @@ const RVVR = () => {
         <br></br>
         <i style={{ display: 'flex', justifyContent: 'center' }}>Drag the video to rotate the viewpoint</i>
         <p>
-          RV VR is an immersive experience that allows viewers to see first-hand what transient life in a recreational vehicle is like in Silicon Valley. Published in 2019 alongside this <a target='_blank' rel='noopener noreferrer' href={ARTICLE_URL}>Peninsula Press article</a>, the six-and-a-half-minute video harnesses immersive technology to create an experience that captures the realities of the Bay Area housing crisis in their rawest form.
+          RV VR is an immersive experience that allows viewers to see first-hand what transient life in a recreational vehicle is like in Silicon Valley. Published alongside this <a target='_blank' rel='noopener noreferrer' href={ARTICLE_URL}>Peninsula Press article</a>, the six-and-a-half-minute video harnesses immersive technology to create an experience that captures the realities of the Bay Area housing crisis in their rawest form.
         </p>
       </div>
       <br></br>
@@ -66,7 +65,7 @@ const RVVR = () => {
       <div className="section" id='background'>
         <h2>Background</h2>
         <p>
-          In my Senior Winter quarter at Stanford, I was enrolled in "<a target='_blank' rel='noopener noreferrer' href={COMM_CLASS_URL}>COMM 280</a>: Virtual Reality Journalism in the Public Sphere." We formed groups of three to report on local issues, using 360&deg; video technology to engage audiences in a fresh and innovative way. Our goal was to shed light on these issues in a way that traditional journalism doesn't fully do justice. My group chose to report on the Bay Area housing crisis, believing that immersive media could help viewers better empathize with the cramped living conditions that many Bay Area residents face.
+          As a Stanford undergrad, I was enrolled in "<a target='_blank' rel='noopener noreferrer' href={COMM_CLASS_URL}>COMM 280</a>: Virtual Reality Journalism in the Public Sphere." We formed groups of three to report on local issues, using 360&deg; video technology to engage audiences in a fresh and innovative way. Our goal was to shed light on these issues in a way that traditional journalism doesn't fully do justice. My group chose to report on the Bay Area housing crisis, believing that immersive media could help viewers better empathize with the cramped living conditions that many Bay Area residents face.
         </p>
       </div>
       <br></br>
