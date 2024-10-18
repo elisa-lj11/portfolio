@@ -10,7 +10,7 @@ const ARTICLE_URL = 'https://peninsulapress.com/2019/03/19/the-bay-areas-housing
 const COMM_CLASS_URL = 'https://explorecourses.stanford.edu/search?q=COMM+280%3a+Virtual+Reality+Journalism+in+the+Public+Sphere&view=catalog&page=0&filter-coursestatus-Active=on&collapse=&academicYear=20182019';
 const RICOH_URL = 'https://us.ricoh-imaging.com/product/theta-s/';
 const PREMIERE_PRO_URL = 'https://helpx.adobe.com/premiere-pro/using/VRSupport.html';
-const LUCID_DREAMING_RELATIVE_URL = '/#/lucid-dreaming';
+const LUCID_DREAMING_PAGE_RELATIVE_PATH = '#/lucid-dreaming';
 
 const RVVR = () => {
   const [refs, setRefs] = useState([]);
@@ -33,7 +33,7 @@ const RVVR = () => {
         <h1>"RV VR": An Immersive Perspective on the Bay Area Housing Crisis</h1>
         <h3>Completed March 2019</h3>
         <div className="video-youtube">
-          {/* Overlay div for click handling */}
+          {/* Overlay div for click handling on 360 videos on mobile*/}
           {isMobile && (
             <a
               href={VIDEO_URL}
@@ -89,7 +89,7 @@ const RVVR = () => {
         <h2>Reflections</h2>
         <ul>
           <li>
-            <b>360&deg; video capture technology has come a long way!</b> Back when I produced my <a target='_blank' rel='noopener noreferrer' href={LUCID_DREAMING_RELATIVE_URL}>"Lucid Dreaming 360" video</a>, I had to rely on numerous technical hacks to make the video look good. In just three years, the technology had advanced significantly, which was exciting to witness, especially as someone deeply immersed in the virtual reality industry. It was reassuring to see such progress being made toward technological advancement and wider public access.
+            <b>360&deg; video capture technology has come a long way!</b> Back when I produced my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${LUCID_DREAMING_PAGE_RELATIVE_PATH}`}>"Lucid Dreaming 360" video</a>, I had to rely on numerous technical hacks to make the video look good. In just three years, the technology had advanced significantly, which was exciting to witness, especially as someone deeply immersed in the virtual reality industry. It was reassuring to see such progress being made toward technological advancement and wider public access.
           </li>
           <li>
             <b>Great immersive storytelling comes with great responsibility.</b> While we were enthusiastic about using an immersive medium to tell this story, we had to exercise careful judgment in selecting which parts of interviews to include and how much of our interviewees' lives to reveal. A home is a personal space, and given the privilege of sharing their stories, we needed to respect their agency and privacy.

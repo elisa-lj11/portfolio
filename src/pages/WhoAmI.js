@@ -4,9 +4,25 @@ import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
 
 import spacedOutImageUrl from '../assets/images/who-am-i/spaced-out.jpg';
+import spaceGradImageUrl from '../assets/images/who-am-i/space-grad.png';
+import spacePetsImageUrl from '../assets/images/who-am-i/space-pets.jpg';
 
+const LINKEDIN_URL = 'https://www.linkedin.com/in/elisa-lupin/';
+const GITHUB_URL = 'https://github.com/elisa-lj11';
+const RESUME_URL = 'https://drive.google.com/file/d/1yRedX4BKhU3c8ZpC5FHdRXyVhrszH0rw/view?usp=sharing';
+const EMAIL_LINK = 'mailto:elisa.lupinj@gmail.com';
+const SOUNDCLOUD_URL = 'https://soundcloud.com/djbudgiebeats';
+const SPOTIFY_URL = 'https://open.spotify.com/user/5eakug67hyf80pi6igg30qmcg?si=0c3213f09cad4704';
+
+const STANFORD_URL = 'https://www.stanford.edu/';
 const SYMSYS_URL = 'https://symsys.stanford.edu/';
+const VHIL_URL = 'https://vhil.stanford.edu/';
 const HIFI_WIKI_URL = 'https://en.wikipedia.org/wiki/High_Fidelity,_Inc.';
+const HIFI_PAGE_RELATIVE_PATH = '#/hifi';
+const TIER_URL = 'https://english.tier.org.tw/';
+const STRIVR_URL = 'https://www.strivr.com/';
+const STRIVR_PAGE_RELATIVE_PATH = '#/strivr';
+const FUTURAMA_QUOTE_VIDEO_EMBED_URL ='https://www.youtube.com/embed/VofkquwmT40?si=pWm2IUDGlIcW0Ilw&amp;start=34';
 
 const WhoAmI = () => {
   const [refs, setRefs] = useState([]);
@@ -43,49 +59,140 @@ const WhoAmI = () => {
       <br></br>
       <hr className="solid"></hr>
       <br></br>
-      <div className="section" id='career'>
-        <h2>Career</h2>
+      <div className="section" id='Links'>
+        <h2>Links</h2>
         <p>
-          I graduated in 2019 from Stanford University with a Bachelor of Science in <a target='_blank' rel='noopener noreferrer' href={SYMSYS_URL}>Symbolic Systems</a>, an interdisciplinary program that branches across computer science, linguistics, philosophy, and psychology. My concentration was "Human-Computer Interaction," where I focused on
+          <a target='_blank' rel='noopener noreferrer' href={LINKEDIN_URL}>LinkedIn</a>
+          <br />
+          <a target='_blank' rel='noopener noreferrer' href={GITHUB_URL}>GitHub</a>
+          <br />
+          <a target='_blank' rel='noopener noreferrer' href={RESUME_URL}>Resume</a>
+          <br />
+          <a target='_blank' rel='noopener noreferrer' href={EMAIL_LINK}>Email</a>
+          <br />
+          <a target='_blank' rel='noopener noreferrer' href={SOUNDCLOUD_URL}>SoundCloud</a>
+          <br />
+          <a target='_blank' rel='noopener noreferrer' href={SPOTIFY_URL}>Spotify Playlists</a>
         </p>
+      </div>
+      <br></br>
+      <hr className="solid"></hr>
+      <br></br>
+      <div className="section" id='values'>
+        <h2>Values</h2>
+        <ol>
+          <li>
+            <b>Community</b>
+            <ul>
+              <li>
+                In a world increasingly shaped by technology and individualism, it's easy to lose sight of our collective roots. We're inherently wired to thrive in community settings, which is why I believe it's crucial to prioritize people in technology design. Technology should foster our connections, not hinder them.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Minimalism</b>
+            <ul>
+              <li>
+                While complex problems often tempt us to overengineer solutions, I believe in taking the time to craft clean, adaptable, and minimalistic approaches. By frontloading the effort to simplify, we can save significant time and effort later in the process.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Delight</b>
+            <ul>
+              <li>
+                Functionality alone isn't enough—things should be a pleasure to use. When we balance usability with enjoyment, we create something more than just a tool; we craft an engaging, immersive experience that leaves a lasting positive impact.
+              </li>
+            </ul>
+          </li>
+        </ol>
         <p>
-          In between my junior and senior years, I took an opportunity to work full time as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, formerly a social virtual reality startup
-
-          <br />
-          <br />
-          Stanford<br />
-          High Fidelity<br />
-          TIER<br />
-          Strivr<br />
-          Piano Teacher<br />
-          Tutor<br />
-          Dog Washer<br />
+          A little bit of inspiration for my website (and perhaps my life):
         </p>
+        <div className="video-youtube">
+          <iframe className="responsive-iframe" src={FUTURAMA_QUOTE_VIDEO_EMBED_URL} title="Futurama Quote" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        </div>
       </div>
       <br></br>
       <hr className="solid"></hr>
       <br></br>
       <div className="section" id='personal'>
         <h2>Personal</h2>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+            <img src={spacePetsImageUrl} alt='Space Pets' width='80%' style={{display: 'inline-block'}}/>
+            <figcaption>Obligatory pet pics</figcaption>
+          </figure>
+        </div>
         <p>
-          I love a good bargain<br />
-          I am beholden to my dog Zody and cat Azalea<br />
-          Trying to learn anime themes on piano<br />
-
+          I am devoted to my labradoodle, Zody, and my tuxedo cat, Azalea. We love going for walks—Azalea rides in her "astronaut" cat backpack—and we often enjoy warm afternoon naps in the sun. When I'm not catering to their whims, I am:
+        </p>
+        <ul>
+          <li>
+            Learning anime and other TV theme songs on piano
+          </li>
+          <li>
+            Making themed playlists
+          </li>
+          <li>
+            Planning remote camping/backpacking trips
+          </li>
+          <li>
+            Traveling to diverse ecosystems around the world that I've never experienced before
+          </li>
+          <li>
+            Finding cheap hole-in-the-wall restaurants
+          </li>
+        </ul>
+      </div>
+      <br></br>
+      <hr className="solid"></hr>
+      <br></br>
+      <div className="section" id='education'>
+        <h2>Education</h2>
+        <h3>Stanford University</h3>
+        <i>September 2014 - June 2019</i>
+        <img src={spaceGradImageUrl} alt='Space Grad' width='50%'/>
+        <p>
+          I graduated from <a target='_blank' rel='noopener noreferrer' href={STANFORD_URL}>Stanford University</a> with a Bachelor of Science in <a target='_blank' rel='noopener noreferrer' href={SYMSYS_URL}>Symbolic Systems</a>, an interdisciplinary program that branches across computer science, linguistics, philosophy, and psychology. My concentration was "Human-Computer Interaction," where I focused on the design, usability, and evaluation of interactive systems, exploring how technology can be better integrated with human needs and behaviors.
         </p>
       </div>
       <br></br>
       <hr className="solid"></hr>
       <br></br>
-      <div className="section" id='Links'>
-        <h2>Links</h2>
+      <div className="section" id='experience'>
+        <h2>Experience</h2>
+        <h3>VHIL</h3>
+        <i>September 2015 - December 2016<br />March 2019 - June 2019</i>
         <p>
-          LinkedIn<br />
-          Resume<br />
-          GitHub<br />
-          Email<br />
-          SoundCloud<br />
-          Spotify Playlists<br />
+          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to develop software for experimental designs, and later returned as a lab assistant to help facilitate experimental studies.
+        </p>
+        <br />
+        <br />
+        <h3>High Fidelity</h3>
+        <i>November 2017 - June 2018</i>
+        <p>
+          In between my junior and senior years, I took an opportunity to work full time as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, formerly a social virtual reality startup based in San Francisco. I was part of the Content Prototyping team, where we developed innovative content to showcase our platform's potential, engage users, and inspire developers and content creators to push creative boundaries. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${HIFI_PAGE_RELATIVE_PATH}`}>High Fidelity project page</a>.
+        </p>
+        <br />
+        <br />
+        <h3>TIER</h3>
+        <i>Summer 2019</i>
+        <p>
+          I moved abroad to Taiwan to work as a Natural Language Processing Software Engineering intern at the <a target='_blank' rel='noopener noreferrer' href={TIER_URL}>Taiwan Institute of Economic Research</a>, where I created and refined NLP analysis programs to automatically gather information from relevant databases for TIER projects.
+        </p>
+        <br />
+        <br />
+        <h3>Strivr</h3>
+        <i>April 2020 - January 2024</i>
+        <p>
+          After returning from Asia, I joined <a target='_blank' rel='noopener noreferrer' href={STRIVR_URL}>Strivr</a>, an end-to-end immersive learning platform for enterprise training, as a software engineer on the Immersive Platform team, where we developed user-facing interactions in virtual reality to facilitate immersive learning and enable a world-class, intuitive experience for users of varying VR familiarity. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${STRIVR_PAGE_RELATIVE_PATH}`}>Strivr project page</a>.
+        </p>
+        <br />
+        <br />
+        <h3>Miscellaneous</h3>
+        <p>
+          I began teaching piano and tutoring in math and writing during high school, continuing through college. Alongside that, I also took on side jobs like dog washing and dog walking.
         </p>
       </div>
     </PageTemplate>

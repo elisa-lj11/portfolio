@@ -16,7 +16,7 @@ import SKYBOX from '../assets/models/milkyway.glb';
 import rocketCursor from '../assets/images/rocketship-cursor.png';
 
 // Path to Accessible page
-const accessiblePagePath = '#/accessible';
+const ACCESSIBLE_PAGE_RELATIVE_PATH = '#/accessible';
 
 // To track cursor intersection
 const raycaster = new THREE.Raycaster();
@@ -425,7 +425,7 @@ const Home = () => {
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and scroll to navigate the space<br></br>
           &gt; Press the "Space" key to reset the view<br></br>
-          <a href={`${process.env.PUBLIC_PATH}${accessiblePagePath}`}>&gt; Accessible site</a>
+          <a href={`${process.env.PUBLIC_PATH}${ACCESSIBLE_PAGE_RELATIVE_PATH}`}>&gt; Accessible site</a>
         </p>
       </div>
       <div id="instruction-text-mobile">
@@ -433,7 +433,7 @@ const Home = () => {
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and zoom to navigate the space<br></br>
           &gt; Triple-tap to reset the view<br></br>
-          <a href={`${process.env.PUBLIC_PATH}${accessiblePagePath}`}>&gt; Accessible site</a>
+          <a href={`${process.env.PUBLIC_PATH}${ACCESSIBLE_PAGE_RELATIVE_PATH}`}>&gt; Accessible site</a>
         </p>
       </div>
     </div>

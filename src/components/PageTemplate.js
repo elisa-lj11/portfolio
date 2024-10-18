@@ -3,12 +3,19 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/style/PageTemplate.css'; // Import the CSS file
 
+// Texture from galaxy model: https://skfb.ly/pr8Kx 
 import galaxyImageUrl from '../assets/images/galaxy.png';
+
+// Custom cursor asset generated with ChatGPT
+import rocketCursor from '../assets/images/rocketship-cursor.png';
 
 const PageTemplate = ({ refs, setRefs, children, generateRefsFromDOM }) => {
   const navigate = useNavigate(); // Hook to programmatically navigate
   const [selectedSection, setSelectedSection] = useState(''); // To keep track of the selected section
   const [jumpScroll, setJumpScroll] = useState(false); // Track if a scroll is manual
+
+  // Set custom cursor
+  document.body.style.cursor = `url(${rocketCursor}), auto`
 
   const projectName = window.location.hash.split('#/')[1].split('#')[0];
 

@@ -36,7 +36,7 @@ const LucidDreaming = () => {
         <h1>"Lucid Dreaming": A 360&deg; Video Experience</h1>
         <h3>Completed May 2016</h3>
         <div className="video-youtube">
-          {/* Overlay div for click handling */}
+          {/* Overlay div for click handling on 360 videos on mobile*/}
           {isMobile && (
             <a
               href={VIDEO_URL}
