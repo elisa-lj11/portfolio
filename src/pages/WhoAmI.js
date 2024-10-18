@@ -74,27 +74,22 @@ const WhoAmI = () => {
             <img className='social-media' src={linkedInIconUrl} />
             LinkedIn
           </a>
-          <br />
           <a className='social-media' target='_blank' rel='noopener noreferrer' href={GITHUB_URL}>
             <img className='social-media' src={gitHubIconUrl} />
             GitHub
           </a>
-          <br />
           <a className='social-media' target='_blank' rel='noopener noreferrer' href={RESUME_URL}>
             <img className='social-media' src={resumeIconUrl} />
             Resume
           </a>
-          <br />
-          <a className='social-media' target='_blank' rel='noopener noreferrer' href={EMAIL_LINK}>
+          <a className='social-media' href={EMAIL_LINK}>
             <img className='social-media' src={emailIconUrl} />
             Email
           </a>
-          <br />
           <a className='social-media' target='_blank' rel='noopener noreferrer' href={SOUNDCLOUD_URL}>
             <img className='social-media' src={soundCloudIconUrl} />
             SoundCloud
           </a>
-          <br />
           <a className='social-media' target='_blank' rel='noopener noreferrer' href={SPOTIFY_URL}>
             <img className='social-media' src={spotifyIconUrl} />
             Spotify Playlists
@@ -212,7 +207,7 @@ const WhoAmI = () => {
         <h3>Strivr</h3>
         <i>April 2020 - January 2024</i>
         <p>
-          After returning from Asia, I joined <a target='_blank' rel='noopener noreferrer' href={STRIVR_URL}>Strivr</a>, an end-to-end immersive learning platform for enterprise training, as a software engineer on the Immersive Platform team, where we developed user-facing interactions in virtual reality to facilitate immersive learning and enable a world-class, intuitive experience for users of varying VR familiarity. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${STRIVR_PAGE_RELATIVE_PATH}`}>Strivr project page</a>.
+          After returning from Asia, I joined <a target='_blank' rel='noopener noreferrer' href={STRIVR_URL}>Strivr</a>, an end-to-end immersive learning platform for enterprise training, as a software engineer on the Immersive Experiences team, where we developed user-facing interactions in virtual reality to facilitate immersive learning and enable a world-class, intuitive experience for users of varying VR familiarity. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${STRIVR_PAGE_RELATIVE_PATH}`}>Strivr project page</a>.
         </p>
         <br />
         <br />
