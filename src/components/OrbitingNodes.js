@@ -3,8 +3,11 @@ import * as THREE from 'three';
 
 class OrbitingNodes {
   constructor() {
+    // Initialize start height above the galaxy center here to use in the array below
+    this.startHeight = 2;
+
     // Array of node data
-    this.nodeData = [
+    this.orbitingNodeData = [
       {
         id: 'strivr',
         path: '/strivr',
@@ -38,7 +41,7 @@ class OrbitingNodes {
         title: 'High Fidelity: Content Prototyping',
         titleMobile: 'Work: High Fidelity',
         nodeRadius: 0.23,
-        finalRadius: 7.0,
+        finalRadius: 6.0,
         color: 0x66b1f2,
       },
       {
@@ -47,7 +50,7 @@ class OrbitingNodes {
         title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis',
         titleMobile: 'Stanford: "RV VR"',
         nodeRadius: 0.2,
-        finalRadius: 7.0,
+        finalRadius: 6.0,
         color: 0x7ba177,
       },
       {
@@ -56,19 +59,29 @@ class OrbitingNodes {
         title: '"Lucid Dreaming": A 360° Video Experience',
         titleMobile: 'Stanford: "Lucid Dreaming"',
         nodeRadius: 0.2,
-        finalRadius: 7.0,
+        finalRadius: 6.0,
         color: 0xd47b7b,
       }
     ];
 
-    this.whoAmINodeInfo = {id: 'who-am-i', title: 'Who am I?'};
-    this.whoAmINode;
+    this.staticNodeData = [
+      {
+        id: 'who-am-i',
+        path: '/who-am-i',
+        title: 'Who am I?',
+        titleMobile: 'Who am I?',
+        position: new THREE.Vector3(0, this.startHeight, 0),
+        nodeRadius: 0.2,
+        finalRadius: 0.0,
+        color: 0xffffff
+      }
+    ];
     
     this.orbitingNodes = []; // Only includes nodes with movement
     this.allNodes = [];
     this.startRadius = 0.0;
     this.radiusIncrement = 3.2; // Space between orbit levels
-    this.numNodes = this.nodeData.length;
+    this.numNodes = this.orbitingNodeData.length;
     this.nodesPerLevel = 3; // Number of nodes per orbit level
 
     this.baseRotationSpeed = 0.3; // Base rotation speed
@@ -86,10 +99,8 @@ class OrbitingNodes {
 
     this.clock = new THREE.Clock();
     this.levelOffsetAngle = Math.PI / this.nodesPerLevel; // Offset each level by half of the angle spacing
-    this.angles = []; // Store the current angle for each node
 
-    this.heightMultiplier = -2; // Controls how much the nodes "climb" the cone vertically
-    this.startHeight = 2; // Starting below the galaxy center (negative y value)
+    this.heightMultiplier = -2; // Controls how much the nodes "fall down" the cone vertically
 
     // Raycaster for interaction
     this.raycaster = new THREE.Raycaster();
@@ -107,22 +118,24 @@ class OrbitingNodes {
 
     // Callback to clean up node-related mouse events, called in Home.js
     this.cleanupMouseEvents = null;
-
-    // Initialize the starting angles for the nodes
-    for (let i = 0; i < this.numNodes; i++) {
-      this.angles.push((i / this.numNodes) * 2 * Math.PI);
-    }
   }
 
-  // "Who am I" node doesn't follow orbit calculations, must be instantiated separately
-  createWhoAmINode(scene, geometry, material) {
-    this.whoAmINode = new THREE.Mesh(geometry, material);
+  createNode(nodeInfo, startingPosition, angle) {
+    const geometry = new THREE.SphereGeometry(nodeInfo.nodeRadius, 32, 32);
+    const material = new THREE.MeshBasicMaterial({ color: nodeInfo.color });
 
-    this.whoAmINode.position.set(0, this.startHeight, 0); // Permanent placement
+    const node = new THREE.Mesh(geometry, material);
 
-    this.whoAmINode.userData = { id: this.whoAmINodeInfo.id, currentRadius: 0, finalRadius: 0 };
+    node.position.copy(startingPosition);
 
-    scene.add(this.whoAmINode);
+    node.userData = { 
+      id: nodeInfo.id, // Assign a unique ID to each node, used as route path to navigate to in Home.js
+      currentRadius: this.startRadius, // Store the current radius of the orbit
+      finalRadius: nodeInfo.finalRadius, // Target the final radius stored here
+      angle: angle // Set the starting angle
+    };
+
+    return node;
   }
 
   // Function to create orbiting nodes with unique IDs
@@ -136,31 +149,13 @@ class OrbitingNodes {
       this.baseRotationSpeed = this.mobileRotationSpeed;
     }
 
-    const geometry = new THREE.SphereGeometry(0.2, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-
-    this.createWhoAmINode(scene, geometry, material);
-
-    this.nodeData.forEach((nodeInfo, i) => {
-      const geometry = new THREE.SphereGeometry(nodeInfo.nodeRadius, 32, 32);
-      const material = new THREE.MeshBasicMaterial({ color: nodeInfo.color });
-      const node = new THREE.Mesh(geometry, material);
-
-      node.position.set(0, this.startHeight, 0);
-
-      node.userData = { 
-        id: nodeInfo.id, // Assign a unique ID to each node, used as route path to navigate to in Home.js
-        currentRadius: this.startRadius, // Store the current radius of the orbit
-        finalRadius: nodeInfo.finalRadius, // Target the final radius stored here
-      };
-
-      this.orbitingNodes.push(node);
-
+    this.staticNodeData.forEach(nodeInfo => {
+      const node = this.createNode(nodeInfo, nodeInfo.position, 0);
+      this.allNodes.push(node);
       scene.add(node);
     });
 
-    // Adjust to store an initial angle offset for each node based on its level
-    this.orbitingNodes.forEach((node, i) => {
+    this.orbitingNodeData.forEach((nodeInfo, i) => {
       // Calculate which level this node is on (integer division)
       const level = Math.floor(i / this.nodesPerLevel);
       
@@ -173,27 +168,29 @@ class OrbitingNodes {
       // Apply an offset to the level's angles so they don't align vertically with the previous level
       const angle = baseAngle + level * this.levelOffsetAngle;
 
-      // Store the angle for this node
-      this.angles[i] = angle;
+      const startingPosition = new THREE.Vector3(0, this.startHeight, 0);
+
+      const node = this.createNode(nodeInfo, startingPosition, angle);
+      this.orbitingNodes.push(node);
+      scene.add(node);
     });
 
     // Store all nodes in one array for calculating mouse intersections
-    this.allNodes = this.orbitingNodes.concat([this.whoAmINode])
+    this.allNodes = this.allNodes.concat(this.orbitingNodes)
   }
 
   // Returns all the nodes and their associated label to Home.js
-  getNodesInfoArray() {
+  getNodeInfoArray() {
     let nodesInfoArray = [];
 
-    this.orbitingNodes.forEach(node => {
-      let nodeInfo = this.nodeData.find(info => info.id === node.userData.id);
+    let allNodeData = this.orbitingNodeData.concat(this.staticNodeData);
+
+    this.allNodes.forEach(node => {
+      let nodeInfo = allNodeData.find(info => info.id === node.userData.id);
       let nodeTitle = this.isMobile ? nodeInfo.titleMobile : nodeInfo.title;
 
-      nodesInfoArray.push({ node, nodeTitle, size: node.userData.size });
+      nodesInfoArray.push({ node, nodeTitle });
     });
-
-    // Add "Who Am I" node separately
-    nodesInfoArray.push({ node: this.whoAmINode, nodeTitle: this.whoAmINodeInfo.title });
 
     return nodesInfoArray;
   }
@@ -311,10 +308,10 @@ class OrbitingNodes {
       // Rotation speed slows on each subsequent level
       const speedMultiplier = 1 / Math.floor((i / this.nodesPerLevel) + 1);
       // Increment the angle based on the current rotation speed and deltaTime
-      this.angles[i] += this.rotationSpeed * deltaTime * speedMultiplier;
+      node.userData.angle += this.rotationSpeed * deltaTime * speedMultiplier;
 
       // Make sure the angle wraps around between 0 and 2*PI (360 degrees)
-      this.angles[i] = this.angles[i] % (2 * Math.PI);
+      node.userData.angle = node.userData.angle % (2 * Math.PI);
 
       // Use the node's specific orbit radius (stored in userData)
       let currentRadius = node.userData.currentRadius;
@@ -326,16 +323,16 @@ class OrbitingNodes {
         (finalRadius - this.startRadius) *
         (2 / (1 + 2 ** (-3 * Math.max(0, elapsedTime - this.rotationStartDelay))) - 1); // Sigmoid-like smooth expansion
       
-      // Cone motion: x and z expand outward, y starts below the center and rises
-      node.position.x = currentRadius * Math.cos(this.angles[i]);
-      node.position.z = currentRadius * Math.sin(this.angles[i]);
+      // Cone motion: x and z expand outward, y starts above the center and falls
+      node.position.x = currentRadius * Math.cos(node.userData.angle);
+      node.position.z = currentRadius * Math.sin(node.userData.angle);
 
       // Update the current radius for the node
       node.userData.currentRadius = currentRadius;
 
       // Calculate the y-position for upward movement, simulating an upside-down cone
       const normalizedRadius = currentRadius / finalRadius; // 0 at start, 1 at max
-      node.position.y = this.startHeight + normalizedRadius * this.heightMultiplier; // Rising upward
+      node.position.y = this.startHeight + normalizedRadius * this.heightMultiplier; // Moving downward
     });
   }
 }

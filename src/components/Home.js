@@ -103,7 +103,7 @@ const Home = () => {
 
   // Animation loop needs to be defined outside of useEffect to be accessible
   const animate = (scene, camera, controls, renderer, galaxyModel) => {
-    const nodesInfoArray = orbitingNodes.getNodesInfoArray(camera, renderer);
+    const nodeInfoArray = orbitingNodes.getNodeInfoArray(camera, renderer);
     
     const animationLoop = () => {
       animationFrameId = requestAnimationFrame(animationLoop);
@@ -112,7 +112,7 @@ const Home = () => {
       orbitingNodes.updateNodes(camera);
 
       // Iterate through each node
-      nodesInfoArray.forEach(({ node, nodeTitle }) => {
+      nodeInfoArray.forEach(({ node, nodeTitle }) => {
         // Check if a labelDiv already exists for this node
         let nodeLabelDiv = labelMap.get(node.userData.id);
 
