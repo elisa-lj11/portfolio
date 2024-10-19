@@ -59,18 +59,14 @@ const RVVR = () => {
           RV VR is an immersive experience that allows viewers to see first-hand what transient life in a recreational vehicle is like in Silicon Valley. Published alongside this <a target='_blank' rel='noopener noreferrer' href={ARTICLE_URL}>Peninsula Press article</a>, the six-and-a-half-minute video harnesses immersive technology to create an experience that captures the realities of the Bay Area housing crisis in their rawest form.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='background'>
         <h2>Background</h2>
         <p>
           As a Stanford undergrad, I was enrolled in "<a target='_blank' rel='noopener noreferrer' href={COMM_CLASS_URL}>COMM 280</a>: Virtual Reality Journalism in the Public Sphere." We formed groups of three to report on local issues, using 360&deg; video technology to engage audiences in a fresh and innovative way. Our goal was to shed light on these issues in a way that traditional journalism doesn't fully do justice. My group chose to report on the Bay Area housing crisis, believing that immersive media could help viewers better empathize with the cramped living conditions that many Bay Area residents face.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='tools'>
         <h2>Tools</h2>
         <img src={ricohImageUrl} alt='Ricoh Theta S' width='40%'/>
@@ -81,9 +77,7 @@ const RVVR = () => {
           Since the Ricoh Theta S automatically synced and stitched the video clips upon export, we were able to rely solely on Adobe's <a target='_blank' rel='noopener noreferrer' href={PREMIERE_PRO_URL}>Premiere Pro</a> video editing software for post-production.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='reflections'>
         <h2>Reflections</h2>
         <ul>

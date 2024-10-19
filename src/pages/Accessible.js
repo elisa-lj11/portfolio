@@ -44,9 +44,7 @@ const Accessible = () => {
           <a href={`${process.env.PUBLIC_PATH}#/who-am-i`}>Who am I?</a>
         </p>
       </div>
-      <br />
       <hr className="solid" />
-      <br />
       <div className="grid-container">
         {sections.map(section => (
           <a key={section.id} href={`${process.env.PUBLIC_PATH}#/${section.id}`} className="button-accessible">

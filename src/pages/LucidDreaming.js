@@ -62,18 +62,14 @@ const LucidDreaming = () => {
           "Lucid Dreaming 360" is a quick and interactive guide to lucid dreaming based on sleep study research. The 7-minute video, produced back in 2016, used at-the-time cutting-edge 360-video capture technology to create an immersive experience that used the principles of immersive learning to the practice of lucid dreaming.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='background'>
         <h2>Background</h2>
         <p>
           As an undergrad at Stanford, I took Stanford's <a target='_blank' rel='noopener noreferrer' href={SLEEP_AND_DREAMS_CLASS_URL}>"Sleep and Dreams"</a> course led by Dr. William Dement and Dr. Rafael Pelayo, both renowned pioneers in sleep medicine research. For our final project, we were tasked with creating an outreach video that creatively communicated some of the key concepts from the class. At the time, I had just begun working at <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>VHIL</a>, Stanford's virtual reality lab where I was learning about the effectiveness of <a target='_blank' rel='noopener noreferrer' href={VHIL_LEARNING_URL}>immersive learning</a> and how to operate 360&deg; video capture technology. I saw this Sleep Outreach project as a opportunity to experiment with immersive technology and produce an engaging yet informative lesson on lucid dreaming, a concept that has fascinated me ever since I was a kid. I also felt that the immersive nature of a 360&deg;e video would beautifully complement the theme of dreaming, allowing viewers to fully experience the sensation of being inside a dream. 
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='tools'>
         <h2>Tools</h2>
         <img src={goProRigImageUrl} alt='GoPro custom 3D-printed rig' width='60%'/>
@@ -85,18 +81,14 @@ const LucidDreaming = () => {
           For the stitching software, I used <a target='_blank' rel='noopener noreferrer' href={KOLOR_URL}>Kolor Autopano Video Pro</a> (now deprecated). To prepare a ready-to-use 360&deg; video for YouTube, I manually synced the six individual video clips, cleaned up the seams between the overlapping GoPro fields of view, and exported and rendered the video in a supported 360&deg; format.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='filming'>
         <h2>Filming</h2>
         <p>
           I was a member of <a target='_blank' rel='noopener noreferrer' href={CALYPSO_URL}>Cardinal Calypso</a>, Stanford's steel pan band, and they graciously volunteered to perform in my video. To avoid potential pitfalls with stitching together multiple scenes for the video, I wrote the script to be filmed in a single shot. While writing the script and staging the performers, I considered how we could use the 360&deg; field of view by arranging the performers in a circle around the camera, but I also made sure to limit distractions around the main speaker by staging peformers further back.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='reflections'>
         <h2>Reflections</h2>
         <ul>

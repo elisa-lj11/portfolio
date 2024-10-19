@@ -61,18 +61,14 @@ const OrgASMR = () => {
           An adaptation of the popular "Head Scratcher," the "orgASMR" takes ASMR (autonomous sensory meridian response) to the next level. It produces trance-like audio effects by detecting the amount of flex from the head scratcher's legs and the orientation of the handle. It also includes volume control and an on/off button. Combining the simplicity of chord progression with the intricacy of movement, the orgASMR is sure to blow your mind.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='background'>
         <h2>Background</h2>
         <p>
           During my Stanford undergrad, I took "<a target='_blank' rel='noopener noreferrer' href={CCRMA_CLASS_URL}>MUSIC 250A</a>: Physical Interaction Design for Music." In this class, we explored how we can physically interact with real-time electronic sound by using and designing sensors, circuits, embedded computers, communication protocols and sound synthesis. For my final project, I designed and built a hybrid musical instrument that integrated both acoustic and electronic components, which I showcased during a final performance alongside other student inventions. I implemented the "orgASMR," which I will describe in more detail in the sections below.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='ideation'>
         <h2>Ideation</h2>
         <img src={firstSketchImageUrl} alt='Sketch of orgASMR' width='80%'/>
@@ -86,9 +82,7 @@ const OrgASMR = () => {
           In essence, I wanted to produce a device that both gives and receives.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='scripting'>
         <h2>Scripting</h2>
         <p>
@@ -150,9 +144,7 @@ const OrgASMR = () => {
           Scripting was developed in tandem with wiring since they were both worked on concurrently in order to incrementally test progress on the orgASMR.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='wiring'>
         <h2>Wiring</h2>
         <img src={protoboard1ImageUrl} alt='First protoboard iteration' width='40%'/>
@@ -169,9 +161,7 @@ const OrgASMR = () => {
         </p>
         <img src={protoboard2ImageUrl} alt='Second protoboard iteration' width='40%'/>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='modeling'>
         <h2>Modeling</h2>
         <p>
@@ -296,9 +286,7 @@ const OrgASMR = () => {
           Up to this point, I had prepared all of the individual physical parts and software. All that remained was to assemble everything together.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='assembly'>
         <h2>Assembly</h2>
         <img src={solderingImageUrl} alt='Soldering' width='60%'/>
@@ -337,9 +325,7 @@ const OrgASMR = () => {
           </figure>
         </div>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='showcase'>
         <h2>Instrument Showcase</h2>
         <img src={finalFormImageUrl} alt='Final form of orgASMR' width='80%'/>
@@ -347,9 +333,7 @@ const OrgASMR = () => {
           The <a target='_blank' rel='noopener noreferrer' href={ORGASMR_DEMO_SHOWCASE_URL}>final performance</a> (same link as embedded video above but starting at 1:16) took place at Stanford's CCRMA building, where dozens of curious attendees explored the orgASMR alongside 16 other student-designed hybrid instruments. The orgASMR withstood the hands and heads of many users throughout the event. The culmination of my work was performing a musical "piece" in front of the audience to showcase the novelty of my instrument. Even my dad attended, and I think he may have cried with what I only hope were tears of joy.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='reflections'>
         <h2>Reflections</h2>
         <ul>

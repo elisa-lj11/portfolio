@@ -79,9 +79,7 @@ const LocalHive = () => {
         <br></br>
         Our final product was an app-hosted platform that fostered community cohesion and social capital through a marketplace of projects and skills that allow community members to create and join projects, volunteer time, and further community involvement. Not only was the project fun to work on, but it gave me a fantastic template for how to design and build out a product. I detail this process in the sections below.
       </p>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='background-research'>
         <h2>Background Research</h2>
         <p>
@@ -94,9 +92,7 @@ const LocalHive = () => {
           Based on these insights, we developed a project aimed at fostering social capital to help communities like Buenaventura become more resilient. We explored using tools like time banking, AI, and blockchain to enable people to exchange skills and services, which would reinforce social ties and support economic self-sufficiency. We were now ready to move to the next phase of needfinding, where we would engage directly with communities to understand their needs and ensure that our app design aligned with their goals.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='needfinding'>
         <h2>Needfinding</h2>
         <p>
@@ -217,9 +213,7 @@ const LocalHive = () => {
           By this point we felt like we had a deep understanding of our community cohesion problem, so we were ready to move onto the next steps of generating "Point of View" and "How Might We?" statements. 
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='pov-hmw'>
         <h2>"POV"s and "HMW"s</h2>
         <p>
@@ -277,9 +271,7 @@ const LocalHive = () => {
           Equipped with our finalized HMWs, we moved onto the solution ideation phase of the design process.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='solution-ideation'>
         <h2>Solution Ideation</h2>
         <p>
@@ -315,9 +307,7 @@ const LocalHive = () => {
           From here we moved into an experimental phase to decide which idea would be the best candidate for our project.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='experience-prototypes'>
         <h2>Experience Prototypes</h2>
         <p>
@@ -415,9 +405,7 @@ const LocalHive = () => {
           After testing our 3 experience prototypes, we decided to move forward with EP 1, our "Skills and Services Marketplace" idea. We believed that this EP demonstrated the most promising results and would be the most likely to deliver long-term outcomes for community cohesion. We were ready to move into the initial stages of prototyping.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='low-fi-prototype'>
         <h2>Low Fidelity Prototype</h2>
         <p>
@@ -589,9 +577,7 @@ const LocalHive = () => {
           After this thorough evaluation of our low-fi prototype, we started development on our medium fidelity prototype using our testing insights to redesign our app's user experience.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='med-fi-prototype'>
         <h2>Medium Fidelity Prototype</h2>
         <p>
@@ -820,9 +806,7 @@ const LocalHive = () => {
           By this point in our process, we were ready to conduct one more round of user research before we would start our final prototype.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='user-research'>
         <h2>User Research</h2>
         <p>
@@ -889,9 +873,7 @@ const LocalHive = () => {
           With this final user study under our belt, we were finally ready to develop and launch our final prototype.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='final-prototype'>
         <h2>Final Prototype</h2>
         <div className="video-vertical" style={{ height: '60%' }}>
@@ -920,9 +902,7 @@ const LocalHive = () => {
           I was proud that in just 10 weeks, we started from a nebulous idea of strengthening communities and worked all the way to a robust prototype that we could present to dozens of people. If there had been more time, we would have loved to take our app to the next level by piloting in a real community for ecological validity, building a minimum viable product, then launching a pilot internationally; but, alas, we had other projects to move onto. Still, we could "bee" happy that we got as far as we did in such a short period.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='reflections'>
         <h2>Reflections</h2>
         <ul>
@@ -936,9 +916,7 @@ const LocalHive = () => {
           </li>
         </ul>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='works-cited'>
         <h2>Works Cited</h2>
         <ul>

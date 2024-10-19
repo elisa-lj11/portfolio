@@ -64,9 +64,7 @@ const WhoAmI = () => {
           Anyway, enough armchair philosophizing. Look below to see who I used to be.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='Links'>
         <h2>Links</h2>
         <div className='social-media-container'>
@@ -96,9 +94,7 @@ const WhoAmI = () => {
           </a>
         </div>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='values'>
         <h2>Values</h2>
         <ol>
@@ -134,9 +130,7 @@ const WhoAmI = () => {
           <iframe className="responsive-iframe" src={FUTURAMA_QUOTE_VIDEO_EMBED_URL} title="Futurama Quote" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='personal'>
         <h2>Personal</h2>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
@@ -166,9 +160,7 @@ const WhoAmI = () => {
           </li>
         </ul>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='education'>
         <h2>Education</h2>
         <h3>Stanford University</h3>
@@ -178,9 +170,7 @@ const WhoAmI = () => {
           I graduated from <a target='_blank' rel='noopener noreferrer' href={STANFORD_URL}>Stanford University</a> with a Bachelor of Science in <a target='_blank' rel='noopener noreferrer' href={SYMSYS_URL}>Symbolic Systems</a>, an interdisciplinary program that branches across computer science, linguistics, philosophy, and psychology. My concentration was "Human-Computer Interaction," where I focused on the design, usability, and evaluation of interactive systems, exploring how technology can be better integrated with human needs and behaviors.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='experience'>
         <h2>Experience</h2>
         <h3>VHIL</h3>

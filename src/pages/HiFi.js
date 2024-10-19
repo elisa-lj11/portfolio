@@ -42,9 +42,7 @@ const HiFi = () => {
           I've included a selection of my projects below.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='clara'>
         <h2>Clara.io Integration</h2>
         <div className="video-youtube">
@@ -112,9 +110,7 @@ const HiFi = () => {
           The Clara.io integration script is available on my <a target='_blank' rel='noopener noreferrer' href={CLARA_SCRIPT_URL}>GitHub</a>.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='google-blocks'>
         <h2>Google Blocks Integration</h2>
         <div className="video-youtube">
@@ -129,9 +125,7 @@ const HiFi = () => {
           The Google Poly integration script is available on my <a target='_blank' rel='noopener noreferrer' href={POLY_SCRIPT_URL}>GitHub</a>.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='other-content'>
         <h2>Other Content</h2>
         <div className="video" style={{ height: '10%' }}>
@@ -148,9 +142,7 @@ const HiFi = () => {
           All content scripts are available on my <a target='_blank' rel='noopener noreferrer' href={HIFI_CONTENT_SCRIPTS_URL}>GitHub</a>.
         </p>
       </div>
-      <br></br>
       <hr className="solid"></hr>
-      <br></br>
       <div className="section" id='reflections'>
         <h2>Reflections</h2>
         <ul>
