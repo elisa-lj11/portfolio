@@ -125,6 +125,13 @@ const Home = () => {
           labelMap.set(node.userData.id, nodeLabelDiv); // Store in the map
         }
 
+        // Who Am I node takes priority
+        if (node.userData.id === 'who-am-i') {
+          nodeLabelDiv.style.fontWeight = 'bold';
+          nodeLabelDiv.style.color = '#db13bd';
+          nodeLabelDiv.style.zIndex = '100'; // High z-index to take precedence
+        }
+
         // Get node's screen position
         const { x, y } = getScreenPosition(node, camera, renderer);
 
