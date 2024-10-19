@@ -453,7 +453,7 @@ const LocalHive = () => {
               <img
               src={uiSketch3ImageUrl}
               alt='Web UI Sketch'
-              style={{ width: '40%', display: 'inline-block', marginRight: '2%' }}
+              style={{ width: '40%', display: 'inline-block' }}
             />
             <figcaption>Web UI Sketch</figcaption>
           </figure>
@@ -613,7 +613,7 @@ const LocalHive = () => {
               <img
               src={medFi1JoinTaskFlowImageUrl}
               alt='"Join a Project" Task Flow'
-              style={{ width: '100%', display: 'inline-block', marginRight: '2%' }}
+              style={{ width: '100%', display: 'inline-block' }}
             />
             <figcaption>Med-Fi "Join a Project" Task Flow</figcaption>
           </figure>
@@ -623,7 +623,7 @@ const LocalHive = () => {
               <img
               src={medFi1CreateTaskFlowImageUrl}
               alt='"Create a Project" Task Flow'
-              style={{ width: '100%', display: 'inline-block', marginRight: '2%' }}
+              style={{ width: '100%', display: 'inline-block' }}
             />
             <figcaption>Med-Fi "Create a Project" Task Flow</figcaption>
           </figure>
@@ -633,7 +633,7 @@ const LocalHive = () => {
               <img
               src={medFi1MonitorTaskFlowImageUrl}
               alt='"Monitor a Community" Task Flow'
-              style={{ width: '100%', display: 'inline-block', marginRight: '2%' }}
+              style={{ width: '100%', display: 'inline-block' }}
             />
             <figcaption>Med-Fi "Monitor a Community" Task Flow</figcaption>
           </figure>
@@ -797,7 +797,7 @@ const LocalHive = () => {
               <img
               src={medFi3HomeImageUrl}
               alt='Third Med-Fi Prototype Home Screen'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
+              style={{ width: '90%', display: 'inline-block' }}
             />
             <figcaption>Third Med-Fi Prototype Home Screen</figcaption>
           </figure>

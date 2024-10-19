@@ -277,7 +277,7 @@ const OrgASMR = () => {
             <img
               src={ringsInHandleImageUrl}
               alt='Rings placed in handle'
-              style={{ width: '50%', display: 'inline-block', marginRight: '2%' }}
+              style={{ width: '50%', display: 'inline-block' }}
             />
             <figcaption>Head scratcher secured to handle with rings</figcaption>
           </figure>
@@ -301,7 +301,7 @@ const OrgASMR = () => {
             <img
               src={finalProtoboardImageUrl}
               alt='Finalized protoboard'
-              style={{ width: '80%', display: 'inline-block', marginRight: '2%' }}
+              style={{ width: '80%', display: 'inline-block' }}
             />
             <figcaption>Finalized protoboard with Teensy and sensors</figcaption>
           </figure>
@@ -319,7 +319,7 @@ const OrgASMR = () => {
             <img
               src={fullyAssembledImageUrl}
               alt='Fully assembled orgASMR'
-              style={{ width: '80%', display: 'inline-block', marginRight: '2%' }}
+              style={{ width: '80%', display: 'inline-block' }}
             />
             <figcaption>Fully assembled orgASMR with a final touch of galaxy duct tape</figcaption>
           </figure>
