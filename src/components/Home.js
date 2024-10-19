@@ -85,8 +85,8 @@ const Home = () => {
   const navigate = useNavigate(); // Hook to navigate between routes
 
   // Default positions for desktop and mobile
-  const DEFAULT_DESKTOP_CAMERA_POSITION = new THREE.Vector3(-1.32, 2.64, -4.12);
-  const DEFAULT_MOBILE_CAMERA_POSITION = new THREE.Vector3(-6.1, 6, 1.52);
+  const DEFAULT_DESKTOP_CAMERA_POSITION = new THREE.Vector3(4.42, 2.64, 0.21);
+  const DEFAULT_MOBILE_CAMERA_POSITION = new THREE.Vector3(5.93, 6.35, 0.22);
   let defaultCameraPosition; // Will be set in useEffect()
 
   // Store the animation frame for cleanup later
@@ -106,6 +106,8 @@ const Home = () => {
     const nodeInfoArray = orbitingNodes.getNodeInfoArray(camera, renderer);
     
     const animationLoop = () => {
+      //console.log("Camera position x:" + camera.position.x + " y:" + camera.position.y + " z:" + camera.position.z);
+      
       animationFrameId = requestAnimationFrame(animationLoop);
 
       // Update orbiting nodes
@@ -274,7 +276,7 @@ const Home = () => {
     // Create promises for loading each model or asset
     const loadGalaxyModel = () => {
       return new Promise((resolve) => {
-        galaxyModel.loadModel(scene, () => {
+        galaxyModel.loadModel(scene, new THREE.Euler(), () => {
           if (process.env.IS_DEVELOPMENT) console.log('Galaxy model loaded and added to scene');
           galaxyModel.setSpeed(-0.3); // Galaxy orbits in reverse
           resolve();
@@ -284,7 +286,7 @@ const Home = () => {
 
     const loadSkyboxModel = () => {
       return new Promise((resolve) => {
-        skyboxModel.loadModel(scene, () => {
+        skyboxModel.loadModel(scene, new THREE.Euler(0, -1, 0), () => {
           if (process.env.IS_DEVELOPMENT) console.log('Skybox model loaded and added to scene');
           resolve();
         });

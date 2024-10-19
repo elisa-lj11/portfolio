@@ -13,11 +13,12 @@ class GLTFModel {
   }
 
   // Load the model with animations
-  loadModel(scene, onLoadCallback) {
+  loadModel(scene, rotation, onLoadCallback) {
     const loader = new GLTFLoader();
     loader.load(this.modelName, (gltf) => {
       this.model = gltf.scene;
       this.model.scale.set(this.scale, this.scale, this.scale);
+      this.model.rotation.copy(rotation);
       scene.add(this.model); // Add the model to the provided scene
 
       const animations = gltf.animations;
