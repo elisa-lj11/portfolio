@@ -3,25 +3,57 @@ import * as THREE from 'three';
 
 class OrbitingNodes {
   constructor() {
-    // Map for node page titles, make sure to update the route path in App.js
-    this.nodeTitles = new Map([
-      ['strivr', 'Strivr: "Immersive Lobby" Upgrade'],
-      ['local-hive', '"Local Hive": A Human-Centered AI Project'],
-      ['orgasmr', '"orgASMR": A Head-Scratching Musical Interface'],
-      ['hifi', 'High Fidelity: Content Prototyping'],
-      ['rv-vr', '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis'],
-      ['lucid-dreaming', '"Lucid Dreaming": A 360° Video Experience'],
-    ]);
-
-    // Map for node page titles on mobile
-    this.nodeTitlesMobile = new Map([
-      ['strivr', 'Work: Strivr'],
-      ['local-hive', 'Stanford: "Local Hive"'],
-      ['orgasmr', 'Stanford: "orgASMR"'],
-      ['hifi', 'Work: High Fidelity'],
-      ['rv-vr', 'Stanford: "RV VR"'],
-      ['lucid-dreaming', 'Stanford: "Lucid Dreaming"'],
-    ]);
+    // Array of node data
+    this.nodeData = [
+      {
+        id: 'strivr',
+        path: '/strivr',
+        title: 'Strivr: "Immersive Lobby" Upgrade',
+        titleMobile: 'Work: Strivr',
+        size: 2.0,
+        imagePath: '', // Add image paths later
+      },
+      {
+        id: 'local-hive',
+        path: '/local-hive',
+        title: '"Local Hive": A Human-Centered AI Project',
+        titleMobile: 'Stanford: "Local Hive"',
+        size: 1.8,
+        imagePath: '',
+      },
+      {
+        id: 'orgasmr',
+        path: '/orgasmr',
+        title: '"orgASMR": A Head-Scratching Musical Interface',
+        titleMobile: 'Stanford: "orgASMR"',
+        size: 1.6,
+        imagePath: '',
+      },
+      {
+        id: 'hifi',
+        path: '/hifi',
+        title: 'High Fidelity: Content Prototyping',
+        titleMobile: 'Work: High Fidelity',
+        size: 1.4,
+        imagePath: '',
+      },
+      {
+        id: 'rv-vr',
+        path: '/rv-vr',
+        title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis',
+        titleMobile: 'Stanford: "RV VR"',
+        size: 1.2,
+        imagePath: '',
+      },
+      {
+        id: 'lucid-dreaming',
+        path: '/lucid-dreaming',
+        title: '"Lucid Dreaming": A 360° Video Experience',
+        titleMobile: 'Stanford: "Lucid Dreaming"',
+        size: 1.0,
+        imagePath: '',
+      }
+    ];
 
     this.whoAmINodeInfo = {id: 'who-am-i', title: 'Who am I?'};
     this.whoAmINode;
@@ -30,7 +62,7 @@ class OrbitingNodes {
     this.allNodes = [];
     this.startRadius = 0.0;
     this.radiusIncrement = 3.2; // Space between orbit levels
-    this.numNodes = this.nodeTitles.size;
+    this.numNodes = this.nodeData.length;
     this.nodesPerLevel = 3; // Number of nodes per orbit level
 
     this.baseRotationSpeed = 0.3; // Base rotation speed
@@ -107,7 +139,7 @@ class OrbitingNodes {
     let orbitLevel = 1;
 
     let i = 0;
-    for (const [nodeId, nodeTitle] of this.nodeTitles) {
+    this.nodeData.forEach(nodeInfo => {
       const node = new THREE.Mesh(geometry, material);
 
       // Update the orbit level after the level is filled
@@ -123,33 +155,36 @@ class OrbitingNodes {
         this.startRadius * Math.sin((i / (this.numNodes % this.nodesPerLevel)) * 2 * Math.PI)
       );
 
-      // Assign a unique ID to each node, this is used as the route path to navigate to in Home.js
-      // Also assign an orbit radius to each node
-      node.userData = { id: `${nodeId}`, currentRadius: this.startRadius, finalRadius: finalRadius };
+      node.userData = { 
+        id: nodeInfo.id, // Assign a unique ID to each node, used as route path to navigate to in Home.js
+        currentRadius: this.startRadius, // Store the current radius of the orbit
+        finalRadius: finalRadius, // Target the final radius stored here
+      };
+
       this.orbitingNodes.push(node);
 
       scene.add(node);
 
-      // Adjust to store an initial angle offset for each node based on its level
-      this.orbitingNodes.forEach((node, i) => {
-        // Calculate which level this node is on (integer division)
-        const level = Math.floor(i / this.nodesPerLevel);
-        
-        // Calculate how many nodes are on the current level
-        const nodesOnCurrentLevel = Math.min(this.nodesPerLevel, this.numNodes - level * this.nodesPerLevel);
-        
-        // Evenly distribute the nodes on this level (in radians)
-        const baseAngle = (i % this.nodesPerLevel) * (2 * Math.PI / nodesOnCurrentLevel);
-
-        // Apply an offset to the level's angles so they don't align vertically with the previous level
-        const angle = baseAngle + level * this.levelOffsetAngle;
-
-        // Store the angle for this node
-        this.angles[i] = angle;
-      });
-
       i++;
-    }
+    });
+
+    // Adjust to store an initial angle offset for each node based on its level
+    this.orbitingNodes.forEach((node, i) => {
+      // Calculate which level this node is on (integer division)
+      const level = Math.floor(i / this.nodesPerLevel);
+      
+      // Calculate how many nodes are on the current level
+      const nodesOnCurrentLevel = Math.min(this.nodesPerLevel, this.numNodes - level * this.nodesPerLevel);
+      
+      // Evenly distribute the nodes on this level (in radians)
+      const baseAngle = (i % this.nodesPerLevel) * (2 * Math.PI / nodesOnCurrentLevel);
+
+      // Apply an offset to the level's angles so they don't align vertically with the previous level
+      const angle = baseAngle + level * this.levelOffsetAngle;
+
+      // Store the angle for this node
+      this.angles[i] = angle;
+    });
 
     // Store all nodes in one array for calculating mouse intersections
     this.allNodes = this.orbitingNodes.concat([this.whoAmINode])
@@ -158,18 +193,17 @@ class OrbitingNodes {
   // Returns all the nodes and their associated label to Home.js
   getNodesInfoArray() {
     let nodesInfoArray = [];
-    this.orbitingNodes.forEach((node, index) => {
-      let nodeTitle = this.isMobile ? this.nodeTitlesMobile.get(node.userData.id) : this.nodeTitles.get(node.userData.id);
 
-      let nodeInfo = { node, nodeTitle };
-      nodesInfoArray.push(nodeInfo);
+    this.orbitingNodes.forEach(node => {
+      let nodeInfo = this.nodeData.find(info => info.id === node.userData.id);
+      let nodeTitle = this.isMobile ? nodeInfo.titleMobile : nodeInfo.title;
+
+      nodesInfoArray.push({ node, nodeTitle, size: node.userData.size });
     });
 
     // Add "Who Am I" node separately
-    let whoAmINode = this.whoAmINode;
-    let whoAmINodeTitle = this.whoAmINodeInfo.title;
-    let whoAmINodeInfo = { node: whoAmINode, nodeTitle: whoAmINodeTitle};
-    nodesInfoArray.push(whoAmINodeInfo);
+    nodesInfoArray.push({ node: this.whoAmINode, nodeTitle: this.whoAmINodeInfo.title });
+
     return nodesInfoArray;
   }
 
@@ -300,7 +334,7 @@ class OrbitingNodes {
         this.startRadius +
         (finalRadius - this.startRadius) *
         (2 / (1 + 2 ** (-3 * Math.max(0, elapsedTime - this.rotationStartDelay))) - 1); // Sigmoid-like smooth expansion
-
+      
       // Cone motion: x and z expand outward, y starts below the center and rises
       node.position.x = currentRadius * Math.cos(this.angles[i]);
       node.position.z = currentRadius * Math.sin(this.angles[i]);
