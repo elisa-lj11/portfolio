@@ -74,52 +74,46 @@ const LocalHive = () => {
       </div>
       <br />
       <p>
-        In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI." I worked with a team of 4 on a quarter-long project applying design thinking, processes, and tools to the intersection of healthcare and smart technology. Over the course of 10 weeks, we underwent the design journey from ideation to iterating on prototypes to presenting our final product in a public fair, in which we received an award for our work.
+        In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI," where my team of four applied design thinking to a quarter-long project at the intersection of healthcare and smart technology. Over 10 weeks, we progressed from ideation to prototyping, ultimately presenting our award-winning product at a public fair.
       </p>
       <p>
-        Our final product was an app-hosted platform that fostered community cohesion and social capital through a marketplace of projects and skills that allow community members to create and join projects, volunteer time, and further community involvement. Not only was the project fun to work on, but it gave me a fantastic template for how to design and build out a product. I detail this process in the sections below.
+        Our final product was an app-hosted platform designed to strengthen community cohesion by enabling users to create and join projects, volunteer, and exchange skills. This project provided me with valuable experience in designing and building products from the ground up.
       </p>
       <hr className="solid"></hr>
       <div className="section" id='background-research'>
         <h2>Background Research</h2>
         <p>
-          Since the goal of the class was to develop a project using human-centered AI to address global challenges, we wanted to apply our technical skills for social good. One of our team members was from Colombia, so we began researching issues in the region. We quickly identified the pressing need to address the impacts of conflict and violence, particularly how these crises affect social infrastructure and community cohesion.
-        </p>
-        <p>
-          Our background research revealed that social infrastructure—such as trust, social cohesion, and self-organization—was a key factor in building community resilience in conflict-affected areas. In Colombia, especially in Buenaventura, a coastal seaport city, communities were grappling with poverty, violence, and unemployment despite the city's importance as a trade hub (Miroff, 2016). Government and NGO efforts often focused on physical infrastructure, but evidence suggested that strengthening social bonds and fostering collaboration within communities was a more effective way to help them recover and thrive (Aldrich & Meyer, 2015).
-        </p>
-        <p>
-          Based on these insights, we developed a project aimed at fostering social capital to help communities like Buenaventura become more resilient. We explored using tools like time banking, AI, and blockchain to enable people to exchange skills and services, which would reinforce social ties and support economic self-sufficiency. We were now ready to move to the next phase of needfinding, where we would engage directly with communities to understand their needs and ensure that our app design aligned with their goals.
+          We focused on applying human-centered AI for social good. One team member, from Colombia, directed our attention to issues in Buenaventura, a seaport city affected by poverty, violence, and unemployment. Research showed that enhancing social infrastructure—trust, collaboration, and self-organization—was crucial for community resilience in conflict-affected areas (Aldrich & Meyer, 2015). Based on these insights, we developed a solution that utilized time banking, AI, and blockchain to reinforce social ties and promote economic self-sufficiency. We then moved to the needfinding phase to ensure our design aligned with community goals.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='needfinding'>
         <h2>Needfinding</h2>
         <p>
-          We interviewed 8 people in total: 2 from Buenaventura, Colombia and 6 from Palo Alto, California, some of which self-identified as "community leaders" and others as "community members." We wanted to get a sense of the differences between disparate communities, so we hoped that by reaching out to folks in Buenaventura, we could break out of our own Palo Alto bubble.
+          We interviewed eight people—two from Buenaventura, Colombia, and six from Palo Alto, California, including self-identified community leaders and members. Our goal was to understand differences between the two communities and break out of our Palo Alto bubble.
         </p>
         <p>
-          We asked questions about the following 5 topics:
+          We explored five topics:
         </p>
         <ol>
           <li>
-            <b>Community Description</b>: Gain insight into the overall characteristics of the community, including its demographics, culture, and unique aspects.
+            <b>Community Description</b>: Characteristics, demographics, and culture.
           </li>
           <li>
-            <b>Community Problems</b>: Understand the main challenges faced by the community, such as issues related to poverty, violence, or lack of resources.
+            <b>Community Problems</b>: Challenges like poverty, violence, and resource scarcity.
           </li>
           <li>
-            <b>Interconnectivity</b>: Assess the level of social cohesion within the community and the extent of relationships with other communities.
+            <b>Interconnectivity</b>: Social cohesion and relationships with other communities.
           </li>
           <li>
-            <b>Outstanding Members/Projects</b>: Identify key figures or initiatives within the community that are driving positive change or providing valuable services.
+            <b>Outstanding Members/Projects</b>: Key figures or initiatives driving positive change.
           </li>
           <li>
-            <b>Applying Social Capital</b>: Explore how social capital is used within the community, and introduce the concept of time banking to gauge their interest in leveraging it for community improvement.
+            <b>Applying Social Capital</b>: Interest in time banking for community improvement.
           </li>
         </ol>
         <p>
-          When we completed our interviews, we coalesced our responses into a single spreadsheet.
+          After conducting the interviews, we compiled the responses into a spreadsheet and synthesized the insights using sticky notes, grouping them by interviewer and guided by the question, "How might we help communities overcome crises?"
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -131,9 +125,6 @@ const LocalHive = () => {
             <figcaption>Combined needfinding interviews</figcaption>
           </figure>
         </div>
-        <p>
-          We then started a synthesis process by reviewing our interview notes and writing insights onto sticky notes which we grouped by interviewer. We guided our insights with the overarching question "How might we help communities overcome crises?".
-        </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
               <img
@@ -141,11 +132,11 @@ const LocalHive = () => {
               alt='Initial Synthesis'
               style={{ width: '50%', display: 'inline-block' }}
             />
-            <figcaption>Initial synthesis</figcaption>
+            <figcaption>Interview synthesis</figcaption>
           </figure>
         </div>
         <p>
-          With the visual aid from the sticky notes, we then grouped the insights into categories like leadership qualities, community obstacles, and infrastructure issues, as well as identifying standout "super-members" who took on leadership roles. This process clarified key takeaways and allowed us to form meaningful narratives from our interview data.
+          Using an affinity map, we categorized insights into themes like leadership qualities, community obstacles, and infrastructure issues, identifying "super-members" who demonstrated leadership. This helped us distill our findings into two empathy maps—one for community leaders and one for community members.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -157,9 +148,6 @@ const LocalHive = () => {
             <figcaption>Affinity map</figcaption>
           </figure>
         </div>
-        <p>
-          We distilled the insights from our affinity map even further into two empathy maps: one for a community leader, and one for a community member.
-        </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
               <img
@@ -179,7 +167,7 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          Between our affinity map and our empathy maps, we noticed some trends that could be mapped to a 2x2 journey map, where one axis was low versus high community cohesion, and the second axis was leadership versus membership. From these graphs, we realized that a community is able to self-organize when the lines between leadership and membership blur into a state of equal collaboration.
+          We also created a 2x2 journey map contrasting community cohesion (low vs. high) with leadership (leaders vs. members). This revealed that self-organization occurs when leadership and membership roles blur into equal collaboration.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -201,70 +189,57 @@ const LocalHive = () => {
         </div>
         <br />
         <p>
-          To conclude our needfinding exercise, we summarized our insights into the following points:
+          Key insights:
         </p>
         <ol>
           <li>
-            Communities differed mainly in their level of cohesion.
+            Communities vary in cohesion levels.
           </li>
           <li>
-            Low-cohesion communities had clear leaders focused on distributing tasks and resources.
+            Low-cohesion communities have clear leaders. 
           </li>
           <li>
-            Medium-cohesion communities saw leaders act as organizers, while members took on larger roles themselves.
+            Medium-cohesion communities see members taking on larger roles.
           </li>
           <li>
-            High-cohesion communities governed by consensus, with little distinction between leaders and members.
+            High-cohesion communities operate by consensus, with little distinction between leaders and members.
           </li>
           <li>
-            As cohesion increases, leadership skills both influence members and empower new leaders.
+            As cohesion increases, learned leadership skills both influence members and empower new leaders.
           </li>
           <li>
-            Technology is used differently across communities, from communication in low-cohesion to collaboration in high-cohesion groups.
+            Technology use varies: communication in low-cohesion and collaboration in high-cohesion groups.
           </li>
           <li>
-            Helping each other is necessary in low-cohesion communities but voluntary in high-cohesion ones.
+            Helping is essential in low-cohesion communities, while it's voluntary in high-cohesion ones.
           </li>
           <li>
-            Leaders seek recognition in low-cohesion settings, while in higher-cohesion communities, leadership roles are often more understated.
+            Leaders demand recognition in low-cohesion settings but are more understated in high-cohesion communities.
           </li>
         </ol>
         <p>
-          By this point we felt like we had a deep understanding of our community cohesion problem, so we were ready to move onto the next steps of generating "Point of View" and "How Might We?" statements. 
+          With these insights, we felt prepared to move on to generating "Point of View" and "How Might We?" statements. 
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='pov-hmw'>
         <h2>"POV"s and "HMW"s</h2>
         <p>
-          We collected the following 3 points of view from a subset of our interviewees:
+          From our interviews, we identified three key points of view:
         </p>
         <ol>
           <li>
-            "Leonard," a community leader, sees his role as connecting external resources with internal needs. However, his tendency to prioritize external solutions over local talent reveals an opportunity to shift leaders' mindsets towards leveraging internal resources first.
+            "Leonard" (community leader): He connects external resources with internal needs but often overlooks local talent, highlighting a need to shift leaders' focus to leveraging internal resources first.
           </li>
           <li>
-            "Ashley," an aspiring social worker in Buenaventura, feels that leadership in her community is exclusionary, preventing her from stepping up. Dismantling existing leadership structures could empower new leaders and promote more inclusive community involvement.
+            "Ashley" (aspiring social worker in Buenaventura): She feels exclusionary leadership prevents her from stepping up. Dismantling existing structures could empower new leaders and foster inclusivity.
           </li>
           <li>
-            Palo Alto cooperative living members have naturally built a knowledge-sharing network through daily interactions, but unequal distribution of voice within the group shows a need to create a more balanced and collaborative environment.
+            Palo Alto cooperative living members: They have a knowledge-sharing network, but unequal voice distribution indicates a need for a more balanced and collaborative environment.
           </li>
         </ol>
         <p>
-          We used these POVs to brainstorm 53 "How might we?" statements that we tracked with sticky notes.
-        </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hmwIdeationImageUrl}
-              alt='HMW Ideation'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>HMW ideation</figcaption>
-          </figure>
-        </div>
-        <p>
-          We then reorganized the HMW sticky notes into affinity groups, and as a group we voted on 3 themes to focus on:
+          These POVs led us to brainstorm 53 "How might we?" statements, which we organized into affinity groups. After voting, we focused on three themes:
         </p>
         <ul>
           <li>
@@ -280,6 +255,16 @@ const LocalHive = () => {
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
               <img
+              src={hmwIdeationImageUrl}
+              alt='HMW Ideation'
+              style={{ width: '100%', display: 'inline-block' }}
+            />
+            <figcaption>HMW ideation</figcaption>
+          </figure>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+              <img
               src={hmwAffinityGroupingImageUrl}
               alt='HMW Affinity Grouping'
               style={{ width: '100%', display: 'inline-block' }}
@@ -288,28 +273,28 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          We generated a final set of HMWs from these themes:
+          From these themes, we generated the following HMW statements:
         </p>
         <ol>
           <li>
-            How might we break up hierarchical community structures that prevent new leaders from speaking up?
+            <b>How might we break down hierarchical community structures that prevent new leaders from speaking up?</b>
           </li>
           <li>
-            How might we advertise one's skills more broadly?
+            <b>How might we advertise a community member's skills more broadly?</b>
           </li>
           <li>
-            How might we make people share and recruit skills inside the community? 
+            <b>How might we encourage skill sharing and recruitment within the community?</b>
           </li>
         </ol>
         <p>
-          Equipped with our finalized HMWs, we moved onto the solution ideation phase of the design process.
+          With our finalized HMWs, we proceeded to the solution ideation phase.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='solution-ideation'>
         <h2>Solution Ideation</h2>
         <p>
-          We launched another sticky note brainstorm session, this time generating 48 ideas for our 3 HMW groups.
+          We held another sticky note brainstorming session, generating 48 ideas for our three HMW groups. After voting, we narrowed it down to 34 options.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -321,9 +306,6 @@ const LocalHive = () => {
             <figcaption>HMW solution brainstorm</figcaption>
           </figure>
         </div>
-        <p>
-          As a group we voted for our favorite ideas and landed on 34 options.
-        </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
               <img
@@ -335,14 +317,14 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          After a final voting round, we landed on the following 4 ideas:
+          In a final voting round, we selected four ideas:
         </p>
         <ul>
           <li>
-            Matching/apprenticeship program for those who want to learn with those who can teach it
+            Matching/apprenticeship program connecting learners with mentors
           </li>
           <li>
-            Place for leaders and community members to post and find skills that they need
+            Platform for leaders and community members to post and find needed skills
           </li>
           <li>
             Pop-up classes/skill teach-ins
@@ -352,14 +334,14 @@ const LocalHive = () => {
           </li>
         </ul>
         <p>
-          From here we moved into an experimental phase to decide which idea would be the best candidate for our project.
+          Next, we moved into an experimental phase to determine the best candidate for our project.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='experience-prototypes'>
         <h2>Experience Prototypes</h2>
         <p>
-          We developed three experience prototypes based on the outcomes of our solution ideation exercise. For each prototype, we tested a hypothesis over a short week-long timeframe and analyzed our assumptions based on testing results.
+          We developed three experience prototypes based on our solution ideation exercise. Each prototype tested a hypothesis over a week and analyzed the results.
         </p>
         <h3>EP 1: Skills and Services Marketplace</h3>
         <img src={e1Prototype1ImageUrl} alt='EP 1 Prototype 1' width='100%'/>
@@ -374,53 +356,53 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          <b>Hypothesis:</b> If members could know what skills and knowledge their neighbors have, they would be more motivated to ask them for help.
+          <b>Hypothesis:</b> Members are more motivated to seek help if they know their neighbors' skills.
         </p>
         <p>
-          <b>Method:</b> We presented a spreadsheet of skilled community members and available tasks to a Palo Alto co-op member.
+          <b>Method:</b> We presented a spreadsheet of skilled community members and tasks to a Palo Alto co-op member.
         </p>
         <span>
           <b>Results:</b>
         </span>
         <ul>
           <li>
-            (+) Matching people to tasks was intuitive
+            (+) Task matching was intuitive.
           </li>
           <li>
-            (+) Table of people with skills was easy to read
+            (+) Table of people with skills was easy to read.
           </li>
           <li>
-            (-) Projects may stagnate if there aren't appropriate skills within the community
+            (-) Projects may stagnate without appropriate skills.
           </li>
           <li>
-            (-) Without funding, some projects may not be feasible
+            (-) Funding is essential for some projects.
           </li>
         </ul>
         <span><b>Validity:</b></span>
         <ul>
           <li>
-            Our hypothesis was valid because all available tasks required community members to join in the same space.
+            Our hypothesis was valid, as tasks required community members to collaborate.
           </li>
           <li>
-            A new assumption is that some members in the community must start with social capital to post tasks.
+            A new assumption emerged that some members need to start with social capital to post tasks.
           </li>
         </ul>
         <h3>EP 2: Hold a "Hackathon" of Community Service</h3>
         <p>
-          <b>Hypothesis:</b> Sharing an activity improves social connection between members and improves the shared understanding of individual skills and knowledge of members of the community.
+          <b>Hypothesis:</b> Shared activities enhance social connections and understanding of individual skills.
         </p>
         <p>
-          <b>Method:</b> Group chat “ideation” session with 1 leader and 1 member of Buenaventura. Will community members have a better idea of what skills their neighbors have?
+          <b>Method:</b> Conducted a group chat ideation session with a leader and member from Buenaventura.
         </p>
         <span>
           <b>Results:</b>
         </span>
         <ul>
           <li>
-            (+) Social goals are more effective at recruiting people for shared activities
+            (+) Social goals effectively recruited people.
           </li>
           <li>
-            (-) Shared activities surfaces skills and knowledge, but users want to know about the players' intentions
+            (-) Activities highlighted skills, but users wanted to know others' intentions.
           </li>
         </ul>
         <span>
@@ -428,31 +410,25 @@ const LocalHive = () => {
         </span>
         <ul>
           <li>
-            Our hypothesis was not valid because members in low cohesion communities struggle to find help in their communities to launch their projects. We found out these communities have scarce knowledge of the skills and knowledge other members have. Can shared activities surface these skills and knowledge?
+            The hypothesis was not valid; low-cohesion communities struggle to identify available help and lack knowledge of others' skills.
           </li>
         </ul>
         <h3>EP 3: Creating More Leaders</h3>
         <p>
-          <b>Hypothesis:</b> If people take ownership over some responsibility, they can develop into leaders.
+          <b>Hypothesis:</b> Taking ownership fosters leadership development.
         </p>
         <p>
-          <b>Method:</b> Chatbot that thrusts users into a (gardening) simulation.
+          <b>Method:</b> Developed a chatbot for a gardening simulation.
         </p>
         <span>
           <b>Results:</b>
         </span>
         <ul>
           <li>
-            (+) Participation wasn't hard to get, people seemed to like the storyline
+            (+) Participation was easy, and the storyline engaged users.
           </li>
           <li>
-            (-) Texting in the same room was a little awkward, and people who knew the subject weren't as interested
-          </li>
-          <li>
-            Had to go off-script, realized this was almost like role-playing/situation training
-          </li>
-          <li>
-            Lack of experience kept leaders humble
+            (-) Texting in-person felt awkward, and knowledgeable participants were less interested.
           </li>
         </ul>
         <span>
@@ -460,41 +436,38 @@ const LocalHive = () => {
         </span>
         <ul>
           <li>
-            Our hypothesis was valid because the simulation gave participants sense of making quick judgements under stress. However, we didn't find our results to indicate long-term success of emerging leaders.
+            The hypothesis was valid as the simulation allowed participants to make quick judgments under stress, but results did not indicate long-term leadership success.
           </li>
         </ul>
         <h3>EP Outcomes: Analysis</h3>
         <p>
-          After testing our 3 experience prototypes, we decided to move forward with EP 1, our "Skills and Services Marketplace" idea. We believed that this EP demonstrated the most promising results and would be the most likely to deliver long-term outcomes for community cohesion. We were ready to move into the initial stages of prototyping.
+          After testing the prototypes, we chose to move forward with EP 1, the "Skills and Services Marketplace," as it showed the most promise for fostering community cohesion. We were ready for the initial prototyping stages.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='low-fi-prototype'>
-        <h2>Low Fidelity Prototype</h2>
+        <h2>Low-Fidelity Prototype</h2>
         <p>
-          At this point in our project, we branded ourselves as <b>Local Hive</b> and described our mission/problem/solution/value proposition:
+          We branded ourselves as <b>Local Hive</b>, defining our mission/problem/solution/value proposition:
         </p>
         <ul>
           <li>
-            <b>Mission:</b> Boost your projects and build your own skills with the power of your community.
+            <b>Mission:</b> Boost projects and build skills through community support.
           </li>
           <li>
-            <b>Problem:</b> How can community members support each other when they are not in close physical proximity?
+            <b>Problem:</b> How can community members support each other at a distance?
           </li>
           <li>
-            <b>Solution:</b> Create a marketplace of projects and skills using volunteering time as currency.
+            <b>Solution:</b> Create a marketplace for projects and skills using volunteering time as currency.
           </li>
           <li>
-            <b>Value Proposition:</b> Providing a platform that fosters community cohesion and social capital.
+            <b>Value Proposition:</b> Foster community cohesion and social capital.
           </li>
         </ul>
-        <p>
-          We took to the drawing boards once again to sketch out concepts for our solution.
-        </p>
         <h3>Concept Sketches</h3>
         <img src={conceptSketchesImageUrl} alt='Concept Sketches' width='100%' />
         <p>
-          Sketches centered around 4 input modalities: web, mobile, AR, existing platform integrations (Slack, iMessage, etc.). We voted on our top two modalities, web and mobile, and proceeded to make more sketches for possible UI.
+          We sketched concepts focusing on four input modalities: web, mobile, AR, and existing platforms (Slack, iMessage, etc.). After voting, we chose web and mobile for further UI sketches.
         </p>
         <h3>UI Sketches</h3>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
@@ -526,24 +499,37 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          Once we had our UI sketches laid out, we evaluated their potential using our insights from the needfinding phase of our project and came to the conclusion that a <b>mobile app</b> would be the better selection because:
+          Once we completed our UI sketches, we determined that a <b>mobile app</b> was the best option due to:
         </p>
         <ol>
           <li>
-            People already use phones to organize and consume information.
+            Users commonly using phones for organizing information.
           </li>
           <li>
-            A mobile app with push notifications is the most appealing and immediate to users who wish to connect with their community.
+            The appeal of push notifications for immediate community connections.
           </li>
           <li>
-            There is already a pre-existing social networking mental model that people associate with phones.
+            Existing social networking mental models linked to mobile devices.
           </li>
         </ol>
         <p>
-          With our decision made, we moved on to defining our task flows which would help us design a low-level prototype.
+          With this decision, we defined task flows to guide our low-fidelity prototype design.
         </p>
         <h3>Task Flows</h3>
-        <p>In order to structure the screens we needed to create for our low-fi prototype, we defined a set of tasks with increasing difficulty. These would help guide us in our initial UI decisions as well as provide us with direction for what the app should enable a user to accomplish. We sketched a task flow for each task listed to inform our low-fi screen designs.</p>
+        <p>
+          We structured screens around tasks of varying difficulty:
+        </p>
+        <ol>
+          <li>
+            <b>Easy Task: Joining a project</b>—signing up, exploring projects, finding a fit, and optionally contacting the leader.
+          </li>
+          <li>
+            <b>Medium Task: Creating a project</b>—specifying details, recruiting users, and posting.
+          </li>
+          <li>
+            <b>Complex Task: Monitoring community involvement</b>—project leaders tracking contributions and users monitoring their engagement.
+          </li>
+        </ol>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
               <img
@@ -554,11 +540,7 @@ const LocalHive = () => {
             <figcaption>Easy task flow</figcaption>
           </figure>
         </div>
-        <p>
-          <b>Easy Task: Joining a project</b>
-          <br />
-          Joining a project involves: signing up, exploring projects, finding a project you are qualified for, joining the project then optionally reaching out to project leader for more information.
-        </p>
+        
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
               <img
@@ -569,11 +551,6 @@ const LocalHive = () => {
             <figcaption>Medium task flow</figcaption>
           </figure>
         </div>
-        <p>
-          <b>Medium Task: Creating a project</b>
-          <br />
-          Creating a project involves: specifying a time, location, the categories of skills involved, compensation awarded and a description for your project then recruiting users and posting the project.
-        </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
               <img
@@ -584,14 +561,6 @@ const LocalHive = () => {
             <figcaption>Complex task flow</figcaption>
           </figure>
         </div>
-        <p>
-          <b>Complex Task: Monitoring community involvement</b>
-          <br />
-          Monitoring Community Involvement involves: project leaders monitoring who is contributing to their project and individual users monitoring their own community involvement and contributions made by the overall community.
-        </p>
-        <p>
-          With our task flows defined, we started sketching out the screens we would need for our low-fi prototype.
-        </p>
         <h3>Low-Fi Prototype Screens</h3>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -604,100 +573,97 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          We sketched out 17 separate screens on sheets of paper and used plastic film to create the illusion of buttons and selection. Our design decisions were guided by the following:
+          With task flows in place, we sketched 17 screens for our low-fi prototype, utilizing plastic film to simulate buttons. Design decisions emphasized:
         </p>
         <ul>
           <li>
-            Users should be encouraged to work on projects outside their skillset by reaching out, gathering information, and collaborating.
+            Encouraging users to engage in projects beyond their skillset.
           </li>
           <li>
-            Meeting people is just as valuable as the work itself, and this is integrated into the app.
+            Valuing connections as much as the work.
           </li>
           <li>
-            Attitudes and intents matter, influencing AI recommendations through goal-based questions.
+            Influencing AI recommendations based on user goals.
           </li>
         </ul>
-        <p>
-          With our low-fi prototype literally in hand, we began testing our app.
-        </p>
         <h3>User Testing</h3>
         <p>
-          We conducted 20-minute user tests with 3 separate participants of different ages and backgrounds. We asked them to run through our 3 tasks by interacting with our paper prototype and using our "buttons" to make selections. Members of our team took turns operating as an interview facilitator who ran through the task instructions, a "computer" who would manually switch paper screens based on user selections, and a notetaker who logged any critical incidents and successes that occurred during the test.
+          We conducted 20-minute tests with three participants of different ages and backgrounds, guiding them through tasks using our paper prototype. Our team alternated roles as facilitator, “computer,” and notetaker.
         </p>
         <p>
-          Critical incidents included:
+          Critical Incidents:
         </p>
         <ul>
           <li>
-            The attitudinal screen was confusing.
+            The attitudinal screen confused users.
           </li>
           <li>
-            Users wanted a screen for specific projects.
+            Participants wanted specific project screens.
           </li>
           <li>
-            Users were only interested in their projects, not in the community status.
+            Users focused more on personal projects than community status.
           </li>
         </ul>
         <p>
-          Critical successes included:
+          Critical Successes:
         </p>
         <ul>
           <li>
-            Creating a project elicited a positive response.
+            Positive responses to creating projects.
           </li>
           <li>
-            Having both people and projects is helpful for users.
+            The combined presence of people and projects was helpful.
           </li>
           <li>
-            Tree visualization was appreciated as symbolism for community growth.
+            Tree visualization symbolizing community growth was appreciated.
           </li>
         </ul>
         <p>
-          Our major takeaways from our low-fi testing were:
+          Takeaways:
         </p>
         <ul>
           <li>
-            (-) The point system needs to be explicit and clear.
-          </li>
-          <li>
-            (-) Navigation between screens needs to be streamlined.
-          </li>
-          <li>
-            (+) The “social network” aspect was intuitive.
+            (+) The social network aspect was intuitive.
           </li>
           <li>
             (+) Joining a community was straightforward.
           </li>
+          <li>
+            (-) The point system needs clarity.
+          </li>
+          <li>
+            (-) Screen navigation requires streamlining.
+          </li>
         </ul>
         <p>
-          After this thorough evaluation of our low-fi prototype, we started development on our medium fidelity prototype using our testing insights to redesign our app's user experience.
+          Following this evaluation, we began developing our medium-fidelity prototype using insights from our user testing.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='med-fi-prototype'>
-        <h2>Medium Fidelity Prototype</h2>
+        <h2>Medium-Fidelity Prototype</h2>
         <p>
-          Going into our med-fi prototype development, we brought a few changes from low-fi testing:
+          In developing our med-fi prototype, we incorporated feedback from low-fi testing, including:
         </p>
         <ul>
           <li>
-            Giving users a starting amount of points (Honey Money) when they sign up
+            Gifting users an initial amount of points (Honey Money) upon signup.
           </li>
           <li>
-            Adding due dates and locations
+            Adding due dates and locations for tasks.
           </li>
           <li>
-            Being able to see experience gained from community involvement
+            Displaying experience gained from community involvement.
           </li>
         </ul>
         <p>
-          A major concept that we wanted to put to the test with our med-fi prototype was the time banking point system that we had indexed on since we started work on this project. In our app, we planned to use "Honey Money" as a form of currency. Users would be able to utilize Honey Money to create their own projects and use it as compensation or join projects to earn more. They would start with 50 Honey Moneys, where 10 Honey Moneys would equal one hour of work. Their experience, Honey Money balance, and transaction history would be viewable on a Wallet Page from their profile.
+          We aimed to test the "Honey Money" time banking system, where users begin with 50 Honey Money (10 equaling one hour of work) to create projects or join others. Users could view their balance, experience, and transaction history on a Wallet Page.
         </p>
         <p>
-          We also wanted to build out a taxonomy of skills. Skills would be taken into account in two situations: when users build their profiles and when they list skills needed for a project. These skills would be categorized into general groups and further divided into specific ones. AI technology would be used to recommend projects users would be qualified for and interested in.
+          We also developed a taxonomy of skills for users' profiles and project listings. AI would recommend projects based on users' qualifications and interests.
         </p>
         <p>
-          We used Figma to build our <a target='_blank' rel='noopener noreferrer' href={FIGMA_MEDFI_1_URL}>first med-fi prototype</a>.
+          Using Figma, we built our <a target='_blank' rel='noopener noreferrer' href={FIGMA_MEDFI_1_URL}>first med-fi prototype</a>.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -710,7 +676,7 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          Our 3 task flows using our med-fi prototype are captured below.
+          Our prototype included our three task flows:
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -743,64 +709,44 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-        We tested 4 participants on our med-fi prototype, with each study running about 10 minutes as they worked through our 3 tasks.
-        </p>
-        <p>
-          Our test plan aimed to investigate the following:
+          We tested four participants for about 10 minutes each as they navigated the tasks. Our test plan aimed to assess:
         </p>
         <ol>
           <li>
-            Gather the likeability of a user to complete a task without guidance
+            Task completion likability and excitement without guidance.
           </li>
           <li>
-            Gather the excitement of a user to complete a task without guidance
+            The order of actions taken.
           </li>
           <li>
-            Find out what actions are done and in what order
+            Preferences for joining versus creating projects.
           </li>
           <li>
-            Find out if people are more likely to join a project or to create a new project
-          </li>
-          <li>
-            Find out whether people can attend more projects by adjusting the language:
-            <ol>
-              <li>
-                Contribute to your community
-              </li>
-              <li>
-                Meet people today
-              </li>
-              <li>
-                Earn points
-              </li>
-              <li>
-                Learn to do something
-              </li>
-            </ol>
+            Language adjustments for participation encouragement.
           </li>
         </ol>
         <p>
-          Our results indicated that we needed to:
+          Results indicated the need to:
         </p>
         <ul>
           <li>
-            Simplify the "Honey Money" concept
+            Simplify the "Honey Money" concept.
           </li>
           <li>
-            Rephrase onboarding
+            Rephrase onboarding instructions.
           </li>
           <li>
-            Add a list of sub-tasks left to complete above the join button
+            Add a sub-task list above the join button.
           </li>
           <li>
-            Add a social media button to accelerate recruiting
+            Include a social media button for recruiting.
           </li>
           <li>
-            List required skills on a task
+            List required skills on tasks.
           </li>
         </ul>
         <p>
-          With these insights we performed one more design iteration to create our <a target='_blank' rel='noopener noreferrer' href={FIGMA_MEDFI_2_URL}>second med-fi Figma prototype</a>, then we moved on to our heuristic evaluation phase.
+          Based on these insights, we iterated our design for a <a target='_blank' rel='noopener noreferrer' href={FIGMA_MEDFI_2_URL}>second med-fi Figma prototype</a> before moving to the heuristic evaluation phase.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -814,7 +760,7 @@ const LocalHive = () => {
         </div>
         <h3>Heuristic Evaluation</h3>
         <p>
-          In this phase of our process we gave our Figma prototype to 4 evaluators who were assigned our 3 tasks and asked to call out any heuristic violations they encountered as they used our prototype. Violations were graded on severity on a 0-4 scale and organized into 10 heuristic categories:
+          In this phase, four evaluators tested our Figma prototype, identifying 46 heuristic violations across ten categories:
         </p>
         <ol>
           <li>
@@ -859,11 +805,11 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          Our testers identified 46 heuristic violations altogether and included feedback for what they expected and how they would fix it. An example of a feedback item is below:
+          An example of feedback received:
         </p>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <p style={{ marginLeft: '10%', marginRight: '10%', textAlign: 'justify' }}>
-            <b>[H6: Recognition rather than recall][Severity: 3]</b>
+            <b>[H6: Recognition not recall][Severity: 3]</b>
             <br />
             <i>Evaluators: 1, 2, 3, 4</i>
             <br />
@@ -875,24 +821,24 @@ const LocalHive = () => {
           </p>
         </div>
         <p>
-          We carefully considered each of the 46 violations and designated action items to incorporate into our <a target='_blank' rel='noopener noreferrer' href={FIGMA_MEDFI_3_URL}>third med-fi prototype</a> iteration. Our major design changes were grouped into four areas: conceptual clarification, content sizing, information consistency, and task prioritization.
+          We carefully considered each of the 46 violations and designated action items to incorporate into our <a target='_blank' rel='noopener noreferrer' href={FIGMA_MEDFI_3_URL}>third med-fi prototype</a> iteration. We categorized violations into four areas for action:
         </p>
         <ul>
           <li>
-            <b>Conceptual Clarification:</b> Simplify onboarding by explaining new app concepts (like Hive and HoneyMoney) while keeping the process concise and visually engaging
+            <b>Conceptual Clarification:</b> Simplify onboarding with concise explanations of app concepts.
           </li>
           <li>
-            <b>Content Sizing:</b> Declutter pages to ensure that all content was appropriately sized and relevant
+            <b>Content Sizing:</b> Declutter pages for relevance.
           </li>
           <li>
-            <b>Information Consistency:</b> Standardize key details across screens, such as project skills and status, to avoid confusion
+            <b>Information Consistency:</b> Standardize key details across screens.
           </li>
           <li>
-            <b>Task Prioritization:</b> Reorder the home screen to emphasize actionable tasks, like joining or creating a project, over less important information
+            <b>Task Prioritization:</b> Emphasize actionable tasks on the home screen.
           </li>
         </ul>
         <p>
-          To highlight the changes between our 3 med-fi prototypes, below is a progression of our app's home screen.
+          The progression between our three med-fi prototypes:
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -921,74 +867,74 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          By this point in our process, we were ready to conduct one more round of user research before we would start our final prototype.
+          We were prepared to conduct one final round of user research before creating our final prototype.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='user-research'>
         <h2>User Research</h2>
         <p>
-          The goal of our user research was to gather feedback on how effectively the prototype addressed issues related to creating and joining community projects. We also aimed to ensure that the app's concepts (Hive, HoneyMoney, Buzz, etc.) were clear and useful, and that the information size and overall design were appropriate and visually appealing to users.
+          Our user research aimed to assess the prototype's effectiveness in addressing issues with creating and joining community projects while ensuring the app's concepts (Hive, Honey Money, Buzz, etc.) were clear and visually appealing.
         </p>
         <p>
-          We recruited volunteers from four key groups (identified in our needfinding stage) for testing:
+          We recruited volunteers from four key groups identified in our needfinding stage for testing:
         </p>
         <ol>
           <li>
-            <b>Community members:</b> Regular members of communities, where we aimed to observe how the app blurred the line between members and leaders, encouraging them to create projects and recruit others.
+            <b>Community members:</b> Regular members to see how the app encourages project creation and recruitment.
           </li>
           <li>
-            <b>Community leaders:</b> Potential power-users who already organize community efforts, with a focus on how the app could enhance their actions, encouraging them to join existing projects and help others.
+            <b>Community leaders:</b> Potential power-users to evaluate how the app enhances their organizing efforts.
           </li>
           <li>
-            <b>Low cohesion/motivation:</b> Members who are less engaged in their communities, to see if the app motivates them to get more involved.
+            <b>Low cohesion/motivation:</b> Less engaged members to determine if the app motivates involvement.
           </li>
           <li>
-            <b>High cohesion/motivation:</b> Highly engaged users, to assess how useful the app remains for communities already functioning well.
+            <b>High cohesion/motivation:</b> Highly engaged users to assess the app's usefulness for well-functioning communities.
           </li>
         </ol>
         <p>
-          We conducted tests with 4 volunteers in total and summarized their feedback below:
+          We conducted tests with four volunteers and summarized their feedback:
         </p>
         <ul>
           <li>
-            The design and Hive theme were well-received, though a few colors in the onboarding process felt out of place.
+            The design and Hive theme were well-received, but some onboarding colors felt out of place.
           </li>
           <li>
-            There was some confusion about the scale of projects the app is intended for (large vs. small) and how the "buzzing" feature works.
+            Users were confused about the intended project scale (large vs. small) and the "buzzing" feature.
           </li>
           <li>
-            Users appreciated the potential for organizing and tracking both personal and community goals but expressed concerns about whether small communities would have enough engagement.
+            There was appreciation for organizing personal and community goals, but concerns about small community engagement.
           </li>
           <li>
-            Suggestions were made to improve realism (e.g., filling in project images) and add more interactive features for sorting and monitoring project progress.
+            Suggestions included adding realistic project images and interactive features for tracking progress.
           </li>
           <li>
-            The Honey Moneys system was well-liked as a way to incentivize helping others, but some wanted clearer ways to track involvement and progress.
+            The Honey Money system was well-liked, but users wanted clearer ways to track involvement.
           </li>
         </ul>
         <p>
-          For our final iterative pass over our prototype, we decided to prioritize the following changes:
+          Based on this feedback, we prioritized the following changes for our final prototype:
         </p>
         <ul>
           <li>
-            <b>Improve fidelity</b> so people can be more fully immersed in the app
+            Enhance fidelity for better immersion.
           </li>
           <li>
-            <b>Put in real pictures</b> for profiles and projects
+            Include real images for profiles and projects.
           </li>
           <li>
-            <b>Sort by category</b> of tasks on a separate screen
+            Sort tasks by category on a separate screen.
           </li>
           <li>
-            <b>Declutter</b> by prioritizing tasks
+            Declutter by prioritizing tasks.
           </li>
           <li>
-            <b>Consistency</b> of key terms like "buzz" across the app
+            Ensure consistency of key terms like "buzz" across the app.
           </li>
         </ul>
         <p>
-          With this final user study under our belt, we were finally ready to develop and launch our final prototype.
+          With this final user study completed, we were ready to develop and launch our final prototype.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -1000,10 +946,7 @@ const LocalHive = () => {
           </video>
         </div>
         <p>
-          We launched our <a target='_blank' rel='noopener noreferrer' href={FIGMA_FINAL_URL}>final Figma prototype</a> in an end-of-quarter project fair.
-        </p>
-        <p>
-          Alongside our prototype we deployed an <a target='_blank' rel='noopener noreferrer' href={APP_WEBSITE_URL}>app website</a> describing our app's functionality and the design process behind it.
+          We launched our <a target='_blank' rel='noopener noreferrer' href={FIGMA_FINAL_URL}>final Figma prototype</a> at an end-of-quarter project fair, accompanied by a website detailing our app's functionality and design process.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -1012,11 +955,13 @@ const LocalHive = () => {
               alt='App Website'
               style={{ width: '60%', display: 'inline-block' }}
             />
-            <figcaption>App website</figcaption>
+            <figcaption>
+              <a target='_blank' rel='noopener noreferrer' href={APP_WEBSITE_URL}>App website</a>
+            </figcaption>
           </figure>
         </div>
         <p>
-          At the fair, we delivered a 15-minute presentation on our app's evolution, and we showcased an accompanying project poster which won "Best Poster" within our cohort of 6 teams.
+          At the fair, we presented our app's evolution in a 15-minute presentation and showcased a project poster that won "Best Poster" among six teams.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -1029,7 +974,7 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          I was proud that in just 10 weeks, we started from a nebulous idea of strengthening communities and worked all the way to a robust prototype that we could present to dozens of people. If there had been more time, we would have loved to take our app to the next level by piloting in a real community for ecological validity, building a minimum viable product, then launching a pilot internationally; but, alas, we had other projects to move onto. Still, we could "bee" happy that we got as far as we did in such a short period.
+          I was proud that in just 10 weeks, we transformed a vague idea of strengthening communities into a robust prototype that many people tried out. With more time, we would have liked to pilot the app in a real community for ecological validity and develop a minimum viable product for an international launch. Nevertheless, we were pleased with our progress in such a short timeframe.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -1037,12 +982,13 @@ const LocalHive = () => {
         <h2>Reflections</h2>
         <ul>
           <li>
-            Needfinding is a crucial step in product development, but it can easily be overlooked if you're too focused on your initial idea of a solution. To apply human-centered design effectively, it's essential to step outside your own perspective and listen objectively to the needs of your target users before forming assumptions about how they think or what they need.</li>
-          <li>
-            Just as you shouldn't get too attached to your initial solution, it's important not to cling to the first, second, or even third iteration of a design. User testing will consistently reveal opportunities for improvement, and often, different users will have conflicting preferences. Refining a design requires balancing the needs of the majority without neglecting the minority.
+            Needfinding is a crucial step in product development, often overlooked if you focus too much on your initial solution. To apply human-centered design effectively, it's essential to step outside your perspective and listen objectively to your target users before making assumptions.
           </li>
           <li>
-            While it's important to remain humble, it's also gratifying to acknowledge when your instincts prove correct. We recognized we had a promising idea when we aimed to leverage social capital to foster community growth. Throughout the design process, we made numerous adjustments to the specifics of how "HoneyMoneys" would effectively motivate community members. However, user tests consistently reinforced our belief that using volunteer time as a currency to support community projects was fundamentally a sound approach.
+            Avoid getting attached to early design iterations; user testing will reveal areas for improvement, often highlighting conflicting preferences among users. Refining a design requires balancing the needs of the majority without neglecting the minority.
+          </li>
+          <li>
+            While humility is important, it's gratifying to recognize when your instincts are correct. We believed in leveraging social capital for community growth, and user tests consistently validated our approach of using volunteer time as a currency for supporting community projects, despite numerous adjustments to the specifics of "Honey Money."
           </li>
         </ul>
       </div>
@@ -1050,9 +996,6 @@ const LocalHive = () => {
       <div className="section" id='works-cited'>
         <h2>Works Cited</h2>
         <ul>
-          <li>
-            Miroff, N (August 24, 2016) The staggering toll of Colombia's war with FARC rebels explained in numbers. The Washington Post. Available in  https://www.washingtonpost.com/
-          </li>
           <li>
             Aldrich, D. P., & Meyer, M. A. (2015). Social capital and community resilience. American behavioral scientist, 59(2), 254-269.
           </li>
