@@ -10,25 +10,22 @@ class OrbitingNodes {
     this.orbitingNodeData = [
       {
         id: 'strivr',
-        path: '/strivr',
         title: 'Strivr: "Immersive Lobby" Upgrade',
         titleMobile: 'Work: Strivr',
-        nodeRadius: 0.3,
+        nodeRadius: 0.4,
         finalRadius: 3.5,
         color: 0x261669,
       },
       {
         id: 'local-hive',
-        path: '/local-hive',
         title: '"Local Hive": A Human-Centered AI Project',
         titleMobile: 'Stanford: "Local Hive"',
-        nodeRadius: 0.25,
+        nodeRadius: 0.3,
         finalRadius: 3.5,
         color: 0xe6cc7e,
       },
       {
         id: 'orgasmr',
-        path: '/orgasmr',
         title: '"orgASMR": A Head-Scratching Musical Interface',
         titleMobile: 'Stanford: "orgASMR"',
         nodeRadius: 0.25,
@@ -37,16 +34,14 @@ class OrbitingNodes {
       },
       {
         id: 'hifi',
-        path: '/hifi',
         title: 'High Fidelity: Content Prototyping',
         titleMobile: 'Work: High Fidelity',
-        nodeRadius: 0.23,
+        nodeRadius: 0.22,
         finalRadius: 6.0,
         color: 0x66b1f2,
       },
       {
         id: 'rv-vr',
-        path: '/rv-vr',
         title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis',
         titleMobile: 'Stanford: "RV VR"',
         nodeRadius: 0.2,
@@ -55,7 +50,6 @@ class OrbitingNodes {
       },
       {
         id: 'lucid-dreaming',
-        path: '/lucid-dreaming',
         title: '"Lucid Dreaming": A 360° Video Experience',
         titleMobile: 'Stanford: "Lucid Dreaming"',
         nodeRadius: 0.2,
@@ -67,13 +61,12 @@ class OrbitingNodes {
     this.staticNodeData = [
       {
         id: 'who-am-i',
-        path: '/who-am-i',
         title: 'Who am I?',
         titleMobile: 'Who am I?',
-        position: new THREE.Vector3(0, this.startHeight, 0),
         nodeRadius: 0.2,
         finalRadius: 0.0,
-        color: 0xffffff
+        color: 0xffffff,
+        position: new THREE.Vector3(0, this.startHeight, 0)
       }
     ];
     
