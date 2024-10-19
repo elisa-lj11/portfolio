@@ -21,8 +21,8 @@ const Accessible = () => {
   const sections = [
     { id: 'strivr', title: 'Strivr: "Immersive Lobby" Upgrade', imageUrl: strivrImageUrl },
     { id: 'local-hive', title: '"Local Hive": A Human-Centered AI Project', imageUrl: localHiveImageUrl },
-    { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
     { id: 'hifi', title: 'High Fidelity: Content Prototyping', imageUrl: hifiImageUrl },
+    { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
     { id: 'rv-vr', title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis', imageUrl: rvvrImageUrl },
     { id: 'lucid-dreaming', title: '"Lucid Dreaming": A 360° Video Experience', imageUrl: lucidDreamingImageUrl },
   ];
