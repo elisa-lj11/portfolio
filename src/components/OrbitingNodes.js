@@ -10,48 +10,54 @@ class OrbitingNodes {
         path: '/strivr',
         title: 'Strivr: "Immersive Lobby" Upgrade',
         titleMobile: 'Work: Strivr',
-        size: 2.0,
-        imagePath: '', // Add image paths later
+        nodeRadius: 0.3,
+        finalRadius: 3.5,
+        color: 0x261669,
       },
       {
         id: 'local-hive',
         path: '/local-hive',
         title: '"Local Hive": A Human-Centered AI Project',
         titleMobile: 'Stanford: "Local Hive"',
-        size: 1.8,
-        imagePath: '',
+        nodeRadius: 0.25,
+        finalRadius: 3.5,
+        color: 0xe6cc7e,
       },
       {
         id: 'orgasmr',
         path: '/orgasmr',
         title: '"orgASMR": A Head-Scratching Musical Interface',
         titleMobile: 'Stanford: "orgASMR"',
-        size: 1.6,
-        imagePath: '',
+        nodeRadius: 0.25,
+        finalRadius: 3.5,
+        color: 0x111582,
       },
       {
         id: 'hifi',
         path: '/hifi',
         title: 'High Fidelity: Content Prototyping',
         titleMobile: 'Work: High Fidelity',
-        size: 1.4,
-        imagePath: '',
+        nodeRadius: 0.23,
+        finalRadius: 7.0,
+        color: 0x66b1f2,
       },
       {
         id: 'rv-vr',
         path: '/rv-vr',
         title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis',
         titleMobile: 'Stanford: "RV VR"',
-        size: 1.2,
-        imagePath: '',
+        nodeRadius: 0.2,
+        finalRadius: 7.0,
+        color: 0x7ba177,
       },
       {
         id: 'lucid-dreaming',
         path: '/lucid-dreaming',
         title: '"Lucid Dreaming": A 360° Video Experience',
         titleMobile: 'Stanford: "Lucid Dreaming"',
-        size: 1.0,
-        imagePath: '',
+        nodeRadius: 0.2,
+        finalRadius: 7.0,
+        color: 0xd47b7b,
       }
     ];
 
@@ -135,37 +141,22 @@ class OrbitingNodes {
 
     this.createWhoAmINode(scene, geometry, material);
 
-    let finalRadius = this.startRadius;
-    let orbitLevel = 1;
-
-    let i = 0;
-    this.nodeData.forEach(nodeInfo => {
+    this.nodeData.forEach((nodeInfo, i) => {
+      const geometry = new THREE.SphereGeometry(nodeInfo.nodeRadius, 32, 32);
+      const material = new THREE.MeshBasicMaterial({ color: nodeInfo.color });
       const node = new THREE.Mesh(geometry, material);
 
-      // Update the orbit level after the level is filled
-      if (i > 0 && i % this.nodesPerLevel === 0) {
-        orbitLevel++;
-      }
-
-      finalRadius = this.startRadius + orbitLevel * this.radiusIncrement; // Increase the orbit radius
-
-      node.position.set(
-        this.startRadius * Math.cos((i / (this.numNodes % this.nodesPerLevel)) * 2 * Math.PI),
-        this.startHeight,
-        this.startRadius * Math.sin((i / (this.numNodes % this.nodesPerLevel)) * 2 * Math.PI)
-      );
+      node.position.set(0, this.startHeight, 0);
 
       node.userData = { 
         id: nodeInfo.id, // Assign a unique ID to each node, used as route path to navigate to in Home.js
         currentRadius: this.startRadius, // Store the current radius of the orbit
-        finalRadius: finalRadius, // Target the final radius stored here
+        finalRadius: nodeInfo.finalRadius, // Target the final radius stored here
       };
 
       this.orbitingNodes.push(node);
 
       scene.add(node);
-
-      i++;
     });
 
     // Adjust to store an initial angle offset for each node based on its level
