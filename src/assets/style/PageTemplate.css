@@ -96,6 +96,8 @@ figcaption {
 .video {
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -109,16 +111,15 @@ figcaption {
 }
 
 .video-vertical {
+  height: 100vh;
+  max-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
-  margin: 0; /* Ensure there's no extra margin */
 }
 
 .video-vertical video {
-  height: 100%; /* Make the video take up full vertical space */
-  max-height: 100vh; /* Constrain the video height to the viewport height */
+  max-height: 100%;
   width: auto; /* Maintain aspect ratio */
 }
 

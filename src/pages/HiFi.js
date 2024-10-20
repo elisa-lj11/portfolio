@@ -128,8 +128,8 @@ const HiFi = () => {
       <hr className="solid"></hr>
       <div className="section" id='other-content'>
         <h2>Other Content</h2>
-        <div className="video" style={{ height: '10%' }}>
-          <video controls muted>
+        <div className="video" style={{ height: 'auto', width: '100%' }}>
+          <video controls muted style={{ width: 'auto', height: '70vh' }}>
             <source src={PILL_VIDEO_URL} type="video/mp4" />
           </video>
         </div>
