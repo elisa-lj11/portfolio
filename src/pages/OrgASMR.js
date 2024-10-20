@@ -26,8 +26,7 @@ import finalFormImageUrl from '../assets/images/orgasmr/final-form.jpg';
 
 import handleModelUrl from '../assets/models/orgasmr-handle.stl';
 
-const ORGASMR_DEMO_EMBED_URL = 'https://www.youtube.com/embed/6NVlh2iXAhg?si=TpFMYwpbAOgr7bNq';
-const ORGASMR_DEMO_SHOWCASE_URL = 'https://youtu.be/6NVlh2iXAhg?si=H1KOo8NMJasDySEF&t=76'
+const ORGASMR_DEMO_EMBED_URL = 'https://www.youtube.com/embed/6NVlh2iXAhg?si=HwM0jBHINPKcrns7&amp;start=76';
 const CCRMA_CLASS_URL = 'https://ccrma.stanford.edu/courses/250a-winter-2019/';
 const ARDUINO_URL = 'https://www.arduino.cc/en/about';
 const FAUST_URL = 'https://faust.grame.fr/';
@@ -93,7 +92,7 @@ const OrgASMR = () => {
         </p>
         <ol>
           <li>
-            <b>Accelerometer:</b> The accelerometer produced eight different orientations based on the sensor's rotation. Using music theory to structure chords with three or four notes, my script mapped each orientation to a specific chord type:
+            <b>Accelerometer:</b> The accelerometer detected eight different custom-defined orientations. Using music theory to structure chords with three or four notes, my script mapped each orientation to a specific chord type:
             <ul>
               <li>
                 Major
@@ -330,7 +329,7 @@ const OrgASMR = () => {
         <h2>Instrument Showcase</h2>
         <img src={finalFormImageUrl} alt='Final form of orgASMR' width='80%'/>
         <p>
-          The <a target='_blank' rel='noopener noreferrer' href={ORGASMR_DEMO_SHOWCASE_URL}>final performance</a> (same link as embedded video above but starting at 1:16) took place at Stanford's CCRMA building, where dozens of curious attendees explored the orgASMR alongside 16 other student-designed hybrid instruments. The orgASMR withstood the hands and heads of many users throughout the event. The culmination of my work was performing a musical "piece" in front of the audience to showcase the novelty of my instrument. Even my dad attended, and I think he may have cried with what I only hope were tears of joy.
+          The final performance took place at Stanford's CCRMA building, where dozens of curious attendees explored the orgASMR alongside 16 other student-designed hybrid instruments. The orgASMR withstood the hands and heads of many users throughout the event. The culmination of my work was performing a musical "piece" in front of the audience to showcase the novelty of my instrument. Even my dad attended, and I think he may have cried with what I only hope were tears of joy.
         </p>
       </div>
       <hr className="solid"></hr>

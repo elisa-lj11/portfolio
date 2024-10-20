@@ -381,7 +381,7 @@ const LocalHive = () => {
         <span><b>Validity:</b></span>
         <ul>
           <li>
-            Our hypothesis was valid, as tasks required community members to collaborate.
+            Our hypothesis was valid, as the visibility of each member's skills enabled more effective collaboration to complete tasks.
           </li>
           <li>
             A new assumption emerged that some members need to start with social capital to post tasks.

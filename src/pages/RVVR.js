@@ -54,7 +54,7 @@ const RVVR = () => {
           <iframe className="responsive-iframe" src={VIDEO_EMBED_URL} title="RV VR" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <br></br>
-        <i style={{ display: 'flex', justifyContent: 'center' }}>Drag the video to rotate the viewpoint</i>
+        <i style={{ display: 'flex', justifyContent: 'center', fontWeight: 'bold' }}>Drag the video to rotate the viewpoint</i>
         <p>
           RV VR is an immersive experience that allows viewers to see first-hand what transient life in a recreational vehicle is like in Silicon Valley. Published alongside this <a target='_blank' rel='noopener noreferrer' href={ARTICLE_URL}>Peninsula Press article</a>, the six-and-a-half-minute video harnesses immersive technology to create an experience that captures the realities of the Bay Area housing crisis in their rawest form.
         </p>

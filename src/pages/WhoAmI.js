@@ -173,17 +173,10 @@ const WhoAmI = () => {
       <hr className="solid"></hr>
       <div className="section" id='experience'>
         <h2>Experience</h2>
-        <h3>VHIL</h3>
-        <i>September 2015 - December 2016<br />March 2019 - June 2019</i>
+        <h3>Strivr</h3>
+        <i>April 2020 - January 2024</i>
         <p>
-          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to develop software for experimental designs, and later returned as a lab assistant to help facilitate experimental studies.
-        </p>
-        <br />
-        <br />
-        <h3>High Fidelity</h3>
-        <i>November 2017 - June 2018</i>
-        <p>
-          In between my junior and senior years, I took an opportunity to work full time as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, formerly a social virtual reality startup based in San Francisco. I was part of the Content Prototyping team, where we developed innovative content to showcase our platform's potential, engage users, and inspire developers and content creators to push creative boundaries. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${HIFI_PAGE_RELATIVE_PATH}`}>High Fidelity project page</a>.
+          After returning from Asia, I joined <a target='_blank' rel='noopener noreferrer' href={STRIVR_URL}>Strivr</a>, an end-to-end immersive learning platform for enterprise training, as a software engineer on the Immersive Experiences team, where we developed user-facing interactions in virtual reality to facilitate immersive learning and enable a world-class, intuitive experience for users of varying VR familiarity. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${STRIVR_PAGE_RELATIVE_PATH}`}>Strivr project page</a>.
         </p>
         <br />
         <br />
@@ -194,10 +187,17 @@ const WhoAmI = () => {
         </p>
         <br />
         <br />
-        <h3>Strivr</h3>
-        <i>April 2020 - January 2024</i>
+        <h3>High Fidelity</h3>
+        <i>November 2017 - June 2018</i>
         <p>
-          After returning from Asia, I joined <a target='_blank' rel='noopener noreferrer' href={STRIVR_URL}>Strivr</a>, an end-to-end immersive learning platform for enterprise training, as a software engineer on the Immersive Experiences team, where we developed user-facing interactions in virtual reality to facilitate immersive learning and enable a world-class, intuitive experience for users of varying VR familiarity. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${STRIVR_PAGE_RELATIVE_PATH}`}>Strivr project page</a>.
+          In between my junior and senior years, I took an opportunity to work full time as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, formerly a social virtual reality startup based in San Francisco. I was part of the Content Prototyping team, where we developed innovative content to showcase our platform's potential, engage users, and inspire developers and content creators to push creative boundaries. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${HIFI_PAGE_RELATIVE_PATH}`}>High Fidelity project page</a>.
+        </p>
+        <br />
+        <br />
+        <h3>VHIL</h3>
+        <i>September 2015 - December 2016<br />March 2019 - June 2019</i>
+        <p>
+          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to develop software for experimental designs, and later returned as a lab assistant to help facilitate experimental studies.
         </p>
         <br />
         <br />
