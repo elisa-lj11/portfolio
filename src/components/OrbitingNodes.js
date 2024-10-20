@@ -115,7 +115,12 @@ class OrbitingNodes {
 
   createNode(nodeInfo, startingPosition, angle) {
     const geometry = new THREE.SphereGeometry(nodeInfo.nodeRadius, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color: nodeInfo.color });
+
+    const material = new THREE.MeshPhongMaterial({
+      color: nodeInfo.color, // Node color
+      shininess: 25,  // Higher shininess for a more reflective surface
+      specular: 0xffffff, // Color of the specular reflection (white for high gloss)
+    });
 
     const node = new THREE.Mesh(geometry, material);
 
