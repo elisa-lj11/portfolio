@@ -14,7 +14,7 @@ class OrbitingNodes {
         titleMobile: 'Work: Strivr',
         nodeRadius: 0.4,
         finalRadius: 3.5,
-        color: 0x261669,
+        color: 0x2d3cdc,
       },
       {
         id: 'local-hive',
@@ -30,7 +30,7 @@ class OrbitingNodes {
         titleMobile: 'Work: High Fidelity',
         nodeRadius: 0.25,
         finalRadius: 3.5,
-        color: 0x66b1f2,
+        color: 0x23ceff,
       },
       {
         id: 'orgasmr',
@@ -38,7 +38,7 @@ class OrbitingNodes {
         titleMobile: 'Stanford: "orgASMR"',
         nodeRadius: 0.25,
         finalRadius: 6.0,
-        color: 0x111582,
+        color: 0x758abf,
       },
       {
         id: 'rv-vr',
