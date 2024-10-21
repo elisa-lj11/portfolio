@@ -15,9 +15,6 @@ import SKYBOX from '../assets/models/milkyway.glb';
 // Custom cursor asset generated with ChatGPT
 import rocketCursor from '../assets/images/rocketship-cursor.png';
 
-// Path to Accessible page
-const ACCESSIBLE_PAGE_RELATIVE_PATH = '#/accessible';
-
 // To track cursor intersection
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
@@ -83,6 +80,10 @@ const Home = () => {
 
   const [isFading, setIsFading] = useState(true); // State to control fade
   const navigate = useNavigate(); // Hook to navigate between routes
+
+  const handleNavigateToAccessible = () => {
+    navigate('/accessible');
+  };
 
   // Default positions for desktop and mobile
   const DEFAULT_DESKTOP_CAMERA_POSITION = new THREE.Vector3(4.42, 2.64, 0.21);
@@ -188,6 +189,21 @@ const Home = () => {
     // Start the animation loop and trigger fade-in
     animationLoop();
     setIsFading(false); // This triggers the fade-out of the black overlay
+  };
+
+  // Convert the node's 3D position to 2D screen coordinates
+  const getScreenPosition = (node, camera, renderer) => {
+    const vector = new THREE.Vector3();
+    node.getWorldPosition(vector);
+    vector.project(camera);
+
+    const halfWidth = renderer.domElement.clientWidth / 2;
+    const halfHeight = renderer.domElement.clientHeight / 2;
+
+    return {
+      x: vector.x * halfWidth + halfWidth,
+      y: -(vector.y * halfHeight) + halfHeight
+    };
   };
 
   // Smooth reset function also needs to be defined outside of useEffect
@@ -404,21 +420,6 @@ const Home = () => {
     };
   }, []); // Empty dependency array, runs once on mount
 
-  // Convert the node's 3D position to 2D screen coordinates
-  const getScreenPosition = (node, camera, renderer) => {
-    const vector = new THREE.Vector3();
-    node.getWorldPosition(vector);
-    vector.project(camera);
-
-    const halfWidth = renderer.domElement.clientWidth / 2;
-    const halfHeight = renderer.domElement.clientHeight / 2;
-
-    return {
-      x: vector.x * halfWidth + halfWidth,
-      y: -(vector.y * halfHeight) + halfHeight
-    };
-  };
-
   return (
     <div ref={mountRef} className="scene-container">
       {/* Use CSS class to control fading effect */}
@@ -434,7 +435,9 @@ const Home = () => {
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and scroll to navigate the space<br></br>
           &gt; Press the "Space" key to reset the view<br></br>
-          <a href={`${process.env.PUBLIC_PATH}${ACCESSIBLE_PAGE_RELATIVE_PATH}`}>&gt; Accessible site</a>
+          <span className="span-link" onClick={handleNavigateToAccessible}>
+            &gt; Accessible site
+          </span>
         </p>
       </div>
       <div id="instruction-text-mobile">
@@ -442,7 +445,9 @@ const Home = () => {
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and zoom to navigate the space<br></br>
           &gt; Triple-tap to reset the view<br></br>
-          <a href={`${process.env.PUBLIC_PATH}${ACCESSIBLE_PAGE_RELATIVE_PATH}`}>&gt; Accessible site</a>
+          <span className="span-link" onClick={handleNavigateToAccessible}>
+            &gt; Accessible site
+          </span>
         </p>
       </div>
     </div>
