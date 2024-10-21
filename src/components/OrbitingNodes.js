@@ -1,6 +1,9 @@
 // src/components/OrbitingNodes.js
 import * as THREE from 'three';
 
+// Bump map generated from https://robson.plus/white-noise-image-generator/
+import bumpMapImageUrl from '../assets/images/node-bump-map.png';
+
 class OrbitingNodes {
   constructor() {
     // Initialize start height above the galaxy center here to use in the array below
@@ -116,10 +119,18 @@ class OrbitingNodes {
   createNode(nodeInfo, startingPosition, angle) {
     const geometry = new THREE.SphereGeometry(nodeInfo.nodeRadius, 32, 32);
 
+    // Load a predefined bump map texture (for simplicity, using a random noise image)
+    const bumpTexture = new THREE.TextureLoader().load(bumpMapImageUrl);
+
+    // Randomize the bumpScale for each node to make them look unique
+    const randomBumpScale = Math.random() * 0.2 + 0.1; // Random value between 0.1 and 0.3
+
     const material = new THREE.MeshPhongMaterial({
       color: nodeInfo.color, // Node color
       shininess: 30,  // Higher shininess for a more reflective surface
       specular: 0xffffff, // Color of the specular reflection (white for high gloss)
+      bumpMap: bumpTexture, // Apply the bump map
+      bumpScale: randomBumpScale // Randomize the bump scale for variation
     });
 
     const node = new THREE.Mesh(geometry, material);
