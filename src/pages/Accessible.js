@@ -1,5 +1,6 @@
 // src/pages/Accessible.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PageTemplate from '../components/PageTemplate';
 
 import strivrImageUrl from '../assets/images/accessible/strivr.png';
@@ -11,6 +12,7 @@ import lucidDreamingImageUrl from '../assets/images/accessible/lucid-dreaming.pn
 
 const Accessible = () => {
   const [refs, setRefs] = useState([]);
+  const navigate = useNavigate(); // Hook to navigate between routes
 
   // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
@@ -27,6 +29,10 @@ const Accessible = () => {
     { id: 'lucid-dreaming', title: '"Lucid Dreaming": A 360° Video Experience', imageUrl: lucidDreamingImageUrl },
   ];
 
+  const handleNavigate = (id) => {
+    navigate(`/${id}`);
+  };
+
   return (
     <PageTemplate
       refs={refs} 
@@ -41,17 +47,27 @@ const Accessible = () => {
           A far-out portfolio of my projects from work, school, and leisure. Select a button to get a deeper look. 
         </p>
         <p>
-          <a href={`${process.env.PUBLIC_PATH}#/who-am-i`}>Who am I?</a>
+          <span 
+            className="span-link"
+            onClick={() => handleNavigate('who-am-i')} 
+          >
+            Who am I?
+          </span>
         </p>
       </div>
       <hr className="solid" />
       <div className="grid-container">
         {sections.map(section => (
-          <a key={section.id} href={`${process.env.PUBLIC_PATH}#/${section.id}`} className="button-accessible">
+          <div
+            key={section.id}
+            className="button-accessible"
+            onClick={() => handleNavigate(section.id)}
+            style={{ cursor: 'pointer' }}
+          >
             <div className="button-title" style={{ backgroundImage: `url(${section.imageUrl})` }}>
               <span>{section.title}</span>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </PageTemplate>
