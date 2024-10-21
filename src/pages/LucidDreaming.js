@@ -93,10 +93,20 @@ const LucidDreaming = () => {
         <h2>Reflections</h2>
         <ul>
           <li>
-            <b>The more working parts, the more room for error.</b> With so many moving parts to produce a 360&deg; video in 2016, it was very easy to make mistakes early on that could snowball down the production pipeline. My patience was tested through this production due to fickle technology and lengthy export times, but I was proud that I could publish a working 360&deg; video, even if it took longer than expected.
+            <b>The more working parts, the more room for error.</b>
+            <ul>
+              <li>
+                With so many moving parts to produce a 360&deg; video in 2016, it was very easy to make mistakes early on that could snowball down the production pipeline. My patience was tested through this production due to fickle technology and lengthy export times, but I was proud that I could publish a working 360&deg; video, even if it took longer than expected.
+              </li>
+            </ul>
           </li>
           <li>
-            <b>Content is key!</b> Even with the latest technology, the content needed to complement the medium for the learning experience to be truly effective. I dedicated a lot of time revising my script as I encountered new technical challenges in 360-video production (such as lower-than-expected video resolution) that could prevent the material from standing out.
+            <b>Content is key.</b>
+            <ul>
+              <li>
+                Even with the latest technology, the content needed to complement the medium for the learning experience to be truly effective. I dedicated a lot of time revising my script as I encountered new technical challenges in 360-video production (such as lower-than-expected video resolution) that could prevent the material from standing out.
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

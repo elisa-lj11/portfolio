@@ -337,13 +337,28 @@ const OrgASMR = () => {
         <h2>Reflections</h2>
         <ul>
           <li>
-            <b>It's okay to get crafty on creative projects.</b> I hadn't originally planned to design rings to secure the head scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had plenty of resources available such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
+            <b>It's okay to get crafty on creative projects.</b>
+            <ul>
+              <li>
+                I hadn't originally planned to design rings to secure the head scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had plenty of resources available such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
+              </li>  
+            </ul>
           </li>
           <li>
-            <b>It's also okay to lean into the craziness.</b> I spent many late nights in the product realization lab at CCRMA, which admittedly was not good for my sleep schedule, but perhaps disinhibited me enough to entertain otherwise silly ideas such as using a head scratcher as a musical instrument. With such an open-ended final project, I felt free to explore how far I could push this quirky idea into reality.
+            <b>It's also okay to lean into the craziness.</b>
+            <ul>
+              <li>
+                I spent many late nights in the product realization lab at CCRMA, which admittedly was not good for my sleep schedule, but perhaps disinhibited me enough to entertain otherwise silly ideas such as using a head scratcher as a musical instrument. With such an open-ended final project, I felt free to explore how far I could push this quirky idea into reality.
+              </li>  
+            </ul>
           </li>
           <li>
-            <b>Feedback is essential along every design iteration step.</b> I was grateful to work alongside such creative, talented, and dedicated students and professors who were forthcoming with their suggestions for improvement. Not only did they lean into the craziness with me, but they helped me see the ways in which I could take the orgASMR to the next level. A great product emerges from a great team.
+            <b>Feedback is essential along every design iteration step.</b>
+            <ul>
+              <li>
+                I was grateful to work alongside such creative, talented, and dedicated students and professors who were forthcoming with their suggestions for improvement. Not only did they lean into the craziness with me, but they helped me see the ways in which I could take the orgASMR to the next level. A great product emerges from a great team.
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

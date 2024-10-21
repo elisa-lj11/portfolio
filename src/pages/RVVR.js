@@ -82,10 +82,20 @@ const RVVR = () => {
         <h2>Reflections</h2>
         <ul>
           <li>
-            <b>360&deg; video capture technology has come a long way!</b> Back when I produced my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${LUCID_DREAMING_PAGE_RELATIVE_PATH}`}>"Lucid Dreaming 360" video</a>, I had to rely on numerous technical hacks to make the video look good. In just three years, the technology had advanced significantly, which was exciting to witness, especially as someone deeply immersed in the virtual reality industry. It was reassuring to see such progress being made toward technological advancement and wider public access.
+            <b>360&deg; video capture technology has come a long way!</b>
+            <ul>
+              <li>
+                Back when I produced my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${LUCID_DREAMING_PAGE_RELATIVE_PATH}`}>"Lucid Dreaming 360" video</a>, I had to rely on numerous technical hacks to make the video look good. In just three years, the technology had advanced significantly, which was exciting to witness, especially as someone deeply immersed in the virtual reality industry. It was reassuring to see such progress being made toward technological advancement and wider public access.
+              </li>
+            </ul>
           </li>
           <li>
-            <b>Great immersive storytelling comes with great responsibility.</b> While we were enthusiastic about using an immersive medium to tell this story, we had to exercise careful judgment in selecting which parts of interviews to include and how much of our interviewees' lives to reveal. A home is a personal space, and given the privilege of sharing their stories, we needed to respect their agency and privacy.
+            <b>Great immersive storytelling comes with great responsibility.</b>
+            <ul>
+              <li>
+                While we were enthusiastic about using an immersive medium to tell this story, we had to exercise careful judgment in selecting which parts of interviews to include and how much of our interviewees' lives to reveal. A home is a personal space, and given the privilege of sharing their stories, we needed to respect their agency and privacy.
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

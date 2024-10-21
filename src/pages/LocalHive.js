@@ -982,13 +982,28 @@ const LocalHive = () => {
         <h2>Reflections</h2>
         <ul>
           <li>
-            Needfinding is a crucial step in product development, often overlooked if you focus too much on your initial solution. To apply human-centered design effectively, it's essential to step outside your perspective and listen objectively to your target users before making assumptions.
+            <b>Listen first, design second.</b>
+            <ul>
+              <li>
+                Needfinding is a crucial step in product development, often overlooked if you focus too much on your initial solution. To apply human-centered design effectively, it's essential to step outside your perspective and listen objectively to your target users before making assumptions.
+              </li>
+            </ul>
           </li>
           <li>
-            Avoid getting attached to early design iterations; user testing will reveal areas for improvement, often highlighting conflicting preferences among users. Refining a design requires balancing the needs of the majority without neglecting the minority.
+            <b>User feedback drives better design.</b>
+            <ul>
+              <li>
+                Avoid getting attached to early design iterations; user testing will reveal areas for improvement, often highlighting conflicting preferences among users. Refining a design requires balancing the needs of the majority without neglecting the minority.
+              </li>
+            </ul>
           </li>
           <li>
-            While humility is important, it's gratifying to recognize when your instincts are correct. We believed in leveraging social capital for community growth, and user tests consistently validated our approach of using volunteer time as a currency for supporting community projects, despite numerous adjustments to the specifics of "Honey Money."
+            <b>Trust your instincts, but validate with users.</b>
+            <ul>
+              <li>
+                While humility is important, it's gratifying to recognize when your instincts are correct. We believed in leveraging social capital for community growth, and user tests consistently validated our approach of using volunteer time as a currency for supporting community projects, despite numerous adjustments to the specifics of "Honey Money."
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
