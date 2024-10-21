@@ -41,7 +41,15 @@ class OrbitingNodes {
         titleMobile: 'Stanford: "orgASMR"',
         nodeRadius: 0.25,
         finalRadius: 6.0,
-        color: 0x758abf,
+        color: 0xe6a063,
+      },
+      {
+        id: 'window',
+        title: '"Window": An AR Clothes Shopping App',
+        titleMobile: 'Stanford: "Window"',
+        nodeRadius: 0.25,
+        finalRadius: 6.0,
+        color: 0x6561e0,
       },
       {
         id: 'rv-vr',
@@ -56,7 +64,7 @@ class OrbitingNodes {
         title: '"Lucid Dreaming": A 360° Video Experience',
         titleMobile: 'Stanford: "Lucid Dreaming"',
         nodeRadius: 0.2,
-        finalRadius: 6.0,
+        finalRadius: 7.0,
         color: 0xd47b7b,
       }
     ];
