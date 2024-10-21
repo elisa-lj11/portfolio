@@ -27,7 +27,7 @@ const initializeLighting = (scene) => {
   const ambLight = new THREE.AmbientLight(0xc6b5f5, 4);
   scene.add(ambLight);
 
-  const pointLight = new THREE.PointLight(0xfae696, 3);
+  const pointLight = new THREE.PointLight(0xfae696, 5);
   pointLight.position.set(0, -2, 0);
   scene.add(pointLight);
 };
