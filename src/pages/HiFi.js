@@ -147,13 +147,28 @@ const HiFi = () => {
         <h2>Reflections</h2>
         <ul>
           <li>
-            <b>In the startup world, agility is essential.</b> High Fidelity was my first full-time developer role, providing valuable insight into how quickly a small startup can pivot between projects, features, and requirements. I learned to be a versatile developer, ready to wear multiple hats to meet the company's evolving needs.
+            <b>In the startup world, agility is essential.</b>
+            <ul>
+              <li>
+                High Fidelity was my first full-time developer role, providing valuable insight into how quickly a small startup can pivot between projects, features, and requirements. I learned to be a versatile developer, ready to wear multiple hats to meet the company's evolving needs.
+              </li>
+            </ul>
           </li>
           <li>
-            <b>Push for your ideas!</b> In the same breath, working at a small startup allowed me to passionately advocate for ideas that I really believed in, providing me with the freedom to implement them effectively.
+            <b>Push for your ideas.</b>
+            <ul>
+              <li>
+                In the same breath, working at a small startup allowed me to passionately advocate for ideas that I really believed in, providing me with the freedom to implement them effectively.
+              </li>
+            </ul>
           </li>
           <li>
-            <b>The more you engage with users, the better you can serve them.</b> I was fortunate to work on a product that allowed us to virtually share space with our users. Thanks to High Fidelity's social networking model, I had the opportunity to converse with dozens of users while developing, testing, and iterating on content. Though formal user testing is crucial for product growth, my direct exposure to user feedback made me more effective in my role as a content/prototype developer, as it deepened my empathy for our users.
+            <b>The more you engage with users, the better you can serve them.</b>
+            <ul>
+              <li>
+                I was fortunate to work on a product that allowed us to virtually share space with our users. Thanks to High Fidelity's social networking model, I had the opportunity to converse with dozens of users while developing, testing, and iterating on content. Though formal user testing is crucial for product growth, my direct exposure to user feedback made me more effective in my role as a content/prototype developer, as it deepened my empathy for our users.
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
