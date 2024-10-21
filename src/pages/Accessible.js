@@ -5,8 +5,9 @@ import PageTemplate from '../components/PageTemplate';
 
 import strivrImageUrl from '../assets/images/accessible/strivr.png';
 import localHiveImageUrl from '../assets/images/accessible/local-hive.png';
-import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
 import hifiImageUrl from '../assets/images/accessible/hifi.png';
+import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
+import windowImageUrl from '../assets/images/accessible/window.png';
 import rvvrImageUrl from '../assets/images/accessible/rv-vr.png';
 import lucidDreamingImageUrl from '../assets/images/accessible/lucid-dreaming.png';
 
@@ -19,12 +20,13 @@ const Accessible = () => {
     generateRefsFunction();  // Call the function that scans the DOM and sets the refs
   };
 
-  // Define your sections
-  const sections = [
+  // Section data
+  const sectionData = [
     { id: 'strivr', title: 'Strivr: "Immersive Lobby" Upgrade', imageUrl: strivrImageUrl },
     { id: 'local-hive', title: '"Local Hive": A Human-Centered AI Project', imageUrl: localHiveImageUrl },
     { id: 'hifi', title: 'High Fidelity: Content Prototyping', imageUrl: hifiImageUrl },
     { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
+    { id: 'window', title: '"Window": An AR Clothes Shopping App', imageUrl: windowImageUrl },
     { id: 'rv-vr', title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis', imageUrl: rvvrImageUrl },
     { id: 'lucid-dreaming', title: '"Lucid Dreaming": A 360° Video Experience', imageUrl: lucidDreamingImageUrl },
   ];
@@ -57,7 +59,7 @@ const Accessible = () => {
       </div>
       <hr className="solid" />
       <div className="grid-container">
-        {sections.map(section => (
+        {sectionData.map(section => (
           <div
             key={section.id}
             className="button-accessible"

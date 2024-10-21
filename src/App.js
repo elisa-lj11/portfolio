@@ -5,8 +5,9 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Strivr from './pages/Strivr';
 import LocalHive from './pages/LocalHive';
-import OrgASMR from './pages/OrgASMR';
 import HiFi from './pages/HiFi';
+import OrgASMR from './pages/OrgASMR';
+import Window from './pages/Window';
 import RVVR from './pages/RVVR';
 import LucidDreaming from './pages/LucidDreaming';
 
@@ -25,8 +26,9 @@ const App = () => {
           <Route path="/" element={< Home />} />
           <Route path="/strivr" element={< Strivr />} />
           <Route path="/local-hive" element={< LocalHive />} />
-          <Route path="/orgasmr" element={< OrgASMR />} />
           <Route path="/hifi" element={< HiFi />} />
+          <Route path="/orgasmr" element={< OrgASMR />} />
+          <Route path="/window" element={< Window />} />
           <Route path="/rv-vr" element={< RVVR />} />
           <Route path="/lucid-dreaming" element={< LucidDreaming />} />
           {/* About Me page */}
