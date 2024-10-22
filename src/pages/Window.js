@@ -452,7 +452,7 @@ const Window = () => {
               <img
               src={heuristicViolationsImageUrl}
               alt='Heuristic Violations Summary'
-              style={{ width: '100%', display: 'inline-block' }}
+              style={{ width: '60%', display: 'inline-block' }}
             />
             <figcaption>Heuristic violations summary</figcaption>
           </figure>
@@ -594,7 +594,7 @@ const Window = () => {
           Due to time constraints leading up to our end-of-quarter project fair, we were unable to implement everything we had planned. Custom clothing measurements, which would allow users to see how items fit different body types, had to be left out of the high-fidelity prototype, though it would be a top priority for future updates. We also set aside store scanning features, which would require collaboration with stores and recognition technology, to focus on core functionality. Finally, our "virtual closet" concept, intended for favoriting and revisiting items across store locations, was postponed.
         </p>
         <p>
-          All things considered, we were proud to have a working AR-enabled prototype ready to present to the world.
+          All in all, we finally had a working AR-enabled prototype ready to present to the world.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -613,13 +613,39 @@ const Window = () => {
             <figcaption>Window poster</figcaption>
           </figure>
         </div>
+        <p>
+          After 10 weeks of late nights and constant iteration, we were proud to take our AR window shopping concept from a paper prototype to a functional app. It was an intense but rewarding process, where we gained experience in design strategies, teamwork, marketing, and collaborative coding.
+        </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='reflections'>
         <h2>Reflections</h2>
-        <p>
-          Add more specific content here.
-        </p>
+        <ul>
+          <li>
+            <b>Step outside of your comfort zone when seeking user insights.</b>
+            <ul>
+              <li>
+                Initially, I was hesitant to approach strangers for feedback on our app, but I was pleasantly surprised by how willing many of them were to help. Engaging with people outside of my bubble provided valuable insights into the diverse use cases for our app.
+              </li>  
+            </ul>
+          </li>
+          <li>
+            <b>Let go of unproductive ideas.</b>
+            <ul>
+              <li>
+                We invested too much time trying to refine our "Closet" feature for better user understanding, rather than asking users whether it would be useful to them. If we had prioritized gathering feedback on this feature earlier, we might have recognized its lack of appeal sooner and avoided the frustration of attempting to improve something that users didn't really want.
+              </li>  
+            </ul>
+          </li>
+          <li>
+            <b>Hype can work wonders!</b>
+            <ul>
+              <li>
+                While we may not have achieved all our personal goals for the app, we generated enough excitement that users were more enthusiastic about its potential than any shortcomings. In such a short development cycle, it was incredibly motivating to see our users eagerly anticipating the next version of our prototype!
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </PageTemplate>
   );
