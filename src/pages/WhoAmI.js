@@ -55,7 +55,7 @@ const WhoAmI = () => {
           I'm a bit of a night owl. When I'm not outside gazing at the stars, wondering how we ended up where we are as these little sentient specks on this vast cosmic canvas floating aimlessly in the ether, I'm up late daydreaming of unconventional ways to make sense of our existence.
         </p>
         <p>
-          I've dabbled in a lot of things: I'm an engineer, a singer, a designer, a festival-goer, a teacher, a pianist, a petsitter, a student, a gaymer, a writer, a long furby enthusiast; not in any particular order. I ask myself "Who am I?" every day, and I wish I could give you a better answer. I guess, in the most abstract sense, I am whoever I am in this exact moment, and any artifacts that remain from my past are just vestiges of who I used to be. Maybe a better question is "who do I want to become?" Now for this, I can give a relatively short answer:
+          I've dabbled in a lot of things: I'm an engineer, a singer, a designer, a festival-goer, a teacher, a pianist, a petsitter, a student, a gaymer, a writer, a long furby enthusiast; not in any particular order. I ask myself "Who am I?" every day, and I wish I could give you a better answer. I guess, in the most abstract sense, I am whoever I am in this exact moment, and any artifacts that remain from my past are just echoes of who I used to be. Maybe a better question is "who do I want to become?" Now for this, I can give a relatively short answer:
         </p>
         <h3>
           <b>I want to become a person who makes a positive impact in this slice of spacetime that we concurrently experience.</b>

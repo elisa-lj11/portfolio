@@ -130,7 +130,7 @@ const Strivr = () => {
           </figure>
         </div>
         <p>
-          Extrapolating outward from these concrete issues, we broke our problem down into three "How might we?" (HMW) statements:
+          Extrapolating outward from these concrete issues, we broke our problem down into three "How Might We" (HMW) statements:
         </p>
         <ol type="1">
           <b>
@@ -209,7 +209,7 @@ const Strivr = () => {
                 alt="Experience Prototype 1"
                 style={{ width: '70%', display: 'inline-block', marginRight: '2%' }}
               />
-              <figcaption>Experience Prototype 1: "Free Roam"</figcaption>
+              <figcaption>EP #1: "Free Roam"</figcaption>
             </figure>
             <figure>
               <img
@@ -217,7 +217,7 @@ const Strivr = () => {
                 alt="Experience Prototype 2"
                 style={{ width: '70%', display: 'inline-block' }}
               />
-              <figcaption>Experience Prototype 2: "Rotate"</figcaption>
+              <figcaption>EP #2: "Rotate"</figcaption>
             </figure>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
@@ -227,7 +227,7 @@ const Strivr = () => {
                 alt="Experience Prototype 3"
                 style={{ width: '60%', display: 'inline-block' }}
               />
-              <figcaption>Experience Prototype 3: "Teleport"</figcaption>
+              <figcaption>EP #3: "Teleport"</figcaption>
             </figure>
           </div>
           <p>
@@ -270,8 +270,8 @@ const Strivr = () => {
         </p>
       </div>
       <hr className="solid"></hr>
-      <div className="section" id='lofi-prototypes'>
-        <h2>Lo-Fi Prototypes</h2>
+      <div className="section" id='low-fi-prototypes'>
+        <h2>Low-Fidelity Prototypes</h2>
         <p>
           We worked on two kinds of prototypes: one for the new UI and the one for the virtual environment.
         </p>
