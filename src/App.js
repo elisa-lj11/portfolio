@@ -1,6 +1,6 @@
 // src/App.js
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import Home from './components/Home';
 import Strivr from './pages/Strivr';
@@ -17,10 +17,25 @@ import NotFound from './pages/NotFound';
 
 import './assets/style/fonts.css';
 
+const HashDecoder = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const decodedHash = decodeURIComponent(window.location.hash);
+
+    if (decodedHash !== window.location.hash) {
+      window.location.hash = decodedHash; // Update URL with decoded hash
+    }
+  }, [location]);
+
+  return null;
+};
+
 const App = () => {
   return (
     <div className="App">
       <Router>
+        <HashDecoder />
         <Routes>
           {/* Update node map in OrbitingNodes.js with new routes */}
           <Route path="/" element={< Home />} />
