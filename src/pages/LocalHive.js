@@ -97,19 +97,19 @@ const LocalHive = () => {
         </p>
         <ol>
           <li>
-            <b>Community Description</b>: Characteristics, demographics, and culture.
+            <b>Community Description:</b> Characteristics, demographics, and culture.
           </li>
           <li>
-            <b>Community Problems</b>: Challenges like poverty, violence, and resource scarcity.
+            <b>Community Problems:</b> Challenges like poverty, violence, and resource scarcity.
           </li>
           <li>
-            <b>Interconnectivity</b>: Social cohesion and relationships with other communities.
+            <b>Interconnectivity:</b> Social cohesion and relationships with other communities.
           </li>
           <li>
-            <b>Outstanding Members/Projects</b>: Key figures or initiatives driving positive change.
+            <b>Outstanding Members/Projects:</b> Key figures or initiatives driving positive change.
           </li>
           <li>
-            <b>Applying Social Capital</b>: Interest in time banking for community improvement.
+            <b>Applying Social Capital:</b> Interest in time banking for community improvement.
           </li>
         </ol>
         <p>
@@ -218,7 +218,7 @@ const LocalHive = () => {
           </li>
         </ol>
         <p>
-          With these insights, we felt prepared to move on to generating "Point of View" and "How Might We?" statements. 
+          With these insights, we felt prepared to move on to generating "Point of View" and "How Might We" statements. 
         </p>
       </div>
       <hr className="solid"></hr>
@@ -239,7 +239,7 @@ const LocalHive = () => {
           </li>
         </ol>
         <p>
-          These POVs led us to brainstorm 53 "How might we?" statements, which we organized into affinity groups. After voting, we focused on three themes:
+          These POVs led us to brainstorm 53 "How Might We" (HMW) statements, which we organized into affinity groups. After voting, we focused on three themes:
         </p>
         <ul>
           <li>
@@ -343,7 +343,7 @@ const LocalHive = () => {
         <p>
           We developed three experience prototypes based on our solution ideation exercise. Each prototype tested a hypothesis over a week and analyzed the results.
         </p>
-        <h3>EP 1: Skills and Services Marketplace</h3>
+        <h3>EP #1: Skills and Services Marketplace</h3>
         <img src={e1Prototype1ImageUrl} alt='EP 1 Prototype 1' width='100%'/>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -387,7 +387,7 @@ const LocalHive = () => {
             A new assumption emerged that some members need to start with social capital to post tasks.
           </li>
         </ul>
-        <h3>EP 2: Hold a "Hackathon" of Community Service</h3>
+        <h3>EP #2: Hold a "Hackathon" of Community Service</h3>
         <p>
           <b>Hypothesis:</b> Shared activities enhance social connections and understanding of individual skills.
         </p>
@@ -413,7 +413,7 @@ const LocalHive = () => {
             The hypothesis was not valid; low-cohesion communities struggle to identify available help and lack knowledge of others' skills.
           </li>
         </ul>
-        <h3>EP 3: Creating More Leaders</h3>
+        <h3>EP #3: Creating More Leaders</h3>
         <p>
           <b>Hypothesis:</b> Taking ownership fosters leadership development.
         </p>
@@ -441,7 +441,7 @@ const LocalHive = () => {
         </ul>
         <h3>EP Outcomes: Analysis</h3>
         <p>
-          After testing the prototypes, we chose to move forward with EP 1, the "Skills and Services Marketplace," as it showed the most promise for fostering community cohesion. We were ready for the initial prototyping stages.
+          After testing the prototypes, we chose to move forward with EP #1, the "Skills and Services Marketplace," as it showed the most promise for fostering community cohesion. We were ready for the initial prototyping stages.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -569,7 +569,7 @@ const LocalHive = () => {
               alt='Low-Fi Overview'
               style={{ width: '100%', display: 'inline-block' }}
             />
-            <figcaption>Low-Fi prototype</figcaption>
+            <figcaption>Low-fi prototype</figcaption>
           </figure>
         </div>
         <p>
@@ -672,7 +672,7 @@ const LocalHive = () => {
               alt='Med-Fi #1 Figma overview'
               style={{ width: '100%', display: 'inline-block' }}
             />
-            <figcaption>Med-Fi #1 Figma overview</figcaption>
+            <figcaption>Med-fi #1 Figma overview</figcaption>
           </figure>
         </div>
         <p>
@@ -685,7 +685,7 @@ const LocalHive = () => {
               alt='"Join a Project" Task Flow'
               style={{ width: '100%', display: 'inline-block' }}
             />
-            <figcaption>Med-Fi "Join a Project" task flow</figcaption>
+            <figcaption>Med-fi "Join a Project" task flow</figcaption>
           </figure>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
@@ -695,7 +695,7 @@ const LocalHive = () => {
               alt='"Create a Project" Task Flow'
               style={{ width: '100%', display: 'inline-block' }}
             />
-            <figcaption>Med-Fi "Create a Project" task flow</figcaption>
+            <figcaption>Med-fi "Create a Project" task flow</figcaption>
           </figure>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
@@ -705,7 +705,7 @@ const LocalHive = () => {
               alt='"Monitor a Community" Task Flow'
               style={{ width: '100%', display: 'inline-block' }}
             />
-            <figcaption>Med-Fi "Monitor a Community" task flow</figcaption>
+            <figcaption>Med-fi "Monitor a Community" task flow</figcaption>
           </figure>
         </div>
         <p>
@@ -809,7 +809,7 @@ const LocalHive = () => {
         </p>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <p style={{ marginLeft: '10%', marginRight: '10%', textAlign: 'justify' }}>
-            <b>[H6: Recognition not recall][Severity: 3]</b>
+            <b>[H6: Recognition not Recall][Severity: 3]</b>
             <br />
             <i>Evaluators: 1, 2, 3, 4</i>
             <br />
@@ -847,7 +847,7 @@ const LocalHive = () => {
               alt='First Med-Fi Prototype Home Screen'
               style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
             />
-            <figcaption>First Med-Fi prototype home screen</figcaption>
+            <figcaption>First med-fi prototype home screen</figcaption>
           </figure>
           <figure>
               <img
@@ -855,7 +855,7 @@ const LocalHive = () => {
               alt='Second Med-Fi Prototype Home Screen'
               style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
             />
-            <figcaption>Second Med-Fi prototype home screen</figcaption>
+            <figcaption>Second med-fi prototype home screen</figcaption>
           </figure>
           <figure>
               <img
@@ -863,7 +863,7 @@ const LocalHive = () => {
               alt='Third Med-Fi Prototype Home Screen'
               style={{ width: '90%', display: 'inline-block' }}
             />
-            <figcaption>Third Med-Fi prototype home screen</figcaption>
+            <figcaption>Third med-fi prototype home screen</figcaption>
           </figure>
         </div>
         <p>
