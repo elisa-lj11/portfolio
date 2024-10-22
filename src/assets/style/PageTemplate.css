@@ -160,6 +160,7 @@ h1, h2, h3 {
 }
 
 .button-accessible {
+  user-select: none;
   text-decoration: none; /* Remove underline from links */
   color: inherit; /* Use the inherited color */
 }
