@@ -76,6 +76,7 @@ header {
 main {
   flex: 1; /* Let the main content take up remaining space */
   overflow-y: auto; /* Allow the main content to scroll */
+  overflow-x: hidden; /* Don't allow horizontal scrolling */
   margin-top: 60px; /* Push content down so it's not hidden by the header */
   position: relative; /* To ensure scrollbar stays visible */
 }
