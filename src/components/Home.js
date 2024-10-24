@@ -274,6 +274,9 @@ const Home = () => {
   };
   
   useEffect(() => {
+    document.body.style.zoom = 1; // Reset the zoom by setting it to the default 1
+    window.scrollTo(0, 0); // Scroll to the top on page load
+
     // Scene setup
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
