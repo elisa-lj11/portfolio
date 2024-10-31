@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A far-out portfolio of my projects from work, school, and leisure",
   "main": "index.js",
-  "homepage": "https://elisa-lj11.github.io/portfolio",
+  "homepage": "https://elisalupin.com",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server .",
     "build": "webpack --mode production",

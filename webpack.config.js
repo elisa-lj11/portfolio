@@ -6,7 +6,7 @@ const path = require('path');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 const developmentRootPath = '/';
-const productionRootPath = '/portfolio/';
+const productionRootPath = '/'; // Used to be '/portfolio' based off 'https://elisa-lj11.github.io/portfolio'
 
 module.exports = {
   entry: './index.js',

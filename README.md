@@ -12,4 +12,7 @@ To run the site locally:
 
 To deploy a build to production:
 `npm run deploy`
-- Visit https://elisa-lj11.github.io/portfolio to see the public website
+- Visit https://elisalupin.com to see the public website
+
+## Resources
+Following this guide for starting a React App from scratch: https://dev.to/ivadyhabimana/how-to-create-a-react-app-without-using-create-react-app-a-step-by-step-guide-30nl
