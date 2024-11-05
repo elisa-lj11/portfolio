@@ -39,7 +39,7 @@ class OrbitingNodes {
         id: 'orgasmr',
         title: '"orgASMR": A Head-Scratching Musical Interface',
         titleMobile: 'Stanford: "orgASMR"',
-        nodeRadius: 0.25,
+        nodeRadius: 0.35,
         finalRadius: 6.0,
         color: 0xe6a063,
       },
