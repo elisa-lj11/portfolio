@@ -32,6 +32,7 @@ import heuristicViolationsImageUrl from '../assets/images/local-hive/heuristic-v
 import medFi1HomeImageUrl from '../assets/images/local-hive/med-fi-1-home.png';
 import medFi2HomeImageUrl from '../assets/images/local-hive/med-fi-2-home.png';
 import medFi3HomeImageUrl from '../assets/images/local-hive/med-fi-3-home.png';
+import fullAppThumbnailImageUrl from '../assets/images/local-hive/full-app-thumbnail.png';
 import fullAppVideoUrl from '../assets/images/local-hive/full-app.mp4';
 import appWebsiteImageUrl from '../assets/images/local-hive/app-website.png';
 import posterImageUrl from '../assets/images/local-hive/poster.png';
@@ -941,7 +942,7 @@ const LocalHive = () => {
       <div className="section" id='final-prototype'>
         <h2>Final Prototype</h2>
         <div className="video-vertical" style={{ height: 'auto', width: '100%' }}>
-          <video controls muted style={{ width: 'auto', height: '70vh' }}>
+          <video controls poster={fullAppThumbnailImageUrl} muted style={{ width: 'auto', height: '70vh' }}>
             <source src={fullAppVideoUrl} type="video/mp4" />
           </video>
         </div>

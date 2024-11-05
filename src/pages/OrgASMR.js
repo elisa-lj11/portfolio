@@ -8,6 +8,7 @@ import STLModel from '../components/STLModel'; // Import the STL model component
 
 import firstSketchImageUrl from '../assets/images/orgasmr/first-sketch.jpg';
 import protoboard1ImageUrl from '../assets/images/orgasmr/protoboard-1.jpg';
+import protoboard1ThumbnailImageUrl from '../assets/images/orgasmr/protoboard-1-thumbnail.png';
 import protoboard1VideoUrl from '../assets/images/orgasmr/protoboard-1.mp4';
 import protoboard2ImageUrl from '../assets/images/orgasmr/protoboard-2.jpg';
 import printImageUrl from '../assets/images/orgasmr/print.jpg';
@@ -151,7 +152,7 @@ const OrgASMR = () => {
           I used a protoboard to wire all of the sensors to the Teensy. The video below demonstrates the chord progressions varying with the Teensy's orientation and the frequency changing with the flex sensor movement.
         </p>
         <div className="video-vertical" style={{ height: 'auto', width: '100%' }}>
-          <video controls style={{ width: 'auto', height: '70vh' }}>
+          <video controls poster={protoboard1ThumbnailImageUrl} style={{ width: 'auto', height: '70vh' }}>
             <source src={protoboard1VideoUrl} type="video/mp4" />
           </video>
         </div>

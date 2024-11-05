@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
 
+import pillThumbnailImageUrl from '../assets/images/hifi/pill-thumbnail.png';
 import PILL_VIDEO_URL from '../assets/images/hifi/pill.mp4';
 
 const HIFI_OVERVIEW_EMBED_URL = 'https://www.youtube.com/embed/3V6Ze7DuF38?si=1MKsHh_zwEaKYXah';
@@ -129,7 +130,7 @@ const HiFi = () => {
       <div className="section" id='other-content'>
         <h2>Other Content</h2>
         <div className="video" style={{ height: 'auto', width: '100%' }}>
-          <video controls muted style={{ width: 'auto', height: '70vh' }}>
+          <video controls poster={pillThumbnailImageUrl} muted style={{ width: 'auto', height: '70vh' }}>
             <source src={PILL_VIDEO_URL} type="video/mp4" />
           </video>
         </div>
