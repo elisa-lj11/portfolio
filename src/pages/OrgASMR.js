@@ -167,9 +167,8 @@ const OrgASMR = () => {
         <p>
           I aimed to design a sleek handle that would both conceal the functional but less aesthetically pleasing components of the orgASMR and complement the instrument's unique concept. To achieve this, I used <a target='_blank' rel='noopener noreferrer' href={SOLIDWORKS_URL}>SolidWorks</a>, a 3D CAD design software, to design the handle. The handle is divided into top and bottom sections, allowing for easy installation of the protoboard, sensors, and Teensy inside.
         </p>
-        <p>
-          <b>Interact with the model below.</b>
-        </p>
+        <i style={{ display: 'flex', justifyContent: 'center', fontWeight: 'bold' }}>Drag and zoom to interact with the model below</i>
+        <br></br>
         <Canvas 
           camera={{
             position: [5, 5, 5], // Change these values to better see your model
