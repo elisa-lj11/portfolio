@@ -50,7 +50,7 @@ const ImmersiveMedia = () => {
       </div>
       <hr className="solid"></hr>
       <div className="section" id='rv-vr'>
-        <h2>"RV VR": A 360&deg; Look into the Bay Area Housing Crisis</h2>
+        <h2>"RV VR": A Look into the Housing Crisis</h2>
         <div className="video-youtube">
           {/* Overlay div for click handling on 360 videos on mobile*/}
           {isMobile && (
@@ -100,7 +100,7 @@ const ImmersiveMedia = () => {
       </div>
       <hr className="solid"></hr>
       <div className="section" id='lucid-dreaming'>
-        <h2>"Lucid Dreaming": A 360&deg; Learning Experience</h2>
+        <h2>"Lucid Dreaming 360": A How-To Video</h2>
         <div className="video-youtube">
           {/* Overlay div for click handling on 360 videos on mobile*/}
           {isMobile && (
