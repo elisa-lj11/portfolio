@@ -8,8 +8,7 @@ import LocalHive from './pages/LocalHive';
 import HiFi from './pages/HiFi';
 import OrgASMR from './pages/OrgASMR';
 import Window from './pages/Window';
-import RVVR from './pages/RVVR';
-import LucidDreaming from './pages/LucidDreaming';
+import ImmersiveMedia from './pages/ImmersiveMedia';
 
 import WhoAmI from './pages/WhoAmI';
 import Accessible from './pages/Accessible';
@@ -44,8 +43,7 @@ const App = () => {
           <Route path="/hifi" element={< HiFi />} />
           <Route path="/orgasmr" element={< OrgASMR />} />
           <Route path="/window" element={< Window />} />
-          <Route path="/rv-vr" element={< RVVR />} />
-          <Route path="/lucid-dreaming" element={< LucidDreaming />} />
+          <Route path="/immersive-media" element={< ImmersiveMedia />} />
           {/* About Me page */}
           <Route path="/who-am-i" element={< WhoAmI />} />
           {/* Accessibility page */}

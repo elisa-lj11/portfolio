@@ -8,8 +8,7 @@ import localHiveImageUrl from '../assets/images/accessible/local-hive.png';
 import hifiImageUrl from '../assets/images/accessible/hifi.png';
 import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
 import windowImageUrl from '../assets/images/accessible/window.png';
-import rvvrImageUrl from '../assets/images/accessible/rv-vr.png';
-import lucidDreamingImageUrl from '../assets/images/accessible/lucid-dreaming.png';
+import immersiveMediaImageUrl from '../assets/images/accessible/rv-vr.png';
 
 const Accessible = () => {
   const [refs, setRefs] = useState([]);
@@ -27,8 +26,7 @@ const Accessible = () => {
     { id: 'hifi', title: 'High Fidelity: Content Prototyping', imageUrl: hifiImageUrl },
     { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
     { id: 'window', title: '"Window": An AR Clothes Shopping App', imageUrl: windowImageUrl },
-    { id: 'rv-vr', title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis', imageUrl: rvvrImageUrl },
-    { id: 'lucid-dreaming', title: '"Lucid Dreaming": A 360° Video Experience', imageUrl: lucidDreamingImageUrl },
+    { id: 'immersive-media', title: 'Immersive Media: An Exploration of 360° Video Experiences', imageUrl: immersiveMediaImageUrl },
   ];
 
   const handleNavigate = (id) => {

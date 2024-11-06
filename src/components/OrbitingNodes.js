@@ -52,20 +52,12 @@ class OrbitingNodes {
         color: 0x6561e0,
       },
       {
-        id: 'rv-vr',
-        title: '"RV VR": An Immersive Perspective on the Bay Area Housing Crisis',
-        titleMobile: 'Stanford: "RV VR"',
-        nodeRadius: 0.2,
+        id: 'immersive-media',
+        title: 'Immersive Media: An Exploration of 360° Video Experiences',
+        titleMobile: 'Stanford: 360° Videos',
+        nodeRadius: 0.3,
         finalRadius: 6.0,
         color: 0x7ba177,
-      },
-      {
-        id: 'lucid-dreaming',
-        title: '"Lucid Dreaming": A 360° Video Experience',
-        titleMobile: 'Stanford: "Lucid Dreaming"',
-        nodeRadius: 0.2,
-        finalRadius: 7.0,
-        color: 0xd47b7b,
       }
     ];
 
