@@ -55,7 +55,7 @@ const WhoAmI = () => {
           I'm a bit of a night owl. When I'm not outside gazing at the stars, wondering how we ended up where we are as these little sentient specks on this vast cosmic canvas floating aimlessly in the ether, I'm up late daydreaming of unconventional ways to make sense of our existence.
         </p>
         <p>
-          I've dabbled in a lot of things: I'm an engineer, a singer, a designer, a festival-goer, a teacher, a pianist, a petsitter, a student, a gaymer, a writer, a long furby enthusiast; not in any particular order. I ask myself "Who am I?" every day, and I wish I could give you a better answer. I guess, in the most abstract sense, I am whoever I am in this exact moment, and any artifacts that remain from my past are just echoes of who I used to be. Maybe a better question is "who do I want to become?" Now for this, I can give a relatively short answer:
+          I've dabbled in a lot of things: I'm an engineer, a singer, a designer, a festival-goer, a teacher, a pianist, a petsitter, a student, a gaymer, a writer, a long furby enthusiast (not in any particular order). I ask myself "Who am I?" every day, and I wish I could give you a better answer. I guess, in the most abstract sense, I am whoever I am in this exact moment, and any artifacts that remain from my past are just echoes of who I used to be. Maybe a better question is "who do I want to become?" Now for this, I can give a relatively short answer:
         </p>
         <h3>
           <b>I want to become a person who makes a positive impact in this slice of spacetime that we concurrently experience.</b>
@@ -110,7 +110,7 @@ const WhoAmI = () => {
             <b>Minimalism</b>
             <ul>
               <li>
-                While complex problems often tempt us to overengineer solutions, I believe in taking the time to craft clean, adaptable, and minimalistic approaches. By frontloading the effort to simplify, we can save significant time and effort later in the process.
+                While complex problems often tempt us to overengineer solutions, I believe in taking the time to craft clean, adaptable, and minimalistic approaches. By frontloading the effort to simplify these solutions, we can save significant time and effort later in the process.
               </li>
             </ul>
           </li>
@@ -153,7 +153,7 @@ const WhoAmI = () => {
             Planning remote camping/backpacking trips
           </li>
           <li>
-            Traveling to diverse ecosystems around the world that I've never experienced before
+            Scuba diving and hiking in new countries
           </li>
           <li>
             Finding cheap hole-in-the-wall restaurants
@@ -183,7 +183,7 @@ const WhoAmI = () => {
         <h3>TIER</h3>
         <i>Summer 2019</i>
         <p>
-          I moved abroad to Taiwan to work as a Natural Language Processing Software Engineering intern at the <a target='_blank' rel='noopener noreferrer' href={TIER_URL}>Taiwan Institute of Economic Research</a>, where I created and refined NLP analysis programs to automatically gather information from relevant databases for TIER projects.
+          I moved abroad to Taiwan to work as a Natural Language Processing Software Engineering intern at the <a target='_blank' rel='noopener noreferrer' href={TIER_URL}>Taiwan Institute of Economic Research</a>, where I created and refined NLP analysis programs to parse information about XR technology updates from relevant databases for TIER's industry analysis.
         </p>
         <br />
         <br />
@@ -197,7 +197,7 @@ const WhoAmI = () => {
         <h3>VHIL</h3>
         <i>September 2015 - December 2016<br />March 2019 - June 2019</i>
         <p>
-          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to develop software for experimental designs, and later returned as a lab assistant to help facilitate experimental studies.
+          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to build immersive components for experimental designs, and later returned as a lab assistant to help facilitate experimental studies.
         </p>
         <br />
         <br />
