@@ -22,15 +22,18 @@ const EMAIL_LINK = 'mailto:elisa.lupinj@gmail.com';
 const SOUNDCLOUD_URL = 'https://soundcloud.com/djbudgiebeats';
 const SPOTIFY_URL = 'https://open.spotify.com/user/5eakug67hyf80pi6igg30qmcg?si=0c3213f09cad4704';
 
-const STANFORD_URL = 'https://www.stanford.edu/';
-const SYMSYS_URL = 'https://symsys.stanford.edu/';
-const VHIL_URL = 'https://vhil.stanford.edu/';
-const HIFI_WIKI_URL = 'https://en.wikipedia.org/wiki/High_Fidelity,_Inc.';
-const HIFI_PAGE_RELATIVE_PATH = '#/hifi';
-const TIER_URL = 'https://english.tier.org.tw/';
+const FUTURAMA_QUOTE_VIDEO_EMBED_URL ='https://www.youtube.com/embed/VofkquwmT40?si=pWm2IUDGlIcW0Ilw&amp;start=34';
 const STRIVR_URL = 'https://www.strivr.com/';
 const STRIVR_PAGE_RELATIVE_PATH = '#/strivr';
-const FUTURAMA_QUOTE_VIDEO_EMBED_URL ='https://www.youtube.com/embed/VofkquwmT40?si=pWm2IUDGlIcW0Ilw&amp;start=34';
+const TIER_URL = 'https://english.tier.org.tw/';
+const JOURNALISM_URL = 'https://navigator.stanford.edu/classes/1246/29611';
+const IMMERSIVE_MEDIA_PAGE_RELATIVE_PATH = '#/immersive-media';
+const HIFI_WIKI_URL = 'https://en.wikipedia.org/wiki/High_Fidelity,_Inc.';
+const HIFI_PAGE_RELATIVE_PATH = '#/hifi';
+const VHIL_URL = 'https://vhil.stanford.edu/';
+const EMPATHY_VHIL_URL = 'https://vhil.stanford.edu/projects/2020/empathy-and-perspective-taking';
+const STANFORD_URL = 'https://www.stanford.edu/';
+const SYMSYS_URL = 'https://symsys.stanford.edu/';
 
 const WhoAmI = () => {
   const [refs, setRefs] = useState([]);
@@ -161,16 +164,6 @@ const WhoAmI = () => {
         </ul>
       </div>
       <hr className="solid"></hr>
-      <div className="section" id='education'>
-        <h2>Education</h2>
-        <h3>Stanford University</h3>
-        <i>September 2014 - June 2019</i>
-        <img src={spaceGradImageUrl} alt='Space Grad' width='50%'/>
-        <p>
-          I graduated from <a target='_blank' rel='noopener noreferrer' href={STANFORD_URL}>Stanford University</a> with a Bachelor of Science in <a target='_blank' rel='noopener noreferrer' href={SYMSYS_URL}>Symbolic Systems</a>, an interdisciplinary program that branches across computer science, linguistics, philosophy, and psychology. My concentration was "Human-Computer Interaction," where I focused on the design, usability, and evaluation of interactive systems, exploring how technology can be better integrated with human needs and behaviors.
-        </p>
-      </div>
-      <hr className="solid"></hr>
       <div className="section" id='experience'>
         <h2>Experience</h2>
         <h3>Strivr</h3>
@@ -181,9 +174,16 @@ const WhoAmI = () => {
         <br />
         <br />
         <h3>TIER</h3>
-        <i>Summer 2019</i>
+        <i>June 2019 - August 2019</i>
         <p>
           I moved abroad to Taiwan to work as a Natural Language Processing Software Engineering intern at the <a target='_blank' rel='noopener noreferrer' href={TIER_URL}>Taiwan Institute of Economic Research</a>, where I created and refined NLP analysis programs to parse information about XR technology updates from relevant databases for TIER's industry analysis.
+        </p>
+        <br />
+        <br />
+        <h3>Stanford Immersive Journalism</h3>
+        <i>January 2019 - March 2019<br />January 2016 - March 2016</i>
+        <p>
+          In my sophomore and senior years, I was a lab assistant for Stanford's course <a target='_blank' rel='noopener noreferrer' href={JOURNALISM_URL}>"Immersive (VR/AR) Journalism in the Public Sphere"</a>, contributing to curriculum development and teaching best practices and methods in 360° video production and postproduction. A journalistic piece that I produced from this class is featured on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${IMMERSIVE_MEDIA_PAGE_RELATIVE_PATH}`}>Immersive Media project page</a>.
         </p>
         <br />
         <br />
@@ -194,16 +194,26 @@ const WhoAmI = () => {
         </p>
         <br />
         <br />
-        <h3>VHIL</h3>
-        <i>September 2015 - December 2016<br />March 2019 - June 2019</i>
+        <h3>Stanford Virtual Human Interaction Lab</h3>
+        <i>March 2019 - June 2019<br />September 2015 - December 2016</i>
         <p>
-          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to build immersive components for experimental designs, and later returned as a lab assistant to help facilitate experimental studies.
+          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to build immersive components for experimental designs such as the <a target='_blank' rel='noopener noreferrer' href={EMPATHY_VHIL_URL}>"Empathy at Scale"</a> project, and I later returned as a lab assistant to help facilitate experimental studies.
         </p>
         <br />
         <br />
         <h3>Miscellaneous</h3>
         <p>
-          I began teaching piano and tutoring in math and writing during high school, continuing through college. Alongside that, I also took on side jobs like dog washing and dog walking.
+          I began teaching piano and tutoring in math and writing as a kid, continuing through college. Outside of teaching, I also took on side jobs like dog washing and dog walking.
+        </p>
+      </div>
+      <hr className="solid"></hr>
+      <div className="section" id='education'>
+        <h2>Education</h2>
+        <h3>Stanford University</h3>
+        <i>September 2014 - June 2019</i>
+        <img src={spaceGradImageUrl} alt='Space Grad' width='50%'/>
+        <p>
+          I graduated from <a target='_blank' rel='noopener noreferrer' href={STANFORD_URL}>Stanford University</a> with a Bachelor of Science in <a target='_blank' rel='noopener noreferrer' href={SYMSYS_URL}>Symbolic Systems</a>, an interdisciplinary program that branches across computer science, linguistics, philosophy, and psychology. My concentration was "Human-Computer Interaction," where I focused on the design, usability, and evaluation of interactive systems, exploring how technology can be better integrated with human needs and behaviors.
         </p>
       </div>
     </PageTemplate>
