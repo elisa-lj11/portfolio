@@ -148,8 +148,9 @@ body, html, #root {
 
   #instruction-text-mobile {
     position: absolute; /* Keep it absolute */
-    bottom: 5%; /* Align left or center as per the layout */
-    left: 5%; /* Provide some margin on the right */
+    top: 100px; /* Adjust this value based on the height of the title */
+    left: 5%; /* Align left or center as per the layout */
+    right: 5%; /* Provide some margin on the right */
     color: white;
     font-size: 15px;
     pointer-events: none;
