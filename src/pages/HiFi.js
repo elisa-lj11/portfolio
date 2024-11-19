@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
 
+import hifiOverviewImageUrl from '../assets/images/hifi/hifi-overview.jpg';
+import claraImageUrl from '../assets/images/hifi/clara-io-hifi.jpg';
 import pillThumbnailImageUrl from '../assets/images/hifi/pill-thumbnail.png';
 import pillVideoUrl from '../assets/images/hifi/pill.mp4';
 
-const HIFI_OVERVIEW_EMBED_URL = 'https://www.youtube.com/embed/3V6Ze7DuF38?si=1MKsHh_zwEaKYXah';
 const HIFI_WIKI_URL = 'https://en.wikipedia.org/wiki/High_Fidelity,_Inc.';
-const CLARA_EMBED_URL = 'https://www.youtube.com/embed/nT2uGtP_k4A?si=vpE6eWI5AzPgLlUD';
 const CLARA_URL = 'https://clara.io/';
 const CLARA_SCRIPT_URL = 'https://github.com/elisa-lj11/hifi/blob/aca261af3e4343cb51635963d31ddb7c8d236461/libraries/script-engine/src/FileScriptingInterface.cpp#L5';
 const POLY_EMBED_URL = 'https://www.youtube.com/embed/SbPHn4p9g3c?si=J9TiZNbwc8qba_SV';
@@ -32,9 +32,7 @@ const HiFi = () => {
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h1>High Fidelity: Content Prototyping</h1>
-        <div className="video-youtube">
-          <iframe className="responsive-iframe" src={HIFI_OVERVIEW_EMBED_URL} title="High Fidelity Highlights" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-        </div>
+        <img src={hifiOverviewImageUrl} alt='Hifi Overview' width='100%'/>
         <br></br>
         <p>
           I worked as an intern and later as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, a startup that formerly focused on social virtual reality. I was part of the content prototyping team, where we created new experiences to showcase the potential of the metaverse. Our goal was to inspire users with engaging content while empowering developers through accessible APIs that allowed them to easily integrate their own creations.
@@ -46,9 +44,7 @@ const HiFi = () => {
       <hr className="solid"></hr>
       <div className="section" id='clara'>
         <h2>Clara.io Integration</h2>
-        <div className="video-youtube">
-          <iframe className="responsive-iframe" src={CLARA_EMBED_URL} title="Clara.io Integration" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-        </div>
+        <img src={claraImageUrl} alt='Clara.io in Hifi' width='100%'/>
         <p>
           I developed an integration to download 3D entities from an external asset library directly through High Fidelity's interface. My project allows users to access <a target='_blank' rel='noopener noreferrer' href={CLARA_URL}>Clara.io</a> from in-world so that they can pick a model and directly add it to their domain without leaving the application.
         </p>
