@@ -28,6 +28,7 @@ import finalFormImageUrl from '../assets/images/orgasmr/final-form.jpg';
 import handleModelUrl from '../assets/models/orgasmr-handle.stl';
 
 const ORGASMR_DEMO_EMBED_URL = 'https://www.youtube.com/embed/6NVlh2iXAhg?si=HwM0jBHINPKcrns7&amp;start=76';
+const ASMR_WIKI_URL = 'https://en.wikipedia.org/wiki/ASMR';
 const CCRMA_CLASS_URL = 'https://ccrma.stanford.edu/courses/250a-winter-2019/';
 const ARDUINO_URL = 'https://www.arduino.cc/en/about';
 const FAUST_URL = 'https://faust.grame.fr/';
@@ -58,7 +59,7 @@ const OrgASMR = () => {
         </div>
         <br></br>
         <p>
-          An adaptation of the popular "Head Scratcher," the "orgASMR" takes ASMR (autonomous sensory meridian response) to the next level. It produces trance-like audio effects by detecting the amount of flex from the head scratcher's legs and the orientation of the handle. It also includes volume control and an on/off button. Combining the simplicity of chord progression with the intricacy of movement, the orgASMR is sure to blow your mind.
+          An adaptation of the popular "Head-Scratcher," the "orgASMR" takes ASMR (<a target='_blank' rel='noopener noreferrer' href={ASMR_WIKI_URL}>autonomous sensory meridian response</a>) to the next level. It produces trance-like audio effects by detecting the amount of flex from the head-scratcher's legs and the orientation of the handle. It also includes volume control and an on/off button. Combining the simplicity of chord progression with the intricacy of movement, the orgASMR is sure to blow your mind.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -73,10 +74,10 @@ const OrgASMR = () => {
         <h2>Ideation</h2>
         <img src={firstSketchImageUrl} alt='Sketch of orgASMR' width='80%'/>
         <p>
-          I set out to create an instrument that experimented with multiple sensory modalities: sound, kinesthesia, and tactile feedback. I was intrigued by the versatility of the classic "head massager" contraption, which not only required users to move their arm in three dimensions to simulate a head-scratching motion, but also featured flexible arms that adjusted to the shape of the user's head. This added an additional layer of control to modulate the sound produced by the device.
+          I set out to create an instrument that experimented with multiple sensory modalities: sound, kinesthesia, and tactile feedback. I was intrigued by the versatility of the classic "head-scratcher" contraption, which not only required users to move their arm in three dimensions to simulate a head-scratching motion, but also featured flexible arms that adjusted to the shape of the user's head. This added an additional layer of control to modulate the sound produced by the device.
         </p>
         <p>
-          To achieve this 4D sound system, I planned to design a custom handle that would attach to the head massager. It would incorporate an accelerometer to capture rotational movement, and a flex sensor (previously sketched as a piezoelectric sensor) to convert physical force into input. A USB-based <a target='_blank' rel='noopener noreferrer' href={TEENSY_URL}>Teensy</a> microcontroller would be embedded in the handle, with the entire setup connected to a computer running a script to process the input and generate sound.
+          To achieve this 4D sound system, I planned to design a custom handle that would attach to the head-scratcher. It would incorporate an accelerometer to capture rotational movement, and a flex sensor (previously sketched as a piezoelectric sensor) to convert physical force into input. A USB-based <a target='_blank' rel='noopener noreferrer' href={TEENSY_URL}>Teensy</a> microcontroller would be embedded in the handle, with the entire setup connected to a computer running a script to process the input and generate sound.
         </p>
         <p>
           In essence, I wanted to produce a device that both gives and receives.
@@ -222,7 +223,7 @@ const OrgASMR = () => {
           </figure>
         </div>
         <p>
-          In addition to the custom 3D-printed handle, I added ring inserts to the top section to securely fasten the head scratcher. Using the SolidWorks model dimensions, I designed two rings in Adobe Illustrator and then used a laser cutter to precisely cut them from a resin board.
+          In addition to the custom 3D-printed handle, I added ring inserts to the top section to securely fasten the head-scratcher. Using the SolidWorks model dimensions, I designed two rings in Adobe Illustrator and then used a laser cutter to precisely cut them from a resin board.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -278,7 +279,7 @@ const OrgASMR = () => {
               alt='Rings placed in handle'
               style={{ width: '50%', display: 'inline-block' }}
             />
-            <figcaption>Head scratcher secured to handle with rings</figcaption>
+            <figcaption>Head-scratcher secured to handle with rings</figcaption>
           </figure>
         </div>
         <p>
@@ -290,7 +291,7 @@ const OrgASMR = () => {
         <h2>Assembly</h2>
         <img src={solderingImageUrl} alt='Soldering' width='60%'/>
         <p>
-          I only had a bit of soldering left to finish the orgASMR, as the flex sensor was designed to extend from the base and attach to one of the head scratcher's arms.
+          I only had a bit of soldering left to finish the orgASMR, as the flex sensor was designed to extend from the base and attach to one of the head-scratcher's arms.
         </p>
         <p>
           With everything properly connected, I could finally piece the whole instrument together.
@@ -340,7 +341,7 @@ const OrgASMR = () => {
             <b>It's okay to get crafty on creative projects.</b>
             <ul>
               <li>
-                I hadn't originally planned to design rings to secure the head scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had plenty of resources available such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
+                I hadn't originally planned to design rings to secure the head-scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had plenty of resources available such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
               </li>  
             </ul>
           </li>
@@ -348,7 +349,7 @@ const OrgASMR = () => {
             <b>It's also okay to lean into the craziness.</b>
             <ul>
               <li>
-                I spent many late nights in the product realization lab at CCRMA, which admittedly was not good for my sleep schedule, but perhaps disinhibited me enough to entertain otherwise silly ideas such as using a head scratcher as a musical instrument. With such an open-ended final project, I felt free to explore how far I could push this quirky idea into reality.
+                I spent many late nights in the product realization lab at CCRMA, which admittedly was not good for my sleep schedule, but perhaps disinhibited me enough to entertain otherwise silly ideas such as using a head-scratcher as a musical instrument. With such an open-ended final project, I felt free to explore how far I could push this quirky idea into reality.
               </li>  
             </ul>
           </li>
