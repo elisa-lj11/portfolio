@@ -276,7 +276,6 @@ const Home = () => {
   useEffect(() => {
     const overlay = document.querySelector('.black-overlay');
     const instructionText = document.getElementById('instruction-text');
-    console.log(instructionText);
 
     const handleTransitionEnd = () => {
       if (overlay.style.opacity < '0.1') {
