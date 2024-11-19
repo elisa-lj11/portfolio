@@ -429,6 +429,11 @@ const Home = () => {
       <div className={`black-overlay ${isFading ? 'fade-in' : 'fade-out'}`}></div>
       <div id="title">
         <p>You have warped to <b>Elisa's space</b></p>
+        <div className="accessible-link">
+          <span className="span-link" onClick={handleNavigateToAccessible}>
+            Accessible view
+          </span>
+        </div>
       </div>
       <div id="title-mobile">
         <p>You have warped to <br></br><b>Elisa's space</b></p>
@@ -438,19 +443,16 @@ const Home = () => {
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and scroll to navigate the space<br></br>
           &gt; Press the "Space" key to reset the view<br></br>
-          <span className="span-link" onClick={handleNavigateToAccessible}>
-            &gt; Accessible site
-          </span>
         </p>
       </div>
       <div id="instruction-text-mobile">
         <p>
+          <span className="span-link" onClick={handleNavigateToAccessible}>
+            &gt; Accessible view
+          </span><br></br>
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and zoom to navigate the space<br></br>
-          &gt; Triple-tap to reset the view<br></br>
-          <span className="span-link" onClick={handleNavigateToAccessible}>
-            &gt; Accessible site
-          </span>
+          &gt; Triple-tap to reset the view
         </p>
       </div>
     </div>
