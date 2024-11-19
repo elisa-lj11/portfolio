@@ -25,7 +25,8 @@ body, html, #root {
   background-color: black;
   z-index: 1000;
   pointer-events: none; /* Ensure overlay doesn’t block interaction */
-  transition: opacity 2s ease-out; /* 2-second fade-out */
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* 1-second fade-out */
 }
 
 .black-overlay.fade-in {
@@ -65,6 +66,15 @@ body, html, #root {
   display: none;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #instruction-text {
   position: absolute;
   bottom: 0%;
@@ -79,6 +89,12 @@ body, html, #root {
   text-align: right;
   width: auto;
   height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#instruction-text.fade-in {
+  animation: fadeIn 1s forwards; /* Apply fade-in animation */
 }
 
 #instruction-text-mobile {
@@ -86,7 +102,7 @@ body, html, #root {
 }
 
 .accessible-link {
-  font-size: 15px;
+  font-size: 20px;
   margin-top: 5px;
 }
 
@@ -132,9 +148,8 @@ body, html, #root {
 
   #instruction-text-mobile {
     position: absolute; /* Keep it absolute */
-    top: 100px; /* Adjust this value based on the height of the title */
-    left: 5%; /* Align left or center as per the layout */
-    right: 5%; /* Provide some margin on the right */
+    bottom: 5%; /* Align left or center as per the layout */
+    left: 5%; /* Provide some margin on the right */
     color: white;
     font-size: 15px;
     pointer-events: none;

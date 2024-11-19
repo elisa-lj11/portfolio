@@ -272,6 +272,24 @@ const Home = () => {
       shouldSmoothReset = false;
     }
   };
+
+  useEffect(() => {
+    const overlay = document.querySelector('.black-overlay');
+    const instructionText = document.getElementById('instruction-text');
+    console.log(instructionText);
+
+    const handleTransitionEnd = () => {
+      if (overlay.style.opacity < '0.1') {
+        instructionText.classList.add('fade-in');
+      }
+    };
+  
+    overlay.addEventListener('transitionend', handleTransitionEnd);
+  
+    return () => {
+      overlay.removeEventListener('transitionend', handleTransitionEnd);
+    };
+  }, []);
   
   useEffect(() => {
     document.body.style.zoom = 1; // Reset the zoom by setting it to the default 1
