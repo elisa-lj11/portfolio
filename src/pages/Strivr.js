@@ -50,7 +50,7 @@ const Strivr = () => {
           </video>
         </div>
         <p style={{textAlign: 'center'}}>
-          <a target='_blank' rel='noopener noreferrer' href={STRIVR_REALTIME_DEMO_URL}>Interactive "Immersive Lobby" demo</a>
+          <a target='_blank' rel='noopener noreferrer' style={{ fontSize: '20px'}} href={STRIVR_REALTIME_DEMO_URL}>Try out the interactive "Immersive Lobby" demo</a>
         </p>
         <i>
           <p>A couple notes:</p>
