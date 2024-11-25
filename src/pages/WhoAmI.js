@@ -55,10 +55,10 @@ const WhoAmI = () => {
         <img src={spacedOutImageUrl} alt='Spaced Out' width='50%'/>
         <br></br>
         <p>
-          I'm a bit of a night owl. When I'm not outside gazing at the stars, wondering how we ended up where we are as these little sentient specks on this vast cosmic canvas floating aimlessly in the ether, I'm up late daydreaming of unconventional ways to make sense of our existence.
+          I'm a bit of a night owl. When I'm not outside gazing at the stars, wondering how we ended up as these little sentient specks on this vast cosmic canvas floating aimlessly in the ether, I'm up late daydreaming of unconventional ways to make sense of our existence.
         </p>
         <p>
-          I've dabbled in a lot of things: I'm an engineer, a singer, a designer, a festival-goer, a teacher, a pianist, a petsitter, a student, a gaymer, a writer, a long furby enthusiast (not in any particular order). I ask myself "Who am I?" every day, and I wish I could give you a better answer. I guess, in the most abstract sense, I am whoever I am in this exact moment, and any artifacts that remain from my past are just echoes of who I used to be. Maybe a better question is "who do I want to become?" Now for this, I can give a relatively short answer:
+          I've dabbled in a lot of things: I'm an engineer, a singer, a designer, a festival-goer, a teacher, a pianist, a petsitter, a student, a gaymer, a writer, a long furby enthusiast (not in any particular order). I ask myself "Who am I?" every day, and I wish I could give you a better answer. I guess, in the most abstract sense, I am whoever I am at this exact moment, and any artifacts that remain from my past are just echoes of who I used to be. Maybe a better question is "Who do I want to become?" Now for this, I can give a relatively short answer:
         </p>
         <h3>
           <b>I want to become a person who makes a positive impact in this slice of spacetime that we concurrently experience.</b>
@@ -113,7 +113,7 @@ const WhoAmI = () => {
             <b>Minimalism</b>
             <ul>
               <li>
-                While complex problems often tempt us to overengineer solutions, I believe in taking the time to craft clean, adaptable, and minimalistic approaches. By frontloading the effort to simplify these solutions, we can save significant time and effort later in the process.
+                While complex problems often tempt us to over-engineer solutions, I believe in taking the time to craft clean, adaptable, and minimalistic approaches. By frontloading the effort to simplify these solutions, we can save significant time and effort later in the process.
               </li>
             </ul>
           </li>
@@ -147,7 +147,7 @@ const WhoAmI = () => {
         </p>
         <ul>
           <li>
-            Learning anime and other TV theme songs on piano
+            Learning anime and other TV theme songs on the piano
           </li>
           <li>
             Making themed playlists
@@ -183,27 +183,27 @@ const WhoAmI = () => {
         <h3>Stanford Immersive Journalism</h3>
         <i>January 2019 - March 2019<br />January 2016 - March 2016</i>
         <p>
-          In my sophomore and senior years, I was a lab assistant for Stanford's course <a target='_blank' rel='noopener noreferrer' href={JOURNALISM_URL}>"Immersive (VR/AR) Journalism in the Public Sphere"</a>, contributing to curriculum development and teaching best practices and methods in 360° video production and postproduction. A journalistic piece that I produced from this class is featured on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${IMMERSIVE_MEDIA_PAGE_RELATIVE_PATH}`}>Immersive Media project page</a>.
+          In my sophomore and senior years, I was a lab assistant for Stanford's course <a target='_blank' rel='noopener noreferrer' href={JOURNALISM_URL}>"Immersive (VR/AR) Journalism in the Public Sphere"</a>, where I contributed to curriculum development and taught best practices and methods in 360° video production and postproduction. A journalistic piece I produced from this class is featured on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${IMMERSIVE_MEDIA_PAGE_RELATIVE_PATH}`}>Immersive Media project page</a>.
         </p>
         <br />
         <br />
         <h3>High Fidelity</h3>
         <i>November 2017 - June 2018</i>
         <p>
-          In between my junior and senior years, I took an opportunity to work full time as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, formerly a social virtual reality startup based in San Francisco. I was part of the Content Prototyping team, where we developed innovative content to showcase our platform's potential, engage users, and inspire developers and content creators to push creative boundaries. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${HIFI_PAGE_RELATIVE_PATH}`}>High Fidelity project page</a>.
+          In between my junior and senior years, I took an opportunity to work full-time as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, formerly a social virtual reality startup based in San Francisco. I was part of the Content Prototyping team, where we developed innovative content to showcase our platform's potential, engage users, and inspire developers and content creators to push creative boundaries. I discuss my work in more detail on my <a target='_blank' rel='noopener noreferrer' href={`${process.env.PUBLIC_PATH}${HIFI_PAGE_RELATIVE_PATH}`}>High Fidelity project page</a>.
         </p>
         <br />
         <br />
         <h3>Stanford Virtual Human Interaction Lab</h3>
         <i>March 2019 - June 2019<br />September 2015 - December 2016</i>
         <p>
-          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to build immersive components for experimental designs such as the <a target='_blank' rel='noopener noreferrer' href={EMPATHY_VHIL_URL}>"Empathy at Scale"</a> project, and I later returned as a lab assistant to help facilitate experimental studies.
+          During my undergraduate studies at Stanford, I worked in the <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>Virtual Human Interaction Lab</a>, where research focuses on studying the psychological and behavioral effects of Virtual Reality (VR) and Augmented Reality (AR). I initially joined as a programmer to build immersive components for experimental designs such as the <a target='_blank' rel='noopener noreferrer' href={EMPATHY_VHIL_URL}>"Empathy at Scale"</a> project. I later returned as a lab assistant to help facilitate experimental studies.
         </p>
         <br />
         <br />
         <h3>Miscellaneous</h3>
         <p>
-          I began teaching piano and tutoring in math and writing as a kid, continuing through college. Outside of teaching, I also took on side jobs like dog washing and dog walking.
+          I began teaching piano and tutoring in math and writing as a kid and continued through college. I also took on side jobs like dog washing and dog walking.
         </p>
       </div>
       <hr className="solid"></hr>
