@@ -60,10 +60,10 @@ const Window = () => {
         <img src={hiFiPrototypeScreenshotImageUrl} alt='Window Hi-Fi prototype' width='40%'/>
         <br></br>
         <p>
-          "Window" uses augmented reality on a mobile platform to place a personalized mannequin in a storefront's window so users can easily view what a store has to offer.
+          "Window" uses augmented reality on a mobile platform to place a personalized mannequin in a storefront window so users can easily view a store's offering.
         </p>
         <p>
-          In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 147</a>: Design Thinking for User Experience Design, Prototyping & Evaluation." In this course, my team of three applied design thinking to a quarter-long project focused on mixed reality and human-computer interaction. Over the course of 10 weeks, we moved from ideation to prototyping and ultimately showcased our high-fidelity mobile app at a public fair.
+          In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 147</a>: Design Thinking for User Experience Design, Prototyping & Evaluation." In this course, my team of three applied design thinking to a quarter-long project focused on mixed reality and human-computer interaction. Over 10 weeks, we moved from ideation to prototyping and ultimately showcased our high-fidelity mobile app at a public fair.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -91,10 +91,10 @@ const Window = () => {
         </p>
         <ol>
           <li>
-            A Macy's employee shared that many customers find the shopping experience frustrating, especially when they can't locate specific items in the store quickly. Making it easier for customers to find items would be a game changer.
+            A Macy's employee shared that many customers find the shopping experience frustrating, especially when they can't locate specific items quickly. Making it easier for customers to find items would be a game changer.
           </li>
           <li>
-            A shopper waiting outside a store expressed a dislike for shopping but prefers in-person experiences over online due to mistrust of reviews. Developing a system to minimize time spent in stores would significantly improve the experience for shoppers like him.
+            A shopper waiting outside a store dislikes shopping but prefers in-person experiences over online due to mistrust of reviews. Developing a system to minimize time spent in stores would significantly improve the experience for shoppers like him.
           </li>
           <li>
             An avid online shopper struggles with clothing purchases due to unpredictable sizing. A solution that helps determine how clothing will fit before buying online would be transformative.
@@ -105,7 +105,7 @@ const Window = () => {
         </p>
         <ol type='1'>
           <li>
-            <b>How might we make it easier for people to find clothes online that fit?</b>
+            <b>How might we make it easier for people to find clothes online that fit them?</b>
           </li>
           <li>
             <b>How might we make shopping more enjoyable by gamifying the experience?</b>
@@ -150,7 +150,7 @@ const Window = () => {
           </figure>
         </div>
         <p>
-          We created three different experience prototypes to explore various aspects of the shopping experience (seen above). These included a virtual closet where users could add their own clothes for friends to view, trying on virtual clothes from a store, and using an AR mannequin to display outfits. We conducted field testing with users, and after several rounds of iteration, we chose to move forward with EP #3: the AR mannequin prototype. It was the most intuitive option, and one of our users, without prompting, mentioned she would love to use something like it, reinforcing our decision.
+          We created three different experience prototypes to explore various aspects of the shopping experience (seen above). These included a virtual closet where users could add their clothes for friends to view, trying on virtual clothes from a store, and using an AR mannequin to display outfits. We conducted field testing with users, and after several rounds of iteration, we chose to move forward with EP #3: the AR mannequin prototype. It was the most intuitive option, and one of our users, without prompting, mentioned she would love to use something like it, reinforcing our decision.
         </p>
         <p>
           Once we agreed to implement EP #3, we developed our low-fidelity prototype.
@@ -221,13 +221,13 @@ const Window = () => {
         </p>
         <ol>
           <li>
-            Smart phones are exponentially more accessible than our other options.
+            Smartphones are exponentially more accessible than our other options.
           </li>
           <li>
-            Smart phones have more AR support than the other devices.
+            Smartphones have more AR support than other devices.
           </li>
           <li>
-            Smart phones lend themselves to social features that the other mediums do not.
+            Smartphones lend themselves to social features that the other mediums do not.
           </li>
         </ol>
         <h3>Task Flows</h3>
@@ -308,7 +308,7 @@ const Window = () => {
           We developed our low-fidelity prototype using paper screens and cut-out printed clothing options. Users began by scanning a store name, which led them to a home screen where they could start shopping or filter options. After selecting how to browse, the app displayed a mannequin in augmented reality through the camera. Users swiped through clothing, viewed item details, added articles to their virtual closet, or shared outfits with friends. Clicking on an item revealed sizing, prices, availability, and brand information, along with a barcode for quick identification at checkout. Additionally, swiping from the left opened a navigation drawer to access their virtual closet, friends, settings, and logout options.
         </p>
         <p>
-          We designed each screen to flow through our three user tasks so that we could conduct our first round of user testing.
+          We designed each screen to flow through our three user tasks to conduct our first round of user testing.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -405,7 +405,7 @@ const Window = () => {
           </figure>
         </div>
         <p>
-          We also deployed a <a target='_blank' rel='noopener noreferrer' href={WINDOW_WEBSITE_URL}>website</a> for Window to demonstrate our progress through the iterative design process. We uploaded our med-fi prototype to our website so that we could collect heuristic evaluations from our classmates. 
+          We also deployed a <a target='_blank' rel='noopener noreferrer' href={WINDOW_WEBSITE_URL}>website</a> for Window to demonstrate our progress through the iterative design process. We uploaded our med-fi prototype to our website to collect heuristic evaluations from our classmates. 
         </p>
       </div>
       <hr className="solid"></hr>
@@ -466,11 +466,10 @@ const Window = () => {
             <i>Evaluators: 1, 2, 3, 4</i>
             <br />
             <br />
-            Confused as to what the plus button does, is there a quick way to star or favorite an item and come back to it? If it adds to the closet, make it more clear that that is what it's doing.
+            I'm confused about what the "plus" button does. Is there a quick way to star or favorite an item and come back to it? If it adds to the closet, make it clear that that is what it's doing.
             <br />
             <br />
-            Fix: Pop up text saying that it has been added to your closet, or just an overlayed icon. Be more intentional
-            about the iconography. 
+            Fix: Pop-up text that the item has been added to your closet, or just an overlayed icon. Be more intentional about the iconography. 
           </p>
         </div>
         <p>
@@ -490,7 +489,7 @@ const Window = () => {
             Clarifying the difference between sharing or adding a complete outfit versus a single clothing item would improve the user experience.
           </li>
           <li>
-            A short tutorial and AR integration with custom-fit clothes on user photos would make the app more engaging and personal.
+            A tutorial and AR integration with custom-fit clothes on user photos would make the app more engaging and personal.
           </li>
         </ul>
         <p>
@@ -507,7 +506,7 @@ const Window = () => {
             Filtering options were added to the main shopping screen for quick adjustments.
           </li>
           <li>
-            Users could share outfit images via text directly from the app.
+            Users could share outfit images by text directly from the app.
           </li>
           <li>
             One-time profile creation was introduced to streamline user measurements.
@@ -590,17 +589,17 @@ const Window = () => {
           </figure>
         </div>
         <p>
-          Due to time constraints leading up to our end-of-quarter project fair, we were unable to implement everything we had planned. Custom clothing measurements, which would allow users to see how items fit different body types, had to be left out of the high-fidelity prototype, though it would be a top priority for future updates. We also set aside store scanning features, which would require collaboration with stores and recognition technology, to focus on core functionality. Finally, our "virtual closet" concept, intended for favoriting and revisiting items across store locations, was postponed.
+          Due to time constraints leading up to our end-of-quarter project fair, we could not implement everything we had planned. Custom clothing measurements, which would allow users to see how items fit different body types, had to be left out of the high-fidelity prototype. We also set aside store scanning features, which would require collaboration with stores and recognition technology, to focus on core functionality. Finally, our "virtual closet" concept, intended for favoriting and revisiting items across store locations, was postponed.
         </p>
         <p>
-          All in all, we finally had a working AR-enabled prototype ready to present to the world.
+          Altogether, we finally had a working AR-enabled prototype ready to present to the world.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='fair'>
         <h2>Project Fair</h2>
         <p>
-          We delivered a 30-second pitch at the CS 147 project fair alongside 44 other project teams. We also ran a demo table for attendees to try out our prototype and learn about our process.
+          We delivered a 30-second pitch at the CS 147 project fair alongside 44 other project teams. We also ran a demo table for attendees to try our prototype and learn about our process.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -624,7 +623,7 @@ const Window = () => {
             <b>Step outside of your comfort zone when seeking user insights.</b>
             <ul>
               <li>
-                Initially, I was hesitant to approach strangers for feedback on our app, but I was pleasantly surprised by how willing many of them were to help. Engaging with people outside of my bubble provided valuable insights into the diverse use cases for our app.
+                Initially, I hesitated to approach strangers for feedback on our app, but I was pleasantly surprised by how willing many were to help. Engaging with people outside of my bubble provided valuable insights into diverse use cases for our app.
               </li>  
             </ul>
           </li>
@@ -632,7 +631,7 @@ const Window = () => {
             <b>Let go of unproductive ideas.</b>
             <ul>
               <li>
-                We invested too much time trying to refine our "Closet" feature for better user understanding, rather than asking users whether it would be useful to them. If we had prioritized gathering feedback on this feature earlier, we might have recognized its lack of appeal sooner and avoided the frustration of attempting to improve something that users didn't really want.
+                We invested too much time trying to refine our "Closet" feature for better user understanding, rather than asking users whether it would be useful to them. If we had prioritized gathering feedback on this feature earlier, we might have recognized its lack of appeal sooner and avoided the frustration of attempting to improve something that users didn't want.
               </li>  
             </ul>
           </li>
