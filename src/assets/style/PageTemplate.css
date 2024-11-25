@@ -127,9 +127,11 @@ figcaption {
   align-items: center;
 }
 
-.video-vertical video {
-  max-height: 100%;
-  width: auto; /* Maintain aspect ratio */
+.responsive-video {
+  width: 100%;
+  height: auto;
+  max-height: 60vh; /* Maintain the maximum height */
+  object-fit: contain; /* Ensure the video scales correctly */
 }
 
 .responsive-iframe {

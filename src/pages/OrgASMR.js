@@ -165,7 +165,7 @@ const OrgASMR = () => {
           I used a protoboard to wire all of the sensors to the Teensy. The video below demonstrates the chord progressions varying with the Teensy's orientation and the frequency changing with the flex sensor movement.
         </p>
         <div className="video-vertical" style={{ height: 'auto', width: '100%' }}>
-          <video controls poster={protoboard1ThumbnailImageUrl} style={{ width: 'auto', height: '70vh' }}>
+          <video controls poster={protoboard1ThumbnailImageUrl} className="responsive-video">
             <source src={protoboard1VideoUrl} type="video/mp4" />
           </video>
         </div>

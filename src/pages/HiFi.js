@@ -126,7 +126,7 @@ const HiFi = () => {
       <div className="section" id='other-content'>
         <h2>Other Content</h2>
         <div className="video" style={{ height: 'auto', width: '100%' }}>
-          <video controls poster={pillThumbnailImageUrl} muted style={{ width: 'auto', height: '70vh' }}>
+          <video controls poster={pillThumbnailImageUrl} muted className="responsive-video">
             <source src={pillVideoUrl} type="video/mp4" />
           </video>
         </div>

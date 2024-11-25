@@ -946,7 +946,7 @@ const LocalHive = () => {
       <div className="section" id='final-prototype'>
         <h2>Final Prototype</h2>
         <div className="video-vertical" style={{ height: 'auto', width: '100%' }}>
-          <video controls poster={fullAppThumbnailImageUrl} muted style={{ width: 'auto', height: '70vh' }}>
+          <video controls poster={fullAppThumbnailImageUrl} muted className="responsive-video">
             <source src={fullAppVideoUrl} type="video/mp4" />
           </video>
         </div>

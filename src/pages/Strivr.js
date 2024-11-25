@@ -45,7 +45,7 @@ const Strivr = () => {
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h1>Strivr: "Immersive Lobby" Upgrade</h1>
         <div className="video" style={{ height: 'auto', width: '100%' }}>
-          <video controls poster={immersiveLobbyThumbnailImageUrl} style={{ width: 'auto', height: '70vh' }}>
+          <video controls poster={immersiveLobbyThumbnailImageUrl} className="responsive-video">
             <source src={immersiveLobbyVideoUrl} type="video/mp4" />
           </video>
         </div>
