@@ -95,7 +95,7 @@ const LocalHive = () => {
       <div className="section" id='needfinding'>
         <h2>Needfinding</h2>
         <p>
-          We interviewed eight people—two from Buenaventura, Colombia, and six from Palo Alto, California, including self-identified community leaders and members. Our goal was to understand differences between the two communities and break out of our Palo Alto bubble.
+          We interviewed eight people—two from Buenaventura, Colombia, and six from Palo Alto, California, including self-identified community leaders and members. We wanted to understand the differences between the two communities and break out of our Palo Alto bubble.
         </p>
         <p>
           We explored five topics:
@@ -118,7 +118,7 @@ const LocalHive = () => {
           </li>
         </ol>
         <p>
-          After conducting the interviews, we compiled the responses into a spreadsheet and synthesized the insights using sticky notes, grouping them by interviewer and guided by the question, "How might we help communities overcome crises?"
+          After conducting the interviews, we compiled the responses into a spreadsheet and synthesized the insights using sticky notes. We grouped them by interviewer and were guided by the question, "How might we help communities overcome crises?"
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -210,7 +210,7 @@ const LocalHive = () => {
             High-cohesion communities operate by consensus, with little distinction between leaders and members.
           </li>
           <li>
-            As cohesion increases, learned leadership skills both influence members and empower new leaders.
+            As cohesion increases, learned leadership skills influence members and empower new leaders.
           </li>
           <li>
             Technology use varies: communication in low-cohesion and collaboration in high-cohesion groups.
@@ -329,13 +329,13 @@ const LocalHive = () => {
             Matching/apprenticeship program connecting learners with mentors
           </li>
           <li>
-            Platform for leaders and community members to post and find needed skills
+            A platform for leaders and community members to post and find needed skills
           </li>
           <li>
             Pop-up classes/skill teach-ins
           </li>
           <li>
-            (Dark horse idea) Hackathon
+            (Darkhorse idea) Hackathon
           </li>
         </ul>
         <p>
@@ -374,7 +374,7 @@ const LocalHive = () => {
             (+) Task matching was intuitive.
           </li>
           <li>
-            (+) Table of people with skills was easy to read.
+            (+) The table of people with skills was easy to read.
           </li>
           <li>
             (-) Projects may stagnate without appropriate skills.
@@ -433,7 +433,7 @@ const LocalHive = () => {
             (+) Participation was easy, and the storyline engaged users.
           </li>
           <li>
-            (-) Texting in-person felt awkward, and knowledgeable participants were less interested.
+            (-) Texting in person felt awkward, and knowledgeable participants were less interested.
           </li>
         </ul>
         <span>
@@ -441,12 +441,12 @@ const LocalHive = () => {
         </span>
         <ul>
           <li>
-            The hypothesis was valid as the simulation allowed participants to make quick judgments under stress, but results did not indicate long-term leadership success.
+            The hypothesis was valid as the simulation allowed participants to make quick judgments under stress, but the results did not indicate long-term leadership success.
           </li>
         </ul>
         <h3>EP Outcomes: Analysis</h3>
         <p>
-          After testing the prototypes, we chose to move forward with EP #1, the "Skills and Services Marketplace," as it showed the most promise for fostering community cohesion. We were ready for the initial prototyping stages.
+          After testing the prototypes, we moved forward with EP #1, the "Skills and Services Marketplace," as it showed the most promise for fostering community cohesion. We were ready for the initial prototyping stages.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -504,17 +504,17 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          Once we completed our UI sketches, we determined that a <b>mobile app</b> was the best option due to:
+          Once we completed our UI sketches, we determined that a <b>mobile app</b> was the best option because:
         </p>
         <ol>
           <li>
-            Users commonly using phones for organizing information.
+            Users commonly use phones to organize information.
           </li>
           <li>
-            The appeal of push notifications for immediate community connections.
+            Push notifications appeal to users for immediate community connections.
           </li>
           <li>
-            Existing social networking mental models linked to mobile devices.
+            Existing social networking mental models are linked to mobile devices.
           </li>
         </ol>
         <p>
@@ -714,7 +714,7 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          We tested four participants for about 10 minutes each as they navigated the tasks. Our test plan aimed to assess:
+          We tested four participants for 10 minutes each as they navigated the tasks. Our test plan aimed to assess:
         </p>
         <ol>
           <li>
@@ -822,7 +822,7 @@ const LocalHive = () => {
             What is the difference between the buzz page and the projects page? It's not intuitive that the buzz page includes projects that you are not currently “enrolled” in. I think that searching for new projects and looking at the ones that you are already signed up for should just all be in the same place. It makes it confusing to need to remember where the different things regarding the projects are.
             <br />
             <br />
-            Fix: Make them one category and have subcategories for searching through projects easily or on the project page having a buzz “someone else” button in addition to a join project button. 
+            Fix: Make them one category and have subcategories for searching through projects easily or, on the project page, have a "Buzz Someone Else" button in addition to a "Join Project" button. 
           </p>
         </div>
         <p>
@@ -889,7 +889,7 @@ const LocalHive = () => {
             <b>Community members:</b> Regular members to see how the app encourages project creation and recruitment.
           </li>
           <li>
-            <b>Community leaders:</b> Potential power-users to evaluate how the app enhances their organizing efforts.
+            <b>Community leaders:</b> Potential power users to evaluate how the app enhances their organizing efforts.
           </li>
           <li>
             <b>Low cohesion/motivation:</b> Less engaged members to determine if the app motivates involvement.
@@ -939,7 +939,7 @@ const LocalHive = () => {
           </li>
         </ul>
         <p>
-          With this final user study completed, we were ready to develop and launch our final prototype.
+          With this final user study, we were ready to develop and launch our final prototype.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -1017,7 +1017,7 @@ const LocalHive = () => {
         <h2>Works Cited</h2>
         <ul>
           <li>
-            Aldrich, D. P., & Meyer, M. A. (2015). Social capital and community resilience. American behavioral scientist, 59(2), 254-269.
+            Aldrich, D. P., & Meyer, M. A. (2015). Social Capital and Community Resilience. <i>American Behavioral Scientist, 59(2)</i>, 254-269.
           </li>
         </ul>
       </div>
