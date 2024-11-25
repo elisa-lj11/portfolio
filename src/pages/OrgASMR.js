@@ -1,5 +1,5 @@
 // src/pages/OrgASMR.js
-import React, { useState, Suspense } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
@@ -39,6 +39,18 @@ const SOLIDWORKS_URL = 'https://www.solidworks.com/';
 
 const OrgASMR = () => {
   const [refs, setRefs] = useState([]);
+  const canvasRef = useRef();
+
+  useEffect(() => {
+    return () => {
+      if (canvasRef.current) {
+        const gl = canvasRef.current.gl;
+        if (gl) {
+          gl.getExtension('WEBGL_lose_context')?.loseContext();
+        }
+      }
+    };
+  }, []);
 
   // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
@@ -173,14 +185,17 @@ const OrgASMR = () => {
         </div>
         <br></br>
         <Canvas 
+          ref={canvasRef}
           camera={{
             position: [5, 5, 5], // Change these values to better see your model
             fov: 50, // Field of view (adjust as necessary)
           }}
           style={{ height: '75vh', width: '100%' }}
+          gl={{ antialias: true, powerPreference: 'high-performance' }}
           onCreated={({ gl }) => {
+            gl.setPixelRatio(window.devicePixelRatio);
+
             return () => {
-              // Dispose WebGL context when Canvas unmounts
               gl.dispose();
             };
           }}
@@ -199,7 +214,6 @@ const OrgASMR = () => {
               rotation={[2, 3, 0.5]} 
             />
           </Suspense>
-          
           {/* OrbitControls to enable zoom and rotation */}
           <OrbitControls />
         </Canvas>
