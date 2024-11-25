@@ -53,18 +53,18 @@ const Strivr = () => {
           <a target='_blank' rel='noopener noreferrer' style={{ fontSize: '20px'}} href={STRIVR_REALTIME_DEMO_URL}>Try out the interactive "Immersive Lobby" demo</a>
         </p>
         <i>
-          <p>A couple notes:</p>
+          <p>A couple of notes:</p>
           <ul>
             <li>
               I've included information on this page that Strivr has approved for public sharing, but certain details have been omitted due to their protection as intellectual property.
             </li>
             <li>
-              Throughout the development of this feature, there were distinct divisions of labor between product, design, and engineering. While I had many opportunities to provide feedback at various stages of the iterative design process, I may not have "owned" certain aspects as an engineer. Therefore, I will use "we" to refer to the team's collective efforts and "I" to highlight my individual contributions.
+              Throughout the development of this feature, there were distinct divisions of labor between product, design, and engineering. While I had many opportunities to provide feedback at various stages of the iterative design process, I may not have "owned" certain aspects as an engineer. Therefore, I will use "we" to refer to the team's collective efforts and "I" to highlight my contributions.
             </li>
           </ul>
         </i>
         <p>
-          As a software engineer on the Immersive Experiences team at <a target='_blank' rel='noopener noreferrer' href={STRIVR_URL}>Strivr</a>, an extended reality training platform for enterprises, I collaborated closely with designers to deliver best-in-class virtual reality experiences for workers from a diverse set of industries.
+          As a software engineer on the Immersive Experiences team at <a target='_blank' rel='noopener noreferrer' href={STRIVR_URL}>Strivr</a>, an extended reality training platform for enterprises, I collaborated closely with designers to deliver best-in-class virtual reality experiences for workers from diverse industries.
         </p>
         <p>
           One of our most ambitious projects was revamping the acclimation flow—the initial set of guiding screens users see when they first put on a VR headset and start the application—and the main menu, which serves as the home screen linking to all training programs, modules, and activities. Our goal was to create a more modern aesthetic that aligned with the immersive "landing lobby" home stage style, now standard in many VR applications.
@@ -74,7 +74,7 @@ const Strivr = () => {
       <div className="section" id='problem'>
         <h2>The Problem</h2>
         <p>
-          At a high level, we wanted to cater our onboarding/landing experience towards our user base, which comprised workers who typically had little to no experience in VR but were excited to learn in VR as opposed to a run-of-the-mill monitor-based application.
+          At a high level, we wanted our onboarding/landing experience to cater to our user base, which comprised workers who typically had little to no experience in VR but were excited to learn in VR instead of a run-of-the-mill monitor-based application.
         </p>
         <p>
            We noted three major UX issues to address in our old UI system:
@@ -87,7 +87,7 @@ const Strivr = () => {
             </li></ul>
           </li>
           <li>
-            <b>Monotone gray environment throughout the application</b>
+            <b>The monotone gray environment throughout the application</b>
             <ul><li>
               The gray environment was not particularly enticing for users who expected to have a more engaging learning experience by using VR.
               </li></ul>
@@ -95,7 +95,7 @@ const Strivr = () => {
           <li>
             <b>Reactive tilt-shifting buttons</b>
             <ul><li>
-              This "neat" effect actually served as more of a distraction than an addition to the user experience.
+              This "neat" effect was more of a distraction than an addition to the user experience.
             </li></ul>
           </li>
         </ol>
@@ -116,7 +116,7 @@ const Strivr = () => {
               alt="Old Lobby"
               style={{ width: '70%', display: 'inline-block'}}
             />
-            <figcaption>Gray environment throughout platform</figcaption>
+            <figcaption>Gray environment throughout the platform</figcaption>
           </figure>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
@@ -146,7 +146,7 @@ const Strivr = () => {
           </b>
         </ol>
         <p>
-          From these three HMW statements we developed our problem statement:
+          From these three HMW statements, we developed our problem statement:
         </p>
         <p>
           <b>
@@ -163,7 +163,7 @@ const Strivr = () => {
         <ul>
           <li><b>Trust</b>
             <ul><li>
-              We need to establish trust with users, especially if it's their first time using a headset. Ensuring they feel safe with both the device and our VR application will encourage them to return for more training.
+              We must establish trust with users, especially if it's their first time using a headset. We want to ensure they feel safe with our VR application and the device to encourage them to return for more training.
             </li></ul>
           </li>
           <li><b>Control</b>
@@ -178,7 +178,7 @@ const Strivr = () => {
           </li>
         </ul>
         <p>
-          Basing our approach on these three tenets, we investigated the state of landing screen UI/UX in a competitive analysis of 
+          Through these three tenets, we investigated the state of landing screen UI/UX in a competitive analysis of 
           similar VR applications with content libraries. Our takeaways from this market research were to implement the following:
         </p>
         <ul>
@@ -191,12 +191,12 @@ const Strivr = () => {
           <li>
             <b>Virtual "home" environment</b>
             <ul><li>
-              We discovered that these comfortable virtual spaces—CG representations of a lobby with furniture and decorations—fostered a sense of ease in users who are new to virtual environments. This would address our <b>HMW #3</b> statement from above.
+              We discovered that these comfortable virtual spaces—CG representations of a lobby with furniture and decorations—fostered a sense of ease in users new to virtual environments. This would address our <b>HMW #3</b> statement from above.
             </li></ul>
           </li>
         </ul>
         <p>
-          With these discoveries in mind, we were ready to explore solutions to our problem.
+          With these discoveries in mind, we were ready to explore solutions to our problems.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -249,7 +249,7 @@ const Strivr = () => {
                 (+) We surround users with content in a 360&deg; circle.
               </li></ul>
               <ul><li>
-                (-) Forcing users to rotate their head beyond a 180&deg; field of view may force them to get up from their chair—they would likely be seated for the majority of our immersive experiences—to view all of the interactable content.
+                (-) Forcing users to rotate their heads beyond a 180&deg; field of view may force them to get up from their chairs—they would likely be seated for the majority of our immersive experiences—to view all of the interactable content.
               </li></ul>
             </li>
             <li>
@@ -263,17 +263,17 @@ const Strivr = () => {
             </li>
           </ol>
           <p>
-            Between our options for our new virtual environment, we landed on our <b>Teleport</b> experience prototype. Our rationale was that our users often had little to no experience in VR, so we wanted to prioritize their safety and comfort while reducing friction as much as possible between users putting on the headset and launching their first activity. By not overwhelming users with too much freedom of movement, they would have more bandwidth to focus on the training content while still being able to enjoy the novelty of being in a virtual environment (<b>HMW #3</b>).
+            Between our options for our new virtual environment, we landed on our <b>Teleport</b> experience prototype. Our rationale was that our users often had little to no experience in VR, so we wanted to prioritize their safety and comfort while reducing friction as much as possible between users putting on the headset and launching their first activity. By not overwhelming users with too much freedom of movement, they would have more bandwidth to focus on the training content while still enjoying the novelty of being in a virtual environment (<b>HMW #3</b>).
           </p>
           <p>
-            This design also lent itself to our previous discovery that we should display related content in a single container (<b>HMWs #1 and #2</b>). Since our users would have interactivity constrained to their field of view, the content should be contained to a central "screen" placed in front of users.
+            This design also lent itself to our previous discovery that we should display related content in a single container (<b>HMWs #1 and #2</b>). Since our users would be constrained to their field of view, the content should be contained to a central "screen" in front of them.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='low-fi-prototypes'>
         <h2>Low-Fidelity Prototypes</h2>
         <p>
-          We worked on two kinds of prototypes: one for the new UI and the one for the virtual environment.
+          We worked on two prototypes: one for the new UI and one for the virtual environment.
         </p>
         <h3>New UI</h3>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
@@ -314,7 +314,7 @@ const Strivr = () => {
           </figure>
         </div>
         <p>
-          We imagined our users entering the lobby from the acclimation flow, which would take place in a dark environment so that they are not distracted while receiving important usage instructions (<b>HMW #2</b>).
+          We imagined our users entering the lobby from the acclimation flow, which would take place in a dark environment so that they would not be distracted while receiving important usage instructions (<b>HMW #2</b>).
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -327,7 +327,7 @@ const Strivr = () => {
           </figure>
         </div>
         <p>
-          Our vision for the virtual lobby environment was a CG-designed home with an open lobby where users can interact with our main menu and content. 
+          Our vision for the virtual lobby environment was a CG-designed home with an open lobby where users could interact with our main menu and content. 
         </p>
         <p>
           Once they completed the acclimation flow, they would enter a warm, inviting space where they could feel relaxed and ready to engage with immersive content. We designed the open layout of the lobby to create the illusion of being in a bigger space. Poorly designed VR can feel constricting, especially with heavy hardware and limited freedom of movement, so we wanted to alleviate that discomfort by bringing users into an open area (<b>HMW #3</b>).
@@ -343,7 +343,7 @@ const Strivr = () => {
           </figure>
         </div>
         <p>
-          We also designed the layout of the virtual home to have clearly visible and distinct destinations (pinpointed by the pink dots in the "X" diagram from the lobby layout prototype). Each of these areas in the virtual home were designed with a unique ambiance to match the theme of the content that would be accessible to users when they teleport to that hotspot. This would enable us to categorize different information displays within the lobby while leaning into mental models that users already have of compartmentalization by location.
+          We also designed the layout of the virtual home to have visible and distinct destinations (pinpointed by the pink dots in the "X" diagram from the lobby layout prototype). Each of these areas in the virtual home was designed with a unique ambiance to match the content accessible to users when they teleport to that hotspot. This would enable us to categorize different information displays within the lobby while leaning into existing mental models of compartmentalization by location.
         </p>
         <p>
           After validating our prototypes, we were finally ready to implement the new acclimation and lobby.
@@ -356,10 +356,10 @@ const Strivr = () => {
           The UI upgrade invoked an extra layer of complexity in my work as an engineer: I wasn't just responsible for implementing the design of our new UI system as specified in the prototypes, but I was also tasked with building the UI so that designers could visit a "sandbox" scene in Unity and iterate on existing designs by modifying their sources directly. In essence, I needed to build modular UI components that could be stacked on top of each other to create new UI objects, and these UI components needed to have their visual properties exposed in a way that designers without Unity programming knowledge could easily tweak values to update the appearance of the UI objects.
         </p>
         <p>
-          In order to expose a set of properties for a given UI component, I utilized the <a href={SCRIPTABLE_OBJECT_URL}>Scriptable Object</a> class provided by Unity to define a custom set of values to assign to the same set of property fields. By modularizing these property sets, I enabled designers to plug-and-chug a wide variety of aesthetic permutations into the same UI component templates, reducing their design iteration time to one-tenth of what it previously took to test different styles.
+          To expose a set of properties for a given UI component, I utilized the <a href={SCRIPTABLE_OBJECT_URL}>Scriptable Object</a> class provided by Unity to define a custom set of values to assign to the same set of property fields. By modularizing these property sets, I enabled designers to "plug and chug" a wide variety of aesthetic permutations into the same UI component templates, reducing their design iteration time to one-tenth of what it previously took to test different styles.
         </p>
         <p>
-          Development of the modularized component scheme and sandbox proved to be a meta-design challenge within our pre-existing design problem. I needed to ensure the designs were optimized for both our VR users and our internal design team. By keeping our HMW statements in mind as I programmed the functionality for our new UI and environment, I successfully implemented our new acclimation and lobby.
+          The modularized component scheme and sandbox development proved to be a meta-design challenge within our pre-existing design problem. I needed to ensure the designs were optimized for both our VR users and our internal design team. By keeping our HMW statements in mind as I programmed the functionality for our new UI and environment, I successfully implemented our new acclimation and lobby.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -371,7 +371,7 @@ const Strivr = () => {
         <br />
         <i style={{ display: 'flex', justifyContent: 'center' }}>New acclimation and lobby featured in Strivr's "Get Started" demo</i>
         <p>
-          Once we finalized development of our new acclimation and lobby, we were able to answer our three HMW statements from before:
+          Once we finalized the development of our new acclimation and lobby, we were able to answer our three HMW statements from before:
         </p>
         <ol>
         <li>
@@ -390,14 +390,14 @@ const Strivr = () => {
                 Simplifying interactions to one button.
               </li>
               <li>
-                Starting users in a minimally distracting environment then moving them to a brighter lobby environment when they are ready to learn.
+                Starting users in a minimally distracting environment and moving them to a brighter lobby environment when they are ready to learn.
               </li>
             </b></ul>
           </li>
           <li>
             We created an enticing 3D environment for our users by:
             <ul><li>
-              <b>Designing an open-walled virtual lobby that uses environmental cues to direct the users' attention to important interactive elements.</b>
+              <b>Designing an open-walled virtual lobby that uses environmental cues, directing user attention to important interactive elements.</b>
             </li></ul>
           </li>
         </ol>
@@ -481,7 +481,7 @@ const Strivr = () => {
             <b>Documentation, documentation, documentation.</b>
             <ul>
               <li>
-                For a project of this scale, it was crucial to keep our design and engineering decisions well-organized and easily accessible. With hundreds of different design and engineering specs to manage, we needed to improve efficiency by tracking where files were stored, identifying finalized versus living documents, and clarifying ownership of specific feature subsets.
+                For a project of this scale, it was crucial to keep our design and engineering decisions well-organized and easily accessible. With hundreds of design and engineering specs to manage, we needed to improve efficiency by tracking where files were stored, identifying finalized versus living documents, and clarifying ownership of specific feature subsets.
               </li>
             </ul>
           </li>
