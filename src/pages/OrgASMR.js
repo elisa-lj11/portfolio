@@ -183,7 +183,6 @@ const OrgASMR = () => {
         <div className='interaction-instructions'>
           Drag and zoom to interact with the model below
         </div>
-        <br></br>
         <div style={{ border: '2px solid #fff', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
           <Canvas 
             ref={canvasRef}
