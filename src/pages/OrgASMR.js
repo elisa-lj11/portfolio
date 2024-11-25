@@ -184,39 +184,41 @@ const OrgASMR = () => {
           Drag and zoom to interact with the model below
         </div>
         <br></br>
-        <Canvas 
-          ref={canvasRef}
-          camera={{
-            position: [5, 5, 5], // Change these values to better see your model
-            fov: 50, // Field of view (adjust as necessary)
-          }}
-          style={{ height: '75vh', width: '100%' }}
-          gl={{ antialias: true, powerPreference: 'high-performance' }}
-          onCreated={({ gl }) => {
-            gl.setPixelRatio(window.devicePixelRatio);
+        <div style={{ border: '2px solid #fff', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
+          <Canvas 
+            ref={canvasRef}
+            camera={{
+              position: [5, 5, 5], // Change these values to better see your model
+              fov: 50, // Field of view (adjust as necessary)
+            }}
+            style={{ height: '50vh', width: '100%' }}
+            gl={{ antialias: true, powerPreference: 'high-performance' }}
+            onCreated={({ gl }) => {
+              gl.setPixelRatio(window.devicePixelRatio);
 
-            return () => {
-              gl.dispose();
-            };
-          }}
-        >
-          {/* Ambient light provides soft global illumination */}
-          <ambientLight intensity={1} />
-          
-          {/* Directional light to cast shadows */}
-          <directionalLight position={[-5, 5, 5]} intensity={1} />
-          
-          {/* Load model with a fallback */}
-          <Suspense fallback={null}>
-            <STLModel 
-              modelPath={handleModelUrl} 
-              scale={[0.0275, 0.0275, 0.0275]} 
-              rotation={[2, 3, 0.5]} 
-            />
-          </Suspense>
-          {/* OrbitControls to enable zoom and rotation */}
-          <OrbitControls />
-        </Canvas>
+              return () => {
+                gl.dispose();
+              };
+            }}
+          >
+            {/* Ambient light provides soft global illumination */}
+            <ambientLight intensity={1} />
+            
+            {/* Directional light to cast shadows */}
+            <directionalLight position={[-5, 5, 5]} intensity={1} />
+            
+            {/* Load model with a fallback */}
+            <Suspense fallback={null}>
+              <STLModel 
+                modelPath={handleModelUrl} 
+                scale={[0.0275, 0.0275, 0.0275]} 
+                rotation={[2, 3, 0.5]} 
+              />
+            </Suspense>
+            {/* OrbitControls to enable zoom and rotation */}
+            <OrbitControls />
+          </Canvas>
+        </div>
         <p>
           The SolidWorks design was realized using a 3D printer.
         </p>
