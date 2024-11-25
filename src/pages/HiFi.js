@@ -35,7 +35,7 @@ const HiFi = () => {
         <img src={hifiOverviewImageUrl} alt='Hifi Overview' width='100%'/>
         <br></br>
         <p>
-          I worked as an intern and later as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, a startup that formerly focused on social virtual reality. I was part of the content prototyping team, where we created new experiences to showcase the potential of the metaverse. Our goal was to inspire users with engaging content while empowering developers through accessible APIs that allowed them to easily integrate their own creations.
+          I worked as an intern and later as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, a startup that formerly focused on social virtual reality. I was part of the content prototyping team, where we created new experiences to showcase the potential of the metaverse. Our goal was to inspire users with engaging content while empowering developers through accessible APIs that allowed them to integrate their own creations easily.
         </p>
         <p>
           I've included a selection of my projects below.
@@ -46,18 +46,18 @@ const HiFi = () => {
         <h2>Clara.io Integration</h2>
         <img src={claraImageUrl} alt='Clara.io in Hifi' width='100%'/>
         <p>
-          I developed an integration to download 3D entities from an external asset library directly through High Fidelity's interface. My project allows users to access <a target='_blank' rel='noopener noreferrer' href={CLARA_URL}>Clara.io</a> from in-world so that they can pick a model and directly add it to their domain without leaving the application.
+          I developed an integration to download 3D entities from an external asset library directly through High Fidelity's interface. My project allowed users to access <a target='_blank' rel='noopener noreferrer' href={CLARA_URL}>Clara.io</a> from in-world to pick a model and directly add it to their domain without leaving the application.
         </p>
         <h3>Background</h3>
         <p>
           During my onboarding at High Fidelity, I noticed the friction that users experienced when trying to upload 3D assets into the metaverse. For an application so reliant on content, this process should have been seamless.
         </p>
         <p>
-          I took initiative in addressing this area for improvement and proposed a solution: an asset database accessible directly within the application. By reducing the time required for asset search, download, and import, users would be empowered to create a more dynamic and vibrant virtual world.
+          I took the initiative to address this area for improvement and proposed a solution: an asset database accessible directly within the application. By reducing the time required for asset search, download, and import, users would be empowered to create a more dynamic and vibrant virtual world.
         </p>
         <h3>Development</h3>
         <p>
-          After researching what asset databases were widely available, I decided to move forward with a Clara.io integration because they maintained a wide variety of 3D assets while enforcing certain texture and model format requirements that meshed well with High Fidelity's system.
+          After researching what asset databases were widely available, I decided to move forward with a Clara.io integration because they maintained a huge database of 3D assets while enforcing certain texture and model format requirements that meshed well with High Fidelity's system.
         </p>
         <p>
           The development of this feature posed several challenges:
@@ -70,11 +70,11 @@ const HiFi = () => {
             Streamlining the process of downloading a zip folder with 3D assets, unzipping the assets, and uploading the contents of the asset folder into High Fidelity
           </li>
           <li>
-            Building in an automatic quality control on models (i.e., preventing users from uploading models that aren't supported in High Fidelity)
+            Building in automatic quality control on models (i.e., preventing users from uploading models that aren't supported in High Fidelity)
           </li>
         </ul>
         <p>
-          I navigated these challenges by breaking down the development process into milestones and thoroughly documenting each step. I designed the system to be scalable with other asset databases, with the intention that the Clara.io integration would serve as a proof of concept for a more streamlined asset upload process that could host multiple databases.
+          I navigated these challenges by breaking down the development process into milestones and thoroughly documenting each step. I designed the system to be scalable with other asset databases so that the Clara.io integration would serve as a proof of concept for a more streamlined asset upload process that could host multiple databases.
         </p>
         <h3>Use Case</h3>
         <ol>
@@ -85,7 +85,7 @@ const HiFi = () => {
             Open "Marketplace" within High Fidelity
           </li>
           <li>
-            Use status bar to switch between Marketplace and Clara.io via the “marketplace” of marketplaces
+            Use the status bar to switch between Marketplace and Clara.io via the “marketplace” of marketplaces
           </li>
           <li>
             Log onto Clara.io within High Fidelity
@@ -97,7 +97,7 @@ const HiFi = () => {
             Download the .fbx format of the model
           </li>
           <li>
-            Save with a specific filename to High Fidelity's built-in Asset Browser
+            Save with a searchable filename to High Fidelity's built-in Asset Browser
           </li>
           <li>
             Upload to the virtual world from the Asset Browser
@@ -116,7 +116,7 @@ const HiFi = () => {
         <br></br>
         <i style={{ display: 'flex', justifyContent: 'center' }}>High Fidelity featured at 1:20</i>
         <p>
-          After the success of the Clara.io integration, I integrated an API that surfaced asset import functionality from <a target='_blank' rel='noopener noreferrer' href={POLY_URL}>Google Poly</a>, a 3D object and scene website. Integrating this asset library to High Fidelity was significantly streamlined by the foundation established through the Clara.io integration. With direct access to Google Poly's extensive collection of user-generated models, High Fidelity users could create a wide variety of environments and virtual worlds to share.
+          After the success of the Clara.io integration, I integrated an API that surfaced asset import functionality from <a target='_blank' rel='noopener noreferrer' href={POLY_URL}>Google Poly</a>, a 3D object and scene website. The integration of this asset library to High Fidelity was significantly streamlined by the foundation established through the Clara.io integration. With direct access to Google Poly's extensive collection of user-generated models, High Fidelity users could create a wide variety of environments and virtual worlds to share.
         </p>
         <p>
           The Google Poly integration script is available on my <a target='_blank' rel='noopener noreferrer' href={POLY_SCRIPT_URL}>GitHub</a>.
@@ -133,7 +133,7 @@ const HiFi = () => {
         <br></br>
         <i style={{ display: 'flex', justifyContent: 'center' }}>"FX Pill" demo</i>
         <p>
-          I scripted virtual pinatas, animated emojis, graphics effect "pills," music visualizers, and other playful content that you may not be able to find in the real world. This content was available on High Fidelity's "Marketplace," allowing users to freely download and incorporate it in their own virtual spaces. The scripts for this content were also open-source, giving other developers the opportunity to experiment with and build upon them.
+          I scripted virtual pinatas, animated emojis, graphics effect "pills," music visualizers, and other playful content that you may not be able to find in the real world. This content was available on High Fidelity's "Marketplace," allowing users to download models freely and incorporate them in their virtual spaces. The scripts for this content were also open-source, allowing other developers to experiment with and build upon them.
         </p>
         <p>
           All content scripts are available on my <a target='_blank' rel='noopener noreferrer' href={HIFI_CONTENT_SCRIPTS_URL}>GitHub</a>.
@@ -155,7 +155,7 @@ const HiFi = () => {
             <b>Push for your ideas.</b>
             <ul>
               <li>
-                In the same breath, working at a small startup allowed me to passionately advocate for ideas that I really believed in, providing me with the freedom to implement them effectively.
+                In the same breath, working at a small startup allowed me to passionately advocate for ideas that I really believed in, giving me the freedom to implement them effectively.
               </li>
             </ul>
           </li>
@@ -163,7 +163,7 @@ const HiFi = () => {
             <b>The more you engage with users, the better you can serve them.</b>
             <ul>
               <li>
-                I was fortunate to work on a product that allowed us to virtually share space with our users. Thanks to High Fidelity's social networking model, I had the opportunity to converse with dozens of users while developing, testing, and iterating on content. Though formal user testing is crucial for product growth, my direct exposure to user feedback made me more effective in my role as a content/prototype developer, as it deepened my empathy for our users.
+                I was fortunate to work on a product that allowed us to share space virtually with our users. Thanks to High Fidelity's social networking model, I was grateful to converse with dozens of users while developing, testing, and iterating on content. Though formal user testing is crucial for product growth, my direct exposure to user feedback made me more effective as a content/prototype developer, as it deepened my empathy for our users.
               </li>
             </ul>
           </li>
