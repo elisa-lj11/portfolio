@@ -51,6 +51,10 @@ const ImmersiveMedia = () => {
       <hr className="solid"></hr>
       <div className="section" id='rv-vr'>
         <h2>"RV VR": A Look into the Housing Crisis</h2>
+        <div className='interaction-instructions'>
+          Drag the video to rotate the viewpoint
+        </div>
+        <br></br>
         <div className="video-youtube">
           {/* Overlay div for click handling on 360 videos on mobile*/}
           {isMobile && (
@@ -73,8 +77,6 @@ const ImmersiveMedia = () => {
           )}
           <iframe className="responsive-iframe" src={RVVR_VIDEO_EMBED_URL} title="RV VR" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <br></br>
-        <i style={{ display: 'flex', justifyContent: 'center', fontWeight: 'bold' }}>Drag the video to rotate the viewpoint</i>
         <p>
           "RV VR" is an immersive experience that allows viewers to see first-hand what transient life in a recreational vehicle is like in Silicon Valley. Published alongside this <a target='_blank' rel='noopener noreferrer' href={ARTICLE_URL}>Peninsula Press article</a>, the six-and-a-half-minute video harnesses immersive technology to create an experience that captures the realities of the Bay Area housing crisis in their rawest form.
         </p>
@@ -101,6 +103,10 @@ const ImmersiveMedia = () => {
       <hr className="solid"></hr>
       <div className="section" id='lucid-dreaming'>
         <h2>"Lucid Dreaming 360": A How-To Video</h2>
+        <div className='interaction-instructions'>
+          Drag the video to rotate the viewpoint
+        </div>
+        <br></br>
         <div className="video-youtube">
           {/* Overlay div for click handling on 360 videos on mobile*/}
           {isMobile && (
@@ -123,8 +129,6 @@ const ImmersiveMedia = () => {
           )}
           <iframe className="responsive-iframe" src={LUCID_VIDEO_EMBED_URL} title="Lucid Dreaming 360" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <br></br>
-        <i style={{ display: 'flex', justifyContent: 'center', fontWeight: 'bold' }}>Drag the video to rotate the viewpoint</i>
         <p>
           "Lucid Dreaming 360" is a quick and interactive guide to lucid dreaming based on sleep study research. The 7-minute video, produced back in 2016, used at-the-time cutting-edge 360-video capture technology to create an immersive experience that used the principles of immersive learning to the practice of lucid dreaming.
         </p>

@@ -94,6 +94,14 @@ figcaption {
   font-style: italic;
 }
 
+.interaction-instructions {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #706EF5;
+}
+
 .video {
   position: relative;
   overflow: hidden;
