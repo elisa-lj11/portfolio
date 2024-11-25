@@ -45,7 +45,7 @@ const ImmersiveMedia = () => {
         <img src={stanfordCardboardVRImageUrl} alt='Stanford Cardboard VR' width='40%'/>
         <br />
         <p>
-          While I was a student at Stanford University, I produced an assortment of 360&deg; video experiences that are detailed below.
+          While I was a student at Stanford University, I produced an assortment of 360&deg; video experiences detailed below.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -78,14 +78,14 @@ const ImmersiveMedia = () => {
           <iframe className="responsive-iframe" src={RVVR_VIDEO_EMBED_URL} title="RV VR" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <p>
-          "RV VR" is an immersive experience that allows viewers to see first-hand what transient life in a recreational vehicle is like in Silicon Valley. Published alongside this <a target='_blank' rel='noopener noreferrer' href={ARTICLE_URL}>Peninsula Press article</a>, the six-and-a-half-minute video harnesses immersive technology to create an experience that captures the realities of the Bay Area housing crisis in their rawest form.
+          "RV VR" is an immersive experience that allows viewers to see first-hand what transient life in a recreational vehicle is like in Silicon Valley. Published alongside this <a target='_blank' rel='noopener noreferrer' href={ARTICLE_URL}>Peninsula Press article</a>, the six-and-a-half-minute video harnesses immersive technology to create an experience that captures the realities of the Bay Area housing crisis in its rawest form.
         </p>
         <h3>Background</h3>
         <p>
-          I took the course "<a target='_blank' rel='noopener noreferrer' href={COMM_CLASS_URL}>COMM 280</a>: Virtual Reality Journalism in the Public Sphere," where we formed groups of three to report on local issues, using 360&deg; video technology to engage audiences in a fresh and innovative way. Our goal was to shed light on these issues in a way that traditional journalism doesn't fully do justice. My group chose to report on the Bay Area housing crisis, believing that immersive media could help viewers better empathize with the cramped conditions in which many Bay Area RV community residents live.
+          I took the course "<a target='_blank' rel='noopener noreferrer' href={COMM_CLASS_URL}>COMM 280</a>: Virtual Reality Journalism in the Public Sphere," where we formed groups of three to report on local issues, using 360&deg; video technology to engage audiences in a fresh and innovative way. Our goal was to shed light on these issues in a way that traditional journalism doesn't fully do justice. My group chose to report the Bay Area housing crisis, believing immersive media could help viewers better empathize with the cramped conditions in which many Bay Area RV community residents live.
         </p>
         <p>
-          We discovered through our research to prepare this piece that local governments have struggled to balance public safety with providing support for these RV communities, implementing regulations like reduced parking times and pursuing limited affordable housing projects. Yet, there is no clear solution, and residents of RV communities, like our two interviewees featured in the video, face daily challenges of survival and stability. We hoped to bring their stories to light in a highly impactful yet ethical way.
+          In our research to prepare this piece, we discovered that local governments had struggled to balance public safety with providing support for these RV communities, implementing regulations like reduced parking times, and pursuing limited affordable housing projects. Yet, there is no clear solution, and residents of RV communities, like our two interviewees featured in the video, face daily challenges of survival and stability. We hoped to bring their stories to light in a highly impactful yet ethical way.
         </p>
         <h3>Tools</h3>
         <img src={ricohImageUrl} alt='Ricoh Theta S' width='30%'/>
@@ -93,7 +93,7 @@ const ImmersiveMedia = () => {
           We used the <a target='_blank' rel='noopener noreferrer' href={RICOH_URL}>Ricoh Theta S</a> (discontinued) to film our mini-documentary. This camera featured two fish-eye lenses, one for each side of the device, to create full 360&deg; videos with minimal intervention. It also included remote recording and live previews through their app, enabling us to effortlessly capture moments and assess the quality of our takes in real time.
         </p>
         <p>
-          Since the Ricoh Theta S automatically synced and stitched the video clips upon export, we were able to rely solely on Adobe's <a target='_blank' rel='noopener noreferrer' href={PREMIERE_PRO_URL}>Premiere Pro</a> video editing software for post-production.
+          Since the Ricoh Theta S automatically synced and stitched the video clips upon export, we relied solely on Adobe's <a target='_blank' rel='noopener noreferrer' href={PREMIERE_PRO_URL}>Premiere Pro</a> video editing software for post-production.
         </p>
         <h3>Filming</h3>
         <p>
@@ -130,16 +130,16 @@ const ImmersiveMedia = () => {
           <iframe className="responsive-iframe" src={LUCID_VIDEO_EMBED_URL} title="Lucid Dreaming 360" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <p>
-          "Lucid Dreaming 360" is a quick and interactive guide to lucid dreaming based on sleep study research. The 7-minute video, produced back in 2016, used at-the-time cutting-edge 360-video capture technology to create an immersive experience that used the principles of immersive learning to the practice of lucid dreaming.
+          "Lucid Dreaming 360" is a quick and interactive guide to lucid dreaming based on sleep study research. The 7-minute video, produced in 2016, used (for its time) cutting-edge 360-video capture technology to create an immersive experience that applies the principles of immersive learning to the practice of lucid dreaming.
         </p>
         <h3>Background</h3>
         <p>
-          I took the <a target='_blank' rel='noopener noreferrer' href={SLEEP_AND_DREAMS_CLASS_URL}>"Sleep and Dreams"</a> course led by Dr. William Dement and Dr. Rafael Pelayo, both renowned pioneers in sleep medicine research. For our final project, we were tasked with creating an outreach video that creatively communicated some of the key concepts from the class. At the time, I had just begun working at <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>VHIL</a>, Stanford's virtual reality lab where I was learning about the effectiveness of <a target='_blank' rel='noopener noreferrer' href={VHIL_LEARNING_URL}>immersive learning</a> and how to operate 360&deg; video capture technology. I saw this Sleep Outreach project as a opportunity to experiment with immersive technology and produce an engaging yet informative lesson on lucid dreaming, a concept that has fascinated me ever since I was a kid. I also felt that the immersive nature of a 360&deg; video would beautifully complement the theme of dreaming, allowing viewers to fully experience the sensation of being inside a dream. 
+          I took the <a target='_blank' rel='noopener noreferrer' href={SLEEP_AND_DREAMS_CLASS_URL}>"Sleep and Dreams"</a> course led by Dr. William Dement and Dr. Rafael Pelayo, both renowned pioneers in sleep medicine research. For our final project, we were tasked with creating an outreach video that creatively communicated some of the key concepts from the class. At the time, I had just begun working at <a target='_blank' rel='noopener noreferrer' href={VHIL_URL}>VHIL</a>, Stanford's virtual reality lab where I was learning about the effectiveness of <a target='_blank' rel='noopener noreferrer' href={VHIL_LEARNING_URL}>immersive learning</a> and how to operate 360&deg; video capture technology. I saw this Sleep Outreach project as an opportunity to experiment with immersive technology and produce an engaging yet informative lesson on lucid dreaming, a concept that has fascinated me since I was a kid. I also felt that the immersive nature of a 360&deg; video would beautifully complement the theme of dreaming, allowing viewers to fully experience the sensation of being inside a dream. 
         </p>
         <h3>Tools</h3>
         <img src={goProRigImageUrl} alt='GoPro custom 3D-printed rig' width='40%'/>
         <p>
-          For the recording equipment, I mounted six <a target='_blank' rel='noopener noreferrer' href={GO_PRO_HERO_URL}>GoPro HERO4 cameras</a> together using a <a target='_blank' rel='noopener noreferrer' href={GO_PRO_RIG_URL}>custom 3D-printed rig</a>. This technology is obsolete in the wake of today's handleheld single-device 360&deg; cameras, but in 2016, we had to be crafty to take advantage of emerging immersive technology while maintaining high-resolution videos.
+          For the recording equipment, I mounted six <a target='_blank' rel='noopener noreferrer' href={GO_PRO_HERO_URL}>GoPro HERO4 cameras</a> together using a <a target='_blank' rel='noopener noreferrer' href={GO_PRO_RIG_URL}>custom 3D-printed rig</a>. This technology is obsolete in the wake of today's handheld single-device 360&deg; cameras. In 2016, however, we had to be crafty to take advantage of emerging immersive technology while maintaining high-resolution videos.
         </p>
         <img src={kolorSoftwareImageUrl} alt='Kolor Autopano Video Pro software' width='80%'/>
         <p>
@@ -147,7 +147,7 @@ const ImmersiveMedia = () => {
         </p>
         <h3>Filming</h3>
         <p>
-          I was a member of <a target='_blank' rel='noopener noreferrer' href={CALYPSO_URL}>Cardinal Calypso</a>, Stanford's steel pan band, and they graciously volunteered to perform in my video. To avoid potential pitfalls with stitching together multiple scenes for the video, I wrote the script to be filmed in a single shot. While writing the script and staging the performers, I considered how we could use the 360&deg; field of view by arranging the performers in a circle around the camera, but I also made sure to limit distractions around the main speaker by staging peformers further back.
+          I was a member of <a target='_blank' rel='noopener noreferrer' href={CALYPSO_URL}>Cardinal Calypso</a>, Stanford's steel pan band, and they graciously volunteered to perform in my video. To avoid potential pitfalls with stitching together multiple scenes for the video, I wrote the script to be filmed in a single shot. While writing the script and staging the performers, I considered how we could use the 360&deg; field of view by arranging the performers in a circle around the camera. I also made sure to limit distractions around the main speaker by staging performers further back.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -158,7 +158,7 @@ const ImmersiveMedia = () => {
             <b>360&deg; video capture technology has come a long way!</b>
             <ul>
               <li>
-                Back when I produced my "Lucid Dreaming 360" video, I had to rely on numerous technical hacks to make the video look good, and my patience was tested by fickle technology and lengthy export times. In just three years between producing "Lucid Dreaming 360" and "RV VR", 360&deg; filming technology had advanced significantly and facilitated wider public access.
+                When I produced my "Lucid Dreaming 360" video, I had to rely on numerous technical hacks to make the video look good. My patience was often tested by fickle technology and lengthy export times. In just three years between producing "Lucid Dreaming 360" and "RV VR", 360&deg; filming technology had advanced significantly and facilitated wider public access.
               </li>
             </ul>
           </li>
@@ -166,7 +166,7 @@ const ImmersiveMedia = () => {
             <b>Great immersive storytelling comes with great responsibility.</b>
             <ul>
               <li>
-                While we were enthusiastic about using an immersive medium to tell the "RV VR" story, we had to exercise careful judgment in selecting which parts of interviews to include and how much of our interviewees' lives to reveal. A home is a personal space, and given the privilege of sharing their stories, we needed to respect their agency and privacy.
+                While we were enthusiastic about using an immersive medium to tell the "RV VR" story, we had to exercise careful judgment in selecting which parts of the interviews to include and how much of our interviewees' lives to reveal. A home is a personal space, and given the privilege of sharing their stories, we wanted to respect their agency and privacy.
               </li>
             </ul>
           </li>
