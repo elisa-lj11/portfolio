@@ -78,7 +78,7 @@ const OrgASMR = () => {
       <div className="section" id='background'>
         <h2>Background</h2>
         <p>
-          During my Stanford undergrad, I took "<a target='_blank' rel='noopener noreferrer' href={CCRMA_CLASS_URL}>MUSIC 250A</a>: Physical Interaction Design for Music." In this class, we explored how we can physically interact with real-time electronic sound by using and designing sensors, circuits, embedded computers, communication protocols and sound synthesis. For my final project, I designed and built a hybrid musical instrument that integrated both acoustic and electronic components, which I showcased during a final performance alongside other student inventions. I implemented the "orgASMR," which I will describe in more detail in the sections below.
+          During my Stanford undergrad, I took "<a target='_blank' rel='noopener noreferrer' href={CCRMA_CLASS_URL}>MUSIC 250A</a>: Physical Interaction Design for Music." In this class, we explored how to physically interact with real-time electronic sound by using and designing sensors, circuits, embedded computers, communication protocols, and sound synthesis. For my final project, I designed and built a hybrid musical instrument that integrated acoustic and electronic components, which I showcased during a final performance alongside other student inventions. I implemented the "orgASMR," which I will describe in more detail in the sections below.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -86,7 +86,7 @@ const OrgASMR = () => {
         <h2>Ideation</h2>
         <img src={firstSketchImageUrl} alt='Sketch of orgASMR' width='80%'/>
         <p>
-          I set out to create an instrument that experimented with multiple sensory modalities: sound, kinesthesia, and tactile feedback. I was intrigued by the versatility of the classic "head-scratcher" contraption, which not only required users to move their arm in three dimensions to simulate a head-scratching motion, but also featured flexible arms that adjusted to the shape of the user's head. This added an additional layer of control to modulate the sound produced by the device.
+          I wanted to create an instrument that experimented with multiple sensory modalities: sound, kinesthesia, and tactile feedback. I was intrigued by the versatility of the classic "head-scratcher" contraption, which not only required users to move their arm in three dimensions to simulate a head-scratching motion but also featured flexible arms that adjusted to the shape of the user's head. This added a layer of control to modulate the sound produced by the device.
         </p>
         <p>
           To achieve this 4D sound system, I planned to design a custom handle that would attach to the head-scratcher. It would incorporate an accelerometer to capture rotational movement, and a flex sensor (previously sketched as a piezoelectric sensor) to convert physical force into input. A USB-based <a target='_blank' rel='noopener noreferrer' href={TEENSY_URL}>Teensy</a> microcontroller would be embedded in the handle, with the entire setup connected to a computer running a script to process the input and generate sound.
@@ -138,7 +138,7 @@ const OrgASMR = () => {
             <b>Flex sensor:</b> The sensor's degree of flex was translated into a frequency, with greater flex producing a higher frequency. This allowed the orgASMR to shift up and down musical scales.
           </li>
           <li>
-            <b>Potentiometer:</b> Also referred to as the "dial button," the potentiometer output was converted to "gain," which we perceived as the sound volume.
+            <b>Potentiometer:</b> Also known as a "dial button," the potentiometer output was converted to "gain," which we perceived as the sound volume.
           </li>
           <li>
             <b>Button:</b> The button's output functioned as the sound "gate," controlling the on and off state of the sound.
@@ -154,7 +154,7 @@ const OrgASMR = () => {
           </li>
         </ul>
         <p>
-          Scripting was developed in tandem with wiring since they were both worked on concurrently in order to incrementally test progress on the orgASMR.
+          I developed the scripts at the same time that I wired the device since they needed to operate concurrently to test progress incrementally on the orgASMR.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -170,7 +170,7 @@ const OrgASMR = () => {
           </video>
         </div>
         <p>
-          Once the orgASMR interactions were thoroughly tested with my first prototype, I moved the components to a smaller protoboard that would fit inside of the custom handle that I would need to make.
+          Once the orgASMR interactions were tested thoroughly with my first prototype, I moved the components to a smaller protoboard that would fit inside the custom handle that I would need to make.
         </p>
         <img src={protoboard2ImageUrl} alt='Second protoboard iteration' width='40%'/>
       </div>
@@ -178,7 +178,7 @@ const OrgASMR = () => {
       <div className="section" id='modeling'>
         <h2>Modeling</h2>
         <p>
-          I aimed to design a sleek handle that would both conceal the functional but less aesthetically pleasing components of the orgASMR and complement the instrument's unique concept. To achieve this, I used <a target='_blank' rel='noopener noreferrer' href={SOLIDWORKS_URL}>SolidWorks</a>, a 3D CAD design software, to design the handle. The handle is divided into top and bottom sections, allowing for easy installation of the protoboard, sensors, and Teensy inside.
+          I aimed to design a sleek handle that would conceal the functional but less aesthetically pleasing components of the orgASMR and complement the instrument's unique concept. To achieve this, I used <a target='_blank' rel='noopener noreferrer' href={SOLIDWORKS_URL}>SolidWorks</a>, a 3D CAD design software, to design the handle. The handle is divided into top and bottom sections, allowing for easy installation of the protoboard, sensors, and Teensy inside.
         </p>
         <div className='interaction-instructions'>
           Drag and zoom to interact with the model below
@@ -240,7 +240,7 @@ const OrgASMR = () => {
           </figure>
         </div>
         <p>
-          In addition to the custom 3D-printed handle, I added ring inserts to the top section to securely fasten the head-scratcher. Using the SolidWorks model dimensions, I designed two rings in Adobe Illustrator and then used a laser cutter to precisely cut them from a resin board.
+          In addition to the custom 3D-printed handle, I added ring inserts to the top section to securely fasten the head-scratcher. Using the SolidWorks model dimensions, I designed two rings in Adobe Illustrator and then used a laser cutter to cut them from a resin board precisely.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
@@ -300,7 +300,7 @@ const OrgASMR = () => {
           </figure>
         </div>
         <p>
-          Up to this point, I had prepared all of the individual physical parts and software. All that remained was to assemble everything together.
+          Up to this point, I had prepared all the individual physical parts and software. All that remained was to assemble all the pieces.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -358,7 +358,7 @@ const OrgASMR = () => {
             <b>It's okay to get crafty on creative projects.</b>
             <ul>
               <li>
-                I hadn't originally planned to design rings to secure the head-scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had plenty of resources available such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
+                I hadn't originally planned to design rings to secure the head-scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had access to plenty of resources, such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
               </li>  
             </ul>
           </li>
@@ -366,7 +366,7 @@ const OrgASMR = () => {
             <b>It's also okay to lean into the craziness.</b>
             <ul>
               <li>
-                I spent many late nights in the product realization lab at CCRMA, which admittedly was not good for my sleep schedule, but perhaps disinhibited me enough to entertain otherwise silly ideas such as using a head-scratcher as a musical instrument. With such an open-ended final project, I felt free to explore how far I could push this quirky idea into reality.
+                I spent many late nights in the product realization lab at CCRMA, which admittedly was not good for my sleep schedule, but perhaps this disinhibited me enough to entertain otherwise silly ideas such as using a head-scratcher as a musical instrument. With such an open-ended final project, I felt free to explore how far I could push this quirky idea into reality.
               </li>  
             </ul>
           </li>
@@ -374,7 +374,7 @@ const OrgASMR = () => {
             <b>Feedback is essential along every design iteration step.</b>
             <ul>
               <li>
-                I was grateful to work alongside such creative, talented, and dedicated students and professors who were forthcoming with their suggestions for improvement. Not only did they lean into the craziness with me, but they helped me see the ways in which I could take the orgASMR to the next level. A great product emerges from a great team.
+                I was grateful to work alongside such creative, talented, and dedicated students and professors who were forthcoming with their suggestions for improvement. Not only did they lean into the craziness with me, but they helped me see the ways I could take the orgASMR to the next level. A great product emerges from a great team.
               </li>
             </ul>
           </li>
