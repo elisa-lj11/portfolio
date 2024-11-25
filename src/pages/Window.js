@@ -1,5 +1,4 @@
-// src/pages/_SamplePage.js
-// Copy this page to create a new project page using standard formatting
+// src/pages/Window.js
 import React, { useState } from 'react';
 import PageTemplate from '../components/PageTemplate';
 
@@ -61,10 +60,10 @@ const Window = () => {
         <img src={hiFiPrototypeScreenshotImageUrl} alt='Window Hi-Fi prototype' width='40%'/>
         <br></br>
         <p>
-          In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 147</a>: Design Thinking for User Experience Design, Prototyping & Evaluation." In this course, my team of three applied design thinking to a quarter-long project focused on mixed reality and human-computer interaction. Over the course of 10 weeks, we moved from ideation to prototyping and ultimately showcased our high-fidelity mobile app at a public fair.
+          "Window" uses augmented reality on a mobile platform to place a personalized mannequin in a storefront's window so users can easily view what a store has to offer.
         </p>
         <p>
-          Our final product used augmented reality on a mobile platform to place a personalized mannequin in a storefront's window so users can easily view what a store has to offer. This project allowed me to deepen my understanding of the iterative design process while continuing to develop my skills in mixed reality technologies, an area I had already begun working in but was eager to expand further.
+          In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 147</a>: Design Thinking for User Experience Design, Prototyping & Evaluation." In this course, my team of three applied design thinking to a quarter-long project focused on mixed reality and human-computer interaction. Over the course of 10 weeks, we moved from ideation to prototyping and ultimately showcased our high-fidelity mobile app at a public fair.
         </p>
       </div>
       <hr className="solid"></hr>

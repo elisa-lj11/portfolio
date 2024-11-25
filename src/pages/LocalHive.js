@@ -63,6 +63,10 @@ const LocalHive = () => {
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h1>"Local Hive": A Human-Centered AI Project</h1>
+        <div className='interaction-instructions'>
+          Interact with the Figma prototype below
+        </div>
+        <br></br>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <iframe
             style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
@@ -75,10 +79,10 @@ const LocalHive = () => {
       </div>
       <br />
       <p>
-        In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI," where my team of four applied design thinking to a quarter-long project at the intersection of healthcare and smart technology. Over 10 weeks, we progressed from ideation to prototyping, ultimately presenting our award-winning product at a public fair.
+        "Local Hive" is an app-hosted platform designed to strengthen community cohesion by enabling users to create and join projects, volunteer, and exchange skills.
       </p>
       <p>
-        Our final product was an app-hosted platform designed to strengthen community cohesion by enabling users to create and join projects, volunteer, and exchange skills. This project provided me with valuable experience in designing and building products from the ground up.
+        In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI," where my team of four applied design thinking to a quarter-long project at the intersection of healthcare and smart technology. Over 10 weeks, we progressed from ideation to prototyping, ultimately presenting our award-winning product at a public fair.
       </p>
       <hr className="solid"></hr>
       <div className="section" id='background-research'>
