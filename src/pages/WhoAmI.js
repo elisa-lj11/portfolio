@@ -173,10 +173,10 @@ const WhoAmI = () => {
         </p>
         <br />
         <br />
-        <h3>TIER</h3>
+        <h3>Taiwan Institute of Economic Research</h3>
         <i>June 2019 - August 2019</i>
         <p>
-          I moved abroad to Taiwan to work as a Natural Language Processing Software Engineering intern at the <a target='_blank' rel='noopener noreferrer' href={TIER_URL}>Taiwan Institute of Economic Research</a>, where I created and refined NLP analysis programs to parse information about XR technology updates from relevant databases for TIER's industry analysis.
+          I moved abroad to Taiwan to work as a Natural Language Processing Software Engineering intern at the <a target='_blank' rel='noopener noreferrer' href={TIER_URL}>Taiwan Institute of Economic Research</a> (TIER), where I created and refined NLP analysis programs to parse information about XR technology updates from relevant databases for TIER's industry analysis.
         </p>
         <br />
         <br />
