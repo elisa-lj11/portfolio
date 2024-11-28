@@ -4,6 +4,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './components/Home';
 import Strivr from './pages/Strivr';
+import Spaceship from './pages/Spaceship';
 import LocalHive from './pages/LocalHive';
 import HiFi from './pages/HiFi';
 import OrgASMR from './pages/OrgASMR';
@@ -39,6 +40,7 @@ const App = () => {
           {/* Update node map in OrbitingNodes.js with new routes */}
           <Route path="/" element={< Home />} />
           <Route path="/strivr" element={< Strivr />} />
+          <Route path="/spaceship" element={< Spaceship />} />
           <Route path="/local-hive" element={< LocalHive />} />
           <Route path="/hifi" element={< HiFi />} />
           <Route path="/orgasmr" element={< OrgASMR />} />

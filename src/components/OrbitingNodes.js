@@ -20,6 +20,14 @@ class OrbitingNodes {
         color: 0x2d3cdc,
       },
       {
+        id: 'spaceship',
+        title: '"Scavenger\'s Gain": From Hotel Room to Spaceship Adventure',
+        titleMobile: 'Personal: "Scavenger\'s Gain"',
+        nodeRadius: 0.35,
+        finalRadius: 3.5,
+        color: 0xc32546,
+      },
+      {
         id: 'local-hive',
         title: '"Local Hive": A Human-Centered AI Project',
         titleMobile: 'Stanford: "Local Hive"',
@@ -78,7 +86,7 @@ class OrbitingNodes {
     this.startRadius = 0.0;
     this.radiusIncrement = 3.2; // Space between orbit levels
     this.numNodes = this.orbitingNodeData.length;
-    this.nodesPerLevel = 3; // Number of nodes per orbit level
+    this.nodesPerLevel = 4; // Number of nodes per orbit level
 
     this.baseRotationSpeed = 0.3; // Base rotation speed
     this.mobileRotationSpeed = 0.05; // Rotation speed on mobile
