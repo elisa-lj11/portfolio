@@ -130,7 +130,7 @@ const ImmersiveMedia = () => {
           <iframe className="responsive-iframe" src={LUCID_VIDEO_EMBED_URL} title="Lucid Dreaming 360" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <p>
-          "Lucid Dreaming 360" is a quick and interactive guide to lucid dreaming based on sleep study research. The 7-minute video, produced in 2016, used (for its time) cutting-edge 360-video capture technology to create an immersive experience that applies the principles of immersive learning to the practice of lucid dreaming.
+          "Lucid Dreaming 360" is a quick and interactive guide to lucid dreaming based on sleep study research. The seven-minute video, produced in 2016, used (for its time) cutting-edge 360-video capture technology to create an immersive experience that applies the principles of immersive learning to the practice of lucid dreaming.
         </p>
         <h3>Background</h3>
         <p>

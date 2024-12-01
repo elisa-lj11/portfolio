@@ -35,7 +35,7 @@ const HiFi = () => {
         <img src={hifiOverviewImageUrl} alt='Hifi Overview' width='100%'/>
         <br></br>
         <p>
-          I worked as an intern and later as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, a startup that formerly focused on social virtual reality. I was part of the content prototyping team, where we created new experiences to showcase the potential of the metaverse. Our goal was to inspire users with engaging content while empowering developers through accessible APIs that allowed them to integrate their own creations easily.
+          I worked as an intern and later as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, a startup that formerly focused on social virtual reality. I was part of the Content Prototyping team, where we created new experiences to showcase the potential of the metaverse. Our goal was to inspire users with engaging content while empowering developers through accessible APIs that allowed them to integrate their own creations easily.
         </p>
         <p>
           I've included a selection of my projects below.
