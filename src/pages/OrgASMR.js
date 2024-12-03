@@ -73,6 +73,9 @@ const OrgASMR = () => {
         <p>
           An adaptation of the popular "Head-Scratcher," the "orgASMR" takes ASMR (<a target='_blank' rel='noopener noreferrer' href={ASMR_WIKI_URL}>autonomous sensory meridian response</a>) to the next level. It produces trance-like audio effects by detecting the amount of flex from the head-scratcher's legs and the orientation of the handle. It also includes volume control and an on/off button. Combining the simplicity of chord progression with the intricacy of movement, the orgASMR is sure to blow your mind.
         </p>
+        <p>
+          I owned the end-to-end development (design, scripting, wiring, modeling, and assembly) of the orgASMR.
+        </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='background'>

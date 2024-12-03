@@ -8,8 +8,8 @@ import spaceshipImageUrl from '../assets/images/accessible/spaceship.jpg';
 import localHiveImageUrl from '../assets/images/accessible/local-hive.png';
 import hifiImageUrl from '../assets/images/accessible/hifi.png';
 import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
-import windowImageUrl from '../assets/images/accessible/window.png';
 import immersiveMediaImageUrl from '../assets/images/accessible/rv-vr.png';
+import windowImageUrl from '../assets/images/accessible/window.png';
 
 const Accessible = () => {
   const [refs, setRefs] = useState([]);
@@ -27,8 +27,8 @@ const Accessible = () => {
     { id: 'local-hive', title: '"Local Hive": A Human-Centered AI Project', imageUrl: localHiveImageUrl },
     { id: 'hifi', title: 'High Fidelity: Content Prototyping', imageUrl: hifiImageUrl },
     { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
-    { id: 'window', title: '"Window": An AR Clothes Shopping App', imageUrl: windowImageUrl },
     { id: 'immersive-media', title: 'Immersive Media: An Exploration of 360° Video Experiences', imageUrl: immersiveMediaImageUrl },
+    { id: 'window', title: '"Window": An AR Clothes Shopping App', imageUrl: windowImageUrl },
   ];
 
   const handleNavigate = (id) => {

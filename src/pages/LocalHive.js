@@ -82,7 +82,7 @@ const LocalHive = () => {
         "Local Hive" is an app-hosted platform designed to strengthen community cohesion by enabling users to create and join projects, volunteer, and exchange skills.
       </p>
       <p>
-        In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI," where my team of four applied design thinking to a quarter-long project at the intersection of healthcare and smart technology. Over 10 weeks, we progressed from ideation to prototyping, ultimately presenting our award-winning product at a public fair.
+        In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 377E</a>: Designing Solutions to Global Grand Challenges: Human-Centered AI," where my team of four applied design thinking to a quarter-long project at the intersection of healthcare and smart technology. Over ten weeks, we progressed from ideation to prototyping, ultimately presenting our award-winning product at a public fair.
       </p>
       <hr className="solid"></hr>
       <div className="section" id='background-research'>
@@ -714,7 +714,7 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          We tested four participants for 10 minutes each as they navigated the tasks. Our test plan aimed to assess:
+          We tested four participants for ten minutes each as they navigated the tasks. Our test plan aimed to assess:
         </p>
         <ol>
           <li>
@@ -979,7 +979,7 @@ const LocalHive = () => {
           </figure>
         </div>
         <p>
-          I was proud that in just 10 weeks, we transformed a vague idea of strengthening communities into a robust prototype that many people tried out. With more time, we would have liked to pilot the app in a real community for ecological validity and develop a minimum viable product for an international launch. Nevertheless, we were pleased with our progress in such a short timeframe.
+          I was proud that in just ten weeks, we transformed a vague idea of strengthening communities into a robust prototype that many people tried out. With more time, we would have liked to pilot the app in a real community for ecological validity and develop a minimum viable product for an international launch. Nevertheless, we were pleased with our progress in such a short timeframe.
         </p>
       </div>
       <hr className="solid"></hr>

@@ -77,6 +77,9 @@ const Spaceship = () => {
         <p>
           "Scavenger's Gain" is a physically immersive experience that transports visitors from an ordinary hotel room to a magical alien planet they crash-landed on in their spaceship. The experience features a full command deck and an interactable Unity-based program that projects the "view" of the planet just outside the cockpit. The experience was developed over eight weeks and culminated in a weekend installation, attracting thousands of delighted visitors. The installation captivated our "scavengers," offering them an unforgettable adventure that seamlessly blended physical interaction with a vividly immersive alien world.
         </p>
+        <p>
+          I collaborated with one other teammate to design and implement the Unity program that powered the virtual viewport experience, and I contributed to the design and development of the physical command deck that fed input into the Unity program.
+        </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='background'>

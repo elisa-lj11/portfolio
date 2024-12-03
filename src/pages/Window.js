@@ -63,7 +63,7 @@ const Window = () => {
           "Window" uses augmented reality on a mobile platform to place a personalized mannequin in a storefront window so users can easily view a store's offering.
         </p>
         <p>
-          In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 147</a>: Design Thinking for User Experience Design, Prototyping & Evaluation." In this course, my team of three applied design thinking to a quarter-long project focused on mixed reality and human-computer interaction. Over 10 weeks, we moved from ideation to prototyping and ultimately showcased our high-fidelity mobile app at a public fair.
+          In my Stanford undergraduate studies, I took "<a target='_blank' rel='noopener noreferrer' href={HCI_CLASS_URL}>CS 147</a>: Design Thinking for User Experience Design, Prototyping & Evaluation." In this course, my team of three applied design thinking to a quarter-long project focused on mixed reality and human-computer interaction. Over ten weeks, we moved from ideation to prototyping and ultimately showcased our high-fidelity mobile app at a public fair.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -612,7 +612,7 @@ const Window = () => {
           </figure>
         </div>
         <p>
-          After 10 weeks of late nights and constant iteration, we were proud to take our AR window shopping concept from a paper prototype to a functional app. It was an intense but rewarding process, where we gained experience in design strategies, teamwork, marketing, and collaborative coding.
+          After ten weeks of late nights and constant iteration, we were proud to take our AR window shopping concept from a paper prototype to a functional app. It was an intense but rewarding process, where we gained experience in design strategies, teamwork, marketing, and collaborative coding.
         </p>
       </div>
       <hr className="solid"></hr>

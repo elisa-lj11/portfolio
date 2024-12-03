@@ -52,20 +52,20 @@ class OrbitingNodes {
         color: 0xe6a063,
       },
       {
-        id: 'window',
-        title: '"Window": An AR Clothes Shopping App',
-        titleMobile: 'Stanford: "Window"',
-        nodeRadius: 0.25,
-        finalRadius: 6.0,
-        color: 0x6561e0,
-      },
-      {
         id: 'immersive-media',
         title: 'Immersive Media: An Exploration of 360° Video Experiences',
         titleMobile: 'Stanford: 360° Videos',
         nodeRadius: 0.3,
         finalRadius: 6.0,
         color: 0x7ba177,
+      },
+      {
+        id: 'window',
+        title: '"Window": An AR Clothes Shopping App',
+        titleMobile: 'Stanford: "Window"',
+        nodeRadius: 0.25,
+        finalRadius: 6.0,
+        color: 0x6561e0,
       }
     ];
 
