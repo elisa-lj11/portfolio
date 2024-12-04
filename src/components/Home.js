@@ -380,6 +380,7 @@ const Home = () => {
     document.addEventListener('touchstart', handleTouchStart);
     document.addEventListener('touchstart', stopSmoothReset);
     document.addEventListener('mousedown', stopSmoothReset);
+    document.addEventListener('wheel', stopSmoothReset);
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mousedown', handleMouseDown);
     document.addEventListener('mouseup', handleMouseUp);
@@ -395,6 +396,7 @@ const Home = () => {
       document.removeEventListener('touchstart', handleTouchStart);
       document.removeEventListener('touchstart', stopSmoothReset);
       document.removeEventListener('mousedown', stopSmoothReset);
+      document.removeEventListener('wheel', stopSmoothReset);
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mousedown', handleMouseDown);
       document.removeEventListener('mouseup', handleMouseUp);
