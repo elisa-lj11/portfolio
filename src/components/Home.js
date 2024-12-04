@@ -386,6 +386,7 @@ const Home = () => {
 
     // Cleanup function when the component unmounts
     return () => {
+      isMouseDown = false; // Reset mouse state
       cancelAnimationFrame(animationFrameId); // Stop animation
 
       // Clean up event listeners to avoid memory leaks
