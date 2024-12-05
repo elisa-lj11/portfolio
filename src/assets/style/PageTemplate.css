@@ -28,7 +28,7 @@ header {
   padding: 5px 20px;
   background: black;
   color: white;
-  z-index: 100; /* Ensure the header stays above content */
+  z-index: 200; /* Ensure the header stays above content and node labels that don't clear quickly enough */
   border-bottom: 2px solid #db13bd;
   display: flex;
   align-items: center;

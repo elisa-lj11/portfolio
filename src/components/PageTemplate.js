@@ -128,8 +128,7 @@ const PageTemplate = ({ refs, setRefs, children, generateRefsFromDOM }) => {
   return (
     /* Set custom cursor here when page loads quicker than previous page unload/cleanup */
     <div className="page-template" style={{ cursor: `url(${rocketCursor}), auto` }}>
-      {/* Set header z-index to 200 to hide node labels that don't clear quickly enough */}
-      <header style={{ zIndex: "200" }}>
+      <header>
         <button className="home" onClick={goHome}>
           &lt;
           <img src={galaxyImageUrl} className="galaxy-image" width="40px"/>
