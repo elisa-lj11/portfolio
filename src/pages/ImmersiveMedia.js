@@ -13,8 +13,8 @@ const ARTICLE_URL = 'https://peninsulapress.com/2019/03/19/the-bay-areas-housing
 const COMM_CLASS_URL = 'https://explorecourses.stanford.edu/search?q=COMM+280%3a+Virtual+Reality+Journalism+in+the+Public+Sphere&view=catalog&page=0&filter-coursestatus-Active=on&collapse=&academicYear=20182019';
 const RICOH_URL = 'https://us.ricoh-imaging.com/product/theta-s/';
 const PREMIERE_PRO_URL = 'https://helpx.adobe.com/premiere-pro/using/VRSupport.html';
-const LUCID_VIDEO_URL = 'https://youtu.be/NUnB0TFU_wo?si=aPCq048FOhP0XID6';
-const LUCID_VIDEO_EMBED_URL = 'https://www.youtube.com/embed/NUnB0TFU_wo?si=aXoCy5yxhngt0hKv';
+const LUCID_VIDEO_URL = 'https://youtu.be/NUnB0TFU_wo?si=oAsu5USh9FnWXSPo';
+const LUCID_VIDEO_EMBED_URL = 'https://www.youtube.com/embed/NUnB0TFU_wo?si=oAsu5USh9FnWXSPo';
 const SLEEP_AND_DREAMS_CLASS_URL = 'https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&page=0&catalog=&q=PSYC+135:+Sleep+and+Dreams&collapse=';
 const VHIL_URL = 'https://vhil.stanford.edu/';
 const VHIL_LEARNING_URL = 'https://vhil.stanford.edu/publications/learning';
