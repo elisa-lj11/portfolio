@@ -108,10 +108,10 @@ const HiFi = () => {
         </p>
       </div>
       <hr className="solid"></hr>
-      <div className="section" id='google-blocks'>
-        <h2>Google Blocks Integration</h2>
+      <div className="section" id='google-poly'>
+        <h2>Google Poly Integration</h2>
         <div className="video-youtube">
-          <iframe className="responsive-iframe" src={POLY_EMBED_URL} title="Google Blocks Integration" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <iframe className="responsive-iframe" src={POLY_EMBED_URL} title="Google Poly Integration" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <br></br>
         <i style={{ display: 'flex', justifyContent: 'center' }}>High Fidelity featured at 1:20</i>
