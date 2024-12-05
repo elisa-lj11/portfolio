@@ -27,7 +27,7 @@ import finalFormImageUrl from '../assets/images/orgasmr/final-form.jpg';
 
 import handleModelUrl from '../assets/models/orgasmr-handle.stl';
 
-const ORGASMR_DEMO_EMBED_URL = 'https://www.youtube.com/embed/6NVlh2iXAhg?si=HwM0jBHINPKcrns7&amp;start=76';
+const ORGASMR_DEMO_EMBED_URL = 'https://www.youtube.com/embed/VDdWokkGXBs?si=6a7AwoilWm2XTZu0&amp;start=76';
 const ASMR_WIKI_URL = 'https://en.wikipedia.org/wiki/ASMR';
 const CCRMA_CLASS_URL = 'https://ccrma.stanford.edu/courses/250a-winter-2019/';
 const ARDUINO_URL = 'https://www.arduino.cc/en/about';
