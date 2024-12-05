@@ -14,7 +14,7 @@ const COMM_CLASS_URL = 'https://explorecourses.stanford.edu/search?q=COMM+280%3a
 const RICOH_URL = 'https://us.ricoh-imaging.com/product/theta-s/';
 const PREMIERE_PRO_URL = 'https://helpx.adobe.com/premiere-pro/using/VRSupport.html';
 const LUCID_VIDEO_URL = 'https://youtu.be/YvZp26yt0Uk?si=USMMEbfPDtPW9916';
-const LUCID_VIDEO_EMBED_URL = 'https://www.youtube.com/embed/YvZp26yt0Uk?si=Lkc-dawIaNcBuq0N';
+const LUCID_VIDEO_EMBED_URL = 'https://www.youtube.com/embed/NUnB0TFU_wo?si=o4ZI5_HyaL9zwg7G';
 const SLEEP_AND_DREAMS_CLASS_URL = 'https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&page=0&catalog=&q=PSYC+135:+Sleep+and+Dreams&collapse=';
 const VHIL_URL = 'https://vhil.stanford.edu/';
 const VHIL_LEARNING_URL = 'https://vhil.stanford.edu/publications/learning';
