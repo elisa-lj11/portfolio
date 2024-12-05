@@ -27,7 +27,7 @@ const NotFound = () => {
   }, []);
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px', height: '100vh' }}>
+    <div style={{ textAlign: 'center', marginTop: '50px', height: '100vh', cursor: `url(${rocketCursor}), auto` }}>
       <h1>404 - Page Not Found</h1>
       <p>Oops! The page you are looking for has crossed the event horizon.</p>
       <button 
