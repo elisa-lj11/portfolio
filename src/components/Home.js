@@ -7,6 +7,8 @@ import OrbitingNodes from './OrbitingNodes'; // Import the OrbitingNodes class
 import GLTFModel from './GLTFModel'; // Import the Model class
 import '../assets/style/Home.css'; // Import the external CSS file
 
+import owlImageUrl from '../assets/images/owl-in-space.png'; // Import the owl image for the loading spinner
+
 // Purchased from https://skfb.ly/pr8Kx
 import GALAXY_MODEL from '../assets/models/galaxy_HD.glb';
 // "Sky Pano - Milkyway" (https://skfb.ly/6BZ67) by MozillaHubs is licensed under CC Attribution-NonCommercial-ShareAlike (http://creativecommons.org/licenses/by-nc-sa/4.0/).
@@ -78,10 +80,11 @@ const Home = () => {
   const skyboxModel = new GLTFModel(SKYBOX, 100); // Instantiate the galaxy skybox with the Model class
   const orbitingNodes = new OrbitingNodes(); // Instantiate the nodes with the OrbitingNodes class
 
-  const [isFading, setIsFading] = useState(true); // State to control fade
+  const [isBlackOverlayActive, setIsBlackOverlayActive] = useState(true); // State to control fade
   const navigate = useNavigate(); // Hook to navigate between routes
 
   const handleNavigateToAccessible = () => {
+    document.body.style.cursor = `url(${rocketCursor}), auto`; // Reset cursor
     navigate('/accessible');
   };
 
@@ -188,7 +191,7 @@ const Home = () => {
 
     // Start the animation loop and trigger fade-in
     animationLoop();
-    setIsFading(false); // This triggers the fade-out of the black overlay
+    setIsBlackOverlayActive(false); // This triggers the fade-out of the black overlay
   };
 
   // Convert the node's 3D position to 2D screen coordinates
@@ -345,9 +348,10 @@ const Home = () => {
         // Set up mouse events for clicking on nodes
         const handleNodeClick = (nodeId) => {
           if (process.env.IS_DEVELOPMENT) console.log(`Clicked node: ${nodeId}`);
+          document.body.style.cursor = `url(${rocketCursor}), auto`; // Reset cursor
+
           // The nodeId is set in OrbitingNodes
           navigate(`/${nodeId}`);
-          document.body.style.cursor = `url(${rocketCursor}), auto`; // Reset cursor
         };
         orbitingNodes.enableMouseEvents(renderer, camera, handleNodeClick);
         resolve(); // Resolve after the nodes are set up
@@ -364,6 +368,12 @@ const Home = () => {
     Promise.all([loadGalaxyModel(), loadSkyboxModel(), loadOrbitingNodes()])
       .then(() => {
         if (process.env.IS_DEVELOPMENT) console.log('All assets loaded. Starting animation.');
+        
+        // Hide the loading overlay
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) {
+          loadingOverlay.style.display = 'none';
+        }
 
         // Start animation loop once all assets are loaded
         animate(scene, camera, controls, renderer, galaxyModel);
@@ -445,8 +455,18 @@ const Home = () => {
 
   return (
     <div ref={mountRef} className="scene-container">
+      <div className="loading-overlay" id="loading-overlay">
+      <img src={owlImageUrl} alt="Owl" className="spinner-image" />
+        <div className="spinner"></div>
+        <p>Blasting off...</p>
+        <div className="accessible-link" style={{ fontSize: "16px" }}>
+          <span className="span-link" onClick={handleNavigateToAccessible}>
+            "Elisa's space" accessible view
+          </span>
+        </div>
+      </div>
       {/* Use CSS class to control fading effect */}
-      <div className={`black-overlay ${isFading ? 'fade-in' : 'fade-out'}`}></div>
+      <div className={`black-overlay ${isBlackOverlayActive ? 'fade-in' : 'fade-out'}`}></div>
       <div id="title">
         <p>You have warped to <b>Elisa's space</b></p>
         <div className="accessible-link">

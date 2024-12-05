@@ -1,5 +1,5 @@
 // src/pages/Accessible.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageTemplate from '../components/PageTemplate';
 
@@ -11,9 +11,22 @@ import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
 import immersiveMediaImageUrl from '../assets/images/accessible/rv-vr.png';
 import windowImageUrl from '../assets/images/accessible/window.png';
 
+// Custom cursor asset generated with ChatGPT
+import rocketCursor from '../assets/images/rocketship-cursor.png';
+
 const Accessible = () => {
   const [refs, setRefs] = useState([]);
   const navigate = useNavigate(); // Hook to navigate between routes
+
+  useEffect(() => {
+    // Set custom cursor after the component has mounted
+    document.body.style.cursor = `url(${rocketCursor}), auto`;
+
+    // Cleanup function to reset the cursor when the component unmounts
+    return () => {
+      document.body.style.cursor = `url(${rocketCursor}), auto`;
+    };
+  }, []);
 
   // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
@@ -32,6 +45,7 @@ const Accessible = () => {
   ];
 
   const handleNavigate = (id) => {
+    document.body.style.cursor = 'url(${rocketCursor}), auto';
     navigate(`/${id}`);
   };
 
