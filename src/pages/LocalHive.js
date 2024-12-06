@@ -37,7 +37,7 @@ import fullAppVideoUrl from '../assets/images/local-hive/full-app.mp4';
 import appWebsiteImageUrl from '../assets/images/local-hive/app-website.png';
 import posterImageUrl from '../assets/images/local-hive/poster.png';
 
-const FIGMA_EMBED_URL = 'https://embed.figma.com/proto/3kFM2Rku8FVGHng69FMslw/MidFi-(Final-Draft)?node-id=7-8&node-type=canvas&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share&client-id=W0bOyp7s8UCjcCHJYXANQr';
+const FIGMA_EMBED_URL = 'https://embed.figma.com/proto/buMWRU5wtJCUicu4OEGfRn/Local-Hive?scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=7-8&embed-host=share&client-id=W0bOyp7s8UCjcCHJYXANQr';
 const HCI_CLASS_URL = 'https://hci.stanford.edu/courses/cs377e/2019/sp/';
 const FIGMA_MEDFI_1_URL = 'https://www.figma.com/proto/ISM4ITEIjEmCWPJzAwXgneCa/MidFi?node-id=46-8&node-type=canvas&t=UM1cFDasWXdlhJmJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
 const FIGMA_MEDFI_2_URL = 'https://www.figma.com/proto/bNHJX5jYid0RXOPx7Y1bab/MidFi-2?node-id=153-90&node-type=canvas&t=UXP0hEhQLf8r8pON-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
@@ -973,7 +973,7 @@ const LocalHive = () => {
               <img
               src={posterImageUrl}
               alt='Poster'
-              style={{ width: '40%', display: 'inline-block' }}
+              style={{ width: '70%', display: 'inline-block' }}
             />
             <figcaption>Local Hive poster</figcaption>
           </figure>
