@@ -2,6 +2,8 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { useErrorBoundary } from 'use-error-boundary';
+
 import STLModel from '../components/STLModel';
 import PageTemplate from '../components/PageTemplate';
 
@@ -17,6 +19,7 @@ import unityYokeTestVideoUrl from '../assets/images/spaceship/unity-yoke-test.mp
 import commandDeckLabelsImageUrl from '../assets/images/spaceship/command-deck-labels.png';
 import componentListImageUrl from '../assets/images/spaceship/component-list.png';
 import commandDeckLowFiPrototypeImageUrl from '../assets/images/spaceship/command-deck-low-fi-prototype.jpg';
+import commandDeckCadModelImageUrl from '../assets/images/spaceship/command-deck-cad-model.png';
 import commandDeckLaserCutImageUrl from '../assets/images/spaceship/command-deck-laser-cut.jpeg';
 import commandDeckAcrylicImageUrl from '../assets/images/spaceship/command-deck-acrylic.png';
 import orbArduinoImageUrl from '../assets/images/spaceship/orb-arduino.jpg';
@@ -43,17 +46,43 @@ const CONTROLLED_FLIGHT_ASSET_URL = 'https://assetstore.unity.com/packages/tools
 const Spaceship = () => {
   const [refs, setRefs] = useState([]);
   const canvasRef = useRef();
+  const { ErrorBoundary, didCatch, error } = useErrorBoundary();
 
   useEffect(() => {
+    const handleContextLost = (event) => {
+      event.preventDefault();
+      console.warn('WebGL context lost');
+      const canvas = canvasRef.current;
+      if (canvas) {
+        canvas.removeEventListener('webglcontextlost', handleContextLost);
+      }
+      window.location.reload();
+    };
+  
+    const canvas = canvasRef.current;
+    if (canvas) {
+      canvas.addEventListener('webglcontextlost', handleContextLost);
+    }
+  
     return () => {
-      if (canvasRef.current) {
-        const gl = canvasRef.current.gl;
-        if (gl) {
-          gl.getExtension('WEBGL_lose_context')?.loseContext();
-        }
+      if (canvas) {
+        canvas.removeEventListener('webglcontextlost', handleContextLost);
       }
     };
   }, []);
+
+  const cadModelFallbackImage = (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+      <figure>
+        <img
+          src={commandDeckCadModelImageUrl}
+          alt='Command deck CAD model'
+          style={{ width: '100%', display: 'inline-block' }}
+        />
+        <figcaption>Command deck CAD model</figcaption>
+      </figure>
+    </div>
+  );
 
   // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
@@ -299,55 +328,64 @@ const Spaceship = () => {
         <p>
           Once we verified our low-fidelity prototype could accommodate all of our components, we moved on to building the high-fidelity prototype. We modeled the command deck in Fusion 360, laser-cut the panels out of half-inch plywood, and surfaced the deck with a white vinyl wrap and laser-cut acrylic.
         </p>
-        <div className='interaction-instructions'>
-          Drag and zoom to interact with the model below
-        </div>
-        <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
-          <Canvas 
-            ref={canvasRef}
-            camera={{
-              position: [5, 5, 5], // Change these values to better see your model
-              fov: 50, // Field of view (adjust as necessary)
-            }}
-            style={{ height: '50vh', width: '100%' }}
-            gl={{ antialias: true, powerPreference: 'high-performance' }}
-            onCreated={({ gl }) => {
-              gl.setPixelRatio(window.devicePixelRatio);
+        {didCatch ? (
+          cadModelFallbackImage
+        ) : (
+          <>
+            <div className='interaction-instructions'>
+              Drag and zoom to interact with the model below
+            </div>
+            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
+              <ErrorBoundary>
+                <Canvas 
+                  ref={canvasRef}
+                  camera={{
+                    position: [5, 5, 5], // Change these values to better see your model
+                    fov: 50, // Field of view (adjust as necessary)
+                  }}
+                  style={{ height: '50vh', width: '100%' }}
+                  gl={{ antialias: true, powerPreference: 'high-performance' }}
+                  fallback={cadModelFallbackImage}
+                  onCreated={({ gl }) => {
+                    gl.setPixelRatio(window.devicePixelRatio);
 
-              return () => {
-                // Dispose the scene and resources when the Canvas unmounts
-                scene.traverse((obj) => {
-                  if (obj.geometry) obj.geometry.dispose();
-                  if (obj.material) {
-                    if (Array.isArray(obj.material)) {
-                      obj.material.forEach((mat) => mat.dispose());
-                    } else {
-                      obj.material.dispose();
-                    }
-                  }
-                });
-                gl.dispose();
-              };
-            }}
-          >
-            {/* Ambient light provides soft global illumination */}
-            <ambientLight intensity={1} />
-            
-            {/* Directional light to cast shadows */}
-            <directionalLight position={[3, 5, 0]} intensity={1} />
-            
-            {/* Load model */}
-            <Suspense fallback={null}>
-              <STLModel 
-                modelPath={commandDeckModelUrl} 
-                scale={[1, 1, 1]} 
-                rotation={[0, -0.75, 2]}
-              />
-            </Suspense>
-            {/* OrbitControls to enable zoom and rotation */}
-            <OrbitControls />
-          </Canvas>
-        </div>
+                    return () => {
+                      // Dispose the scene and resources when the Canvas unmounts
+                      scene.traverse((obj) => {
+                        if (obj.geometry) obj.geometry.dispose();
+                        if (obj.material) {
+                          if (Array.isArray(obj.material)) {
+                            obj.material.forEach((mat) => mat.dispose());
+                          } else {
+                            obj.material.dispose();
+                          }
+                        }
+                      });
+                      gl.dispose();
+                    };
+                  }}
+                >
+                  {/* Ambient light provides soft global illumination */}
+                  <ambientLight intensity={1} />
+                  
+                  {/* Directional light to cast shadows */}
+                  <directionalLight position={[3, 5, 0]} intensity={1} />
+                  
+                  {/* Load model */}
+                  <Suspense fallback={null}>
+                    <STLModel 
+                      modelPath={commandDeckModelUrl} 
+                      scale={[1, 1, 1]} 
+                      rotation={[0, -0.75, 2]}
+                    />
+                  </Suspense>
+                  {/* OrbitControls to enable zoom and rotation */}
+                  <OrbitControls />
+                </Canvas>
+              </ErrorBoundary>
+            </div>
+          </>
+        )}
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
             <img

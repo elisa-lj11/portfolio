@@ -2,15 +2,17 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { useErrorBoundary } from 'use-error-boundary';
 
-import PageTemplate from '../components/PageTemplate';
 import STLModel from '../components/STLModel'; // Import the STL model component
+import PageTemplate from '../components/PageTemplate';
 
 import firstSketchImageUrl from '../assets/images/orgasmr/first-sketch.jpg';
 import protoboard1ImageUrl from '../assets/images/orgasmr/protoboard-1.jpg';
 import protoboard1ThumbnailImageUrl from '../assets/images/orgasmr/protoboard-1-thumbnail.png';
 import protoboard1VideoUrl from '../assets/images/orgasmr/protoboard-1.mp4';
 import protoboard2ImageUrl from '../assets/images/orgasmr/protoboard-2.jpg';
+import orgasmrCadModelImageUrl from '../assets/images/orgasmr/orgasmr-cad-model.png';
 import printImageUrl from '../assets/images/orgasmr/print.jpg';
 import topBottomImageUrl from '../assets/images/orgasmr/top-bottom.jpg';
 import solidworksWireframeImageUrl from '../assets/images/orgasmr/solidworks-wireframe.png';
@@ -40,17 +42,43 @@ const SOLIDWORKS_URL = 'https://www.solidworks.com/';
 const OrgASMR = () => {
   const [refs, setRefs] = useState([]);
   const canvasRef = useRef();
+  const { ErrorBoundary, didCatch, error } = useErrorBoundary();
 
   useEffect(() => {
+    const handleContextLost = (event) => {
+      event.preventDefault();
+      console.warn('WebGL context lost');
+      const canvas = canvasRef.current;
+      if (canvas) {
+        canvas.removeEventListener('webglcontextlost', handleContextLost);
+      }
+      window.location.reload();
+    };
+  
+    const canvas = canvasRef.current;
+    if (canvas) {
+      canvas.addEventListener('webglcontextlost', handleContextLost);
+    }
+  
     return () => {
-      if (canvasRef.current) {
-        const gl = canvasRef.current.gl;
-        if (gl) {
-          gl.getExtension('WEBGL_lose_context')?.loseContext();
-        }
+      if (canvas) {
+        canvas.removeEventListener('webglcontextlost', handleContextLost);
       }
     };
   }, []);
+
+  const cadModelFallbackImage = (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+      <figure>
+        <img
+          src={orgasmrCadModelImageUrl}
+          alt='orgASMR handle CAD model'
+          style={{ width: '70%', display: 'inline-block' }}
+        />
+        <figcaption>orgASMR handle CAD model</figcaption>
+      </figure>
+    </div>
+  );
 
   // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
@@ -183,44 +211,64 @@ const OrgASMR = () => {
         <p>
           I aimed to design a sleek handle that would conceal the functional but less aesthetically pleasing components of the orgASMR and complement the instrument's unique concept. To achieve this, I used <a target='_blank' rel='noopener noreferrer' href={SOLIDWORKS_URL}>SolidWorks</a>, a 3D CAD design software, to design the handle. The handle is divided into top and bottom sections, allowing for easy installation of the protoboard, sensors, and Teensy inside.
         </p>
-        <div className='interaction-instructions'>
-          Drag and zoom to interact with the model below
-        </div>
-        <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
-          <Canvas 
-            ref={canvasRef}
-            camera={{
-              position: [5, 5, 5], // Change these values to better see your model
-              fov: 50, // Field of view (adjust as necessary)
-            }}
-            style={{ height: '50vh', width: '100%' }}
-            gl={{ antialias: true, powerPreference: 'high-performance' }}
-            onCreated={({ gl }) => {
-              gl.setPixelRatio(window.devicePixelRatio);
+        {didCatch ? (
+          cadModelFallbackImage
+        ) : (
+          <>
+            <div className='interaction-instructions'>
+              Drag and zoom to interact with the model below
+            </div>
+            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
+              <ErrorBoundary>
+                <Canvas 
+                  ref={canvasRef}
+                  camera={{
+                    position: [5, 5, 5], // Change these values to better see your model
+                    fov: 50, // Field of view (adjust as necessary)
+                  }}
+                  style={{ height: '50vh', width: '100%' }}
+                  gl={{ antialias: true, powerPreference: 'high-performance' }}
+                  fallback={cadModelFallbackImage}
+                  onCreated={({ gl }) => {
+                    gl.setPixelRatio(window.devicePixelRatio);
 
-              return () => {
-                gl.dispose();
-              };
-            }}
-          >
-            {/* Ambient light provides soft global illumination */}
-            <ambientLight intensity={1} />
-            
-            {/* Directional light to cast shadows */}
-            <directionalLight position={[-5, 5, 5]} intensity={1} />
-            
-            {/* Load model with a fallback */}
-            <Suspense fallback={null}>
-              <STLModel 
-                modelPath={handleModelUrl} 
-                scale={[0.0275, 0.0275, 0.0275]} 
-                rotation={[2, 3, 0.5]} 
-              />
-            </Suspense>
-            {/* OrbitControls to enable zoom and rotation */}
-            <OrbitControls />
-          </Canvas>
-        </div>
+                    return () => {
+                      // Dispose the scene and resources when the Canvas unmounts
+                      scene.traverse((obj) => {
+                        if (obj.geometry) obj.geometry.dispose();
+                        if (obj.material) {
+                          if (Array.isArray(obj.material)) {
+                            obj.material.forEach((mat) => mat.dispose());
+                          } else {
+                            obj.material.dispose();
+                          }
+                        }
+                      });
+                      gl.dispose();
+                    };
+                  }}
+                >
+                  {/* Ambient light provides soft global illumination */}
+                  <ambientLight intensity={1} />
+                  
+                  {/* Directional light to cast shadows */}
+                  <directionalLight position={[-5, 5, 5]} intensity={1} />
+                  
+                  {/* Load model with a fallback */}
+                  <Suspense fallback={null}>
+                    <STLModel 
+                      modelPath={handleModelUrl} 
+                      scale={[0.0275, 0.0275, 0.0275]} 
+                      rotation={[2, 3, 0.5]} 
+                    />
+                  </Suspense>
+                  {/* OrbitControls to enable zoom and rotation */}
+                  <OrbitControls />
+                </Canvas>
+              </ErrorBoundary>
+            </div>
+          </>
+        )}
         <p>
           The SolidWorks design was realized using a 3D printer.
         </p>
