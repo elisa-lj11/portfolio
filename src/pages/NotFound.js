@@ -1,5 +1,5 @@
 // src/pages/NotFound.js
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import galaxyImageUrl from '../assets/images/galaxy.png';
@@ -15,16 +15,6 @@ const NotFound = () => {
   const goHome = () => {
     navigate('/'); // Navigate to the home page
   };
-
-  useEffect(() => {
-    // Set custom cursor after the component has mounted
-    document.body.style.cursor = `url(${rocketCursor}), auto`;
-
-    // Cleanup function to reset the cursor when the component unmounts
-    return () => {
-      document.body.style.cursor = `url(${rocketCursor}), auto`;
-    };
-  }, []);
 
   return (
     <div style={{ textAlign: 'center', marginTop: '50px', height: '100vh', cursor: `url(${rocketCursor}), auto` }}>

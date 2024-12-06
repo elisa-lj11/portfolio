@@ -14,16 +14,6 @@ const PageTemplate = ({ refs, setRefs, children, generateRefsFromDOM }) => {
   const [selectedSection, setSelectedSection] = useState(''); // To keep track of the selected section
   const [jumpScroll, setJumpScroll] = useState(false); // Track if a scroll is manual
 
-  useEffect(() => {
-    // Set custom cursor after the component has mounted
-    document.body.style.cursor = `url(${rocketCursor}), auto`;
-
-    // Cleanup function to reset the cursor when the component unmounts
-    return () => {
-      document.body.style.cursor = `url(${rocketCursor}), auto`;
-    };
-  }, []);
-
   const projectName = window.location.hash.split('#/')[1].split('#')[0];
 
   const goHome = () => {
