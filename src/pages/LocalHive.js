@@ -345,7 +345,7 @@ const LocalHive = () => {
       <div className="section" id='experience-prototypes'>
         <h2>Experience Prototypes</h2>
         <p>
-          We developed three experience prototypes based on our solution ideation exercise. Each prototype tested a hypothesis over a week and analyzed the results.
+          We developed three experience prototypes based on our solution ideation exercise. Each prototype was designed to test a specific hypothesis over the course of a week, after which we analyzed the testing results.
         </p>
         <h3>EP #1: Skills and Services Marketplace</h3>
         <img src={e1Prototype1ImageUrl} alt='EP 1 Prototype 1' width='100%'/>
