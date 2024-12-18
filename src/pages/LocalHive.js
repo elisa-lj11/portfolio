@@ -39,12 +39,11 @@ import posterImageUrl from '../assets/images/local-hive/poster.png';
 
 const FIGMA_EMBED_URL = 'https://embed.figma.com/proto/buMWRU5wtJCUicu4OEGfRn/Local-Hive?scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=7-8&embed-host=share&client-id=W0bOyp7s8UCjcCHJYXANQr';
 const HCI_CLASS_URL = 'https://hci.stanford.edu/courses/cs377e/2019/sp/';
-const FIGMA_MEDFI_1_URL = 'https://www.figma.com/proto/ISM4ITEIjEmCWPJzAwXgneCa/MidFi?node-id=46-8&node-type=canvas&t=UM1cFDasWXdlhJmJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
-const FIGMA_MEDFI_2_URL = 'https://www.figma.com/proto/bNHJX5jYid0RXOPx7Y1bab/MidFi-2?node-id=153-90&node-type=canvas&t=UXP0hEhQLf8r8pON-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
-const FIGMA_MEDFI_3_URL = 'https://www.figma.com/proto/VYpOKOfXgN9EMJZHS87aiP/MidFi-3-(Decluttered-on-right)?node-id=153-90&node-type=canvas&t=4Ji7p1jIXveXk3MW-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
-const FIGMA_FINAL_URL = 'https://www.figma.com/proto/3kFM2Rku8FVGHng69FMslw/MidFi-(Final-Draft)?node-id=7-8&node-type=canvas&t=qu5Y3ct7QZOm2kf1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
+const FIGMA_MEDFI_1_URL = 'https://www.figma.com/proto/TbrcDULHQr9qFZoErKRLgp/Local-Hive-Med-Fi-1?t=rVYiSmG48lrdt6XP-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=46-8';
+const FIGMA_MEDFI_2_URL = 'https://www.figma.com/proto/zsqCeA8iudrpugVS2L78DH/Local-Hive-Med-Fi-2?t=mSTQmXJW3jnYlprY-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=153-90';
+const FIGMA_MEDFI_3_URL = 'https://www.figma.com/proto/PUgA7RSwxzDfS2i21OMHYR/Local-Hive-Med-Fi-3?node-id=153-90&p=f&t=ybFCAQlF88cWjT8M-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
+const FIGMA_FINAL_URL = 'https://www.figma.com/proto/buMWRU5wtJCUicu4OEGfRn/Local-Hive?node-id=7-8&p=f&t=MyNiNauoxxTkwMSH-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1';
 const APP_WEBSITE_URL = 'https://hci.stanford.edu/courses/cs377e/2019/sp/projects/ResQ/';
-// Figma Embed API 1.0, outdated // const FIGMA_EMBED_URL = 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/3kFM2Rku8FVGHng69FMslw/MidFi-(Final-Draft)?node-id=7-8&node-type=canvas&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share';
 
 const LocalHive = () => {
   const [refs, setRefs] = useState([]);
@@ -951,7 +950,7 @@ const LocalHive = () => {
           </video>
         </div>
         <p>
-          We launched our <a target='_blank' rel='noopener noreferrer' href={FIGMA_FINAL_URL}>final Figma prototype</a> at an end-of-quarter project fair, accompanied by a website detailing our app's functionality and design process.
+          We launched our <a target='_blank' rel='noopener noreferrer' href={FIGMA_FINAL_URL}>final Figma prototype</a> (also embedded at the beginning of this page) at an end-of-quarter project fair, accompanied by a website detailing our app's functionality and design process.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
