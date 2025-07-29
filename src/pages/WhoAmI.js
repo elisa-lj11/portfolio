@@ -12,8 +12,9 @@ import soundCloudIconUrl from '../assets/images/who-am-i/soundcloud-logo.png';
 import spotifyIconUrl from '../assets/images/who-am-i/spotify-logo.png';
 
 import spacedOutImageUrl from '../assets/images/who-am-i/spaced-out.jpg';
-import spaceGradImageUrl from '../assets/images/who-am-i/space-grad.png';
 import spacePetsImageUrl from '../assets/images/who-am-i/space-pets.jpg';
+import panamaFarmImageUrl from '../assets/images/who-am-i/panama-farm.jpeg';
+import spaceGradImageUrl from '../assets/images/who-am-i/space-grad.png';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/elisa-lupin/';
 const GITHUB_URL = 'https://github.com/elisa-lj11';
@@ -23,6 +24,9 @@ const SOUNDCLOUD_URL = 'https://soundcloud.com/djbudgiebeats';
 const SPOTIFY_URL = 'https://open.spotify.com/user/5eakug67hyf80pi6igg30qmcg?si=0c3213f09cad4704';
 
 const FUTURAMA_QUOTE_VIDEO_EMBED_URL ='https://www.youtube.com/embed/VofkquwmT40?si=pWm2IUDGlIcW0Ilw&amp;start=34';
+const WWOOF_URL = 'https://wwoof.net/';
+const STARDEW_URL = 'https://www.stardewvalley.net/';
+const EXPLORATORIUM_URL ='https://www.exploratorium.edu/';
 const STRIVR_URL = 'https://www.strivr.com/';
 const STRIVR_PAGE_RELATIVE_PATH = '#/strivr';
 const TIER_URL = 'https://english.tier.org.tw/';
@@ -32,6 +36,8 @@ const HIFI_WIKI_URL = 'https://en.wikipedia.org/wiki/High_Fidelity,_Inc.';
 const HIFI_PAGE_RELATIVE_PATH = '#/hifi';
 const VHIL_URL = 'https://vhil.stanford.edu/';
 const EMPATHY_VHIL_URL = 'https://vhil.stanford.edu/projects/2020/empathy-and-perspective-taking';
+const BERKELEY_URL = 'https://www.berkeley.edu/';
+const MDES_URL = 'https://design.berkeley.edu/about-mdes';
 const STANFORD_URL = 'https://www.stanford.edu/';
 const SYMSYS_URL = 'https://symsys.stanford.edu/';
 
@@ -102,26 +108,26 @@ const WhoAmI = () => {
         <h2>Values</h2>
         <ol>
           <li>
-            <b>Community</b>
+            <b style={{fontWeight: 'bold'}}>Curiosity</b>
+            <ul>
+              <li>
+                I approach new problems with an open mind and a beginner's mentality. When stepping into unfamiliar domains, I've found that I learn best by asking many questions early and often (not sparing the dumb ones). Pairing the humility to admit what I don't know with the curiosity to seek out answers has led me to discover fascinating insights I didn't even realize I was missing.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b style={{fontWeight: 'bold'}}>Creativity</b>
+            <ul>
+              <li>
+                Why remake something for the thousandth time when we can create work that is novel and engaging? Foundational knowledge is essential for building functionality, but I challenge myself to find new ways to fulfill the original purpose of a design while infusing it with nontraditional methods that make the result not only useful, but delightful.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b style={{fontWeight: 'bold'}}>Community</b>
             <ul>
               <li>
                 In a world increasingly shaped by technology and individualism, it's easy to lose sight of our collective roots. We're inherently wired to thrive in community settings, which is why I believe it's crucial to prioritize people in technology design. Technology should foster our connections, not hinder them.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <b>Minimalism</b>
-            <ul>
-              <li>
-                While complex problems often tempt us to over-engineer solutions, I believe in taking the time to craft clean, adaptable, and minimalistic approaches. By frontloading the effort to simplify these solutions, we can save significant time and effort later in the process.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <b>Delight</b>
-            <ul>
-              <li>
-                Functionality alone isn't enough—things should be a pleasure to use. When we balance usability with enjoyment, we create something more than just a tool; we craft an engaging, immersive experience that leaves a lasting positive impact.
               </li>
             </ul>
           </li>
@@ -143,14 +149,14 @@ const WhoAmI = () => {
           </figure>
         </div>
         <p>
-          I am devoted to my labradoodle, Zody, and my tuxedo cat, Azalea. We love going for walks—Azalea rides in her "astronaut" cat backpack—and we often enjoy warm afternoon naps in the sun. When I'm not catering to their whims, I am:
+          I am devoted to my tuxedo cat, Azalea (and dearly miss my labradoodle, Zody). We love going for walks—Azalea rides in her "astronaut" cat backpack—and we often enjoy warm afternoon naps in the sun. When I'm not catering to Azalea's whims, I am:
         </p>
         <ul>
           <li>
             Learning anime and other TV theme songs on the piano
           </li>
           <li>
-            Making themed playlists
+            Playing cozy video games
           </li>
           <li>
             Planning remote camping/backpacking trips
@@ -164,8 +170,38 @@ const WhoAmI = () => {
         </ul>
       </div>
       <hr className="solid"></hr>
+      <div className="section" id='education'>
+        <h2>Education</h2>
+        <h3>University of California, Berkeley</h3>
+        <i>August 2025 - December 2026 (expected)</i>
+        <p>
+          I am a master's student at the <a target='_blank' rel='noopener noreferrer' href={BERKELEY_URL}>University of California, Berkeley</a> in the <a target='_blank' rel='noopener noreferrer' href={MDES_URL}>Master of Design</a> program, which emphasizes a critical approach to design and social practice to address the new realities of emerging technologies. Through this program, I aim to explore human-centered design, human-computer interaction, and user interface design, with a focus on creating innovative physical-digital interfaces that facilitate interpersonal connections.
+        </p>
+        <br />
+        <br />
+        <h3>Stanford University</h3>
+        <i>September 2014 - June 2019</i>
+        <img src={spaceGradImageUrl} alt='Space Grad' width='50%'/>
+        <p>
+          I graduated from <a target='_blank' rel='noopener noreferrer' href={STANFORD_URL}>Stanford University</a> with a Bachelor of Science in <a target='_blank' rel='noopener noreferrer' href={SYMSYS_URL}>Symbolic Systems</a>, an interdisciplinary program that branches across computer science, linguistics, philosophy, and psychology. My concentration was "Human-Computer Interaction," where I focused on the design, usability, and evaluation of interactive systems, exploring how technology can be better integrated with human needs and behaviors.
+        </p>
+      </div>
+      <hr className="solid"></hr>
       <div className="section" id='experience'>
         <h2>Experience</h2>
+        <h3>Funemployment</h3>
+        <i>February 2024 - July 2025</i>
+        <br/>
+        <br/>
+        <img src={panamaFarmImageUrl} alt='Farming in Panamá' width='80%'/>
+        <p>
+          I left Strivr in January 2024 to explore my dream of living remotely on a farm in Panamá through the volunteer program <a target='_blank' rel='noopener noreferrer' href={WWOOF_URL}>WWOOF</a>. Motivated to connect to my Panamanian roots by learning Spanish, and inspired by my video game experience with virtual farming in <a target='_blank' rel='noopener noreferrer' href={STARDEW_URL}>Stardew Valley</a>, I moved to Boquete, a mountainous region famous for its coffee. Four months of real-life farming later, I realized it was, unsurprisingly, more fun in a video game, so I returned to California to figure out my next steps. 
+        </p>
+        <p>
+          After a period of soul-searching, I decided to apply to graduate school and was accepted into UC Berkeley's Master of Design program for emerging technology. In the meantime, I worked as a barista to learn both the craft of coffee-making and the art of small talk, volunteered at the <a target='_blank' rel='noopener noreferrer' href={EXPLORATORIUM_URL}>Exploratorium</a> (a public learning laboratory blending science and art), and traveled through Europe with family.
+        </p>
+        <br />
+        <br />
         <h3>Strivr</h3>
         <i>April 2020 - January 2024</i>
         <p>
@@ -204,16 +240,6 @@ const WhoAmI = () => {
         <h3>Miscellaneous</h3>
         <p>
           I began teaching piano and tutoring in math and writing as a kid and continued through college. I also took on side jobs like dog washing and dog walking.
-        </p>
-      </div>
-      <hr className="solid"></hr>
-      <div className="section" id='education'>
-        <h2>Education</h2>
-        <h3>Stanford University</h3>
-        <i>September 2014 - June 2019</i>
-        <img src={spaceGradImageUrl} alt='Space Grad' width='50%'/>
-        <p>
-          I graduated from <a target='_blank' rel='noopener noreferrer' href={STANFORD_URL}>Stanford University</a> with a Bachelor of Science in <a target='_blank' rel='noopener noreferrer' href={SYMSYS_URL}>Symbolic Systems</a>, an interdisciplinary program that branches across computer science, linguistics, philosophy, and psychology. My concentration was "Human-Computer Interaction," where I focused on the design, usability, and evaluation of interactive systems, exploring how technology can be better integrated with human needs and behaviors.
         </p>
       </div>
     </PageTemplate>
