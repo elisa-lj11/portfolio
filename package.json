@@ -15,9 +15,9 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.28.3",
-    "@babel/core": "^7.28.4",
-    "@babel/preset-env": "^7.28.3",
-    "@babel/preset-react": "^7.27.1",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
     "babel-loader": "^10.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^13.0.1",
@@ -37,7 +37,7 @@
     "http-proxy-middleware": "^3.0.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.4",
+    "react-router-dom": "^7.9.5",
     "three": "^0.180.0",
     "three-stdlib": "^2.36.0",
     "use-error-boundary": "^2.0.6"
