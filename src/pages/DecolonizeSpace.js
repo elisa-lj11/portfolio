@@ -549,7 +549,7 @@ const DecolonizeSpace = () => {
       <div className="section" id='takeaways'>
         <h2>Takeaways</h2>
         <p>
-          Ultimately, the creation of this hybrid zine functions as an act of prophylactic photogrammetry: a deliberate pivot away from the extractive colonial mindset projected onto the cosmos and back toward the necessity of terrestrial reclamation. By physically juxtaposing the impossibly vast, modeled celestial targets with the intimate, flawed digital indexes of our Earthly resources (e.g., the failed attempt to capture water, the essential life of the potted plant) this zine underscores the deep moral and material failure of seeking expansion before conservation.
+          Ultimately, the creation of this hybrid zine functions as an act of prophylactic photogrammetry: a deliberate pivot away from the extractive colonial mindset projected onto the cosmos and back toward the necessity of terrestrial reclamation. By physically juxtaposing the impossibly vast, modeled celestial targets with the intimate, flawed digital indexes of our Earthly resources (e.g., the failed attempt to capture water, the essential life of the potted plant), this zine underscores the deep moral and material failure of seeking expansion before conservation.
           <br/><br/>
           The final takeaway is that the "final frontier" is not an escape route but a false ideology: the greatest expansion of human possibility lies not in planting flags on sterile planets, but in the sustained appreciation, preservation, and reuse of the complex and life-giving artifacts that already constitute our only home.
         </p>
