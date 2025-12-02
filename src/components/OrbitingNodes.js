@@ -66,6 +66,14 @@ class OrbitingNodes {
         nodeRadius: 0.25,
         finalRadius: 6.0,
         color: 0x6561e0,
+      },
+      {
+        id: 'decolonize-space',
+        title: 'Prophylactic Photogrammetry Toward Decolonization of Space',
+        titleMobile: 'Prophylactic Interplanetary Decolonization',
+        nodeRadius: 0.2,
+        finalRadius: 6.0,
+        color: 0xd834eb,
       }
     ];
 

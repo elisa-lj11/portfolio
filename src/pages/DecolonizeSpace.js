@@ -9,6 +9,7 @@ import PageTemplate from '../components/PageTemplate';
 
 import galaxyModelImageUrl from '../assets/images/decolonize-space/galaxy-model.png';
 import placardImageUrl from '../assets/images/decolonize-space/zine-placard.JPEG';
+import cardsImageUrl from '../assets/images/decolonize-space/zine-cards.JPEG';
 import earthModelImageUrl from '../assets/images/decolonize-space/earth-model.png';
 import marsModelImageUrl from '../assets/images/decolonize-space/mars-model.png';
 import pCModelImageUrl from '../assets/images/decolonize-space/proxima-centauri-model.png';
@@ -188,9 +189,17 @@ const DecolonizeSpace = () => {
             <img
               src={placardImageUrl}
               alt='Zine placard'
-              style={{ width: '80%', display: 'inline-block' }}
+              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
             />
             <figcaption>Physical portion of zine, laser-cut into plywood</figcaption>
+          </figure>
+          <figure>
+            <img
+              src={cardsImageUrl}
+              alt='Zine tokens'
+              style={{ width: '90%', display: 'inline-block' }}
+            />
+            <figcaption>Zine tokens, QR code linking to this digital zine</figcaption>
           </figure>
         </div>
       </div>
@@ -534,6 +543,15 @@ const DecolonizeSpace = () => {
           Plants came long before us. We are dependent on them for the air we breathe. Unfortunately, we have wreaked havoc on our forests and plant ecosystems by consuming far too many resources. The plants have not had time to catch up with our levels of consumption, and in a way, we are suffocating ourselves in an attempt to "have" more.
           <br/><br/>
           The potted orchid in this zine, captured with photogrammetry, is therefore a symbol of this localized, rooted vitality, a vital artifact we must nurture and reuse here on Earth before we can ethically project our consumption onto sterile celestial frontiers.
+        </p>
+      </div>
+      <hr className="solid"></hr>
+      <div className="section" id='takeaways'>
+        <h2>Takeaways</h2>
+        <p>
+          Ultimately, the creation of this hybrid zine functions as an act of prophylactic photogrammetry: a deliberate pivot away from the extractive colonial mindset projected onto the cosmos and back toward the necessity of terrestrial reclamation. By physically juxtaposing the impossibly vast, modeled celestial targets with the intimate, flawed digital indexes of our Earthly resources (e.g., the failed attempt to capture water, the essential life of the potted plant) this zine underscores the deep moral and material failure of seeking expansion before conservation.
+          <br/><br/>
+          The final takeaway is that the "final frontier" is not an escape route but a false ideology: the greatest expansion of human possibility lies not in planting flags on sterile planets, but in the sustained appreciation, preservation, and reuse of the complex and life-giving artifacts that already constitute our only home.
         </p>
       </div>
     </PageTemplate>
