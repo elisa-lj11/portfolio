@@ -10,6 +10,7 @@ import HiFi from './pages/HiFi';
 import OrgASMR from './pages/OrgASMR';
 import ImmersiveMedia from './pages/ImmersiveMedia';
 import Window from './pages/Window';
+import DecolonizeSpace from './pages/DecolonizeSpace';
 
 import WhoAmI from './pages/WhoAmI';
 import Accessible from './pages/Accessible';
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/orgasmr" element={< OrgASMR />} />
           <Route path="/immersive-media" element={< ImmersiveMedia />} />
           <Route path="/window" element={< Window />} />
+          <Route path="/decolonize-space" element={< DecolonizeSpace />} />
           {/* About Me page */}
           <Route path="/who-am-i" element={< WhoAmI />} />
           {/* Accessibility page */}
