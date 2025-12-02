@@ -509,7 +509,7 @@ const DecolonizeSpace = () => {
                       modelPath={plantModelUrl} 
                       position={[0, -1, 0]}
                       scale={[3, 3, 3]} 
-                      rotation={[0, 0, 0]} 
+                      rotation={[0, -2.1, 0]} 
                     />
                   </Suspense>
                   {/* OrbitControls to enable zoom and rotation */}
