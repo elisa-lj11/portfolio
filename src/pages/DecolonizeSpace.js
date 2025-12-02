@@ -8,6 +8,7 @@ import GLBModel from '../components/GLBModel';
 import PageTemplate from '../components/PageTemplate';
 
 import galaxyModelImageUrl from '../assets/images/decolonize-space/galaxy-model.png';
+import placardImageUrl from '../assets/images/decolonize-space/zine-placard.JPEG';
 import earthModelImageUrl from '../assets/images/decolonize-space/earth-model.png';
 import marsModelImageUrl from '../assets/images/decolonize-space/mars-model.png';
 import pCModelImageUrl from '../assets/images/decolonize-space/proxima-centauri-model.png';
@@ -182,6 +183,16 @@ const DecolonizeSpace = () => {
           <br/><br/>
           As a sustainable alternative, we should lean into the preservation and reuse of artifacts that are already accessible to us before projecting a consumerist, extraterrestrial human future that demands even greater resource consumption and perpetuates colonial violence.
         </p>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+          <figure>
+            <img
+              src={placardImageUrl}
+              alt='Zine placard'
+              style={{ width: '80%', display: 'inline-block' }}
+            />
+            <figcaption>Physical portion of zine, laser-cut into plywood</figcaption>
+          </figure>
+        </div>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='earth'>
