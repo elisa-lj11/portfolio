@@ -193,6 +193,8 @@ const DecolonizeSpace = () => {
             />
             <figcaption>Physical portion of zine, laser-cut into plywood</figcaption>
           </figure>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
           <figure>
             <img
               src={cardsImageUrl}
