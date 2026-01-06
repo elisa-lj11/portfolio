@@ -468,7 +468,7 @@ const Home = () => {
       {/* Use CSS class to control fading effect */}
       <div className={`black-overlay ${isBlackOverlayActive ? 'fade-in' : 'fade-out'}`}></div>
       <div id="title">
-        <p>You have warped to <b>Elisa's space</b></p>
+        <p><b>ELISA LUPIN-JIMENEZ</b>, creative technologist and space nerd</p>
         <div className="accessible-link">
           <span className="span-link" onClick={handleNavigateToAccessible}>
             Simple view
@@ -476,7 +476,7 @@ const Home = () => {
         </div>
       </div>
       <div id="title-mobile">
-        <p>You have warped to <br></br><b>Elisa's space</b></p>
+        <p><b>ELISA LUPIN-JIMENEZ</b><br></br>creative technologist, space nerd</p>
       </div>
       <div id="instruction-text">
         <p>

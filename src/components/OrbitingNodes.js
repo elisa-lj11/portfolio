@@ -66,14 +66,6 @@ class OrbitingNodes {
         nodeRadius: 0.25,
         finalRadius: 6.0,
         color: 0x6561e0,
-      },
-      {
-        id: 'decolonize-space',
-        title: 'Prophylactic Photogrammetry Toward Decolonization of Space',
-        titleMobile: 'Cal: Interplanetary Decolonization',
-        nodeRadius: 0.2,
-        finalRadius: 6.0,
-        color: 0xd834eb,
       }
     ];
 
@@ -96,7 +88,7 @@ class OrbitingNodes {
     this.numNodes = this.orbitingNodeData.length;
     this.nodesPerLevel = 4; // Number of nodes per orbit level
 
-    this.baseRotationSpeed = 0.3; // Base rotation speed
+    this.baseRotationSpeed = 0.1; // Base rotation speed
     this.mobileRotationSpeed = 0.05; // Rotation speed on mobile
     this.slowRotationSpeed = 0; // Slower speed when hovering
     this.targetRotationSpeed = this.baseRotationSpeed; // Add a target for smooth lerping
