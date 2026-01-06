@@ -43,7 +43,7 @@ const Accessible = () => {
     >
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
-        <h1>You have warped to Elisa's space</h1>
+        <h1>ELISA LUPIN-JIMENEZ, creative technologist and space nerd</h1>
         <h3>(Simple view)</h3>
         <p>
           A far-out portfolio of my projects from work, school, and leisure. Select a button to get a deeper look. 
