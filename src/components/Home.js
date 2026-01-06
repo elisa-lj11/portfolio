@@ -85,7 +85,7 @@ const Home = () => {
 
   const handleNavigateToAccessible = () => {
     document.body.style.cursor = `url(${rocketCursor}), auto`; // Reset cursor
-    navigate('/accessible');
+    navigate('/simple-view');
   };
 
   // Default positions for desktop and mobile
@@ -461,7 +461,7 @@ const Home = () => {
         <p>Blasting off...</p>
         <div className="accessible-link" style={{ fontSize: "16px" }}>
           <span className="span-link" onClick={handleNavigateToAccessible}>
-            "Elisa's space" accessible view
+            "Elisa's space" simple view
           </span>
         </div>
       </div>
@@ -471,7 +471,7 @@ const Home = () => {
         <p>You have warped to <b>Elisa's space</b></p>
         <div className="accessible-link">
           <span className="span-link" onClick={handleNavigateToAccessible}>
-            Accessible view
+            Simple view
           </span>
         </div>
       </div>
@@ -488,7 +488,7 @@ const Home = () => {
       <div id="instruction-text-mobile">
         <p>
           <span className="span-link" onClick={handleNavigateToAccessible}>
-            &gt; Accessible view
+            &gt; Simple view
           </span><br></br>
           &gt; Click a celestial body to explore projects<br></br>
           &gt; Drag and pinch-to-zoom to navigate the space<br></br>

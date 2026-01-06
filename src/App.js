@@ -51,7 +51,7 @@ const App = () => {
           {/* About Me page */}
           <Route path="/who-am-i" element={< WhoAmI />} />
           {/* Accessibility page */}
-          <Route path="/accessible" element={< Accessible />} />
+          <Route path="/simple-view" element={< Accessible />} />
           {/* Catch-all route for 404 Not Found */}
           <Route path="*" element={<NotFound />} />
         </Routes>
