@@ -12,12 +12,12 @@ class OrbitingNodes {
     // Array of node data
     this.orbitingNodeData = [
       {
-        id: 'strivr',
-        title: 'Strivr: "Immersive Lobby" Upgrade',
-        titleMobile: 'Work: Strivr',
+        id: 'flow',
+        title: '"flow": An Embodied, Healing Interactive Experience',
+        titleMobile: 'Cal: flow',
         nodeRadius: 0.4,
         finalRadius: 3.5,
-        color: 0x2d3cdc,
+        color: 0xd834eb,
       },
       {
         id: 'spaceship',
@@ -28,11 +28,27 @@ class OrbitingNodes {
         color: 0xc32546,
       },
       {
+        id: 'strivr',
+        title: 'Strivr: "Immersive Lobby" Upgrade',
+        titleMobile: 'Work: Strivr',
+        nodeRadius: 0.3,
+        finalRadius: 3.5,
+        color: 0x2d3cdc,
+      },
+      {
+        id: 'orgasmr',
+        title: '"orgASMR": A Head-Scratching Musical Interface',
+        titleMobile: 'Stanford: "orgASMR"',
+        nodeRadius: 0.3,
+        finalRadius: 3.5,
+        color: 0xe6a063,
+      },
+      {
         id: 'local-hive',
         title: '"Local Hive": A Human-Centered AI Project',
         titleMobile: 'Stanford: "Local Hive"',
-        nodeRadius: 0.3,
-        finalRadius: 3.5,
+        nodeRadius: 0.35,
+        finalRadius: 6,
         color: 0xe6cc7e,
       },
       {
@@ -40,16 +56,8 @@ class OrbitingNodes {
         title: 'High Fidelity: Content Prototyping',
         titleMobile: 'Work: High Fidelity',
         nodeRadius: 0.25,
-        finalRadius: 3.5,
-        color: 0x23ceff,
-      },
-      {
-        id: 'orgasmr',
-        title: '"orgASMR": A Head-Scratching Musical Interface',
-        titleMobile: 'Stanford: "orgASMR"',
-        nodeRadius: 0.35,
         finalRadius: 6.0,
-        color: 0xe6a063,
+        color: 0x23ceff,
       },
       {
         id: 'immersive-media',
@@ -66,7 +74,17 @@ class OrbitingNodes {
         nodeRadius: 0.25,
         finalRadius: 6.0,
         color: 0x6561e0,
+      },
+      /*
+      {
+        id: 'decolonize-space',
+        title: 'Prophylactic Photogrammetry Toward Decolonization of Space',
+        titleMobile: 'Cal: Interplanetary Decolonization',
+        nodeRadius: 0.2,
+        finalRadius: 6.0,
+        color: 0xd834eb,
       }
+      */
     ];
 
     this.staticNodeData = [

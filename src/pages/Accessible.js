@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageTemplate from '../components/PageTemplate';
 
-import strivrImageUrl from '../assets/images/accessible/strivr.png';
+import flowImageUrl from '../assets/images/accessible/flow.png';
 import spaceshipImageUrl from '../assets/images/accessible/spaceship.jpg';
+import strivrImageUrl from '../assets/images/accessible/strivr.png';
+import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
 import localHiveImageUrl from '../assets/images/accessible/local-hive.png';
 import hifiImageUrl from '../assets/images/accessible/hifi.png';
-import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
 import immersiveMediaImageUrl from '../assets/images/accessible/rv-vr.png';
 import windowImageUrl from '../assets/images/accessible/window.png';
 
@@ -22,11 +23,12 @@ const Accessible = () => {
 
   // Section data
   const sectionData = [
-    { id: 'strivr', title: 'Strivr: "Immersive Lobby" Upgrade', imageUrl: strivrImageUrl },
+    { id: 'flow', title: '"flow": An Embodied, Healing Interactive Experience', imageUrl: flowImageUrl },
     { id: 'spaceship', title: '"Scavenger\'s Gain": From Hotel Room to Spaceship Adventure', imageUrl: spaceshipImageUrl },
+    { id: 'strivr', title: 'Strivr: "Immersive Lobby" Upgrade', imageUrl: strivrImageUrl },
+    { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
     { id: 'local-hive', title: '"Local Hive": A Human-Centered AI Project', imageUrl: localHiveImageUrl },
     { id: 'hifi', title: 'High Fidelity: Content Prototyping', imageUrl: hifiImageUrl },
-    { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
     { id: 'immersive-media', title: 'Immersive Media: An Exploration of 360° Video Experiences', imageUrl: immersiveMediaImageUrl },
     { id: 'window', title: '"Window": An AR Clothes Shopping App', imageUrl: windowImageUrl },
   ];

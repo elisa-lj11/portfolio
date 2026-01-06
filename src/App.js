@@ -3,13 +3,16 @@ import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './components/Home';
-import Strivr from './pages/Strivr';
+import Flow from './pages/Flow';
 import Spaceship from './pages/Spaceship';
+import OrgASMR from './pages/OrgASMR';
+import Strivr from './pages/Strivr';
 import LocalHive from './pages/LocalHive';
 import HiFi from './pages/HiFi';
-import OrgASMR from './pages/OrgASMR';
 import ImmersiveMedia from './pages/ImmersiveMedia';
 import Window from './pages/Window';
+
+// No node visible
 import DecolonizeSpace from './pages/DecolonizeSpace';
 
 import WhoAmI from './pages/WhoAmI';
@@ -40,11 +43,12 @@ const App = () => {
         <Routes>
           {/* Update node map in OrbitingNodes.js with new routes */}
           <Route path="/" element={< Home />} />
-          <Route path="/strivr" element={< Strivr />} />
+          <Route path="/flow" element={< Flow />} />
           <Route path="/spaceship" element={< Spaceship />} />
+          <Route path="/strivr" element={< Strivr />} />
+          <Route path="/orgasmr" element={< OrgASMR />} />
           <Route path="/local-hive" element={< LocalHive />} />
           <Route path="/hifi" element={< HiFi />} />
-          <Route path="/orgasmr" element={< OrgASMR />} />
           <Route path="/immersive-media" element={< ImmersiveMedia />} />
           <Route path="/window" element={< Window />} />
           <Route path="/decolonize-space" element={< DecolonizeSpace />} />
