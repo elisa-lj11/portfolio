@@ -1,4 +1,3 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -15,6 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, './build'),
     filename: 'index_bundle.js',
     publicPath: isDevelopment ? developmentRootPath : productionRootPath,
+    clean: true,
   },
   target: 'web',
   devServer: {
@@ -59,41 +59,19 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|mp4)$/i, // Add more extensions as needed
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]', // This preserves the file's original name and path
-            },
-          },
-        ],
+        type: 'asset/resource',
       },
       {
         test: /\.(glb|gltf)$/, // Match both .glb and .gltf files if needed
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]', // Keep original path and name
-            },
-          },
-        ],
+        type: 'asset/resource',
       },
       {
         test: /\.stl$/, // Match .stl files
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]', // Keep original path and name
-            },
-          },
-        ],
+        type: 'asset/resource',
       }
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(), // This will clear out the build folder before each new build
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html')
     }),
