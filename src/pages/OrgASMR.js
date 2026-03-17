@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useErrorBoundary } from 'use-error-boundary';
 
-import STLModel from '../components/STLModel'; // Import the STL model component
+import STLModel from '../components/STLModel';
 import PageTemplate from '../components/PageTemplate';
 
 import firstSketchImageUrl from '../assets/images/orgasmr/first-sketch.jpg';
@@ -54,12 +54,12 @@ const OrgASMR = () => {
       }
       window.location.reload();
     };
-  
+
     const canvas = canvasRef.current;
     if (canvas) {
       canvas.addEventListener('webglcontextlost', handleContextLost);
     }
-  
+
     return () => {
       if (canvas) {
         canvas.removeEventListener('webglcontextlost', handleContextLost);
@@ -68,27 +68,20 @@ const OrgASMR = () => {
   }, []);
 
   const cadModelFallbackImage = (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-      <figure>
-        <img
-          src={orgasmrCadModelImageUrl}
-          alt='orgASMR handle CAD model'
-          style={{ width: '70%', display: 'inline-block' }}
-        />
-        <figcaption>orgASMR handle CAD model</figcaption>
-      </figure>
-    </div>
+    <figure>
+      <img src={orgasmrCadModelImageUrl} alt='orgASMR handle CAD model' style={{ maxWidth: '70%' }} />
+      <figcaption>orgASMR handle CAD model</figcaption>
+    </figure>
   );
 
-  // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
-    generateRefsFunction();  // Call the function that scans the DOM and sets the refs
+    generateRefsFunction();
   };
 
   return (
     <PageTemplate
-      refs={refs} 
-      setRefs={setRefs} 
+      refs={refs}
+      setRefs={setRefs}
       generateRefsFromDOM={generateRefsFromDOM}
     >
       <div className="section" id='overview'>
@@ -97,7 +90,6 @@ const OrgASMR = () => {
         <div className="video-youtube">
           <iframe className="responsive-iframe" src={ORGASMR_DEMO_EMBED_URL} title="orgASMR Demo" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <br></br>
         <p>
           An adaptation of the popular "Head-Scratcher," the "orgASMR" takes ASMR (<a target='_blank' rel='noopener noreferrer' href={ASMR_WIKI_URL}>autonomous sensory meridian response</a>) to the next level. It produces trance-like audio effects by detecting the amount of flex from the head-scratcher's legs and the orientation of the handle. It also includes volume control and an on/off button. Combining the simplicity of chord progression with the intricacy of movement, the orgASMR is sure to blow your mind.
         </p>
@@ -115,7 +107,9 @@ const OrgASMR = () => {
       <hr className="solid"></hr>
       <div className="section" id='ideation'>
         <h2>Ideation</h2>
-        <img src={firstSketchImageUrl} alt='Sketch of orgASMR' width='80%'/>
+        <figure>
+          <img src={firstSketchImageUrl} alt='Sketch of orgASMR' style={{ maxWidth: '80%' }} />
+        </figure>
         <p>
           I wanted to create an instrument that experimented with multiple sensory modalities: sound, kinesthesia, and tactile feedback. I was intrigued by the versatility of the classic "head-scratcher" contraption, which not only required users to move their arm in three dimensions to simulate a head-scratching motion but also featured flexible arms that adjusted to the shape of the user's head. This added a layer of control to modulate the sound produced by the device.
         </p>
@@ -139,30 +133,14 @@ const OrgASMR = () => {
           <li>
             <b>Accelerometer:</b> The accelerometer detected eight different custom-defined orientations. Using music theory to structure chords with three or four notes, my script mapped each orientation to a specific chord type:
             <ul>
-              <li>
-                Major
-              </li>
-              <li>
-                Minor
-              </li>
-              <li>
-                Diminished
-              </li>
-              <li>
-                Major 7
-              </li>
-              <li>
-                Minor 7
-              </li>
-              <li>
-                Dominant 7
-              </li>
-              <li>
-                Suspended
-              </li>
-              <li>
-                Augmented
-              </li>
+              <li>Major</li>
+              <li>Minor</li>
+              <li>Diminished</li>
+              <li>Major 7</li>
+              <li>Minor 7</li>
+              <li>Dominant 7</li>
+              <li>Suspended</li>
+              <li>Augmented</li>
             </ul>
           </li>
           <li>
@@ -191,7 +169,9 @@ const OrgASMR = () => {
       <hr className="solid"></hr>
       <div className="section" id='wiring'>
         <h2>Wiring</h2>
-        <img src={protoboard1ImageUrl} alt='First protoboard iteration' width='40%'/>
+        <figure>
+          <img src={protoboard1ImageUrl} alt='First protoboard iteration' style={{ maxWidth: '40%' }} />
+        </figure>
         <p>
           I used a protoboard to wire all of the sensors to the Teensy. The video below demonstrates the chord progressions varying with the Teensy's orientation and the frequency changing with the flex sensor movement.
         </p>
@@ -203,7 +183,9 @@ const OrgASMR = () => {
         <p>
           Once the orgASMR interactions were tested thoroughly with my first prototype, I moved the components to a smaller protoboard that would fit inside the custom handle that I would need to make.
         </p>
-        <img src={protoboard2ImageUrl} alt='Second protoboard iteration' width='40%'/>
+        <figure>
+          <img src={protoboard2ImageUrl} alt='Second protoboard iteration' style={{ maxWidth: '40%' }} />
+        </figure>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='modeling'>
@@ -218,13 +200,13 @@ const OrgASMR = () => {
             <div className='interaction-instructions'>
               Drag and zoom to interact with the model below
             </div>
-            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
+            <div className="model-viewer">
               <ErrorBoundary>
-                <Canvas 
+                <Canvas
                   ref={canvasRef}
                   camera={{
-                    position: [5, 5, 5], // Change these values to better see your model
-                    fov: 50, // Field of view (adjust as necessary)
+                    position: [5, 5, 5],
+                    fov: 50,
                   }}
                   style={{ height: '50vh', width: '100%' }}
                   gl={{ antialias: true, powerPreference: 'high-performance' }}
@@ -233,7 +215,6 @@ const OrgASMR = () => {
                     gl.setPixelRatio(window.devicePixelRatio);
 
                     return () => {
-                      // Dispose the scene and resources when the Canvas unmounts
                       scene.traverse((obj) => {
                         if (obj.geometry) obj.geometry.dispose();
                         if (obj.material) {
@@ -248,21 +229,15 @@ const OrgASMR = () => {
                     };
                   }}
                 >
-                  {/* Ambient light provides soft global illumination */}
                   <ambientLight intensity={1} />
-                  
-                  {/* Directional light to cast shadows */}
                   <directionalLight position={[-5, 5, 5]} intensity={1} />
-                  
-                  {/* Load model with a fallback */}
                   <Suspense fallback={null}>
-                    <STLModel 
-                      modelPath={handleModelUrl} 
-                      scale={[0.0275, 0.0275, 0.0275]} 
-                      rotation={[2, 3, 0.5]} 
+                    <STLModel
+                      modelPath={handleModelUrl}
+                      scale={[0.0275, 0.0275, 0.0275]}
+                      rotation={[2, 3, 0.5]}
                     />
                   </Suspense>
-                  {/* OrbitControls to enable zoom and rotation */}
                   <OrbitControls />
                 </Canvas>
               </ErrorBoundary>
@@ -272,84 +247,47 @@ const OrgASMR = () => {
         <p>
           The SolidWorks design was realized using a 3D printer.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
-              <img
-              src={printImageUrl}
-              alt='3D print in progress'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
-            />
+            <img src={printImageUrl} alt='3D print in progress' />
             <figcaption>3D print in progress</figcaption>
           </figure>
           <figure>
-            <img
-              src={topBottomImageUrl}
-              alt='Top and bottom handle parts'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
+            <img src={topBottomImageUrl} alt='Top and bottom handle parts' />
             <figcaption>Top and bottom handle parts</figcaption>
           </figure>
         </div>
         <p>
           In addition to the custom 3D-printed handle, I added ring inserts to the top section to securely fasten the head-scratcher. Using the SolidWorks model dimensions, I designed two rings in Adobe Illustrator and then used a laser cutter to cut them from a resin board precisely.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
-            <img
-              src={solidworksWireframeImageUrl}
-              alt='SolidWorks wireframe'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
-            />
+            <img src={solidworksWireframeImageUrl} alt='SolidWorks wireframe' />
             <figcaption>SolidWorks wireframe</figcaption>
           </figure>
           <figure>
-            <img
-              src={solidworksRingsImageUrl}
-              alt='Rings in wireframe'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
+            <img src={solidworksRingsImageUrl} alt='Rings in wireframe' />
             <figcaption>Rings in wireframe</figcaption>
           </figure>
         </div>
-        <br></br>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <figure>
+          <img src={illustratorRingImageUrl} alt='Illustrator ring design' style={{ maxWidth: '70%' }} />
+          <figcaption>Illustrator ring design</figcaption>
+        </figure>
+        <div className="img-row">
           <figure>
-            <img
-              src={illustratorRingImageUrl}
-              alt='Illustrator ring design'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Illustrator ring design</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={laserCutterImageUrl}
-              alt='Laser cutter in progress'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
-            />
+            <img src={laserCutterImageUrl} alt='Laser cutter in progress' />
             <figcaption>Laser cutter in progress</figcaption>
           </figure>
           <figure>
-            <img
-              src={ringsImageUrl}
-              alt='Rings result'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
+            <img src={ringsImageUrl} alt='Rings result' />
             <figcaption>Rings result</figcaption>
           </figure>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={ringsInHandleImageUrl}
-              alt='Rings placed in handle'
-              style={{ width: '50%', display: 'inline-block' }}
-            />
-            <figcaption>Head-scratcher secured to handle with rings</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={ringsInHandleImageUrl} alt='Rings placed in handle' style={{ maxWidth: '50%' }} />
+          <figcaption>Head-scratcher secured to handle with rings</figcaption>
+        </figure>
         <p>
           Up to this point, I had prepared all the individual physical parts and software. All that remained was to assemble all the pieces.
         </p>
@@ -357,38 +295,26 @@ const OrgASMR = () => {
       <hr className="solid"></hr>
       <div className="section" id='assembly'>
         <h2>Assembly</h2>
-        <img src={solderingImageUrl} alt='Soldering' width='60%'/>
+        <figure>
+          <img src={solderingImageUrl} alt='Soldering' style={{ maxWidth: '60%' }} />
+        </figure>
         <p>
           I only had a bit of soldering left to finish the orgASMR, as the flex sensor was designed to extend from the base and attach to one of the head-scratcher's arms.
         </p>
         <p>
           With everything properly connected, I could finally piece the whole instrument together.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <figure>
+          <img src={finalProtoboardImageUrl} alt='Finalized protoboard' style={{ maxWidth: '80%' }} />
+          <figcaption>Finalized protoboard with Teensy and sensors</figcaption>
+        </figure>
+        <div className="img-row">
           <figure>
-            <img
-              src={finalProtoboardImageUrl}
-              alt='Finalized protoboard'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Finalized protoboard with Teensy and sensors</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={almostAssembledImageUrl}
-              alt='Almost assembled orgASMR'
-              style={{ width: '80%', display: 'inline-block', marginRight: '2%' }}
-            />
+            <img src={almostAssembledImageUrl} alt='Almost assembled orgASMR' />
             <figcaption>Functional components ready to be loaded into the handle</figcaption>
           </figure>
           <figure>
-            <img
-              src={fullyAssembledImageUrl}
-              alt='Fully assembled orgASMR'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
+            <img src={fullyAssembledImageUrl} alt='Fully assembled orgASMR' />
             <figcaption>Fully assembled orgASMR with a final touch of galaxy duct tape</figcaption>
           </figure>
         </div>
@@ -396,7 +322,9 @@ const OrgASMR = () => {
       <hr className="solid"></hr>
       <div className="section" id='showcase'>
         <h2>Instrument Showcase</h2>
-        <img src={finalFormImageUrl} alt='Final form of orgASMR' width='80%'/>
+        <figure>
+          <img src={finalFormImageUrl} alt='Final form of orgASMR' style={{ maxWidth: '80%' }} />
+        </figure>
         <p>
           The final performance took place at Stanford's CCRMA building, where dozens of curious attendees explored the orgASMR alongside 16 other student-designed hybrid instruments. The orgASMR withstood the hands and heads of many users throughout the event. The culmination of my work was performing a musical "piece" in front of the audience to showcase the novelty of my instrument. Even my dad attended, and I think he may have cried with what I only hope were tears of joy.
         </p>
@@ -410,7 +338,7 @@ const OrgASMR = () => {
             <ul>
               <li>
                 I hadn't originally planned to design rings to secure the head-scratcher within the custom handle, but when I noticed that it wobbled too much, I had to improvise. Fortunately, I had access to plenty of resources, such as a laser cutter, so the wobbles were more of a speed bump than a show stopper.
-              </li>  
+              </li>
             </ul>
           </li>
           <li>
@@ -418,7 +346,7 @@ const OrgASMR = () => {
             <ul>
               <li>
                 I spent many late nights in the product realization lab at CCRMA, which admittedly was not good for my sleep schedule, but perhaps this disinhibited me enough to entertain otherwise silly ideas such as using a head-scratcher as a musical instrument. With such an open-ended final project, I felt free to explore how far I could push this quirky idea into reality.
-              </li>  
+              </li>
             </ul>
           </li>
           <li>

@@ -16,12 +16,12 @@ import pCModelImageUrl from '../assets/images/decolonize-space/proxima-centauri-
 import waterModelImageUrl from '../assets/images/decolonize-space/water-model.png';
 import plantModelImageUrl from '../assets/images/decolonize-space/plant-model.png';
 
-import galaxyModelUrl from '../assets/models/galaxy_HD.glb'; // Sourced from https://sketchfab.com/3d-models/galaxy-space-portal-black-hole-773ae44fc994471b85679236a36c0918
-import earthModelUrl from '../assets/models/earth.glb'; // Sourced from https://sketchfab.com/3d-models/planet-earth-babd284930204736a938915ceb0a6535
-import marsModelUrl from '../assets/models/mars.glb'; // Sourced from https://sketchfab.com/3d-models/mars-48641f1b618243ad99c8e9cff889b613
-import pCModelUrl from '../assets/models/proxima-centauri.glb'; // Sourced from https://sketchfab.com/3d-models/proxima-centariu-b-got-balls-remastered-f0f80e378e51457a887cbe1c0039d9cf
-import waterModelUrl from '../assets/models/water.glb'; // Scanned with Luma AI
-import plantModelUrl from '../assets/models/plant.glb'; // Scanned with Luma AI
+import galaxyModelUrl from '../assets/models/galaxy_HD.glb';
+import earthModelUrl from '../assets/models/earth.glb';
+import marsModelUrl from '../assets/models/mars.glb';
+import pCModelUrl from '../assets/models/proxima-centauri.glb';
+import waterModelUrl from '../assets/models/water.glb';
+import plantModelUrl from '../assets/models/plant.glb';
 
 const SPACESHIP_EARTH_URL = 'https://anthropology.mit.edu/files/anthropology/imce/people/papers/helmreich_spaceship_earth.pdf';
 
@@ -40,12 +40,12 @@ const DecolonizeSpace = () => {
       }
       window.location.reload();
     };
-  
+
     const canvas = canvasRef.current;
     if (canvas) {
       canvas.addEventListener('webglcontextlost', handleContextLost);
     }
-  
+
     return () => {
       if (canvas) {
         canvas.removeEventListener('webglcontextlost', handleContextLost);
@@ -53,20 +53,12 @@ const DecolonizeSpace = () => {
     };
   }, []);
 
-  const modelFallbackImage = ({ imageUrl, altText, captionText }) => {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-        <figure>
-          <img
-            src={imageUrl}
-            alt={altText}
-            style={{ width: '70%', display: 'inline-block' }}
-          />
-          <figcaption>{captionText}</figcaption>
-        </figure>
-      </div>
-    );
-  };
+  const modelFallbackImage = ({ imageUrl, altText, captionText }) => (
+    <figure>
+      <img src={imageUrl} alt={altText} style={{ maxWidth: '70%' }} />
+      <figcaption>{captionText}</figcaption>
+    </figure>
+  );
 
   const galaxyModelFallbackElement = modelFallbackImage({
     imageUrl: galaxyModelImageUrl,
@@ -104,169 +96,105 @@ const DecolonizeSpace = () => {
     captionText: 'Plant model (Fallback Image)',
   });
 
-  // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
-    generateRefsFunction();  // Call the function that scans the DOM and sets the refs
+    generateRefsFunction();
   };
+
+  const makeCanvas = ({ modelUrl, fallbackElement, modelComponent, ambientIntensity, dirIntensity, scale, position, rotation }) => (
+    didCatch ? fallbackElement : (
+      <>
+        <div className='interaction-instructions'>
+          Drag and zoom to interact with the model below
+        </div>
+        <div className="model-viewer">
+          <ErrorBoundary>
+            <Canvas
+              ref={canvasRef}
+              camera={{ position: [5, 5, 5], fov: 50 }}
+              style={{ height: '50vh', width: '100%' }}
+              gl={{ antialias: true, powerPreference: 'high-performance' }}
+              fallback={fallbackElement}
+              onCreated={({ gl }) => {
+                gl.setPixelRatio(window.devicePixelRatio);
+                return () => {
+                  scene.traverse((obj) => {
+                    if (obj.geometry) obj.geometry.dispose();
+                    if (obj.material) {
+                      if (Array.isArray(obj.material)) {
+                        obj.material.forEach((mat) => mat.dispose());
+                      } else {
+                        obj.material.dispose();
+                      }
+                    }
+                  });
+                  gl.dispose();
+                };
+              }}
+            >
+              <ambientLight intensity={ambientIntensity} />
+              <directionalLight position={[-5, 5, 5]} intensity={dirIntensity} />
+              <Suspense fallback={null}>
+                <GLBModel
+                  modelPath={modelUrl}
+                  scale={scale}
+                  position={position}
+                  rotation={rotation}
+                />
+              </Suspense>
+              <OrbitControls />
+            </Canvas>
+          </ErrorBoundary>
+        </div>
+      </>
+    )
+  );
 
   return (
     <PageTemplate
-      refs={refs} 
-      setRefs={setRefs} 
+      refs={refs}
+      setRefs={setRefs}
       generateRefsFromDOM={generateRefsFromDOM}
     >
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Zine Overview</h2>
         <h1>Prophylactic Photogrammetry Toward Decolonization of Space</h1>
-        <br></br>
-        {didCatch ? (
-          galaxyModelFallbackElement
-        ) : (
-          <>
-            <div className='interaction-instructions'>
-              Drag and zoom to interact with the galaxy below
-            </div>
-            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
-              <ErrorBoundary>
-                <Canvas 
-                  ref={canvasRef}
-                  camera={{
-                    position: [5, 5, 5], // Change these values to better see your model
-                    fov: 50, // Field of view (adjust as necessary)
-                  }}
-                  style={{ height: '50vh', width: '100%' }}
-                  gl={{ antialias: true, powerPreference: 'high-performance' }}
-                  fallback={galaxyModelFallbackElement}
-                  onCreated={({ gl }) => {
-                    gl.setPixelRatio(window.devicePixelRatio);
-
-                    return () => {
-                      // Dispose the scene and resources when the Canvas unmounts
-                      scene.traverse((obj) => {
-                        if (obj.geometry) obj.geometry.dispose();
-                        if (obj.material) {
-                          if (Array.isArray(obj.material)) {
-                            obj.material.forEach((mat) => mat.dispose());
-                          } else {
-                            obj.material.dispose();
-                          }
-                        }
-                      });
-                      gl.dispose();
-                    };
-                  }}
-                >
-                  {/* Ambient light provides soft global illumination */}
-                  <ambientLight intensity={1} />
-                  
-                  {/* Directional light to cast shadows */}
-                  <directionalLight position={[-5, 5, 5]} intensity={5} />
-                  
-                  {/* Load model with a fallback */}
-                  <Suspense fallback={null}>
-                    <GLBModel 
-                      modelPath={galaxyModelUrl} 
-                      scale={[3.5, 3.5, 3.5]} 
-                      rotation={[0, 0, 0.2]} 
-                    />
-                  </Suspense>
-                  {/* OrbitControls to enable zoom and rotation */}
-                  <OrbitControls />
-                </Canvas>
-              </ErrorBoundary>
-            </div>
-          </>
-        )}
+        {makeCanvas({
+          modelUrl: galaxyModelUrl,
+          fallbackElement: galaxyModelFallbackElement,
+          ambientIntensity: 1,
+          dirIntensity: 5,
+          scale: [3.5, 3.5, 3.5],
+          position: [0, 0, 0],
+          rotation: [0, 0, 0.2],
+        })}
         <p>
-          This hybrid physical/digital zine explores the expansiveness of possibilities in outer space while critically examining the inability of humans to “stake claims” to the histories of preexisting celestial objects in pursuit of interplanetary colonization.
+          This hybrid physical/digital zine explores the expansiveness of possibilities in outer space while critically examining the inability of humans to "stake claims" to the histories of preexisting celestial objects in pursuit of interplanetary colonization.
           <br/><br/>
-          In a world where capitalist hegemony is hyperfocused on chasing “the final frontier” after depleting our terrestrial resources, we must be reminded that these celestial bodies predate us and have developed their own stories for millions, if not billions of years, before human existence.
+          In a world where capitalist hegemony is hyperfocused on chasing "the final frontier" after depleting our terrestrial resources, we must be reminded that these celestial bodies predate us and have developed their own stories for millions, if not billions of years, before human existence.
           <br/><br/>
           As a sustainable alternative, we should lean into the preservation and reuse of artifacts that are already accessible to us before projecting a consumerist, extraterrestrial human future that demands even greater resource consumption and perpetuates colonial violence.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={placardImageUrl}
-              alt='Zine placard'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
-            />
-            <figcaption>Physical portion of zine, laser-cut into plywood</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={cardsImageUrl}
-              alt='Zine tokens'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
-            <figcaption>Zine tokens, QR code linking to this digital zine</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={placardImageUrl} alt='Zine placard' style={{ maxWidth: '90%' }} />
+          <figcaption>Physical portion of zine, laser-cut into plywood</figcaption>
+        </figure>
+        <figure>
+          <img src={cardsImageUrl} alt='Zine tokens' style={{ maxWidth: '90%' }} />
+          <figcaption>Zine tokens, QR code linking to this digital zine</figcaption>
+        </figure>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='earth'>
         <h2>Our Very Own Planet Earth</h2>
-        {didCatch ? (
-          earthModelFallbackElement
-        ) : (
-          <>
-            <div className='interaction-instructions'>
-              Drag and zoom to interact with Earth below
-            </div>
-            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
-              <ErrorBoundary>
-                <Canvas 
-                  ref={canvasRef}
-                  camera={{
-                    position: [5, 5, 5], // Change these values to better see your model
-                    fov: 50, // Field of view (adjust as necessary)
-                  }}
-                  style={{ height: '50vh', width: '100%' }}
-                  gl={{ antialias: true, powerPreference: 'high-performance' }}
-                  fallback={earthModelFallbackElement}
-                  onCreated={({ gl }) => {
-                    gl.setPixelRatio(window.devicePixelRatio);
-
-                    return () => {
-                      // Dispose the scene and resources when the Canvas unmounts
-                      scene.traverse((obj) => {
-                        if (obj.geometry) obj.geometry.dispose();
-                        if (obj.material) {
-                          if (Array.isArray(obj.material)) {
-                            obj.material.forEach((mat) => mat.dispose());
-                          } else {
-                            obj.material.dispose();
-                          }
-                        }
-                      });
-                      gl.dispose();
-                    };
-                  }}
-                >
-                  {/* Ambient light provides soft global illumination */}
-                  <ambientLight intensity={10} />
-                  
-                  {/* Directional light to cast shadows */}
-                  <directionalLight position={[-5, 5, 5]} intensity={10} />
-                  
-                  {/* Load model with a fallback */}
-                  <Suspense fallback={null}>
-                    <GLBModel 
-                      modelPath={earthModelUrl} 
-                      position={[1, -4, 0]}
-                      scale={[3, 3, 3]} 
-                      rotation={[0, 0, 0.2]} 
-                    />
-                  </Suspense>
-                  {/* OrbitControls to enable zoom and rotation */}
-                  <OrbitControls />
-                </Canvas>
-              </ErrorBoundary>
-            </div>
-          </>
-        )}
+        {makeCanvas({
+          modelUrl: earthModelUrl,
+          fallbackElement: earthModelFallbackElement,
+          ambientIntensity: 10,
+          dirIntensity: 10,
+          scale: [3, 3, 3],
+          position: [1, -4, 0],
+          rotation: [0, 0, 0.2],
+        })}
         <p>
           Earth has always been our home planet. Humans have subsisted off of Earth's resources for a million years, yet it is only in the last few centuries that we have begun to consider the possibility of exhausting our resources and needing a backup plan in space. As we have gotten closer and closer to breaking into interplanetary travel, going as far as placing satellites into and beyond our orbit, we have become more convinced that interplanetary colonization is the only alternative to our inevitable demise.
           <br/><br/>
@@ -278,65 +206,15 @@ const DecolonizeSpace = () => {
       <hr className="solid"></hr>
       <div className="section" id='mars'>
         <h2>Mars: The Next Frontier?</h2>
-        {didCatch ? (
-          marsModelFallbackElement
-        ) : (
-          <>
-            <div className='interaction-instructions'>
-              Drag and zoom to interact with Mars below
-            </div>
-            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
-              <ErrorBoundary>
-                <Canvas 
-                  ref={canvasRef}
-                  camera={{
-                    position: [5, 5, 5], // Change these values to better see your model
-                    fov: 50, // Field of view (adjust as necessary)
-                  }}
-                  style={{ height: '50vh', width: '100%' }}
-                  gl={{ antialias: true, powerPreference: 'high-performance' }}
-                  fallback={marsModelFallbackElement}
-                  onCreated={({ gl }) => {
-                    gl.setPixelRatio(window.devicePixelRatio);
-
-                    return () => {
-                      // Dispose the scene and resources when the Canvas unmounts
-                      scene.traverse((obj) => {
-                        if (obj.geometry) obj.geometry.dispose();
-                        if (obj.material) {
-                          if (Array.isArray(obj.material)) {
-                            obj.material.forEach((mat) => mat.dispose());
-                          } else {
-                            obj.material.dispose();
-                          }
-                        }
-                      });
-                      gl.dispose();
-                    };
-                  }}
-                >
-                  {/* Ambient light provides soft global illumination */}
-                  <ambientLight intensity={5} />
-                  
-                  {/* Directional light to cast shadows */}
-                  <directionalLight position={[-5, 5, 5]} intensity={10} />
-                  
-                  {/* Load model with a fallback */}
-                  <Suspense fallback={null}>
-                    <GLBModel 
-                      modelPath={marsModelUrl} 
-                      position={[0, 0, 0]}
-                      scale={[5, 5, 5]} 
-                      rotation={[0, 0, 0.2]} 
-                    />
-                  </Suspense>
-                  {/* OrbitControls to enable zoom and rotation */}
-                  <OrbitControls />
-                </Canvas>
-              </ErrorBoundary>
-            </div>
-          </>
-        )}
+        {makeCanvas({
+          modelUrl: marsModelUrl,
+          fallbackElement: marsModelFallbackElement,
+          ambientIntensity: 5,
+          dirIntensity: 10,
+          scale: [5, 5, 5],
+          position: [0, 0, 0],
+          rotation: [0, 0, 0.2],
+        })}
         <p>
           Mars is "the next frontier." We have already expended so many resources to land rovers on Mars, all in the hopes of eventually sending humans out there as the first interplanetary colony. Who will have the "privilege" of settling this new colony? Most likely, the elite will embark on this voyage, leaving behind a ravaged Earth in which marginalized communities must survive.
         </p>
@@ -344,65 +222,15 @@ const DecolonizeSpace = () => {
       <hr className="solid"></hr>
       <div className="section" id='proxima-centauri'>
         <h2>Proxima Centauri: A Distant Future</h2>
-        {didCatch ? (
-          pCModelFallbackElement
-        ) : (
-          <>
-            <div className='interaction-instructions'>
-              Drag and zoom to interact with Proxima Centauri below
-            </div>
-            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
-              <ErrorBoundary>
-                <Canvas 
-                  ref={canvasRef}
-                  camera={{
-                    position: [5, 5, 5], // Change these values to better see your model
-                    fov: 50, // Field of view (adjust as necessary)
-                  }}
-                  style={{ height: '50vh', width: '100%' }}
-                  gl={{ antialias: true, powerPreference: 'high-performance' }}
-                  fallback={pCModelFallbackElement}
-                  onCreated={({ gl }) => {
-                    gl.setPixelRatio(window.devicePixelRatio);
-
-                    return () => {
-                      // Dispose the scene and resources when the Canvas unmounts
-                      scene.traverse((obj) => {
-                        if (obj.geometry) obj.geometry.dispose();
-                        if (obj.material) {
-                          if (Array.isArray(obj.material)) {
-                            obj.material.forEach((mat) => mat.dispose());
-                          } else {
-                            obj.material.dispose();
-                          }
-                        }
-                      });
-                      gl.dispose();
-                    };
-                  }}
-                >
-                  {/* Ambient light provides soft global illumination */}
-                  <ambientLight intensity={2} />
-                  
-                  {/* Directional light to cast shadows */}
-                  <directionalLight position={[-5, 5, 5]} intensity={1} />
-                  
-                  {/* Load model with a fallback */}
-                  <Suspense fallback={null}>
-                    <GLBModel 
-                      modelPath={pCModelUrl} 
-                      position={[0, 0, 0]}
-                      scale={[3, 3, 3]} 
-                      rotation={[0, 0, 0.2]} 
-                    />
-                  </Suspense>
-                  {/* OrbitControls to enable zoom and rotation */}
-                  <OrbitControls />
-                </Canvas>
-              </ErrorBoundary>
-            </div>
-          </>
-        )}
+        {makeCanvas({
+          modelUrl: pCModelUrl,
+          fallbackElement: pCModelFallbackElement,
+          ambientIntensity: 2,
+          dirIntensity: 1,
+          scale: [3, 3, 3],
+          position: [0, 0, 0],
+          rotation: [0, 0, 0.2],
+        })}
         <p>
           Some scientists imagine humanity branching into the Alpha Centauri star system located just 4.2 light years away from us. "Just" is an understatement, though; 4.2 light years is actually 24.7 trillion miles. With our current space travel capabilities, it would take us 200,000 years to reach Proxima Centauri.
           <br/><br/>
@@ -414,133 +242,33 @@ const DecolonizeSpace = () => {
       <hr className="solid"></hr>
       <div className="section" id='water'>
         <h2>Water Is All Around Us</h2>
-        {didCatch ? (
-          waterModelFallbackElement
-        ) : (
-          <>
-            <div className='interaction-instructions'>
-              Drag and zoom to interact with the glass of water below
-            </div>
-            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
-              <ErrorBoundary>
-                <Canvas 
-                  ref={canvasRef}
-                  camera={{
-                    position: [5, 5, 5], // Change these values to better see your model
-                    fov: 50, // Field of view (adjust as necessary)
-                  }}
-                  style={{ height: '50vh', width: '100%' }}
-                  gl={{ antialias: true, powerPreference: 'high-performance' }}
-                  fallback={waterModelFallbackElement}
-                  onCreated={({ gl }) => {
-                    gl.setPixelRatio(window.devicePixelRatio);
-
-                    return () => {
-                      // Dispose the scene and resources when the Canvas unmounts
-                      scene.traverse((obj) => {
-                        if (obj.geometry) obj.geometry.dispose();
-                        if (obj.material) {
-                          if (Array.isArray(obj.material)) {
-                            obj.material.forEach((mat) => mat.dispose());
-                          } else {
-                            obj.material.dispose();
-                          }
-                        }
-                      });
-                      gl.dispose();
-                    };
-                  }}
-                >
-                  {/* Ambient light provides soft global illumination */}
-                  <ambientLight intensity={1} />
-                  
-                  {/* Directional light to cast shadows */}
-                  <directionalLight position={[-5, 5, 5]} intensity={1} />
-                  
-                  {/* Load model with a fallback */}
-                  <Suspense fallback={null}>
-                    <GLBModel 
-                      modelPath={waterModelUrl} 
-                      position={[0, 0, 0]}
-                      scale={[3, 3, 3]} 
-                      rotation={[0, 0, 0]} 
-                    />
-                  </Suspense>
-                  {/* OrbitControls to enable zoom and rotation */}
-                  <OrbitControls />
-                </Canvas>
-              </ErrorBoundary>
-            </div>
-          </>
-        )}
+        {makeCanvas({
+          modelUrl: waterModelUrl,
+          fallbackElement: waterModelFallbackElement,
+          ambientIntensity: 1,
+          dirIntensity: 1,
+          scale: [3, 3, 3],
+          position: [0, 0, 0],
+          rotation: [0, 0, 0],
+        })}
         <p>
           Water is a source of life, yet we take it for granted, assuming that it will always be accessible with the right infrastructure. Our water is precious and essential to life; being without it results in death after just three days. We must work harder to protect our sources of water and re-learn the simple appreciation of it as a resource to which we can have virtually unlimited access only if we preserve it.
           <br/><br/>
-          I attempted to capture this glass of water using photogrammetry and utterly failed. I scoured the Internet for higher-quality 3D models of glasses of water, but I decided to keep this one as a metaphor for the difficulty of translating ephemeral, essential reality into a stable, masterable digital asset. This highlights the conceit that if we can model something, we can control it, a dangerous assumption that underlies the very planetary resource exploitation this zine critiques. 
+          I attempted to capture this glass of water using photogrammetry and utterly failed. I scoured the Internet for higher-quality 3D models of glasses of water, but I decided to keep this one as a metaphor for the difficulty of translating ephemeral, essential reality into a stable, masterable digital asset. This highlights the conceit that if we can model something, we can control it, a dangerous assumption that underlies the very planetary resource exploitation this zine critiques.
         </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='plant'>
         <h2>Plants Ground Us</h2>
-        {didCatch ? (
-          plantModelFallbackElement
-        ) : (
-          <>
-            <div className='interaction-instructions'>
-              Drag and zoom to interact with the orchid below
-            </div>
-            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
-              <ErrorBoundary>
-                <Canvas 
-                  ref={canvasRef}
-                  camera={{
-                    position: [5, 5, 5], // Change these values to better see your model
-                    fov: 50, // Field of view (adjust as necessary)
-                  }}
-                  style={{ height: '50vh', width: '100%' }}
-                  gl={{ antialias: true, powerPreference: 'high-performance' }}
-                  fallback={plantModelFallbackElement}
-                  onCreated={({ gl }) => {
-                    gl.setPixelRatio(window.devicePixelRatio);
-
-                    return () => {
-                      // Dispose the scene and resources when the Canvas unmounts
-                      scene.traverse((obj) => {
-                        if (obj.geometry) obj.geometry.dispose();
-                        if (obj.material) {
-                          if (Array.isArray(obj.material)) {
-                            obj.material.forEach((mat) => mat.dispose());
-                          } else {
-                            obj.material.dispose();
-                          }
-                        }
-                      });
-                      gl.dispose();
-                    };
-                  }}
-                >
-                  {/* Ambient light provides soft global illumination */}
-                  <ambientLight intensity={5} />
-                  
-                  {/* Directional light to cast shadows */}
-                  <directionalLight position={[-5, 5, 5]} intensity={0.5} />
-                  
-                  {/* Load model with a fallback */}
-                  <Suspense fallback={null}>
-                    <GLBModel 
-                      modelPath={plantModelUrl} 
-                      position={[0, -1, 0]}
-                      scale={[3, 3, 3]} 
-                      rotation={[0, -2.1, 0]} 
-                    />
-                  </Suspense>
-                  {/* OrbitControls to enable zoom and rotation */}
-                  <OrbitControls />
-                </Canvas>
-              </ErrorBoundary>
-            </div>
-          </>
-        )}
+        {makeCanvas({
+          modelUrl: plantModelUrl,
+          fallbackElement: plantModelFallbackElement,
+          ambientIntensity: 5,
+          dirIntensity: 0.5,
+          scale: [3, 3, 3],
+          position: [0, -1, 0],
+          rotation: [0, -2.1, 0],
+        })}
         <p>
           Plants came long before us. We are dependent on them for the air we breathe. Unfortunately, we have wreaked havoc on our forests and plant ecosystems by consuming far too many resources. The plants have not had time to catch up with our levels of consumption, and in a way, we are suffocating ourselves in an attempt to "have" more.
           <br/><br/>

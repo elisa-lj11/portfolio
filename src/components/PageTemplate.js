@@ -1,127 +1,157 @@
 // src/components/PageTemplate.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/style/PageTemplate.css'; // Import the CSS file
 
-// Texture from galaxy model: https://skfb.ly/pr8Kx 
+// Texture from galaxy model: https://skfb.ly/pr8Kx
 import galaxyImageUrl from '../assets/images/galaxy.png';
 
 // Custom cursor asset generated with ChatGPT
 import rocketCursor from '../assets/images/rocketship-cursor.png';
 
 const PageTemplate = ({ refs, setRefs, children, generateRefsFromDOM }) => {
-  const navigate = useNavigate(); // Hook to programmatically navigate
-  const [selectedSection, setSelectedSection] = useState(''); // To keep track of the selected section
-  const [jumpScroll, setJumpScroll] = useState(false); // Track if a scroll is manual
+  const navigate = useNavigate();
+  const [selectedSection, setSelectedSection] = useState('');
+  const [jumpScroll, setJumpScroll] = useState(false);
+  const progressBarRef = useRef(null);
+  const mainRef = useRef(null);
 
   const projectName = window.location.hash.split('#/')[1].split('#')[0];
 
   const goHome = () => {
-    navigate('/'); // Navigate to the home page
+    navigate('/');
   };
 
   // Function to search DOM for div elements and generate refs array
   const generateRefsFromDOMInternal = () => {
-    const divs = document.querySelectorAll('div.section'); // Select all div section elements
+    const divs = document.querySelectorAll('div.section');
     const newRefs = Array.from(divs).map((div) => {
       const h2 = div.querySelector('h2');
       return {
         id: div.id,
-        label: h2 ? h2.textContent : div.id // Use h2 text if available, otherwise use the div id
+        label: h2 ? h2.textContent : div.id
       };
     });
-    setRefs(newRefs); // Update refs
+    setRefs(newRefs);
   };
 
   useEffect(() => {
     if (generateRefsFromDOM) {
-      generateRefsFromDOM(generateRefsFromDOMInternal); // Call internal function
+      generateRefsFromDOM(generateRefsFromDOMInternal);
     }
-    // Empty dependency array ensures this effect runs only on mount
   }, []);
 
+  // Reading progress bar
+  useEffect(() => {
+    const mainEl = mainRef.current;
+    if (!mainEl || !progressBarRef.current) return;
+
+    const updateProgress = () => {
+      const scrollTop = mainEl.scrollTop;
+      const scrollHeight = mainEl.scrollHeight - mainEl.clientHeight;
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      progressBarRef.current.style.width = `${progress}%`;
+    };
+
+    mainEl.addEventListener('scroll', updateProgress, { passive: true });
+    return () => mainEl.removeEventListener('scroll', updateProgress);
+  }, []);
+
+  // Scroll-triggered section visibility animations
+  useEffect(() => {
+    const sections = document.querySelectorAll('.section');
+    if (!sections.length) return;
+
+    const visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        root: mainRef.current,
+        rootMargin: '0px 0px -8% 0px',
+        threshold: 0.05,
+      }
+    );
+
+    sections.forEach((section) => visibilityObserver.observe(section));
+
+    return () => visibilityObserver.disconnect();
+  }, [refs]);
+
   const scrollToSection = (targetId) => {
-    const targetElement = document.getElementById(targetId); // Get the element to scroll to
+    const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
-      setJumpScroll(true); // Set flag before scroll starts
+      setJumpScroll(true);
 
-      // Scroll and update hash without delay
       targetElement.scrollIntoView({ behavior: 'smooth' });
       window.history.replaceState(null, '', `${process.env.PUBLIC_PATH}#/${projectName}#${targetId}`);
       setSelectedSection(targetId);
 
-      // Reset manual scroll flag after a delay
       setTimeout(() => setJumpScroll(false), 800);
     } else {
-      // If target section doesn't exist, redirect to the base project URL
       window.history.replaceState(null, '', `${process.env.PUBLIC_PATH}#/${projectName}`);
     }
   };
 
-  // Handle scroll action from dropdown
   const handleScroll = (event) => {
-    const targetId = event.target.value; // Get the selected value from the dropdown
+    const targetId = event.target.value;
     if (targetId) {
       scrollToSection(targetId);
     }
   };
 
-  // Use IntersectionObserver to track section visibility
+  // IntersectionObserver for dropdown section tracking
   useEffect(() => {
     const observerOptions = {
-      root: null, // Observe within the viewport
-      rootMargin: '0px 0px -10% 0px', // Start detecting sections when they are entering the viewport
-      threshold: [0.1], // Trigger when 10% of the section is visible
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: [0.1],
     };
 
     const observerCallback = (entries) => {
       const visibleSections = entries.filter((entry) => entry.isIntersecting);
       if (visibleSections.length > 0) {
-        // If at least one section is visible, set the selected section
         const visibleSection = visibleSections[0].target.id;
         setSelectedSection(visibleSection);
-        window.history.replaceState(null, '', `${process.env.PUBLIC_PATH}#/${projectName}#${visibleSection}`); // Update the URL hash
+        window.history.replaceState(null, '', `${process.env.PUBLIC_PATH}#/${projectName}#${visibleSection}`);
       }
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Observe each section (the refs should correspond to section headers)
     refs.forEach((ref) => {
       const section = document.getElementById(ref.id);
       if (section) observer.observe(section);
     });
 
-    // Clean up the observer when the component unmounts
     return () => {
       refs.forEach((ref) => {
         const section = document.getElementById(ref.id);
-        if (section) {
-          observer.unobserve(section);
-        }
+        if (section) observer.unobserve(section);
       });
-
-      // Clean up the observer on component unmount
       observer.disconnect();
     };
   }, [refs, jumpScroll]);
 
-  // Effect to handle initial scrolling based on the URL
+  // Handle initial scrolling based on URL
   useEffect(() => {
-    const targetId = window.location.hash.split('#').pop(); // Extract the target ID from the hash
+    const targetId = window.location.hash.split('#').pop();
     if (targetId) {
-      scrollToSection(targetId); // Scroll to the section if found
+      scrollToSection(targetId);
     }
   }, []);
 
   return (
-    /* Set custom cursor here when page loads quicker than previous page unload/cleanup */
     <div className="page-template" style={{ cursor: `url(${rocketCursor}), auto` }}>
       <header>
         <button className="home" onClick={goHome}>
           &lt;
-          <img src={galaxyImageUrl} className="galaxy-image" width="40px"/>
+          <img src={galaxyImageUrl} className="galaxy-image" width="40px" alt="galaxy" />
           <span>Go back to space</span>
         </button>
         <div className="dropdown">
@@ -135,13 +165,13 @@ const PageTemplate = ({ refs, setRefs, children, generateRefsFromDOM }) => {
           </select>
         </div>
       </header>
-      <main>
+      <div className="progress-bar" ref={progressBarRef}></div>
+      <main ref={mainRef}>
         <div className="content">
-          {children} {/* This is where the specific page content will be rendered */}
+          {children}
         </div>
       </main>
       <footer>
-        {/* Add footer elements here if needed */}
       </footer>
     </div>
   );

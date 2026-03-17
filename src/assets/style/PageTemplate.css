@@ -1,107 +1,273 @@
-/* PageTemplate.css */
+/* PageTemplate.css — Product Designer Case Study Style */
 
+/* ===== CSS Custom Properties ===== */
+:root {
+  --bg-primary: #080616;
+  --bg-secondary: #16122b;
+  --accent-primary: #db13bd;
+  --accent-secondary: #706EF5;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.42);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --transition: 0.3s ease;
+}
+
+/* ===== Base ===== */
 body {
   margin: 0;
-  background: linear-gradient(black, #16122b); /* Dark blackish-purple background */
-  color: white; /* White text color */
-  height: 100vh; /* Full viewport height */
+  background: linear-gradient(160deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  height: 100vh;
   display: flex;
-  flex-direction: column; /* Ensure body content flows vertically */
-  overflow-y: auto; /* Prevent body scrolling */
+  flex-direction: column;
+  overflow-y: auto;
   --vh: 100vh;
 }
 
+/* ===== Page Template Container ===== */
 .page-template {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full viewport height for the entire page */
+  height: 100vh;
   overflow: hidden;
   position: relative;
 }
 
+/* ===== Reading Progress Bar ===== */
+.progress-bar {
+  position: fixed;
+  top: 57px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  z-index: 201;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* ===== Header ===== */
 header {
   position: fixed;
   top: 0;
   left: 0;
-  height: 50px;
-  width: 100%; /* Make header span the full width */
-  padding: 5px 20px;
-  background: black;
+  height: 57px;
+  width: 100%;
+  padding: 0 24px;
+  background: rgba(8, 6, 22, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: white;
-  z-index: 200; /* Ensure the header stays above content and node labels that don't clear quickly enough */
-  border-bottom: 2px solid #db13bd;
+  z-index: 200;
+  border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
+/* ===== Navigation Dropdown ===== */
 .dropdown {
   position: absolute;
-  left: 50%; /* Start dropdown at the horizontal center */
-  transform: translateX(-50%); /* Offset by 50% of its width to fully center */
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  max-width: auto;
   padding: 5px;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px;
 }
 
 .dropdown select {
-  padding: 5px;
-  font-size: 16px;
-  color: white; /* Text color */
-  background-color: #2d2d2d; /* Background color of the dropdown */
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Border for the dropdown */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Change cursor on hover */
+  padding: 6px 14px;
+  font-size: 13px;
+  color: white;
+  background-color: rgba(30, 28, 52, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.02em;
 }
 
-/* Custom styles for the selected option */
 .dropdown select option {
-  background-color: #2d2d2d; /* Background color for options */
-  color: white; /* Text color for options */
+  background-color: #1a1830;
+  color: white;
 }
 
-/* Optional: custom styles for the dropdown when focused */
 .dropdown select:focus {
-  outline: none; /* Remove default focus outline */
-  border: 1px solid #db13bd; /* Optional: change border color on focus */
+  outline: none;
+  border: 1px solid var(--accent-primary);
 }
 
-/* Style for selected option (no direct CSS for this in standard select) */
 .dropdown select option:checked {
-  background-color: #db13bd; /* Background color for selected option */
-  color: white; /* Text color for selected option */
+  background-color: var(--accent-primary);
+  color: white;
 }
 
+/* ===== Main Scrollable Area ===== */
 main {
-  flex: 1; /* Let the main content take up remaining space */
-  overflow-y: auto; /* Allow the main content to scroll */
-  overflow-x: hidden; /* Don't allow horizontal scrolling */
-  margin-top: 60px; /* Push content down so it's not hidden by the header */
-  position: relative; /* To ensure scrollbar stays visible */
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 59px;
+  position: relative;
 }
 
+/* ===== Content Container ===== */
 .content {
-  margin: 0 auto; /* Center the article */
-  padding-top: 5%;
-  padding-left: 20%; /* Padding around the content */
-  padding-right: 20%; /* Padding around the content */
-  padding-bottom: 50px;
-  box-sizing: border-box; /* Include padding in height calculation */
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 5% 40px 100px;
+  box-sizing: border-box;
+}
+
+/* ===== Section Entrance Animation ===== */
+.section {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(112, 110, 245, 0.2);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--accent-primary);
+}
+
+h3 {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+p, ol, ul {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity var(--transition);
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+/* ===== Section Divider ===== */
+hr.solid {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(112, 110, 245, 0.25) 30%, rgba(219, 19, 189, 0.2) 70%, transparent);
+  margin: 72px 0;
+}
+
+/* ===== Figures & Captions ===== */
+figure {
+  margin: 1.5rem 0;
+  text-align: center;
 }
 
 figcaption {
   font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+  line-height: 1.5;
 }
 
-.interaction-instructions {
+/* ===== Images ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+img.social-media {
+  margin: 0;
+  width: 20px;
+  height: auto;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 0;
+}
+
+img.galaxy-image {
+  border-radius: 0;
+}
+
+/* ===== Image Row (replaces verbose inline flex styles) ===== */
+.img-row {
   display: flex;
   justify-content: center;
-  font-weight: bold;
-  font-size: 20px;
-  color: #706EF5;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin: 1.5rem 0;
 }
 
+.img-row figure {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.img-row figure img {
+  width: 100%;
+}
+
+/* ===== 3D Model Viewer (replaces inline border styles) ===== */
+.model-viewer {
+  border: 1px solid rgba(112, 110, 245, 0.45);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 20px 0;
+  background: rgba(112, 110, 245, 0.04);
+  overflow: hidden;
+}
+
+/* ===== Video Containers ===== */
 .video {
   position: relative;
   overflow: hidden;
@@ -109,14 +275,17 @@ figcaption {
   justify-content: center;
   align-items: center;
   width: 100%;
+  border-radius: 10px;
+  margin: 1rem 0;
 }
 
 .video-youtube {
   position: relative;
   overflow: hidden;
-  align-items: center;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  padding-top: 56.25%;
+  border-radius: 10px;
+  margin: 1rem 0;
 }
 
 .video-vertical {
@@ -130,8 +299,9 @@ figcaption {
 .responsive-video {
   width: 100%;
   height: auto;
-  max-height: 60vh; /* Maintain the maximum height */
-  object-fit: contain; /* Ensure the video scales correctly */
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .responsive-iframe {
@@ -144,142 +314,129 @@ figcaption {
   height: 100%;
 }
 
-/* Custom scrollbar styling */
+/* ===== Interaction Instructions ===== */
+.interaction-instructions {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--accent-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+/* ===== Back Button ===== */
+button.home {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  background: none;
+  color: white;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+  transition: opacity var(--transition), font-weight var(--transition);
+  white-space: nowrap;
+}
+
+button.home:hover {
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* ===== Scrollbar ===== */
 main::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 main::-webkit-scrollbar-thumb {
-  background: #444; /* Dark scrollbar thumb */
-  border-radius: 6px; /* Rounded edges for scrollbar thumb */
+  background: rgba(112, 110, 245, 0.35);
+  border-radius: 4px;
 }
 
 main::-webkit-scrollbar-track {
-  background: #2d2a40; /* Background for the scrollbar track */
+  background: rgba(0, 0, 0, 0.15);
 }
 
-h1, h2, h3 {
-  color: #ffffff; /* White color for headings */
-  margin-top: 0; /* Remove top margin from headings */
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 3 buttons per row */
-  gap: 30px; /* Space between buttons */
-  padding: 20px; /* Padding around the grid */
-}
-
-.button-accessible {
-  user-select: none;
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Use the inherited color */
-}
-
-.button-title {
-  display: flex;
-  text-align: center;
-  justify-content: center; /* Center the text horizontally */
-  align-items: center; /* Center the text vertically */
-  width: 100%; /* Full width of the parent */
-  height: 100px; /* Fixed height for square buttons */
-  background-size: cover; /* Cover the button with the background image */
-  background-position: center; /* Center the image */
-  border: 2px solid transparent; /* Default border */
-  border-radius: 8px; /* Rounded corners */
-  transition: border 0.3s ease; /* Smooth transition for border */
-  position: relative; /* Positioning context for the overlay */
-  color: white; /* Change text color */
-  font-weight: normal; /* Make text bold */
-}
-
-.button-title::after {
-  content: ""; /* Empty content for the overlay */
-  position: absolute; /* Position it absolutely within the button */
-  top: 0; /* Cover the top */
-  left: 0; /* Cover the left */
-  right: 0; /* Cover the right */
-  bottom: 0; /* Cover the bottom */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  border-radius: 8px; /* Match button border radius */
-  z-index: 1; /* Layer above the background but below the text */
-}
-
-.button-title span {
-  z-index: 2; /* Bring text above the overlay */
-  position: relative; /* Positioning context for text */
-}
-
-.button-accessible:hover .button-title {
-  border: 2px solid #db13bd; /* Change border color on hover */
-  font-weight: bold; /* Make text bold */
-}
-
-p, ol, ul {
-  line-height: 1.6; /* Increase line height for better readability */
-}
-
-a {
-  color: #db13bd;
-}
-
+/* ===== Social Media Links ===== */
 .social-media-container {
   display: flex;
-  justify-content: space-around; /* Evenly space out items */
-  align-items: center; /* Center items vertically */
-  flex-wrap: wrap; /* Wrap items if they overflow */
-  padding: 20px; /* Add padding around the container */
-  width: 100%; /* Full width container */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 a.social-media {
   width: auto;
   display: inline-flex;
-  align-items: center;  /* Vertically aligns the image and text */
+  align-items: center;
   justify-content: flex-start;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-img {
-  max-width: 100%;  /* Ensure the image scales down */
-  height: auto;     /* Maintain aspect ratio */
-  display: block;   /* Remove potential extra space */
-  margin: 0 auto;   /* Center the image horizontally */
-  border-radius: 5px; /* Add some rounded corners */
+/* ===== Accessible View Grid ===== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 20px;
 }
 
-img.social-media {
-  margin: 0; /* Override the parent img setting */
-  width: 20px;
-  height: auto;
-  display: inline-block;
-  margin-right: 5px;
+.button-accessible {
+  user-select: none;
+  text-decoration: none;
+  color: inherit;
 }
 
-button.home {
+.button-title {
   display: flex;
-  align-items: center; /* Vertically center the image and text */
-  margin-right: auto; /* Push button to the left */
-  background: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border var(--transition);
+  position: relative;
   color: white;
-  padding: 5px 10px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
+  font-weight: normal;
 }
 
-button.home:hover {
+.button-title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.48);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.button-title span {
+  z-index: 2;
+  position: relative;
+}
+
+.button-accessible:hover .button-title {
+  border: 2px solid var(--accent-primary);
   font-weight: bold;
 }
 
-hr.solid {
-  border-top: 1px solid #bbb;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
+/* ===== Footer ===== */
 .footer {
   padding: 20px;
   background: #111;
@@ -287,55 +444,63 @@ hr.solid {
   text-align: center;
 }
 
-/* Media query for small screens */
+/* ===== Responsive: Small screens ===== */
+@media (max-width: 768px) {
+  .content {
+    padding: 6% 20px 80px;
+  }
+
+  .img-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-row figure {
+    width: 100%;
+  }
+
+  hr.solid {
+    margin: 52px 0;
+  }
+}
+
+/* ===== Responsive: Touch devices ===== */
 @media (pointer:none), (pointer:coarse) {
   body {
-    --vh: calc(var(--vh, 1vh) * 100); /* Recalculate */
+    --vh: calc(var(--vh, 1vh) * 100);
   }
 
   header {
-    flex-direction: row; /* Stack elements horizontally */
-    align-items: flex-start; /* Align to the left */
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .content {
-    margin: 0 auto; /* Center the article */
-    padding-top: 5%;
-    padding-left: 5%; /* Padding around the content */
-    padding-right: 5%; /* Padding around the content */
-    padding-bottom: 80px;
-    box-sizing: border-box; /* Include padding in height calculation */
+    padding: 6% 5% 80px;
   }
 
   .dropdown {
-    position: static; /* Allow dropdown to follow normal flow */
+    position: static;
     transform: none;
-    width: 100%; /* Make the dropdown take the full width */
-    max-width: 100%; /* Ensure it doesn’t overflow the container */
-    margin-left: 10px; /* Add space between button and dropdown */
+    width: 100%;
+    max-width: 100%;
+    margin-left: 10px;
     margin-right: 10px;
   }
 
   button.home {
-    margin-right: 10px; /* Add space between button and dropdown */
+    margin-right: 10px;
   }
 
   button.home span {
-    display: none; /* Hides the next sibling span */
+    display: none;
   }
 
-  img {
-    width: 100%; /* Make all images fit the full width of their container */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  /* Create exception for header "Go back to space" image */
-  img.galaxy-image {
-    width: 40px;
-  }
-
-  /* Hide scrollbar for webkit browsers */
   main::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
+    display: none;
+  }
+
+  img.galaxy-image {
+    width: 40px !important;
   }
 }

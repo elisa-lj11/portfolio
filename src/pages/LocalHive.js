@@ -119,45 +119,38 @@ const LocalHive = () => {
         <p>
           After conducting the interviews, we compiled the responses into a spreadsheet and synthesized the insights using sticky notes. We grouped them by interviewer and were guided by the question, "How might we help communities overcome crises?"
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={needfindingInterviewsImageUrl}
-              alt='Needfinding Interviews'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
-            <figcaption>Combined needfinding interviews</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={initialSynthesisImageUrl}
-              alt='Initial Synthesis'
-              style={{ width: '50%', display: 'inline-block' }}
-            />
-            <figcaption>Interview synthesis</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={needfindingInterviewsImageUrl}
+            alt='Needfinding Interviews'
+            style={{ maxWidth: '90%' }}
+          />
+          <figcaption>Combined needfinding interviews</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={initialSynthesisImageUrl}
+            alt='Initial Synthesis'
+            style={{ maxWidth: '50%' }}
+          />
+          <figcaption>Interview synthesis</figcaption>
+        </figure>
         <p>
           Using an affinity map, we categorized insights into themes like leadership qualities, community obstacles, and infrastructure issues, identifying "super-members" who demonstrated leadership. This helped us distill our findings into two empathy maps—one for community leaders and one for community members.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <figure>
+          <img
+            src={affinityMapImageUrl}
+            alt='Affinity Map'
+            style={{ maxWidth: '70%' }}
+          />
+          <figcaption>Affinity map</figcaption>
+        </figure>
+        <div className="img-row">
           <figure>
-              <img
-              src={affinityMapImageUrl}
-              alt='Affinity Map'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Affinity map</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
+            <img
               src={leaderEmpathyMapImageUrl}
               alt='Community Leader Empathy Map'
-              style={{ width: '70%', display: 'inline-block', marginRight: '2%' }}
             />
             <figcaption>Community leader empathy map</figcaption>
           </figure>
@@ -165,7 +158,6 @@ const LocalHive = () => {
             <img
               src={memberEmpathyMapImageUrl}
               alt='Community Member Empathy Map'
-              style={{ width: '70%', display: 'inline-block' }}
             />
             <figcaption>Community member empathy map</figcaption>
           </figure>
@@ -173,12 +165,11 @@ const LocalHive = () => {
         <p>
           We also created a 2x2 journey map contrasting community cohesion (low vs. high) with leadership (leaders vs. members). This revealed that self-organization occurs when leadership and membership roles blur into equal collaboration.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
-              <img
+            <img
               src={journeyMapStickyNotesImageUrl}
               alt='Initial 2x2 Journey Map'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
             />
             <figcaption>Initial 2x2 journey map using sticky notes from past exercises</figcaption>
           </figure>
@@ -186,7 +177,6 @@ const LocalHive = () => {
             <img
               src={journeyMapCondensedImageUrl}
               alt='Condensed 2x2 Journey Map'
-              style={{ width: '70%', display: 'inline-block' }}
             />
             <figcaption>Condensed 2x2 journey map</figcaption>
           </figure>
@@ -256,26 +246,20 @@ const LocalHive = () => {
             Teaching Skills
           </li>
         </ul>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hmwIdeationImageUrl}
-              alt='HMW Ideation'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>HMW ideation</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hmwAffinityGroupingImageUrl}
-              alt='HMW Affinity Grouping'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>HMW affinity grouping</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={hmwIdeationImageUrl}
+            alt='HMW Ideation'
+          />
+          <figcaption>HMW ideation</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={hmwAffinityGroupingImageUrl}
+            alt='HMW Affinity Grouping'
+          />
+          <figcaption>HMW affinity grouping</figcaption>
+        </figure>
         <p>
           From these themes, we generated the following HMW statements:
         </p>
@@ -300,26 +284,21 @@ const LocalHive = () => {
         <p>
           We held another sticky note brainstorming session, generating 48 ideas for our three HMW groups. After voting, we narrowed it down to 34 options.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hmwSolutionBrainstormImageUrl}
-              alt='HMW Solution Brainstorm'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>HMW solution brainstorm</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hmwSolutionFinalIdeasImageUrl}
-              alt='HMW Solution Final Ideas'
-              style={{ width: '60%', display: 'inline-block' }}
-            />
-            <figcaption>HMW solution final ideas</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={hmwSolutionBrainstormImageUrl}
+            alt='HMW Solution Brainstorm'
+          />
+          <figcaption>HMW solution brainstorm</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={hmwSolutionFinalIdeasImageUrl}
+            alt='HMW Solution Final Ideas'
+            style={{ maxWidth: '60%' }}
+          />
+          <figcaption>HMW solution final ideas</figcaption>
+        </figure>
         <p>
           In a final voting round, we selected four ideas:
         </p>
@@ -349,16 +328,14 @@ const LocalHive = () => {
         </p>
         <h3>EP #1: Skills and Services Marketplace</h3>
         <img src={e1Prototype1ImageUrl} alt='EP 1 Prototype 1' width='100%'/>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={e1Prototype2ImageUrl}
-              alt='EP 1 Prototype 2'
-              style={{ width: '40%', display: 'inline-block' }}
-            />
-            <figcaption>Matching members to tasks based on their listed skills</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={e1Prototype2ImageUrl}
+            alt='EP 1 Prototype 2'
+            style={{ maxWidth: '40%' }}
+          />
+          <figcaption>Matching members to tasks based on their listed skills</figcaption>
+        </figure>
         <p>
           <b>Hypothesis:</b> Members are more motivated to seek help if they know their neighbors' skills.
         </p>
@@ -474,12 +451,11 @@ const LocalHive = () => {
           We sketched concepts focusing on four input modalities: web, mobile, AR, and existing platforms (Slack, iMessage, etc.). After voting, we chose web and mobile for further UI sketches.
         </p>
         <h3>UI Sketches</h3>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
-              <img
+            <img
               src={uiSketch1ImageUrl}
               alt='Mobile UI Sketch 1'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
             />
             <figcaption>Mobile UI sketch 1</figcaption>
           </figure>
@@ -487,21 +463,18 @@ const LocalHive = () => {
             <img
               src={uiSketch2ImageUrl}
               alt='Mobile UI Sketch 2'
-              style={{ width: '90%', display: 'inline-block' }}
             />
             <figcaption>Mobile UI sketch 2</figcaption>
           </figure>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={uiSketch3ImageUrl}
-              alt='Web UI Sketch'
-              style={{ width: '40%', display: 'inline-block' }}
-            />
-            <figcaption>Web UI sketch</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={uiSketch3ImageUrl}
+            alt='Web UI Sketch'
+            style={{ maxWidth: '40%' }}
+          />
+          <figcaption>Web UI sketch</figcaption>
+        </figure>
         <p>
           Once we completed our UI sketches, we determined that a <b>mobile app</b> was the best option because:
         </p>
@@ -534,48 +507,39 @@ const LocalHive = () => {
             <b>Complex Task: Monitoring community involvement</b>—project leaders tracking contributions and users monitoring their engagement.
           </li>
         </ol>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={easyTaskFlowImageUrl}
-              alt='Easy Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Easy task flow</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={easyTaskFlowImageUrl}
+            alt='Easy Task Flow'
+            style={{ maxWidth: '70%' }}
+          />
+          <figcaption>Easy task flow</figcaption>
+        </figure>
         
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={mediumTaskFlowImageUrl}
-              alt='Medium Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Medium task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={complexTaskFlowImageUrl}
-              alt='Complex Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Complex task flow</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={mediumTaskFlowImageUrl}
+            alt='Medium Task Flow'
+            style={{ maxWidth: '70%' }}
+          />
+          <figcaption>Medium task flow</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={complexTaskFlowImageUrl}
+            alt='Complex Task Flow'
+            style={{ maxWidth: '70%' }}
+          />
+          <figcaption>Complex task flow</figcaption>
+        </figure>
         <h3>Low-Fi Prototype Screens</h3>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={lowFiOverviewImageUrl}
-              alt='Low-Fi Overview'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Low-fi prototype</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={lowFiOverviewImageUrl}
+            alt='Low-Fi Overview'
+          />
+          <figcaption>Low-fi prototype</figcaption>
+        </figure>
         <p>
           With task flows in place, we sketched 17 screens for our low-fi prototype, utilizing plastic film to simulate buttons. Design decisions emphasized:
         </p>
@@ -669,49 +633,37 @@ const LocalHive = () => {
         <p>
           Using Figma, we built our <a target='_blank' rel='noopener noreferrer' href={FIGMA_MEDFI_1_URL}>first med-fi prototype</a>.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={medFi1FigmaOverviewImageUrl}
-              alt='Med-Fi #1 Figma overview'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Med-fi #1 Figma overview</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={medFi1FigmaOverviewImageUrl}
+            alt='Med-Fi #1 Figma overview'
+          />
+          <figcaption>Med-fi #1 Figma overview</figcaption>
+        </figure>
         <p>
           Our prototype included our three task flows:
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={medFi1JoinTaskFlowImageUrl}
-              alt='"Join a Project" Task Flow'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Med-fi "Join a Project" task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={medFi1CreateTaskFlowImageUrl}
-              alt='"Create a Project" Task Flow'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Med-fi "Create a Project" task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={medFi1MonitorTaskFlowImageUrl}
-              alt='"Monitor a Community" Task Flow'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Med-fi "Monitor a Community" task flow</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={medFi1JoinTaskFlowImageUrl}
+            alt='"Join a Project" Task Flow'
+          />
+          <figcaption>Med-fi "Join a Project" task flow</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={medFi1CreateTaskFlowImageUrl}
+            alt='"Create a Project" Task Flow'
+          />
+          <figcaption>Med-fi "Create a Project" task flow</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={medFi1MonitorTaskFlowImageUrl}
+            alt='"Monitor a Community" Task Flow'
+          />
+          <figcaption>Med-fi "Monitor a Community" task flow</figcaption>
+        </figure>
         <p>
           We tested four participants for ten minutes each as they navigated the tasks. Our test plan aimed to assess:
         </p>
@@ -752,16 +704,13 @@ const LocalHive = () => {
         <p>
           Based on these insights, we iterated our design for a <a target='_blank' rel='noopener noreferrer' href={FIGMA_MEDFI_2_URL}>second med-fi Figma prototype</a> before moving to the heuristic evaluation phase.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={medFi2FigmaOverviewImageUrl}
-              alt='Med-Fi 2 Figma Overview'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Med-Fi #2 Figma overview</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={medFi2FigmaOverviewImageUrl}
+            alt='Med-Fi 2 Figma Overview'
+          />
+          <figcaption>Med-Fi #2 Figma overview</figcaption>
+        </figure>
         <h3>Heuristic Evaluation</h3>
         <p>
           In this phase, four evaluators tested our Figma prototype, identifying 46 heuristic violations across ten categories:
@@ -798,16 +747,13 @@ const LocalHive = () => {
             Documentation
           </li>
         </ol>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={heuristicViolationsImageUrl}
-              alt='Heuristic Violations Summary'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Heuristic violations summary</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={heuristicViolationsImageUrl}
+            alt='Heuristic Violations Summary'
+          />
+          <figcaption>Heuristic violations summary</figcaption>
+        </figure>
         <p>
           An example of feedback received:
         </p>
@@ -844,28 +790,25 @@ const LocalHive = () => {
         <p>
           The progression between our three med-fi prototypes:
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
-              <img
+            <img
               src={medFi1HomeImageUrl}
               alt='First Med-Fi Prototype Home Screen'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
             />
             <figcaption>First med-fi prototype home screen</figcaption>
           </figure>
           <figure>
-              <img
+            <img
               src={medFi2HomeImageUrl}
               alt='Second Med-Fi Prototype Home Screen'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
             />
             <figcaption>Second med-fi prototype home screen</figcaption>
           </figure>
           <figure>
-              <img
+            <img
               src={medFi3HomeImageUrl}
               alt='Third Med-Fi Prototype Home Screen'
-              style={{ width: '90%', display: 'inline-block' }}
             />
             <figcaption>Third med-fi prototype home screen</figcaption>
           </figure>
@@ -952,31 +895,27 @@ const LocalHive = () => {
         <p>
           We launched our <a target='_blank' rel='noopener noreferrer' href={FIGMA_FINAL_URL}>final Figma prototype</a> (also embedded at the beginning of this page) at an end-of-quarter project fair, accompanied by a website detailing our app's functionality and design process.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={appWebsiteImageUrl}
-              alt='App Website'
-              style={{ width: '60%', display: 'inline-block' }}
-            />
-            <figcaption>
-              <a target='_blank' rel='noopener noreferrer' href={APP_WEBSITE_URL}>App website</a>
-            </figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={appWebsiteImageUrl}
+            alt='App Website'
+            style={{ maxWidth: '60%' }}
+          />
+          <figcaption>
+            <a target='_blank' rel='noopener noreferrer' href={APP_WEBSITE_URL}>App website</a>
+          </figcaption>
+        </figure>
         <p>
           At the fair, we presented our app's evolution in a 15-minute presentation and showcased a project poster that won "Best Poster" among six teams.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={posterImageUrl}
-              alt='Poster'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Local Hive poster</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={posterImageUrl}
+            alt='Poster'
+            style={{ maxWidth: '70%' }}
+          />
+          <figcaption>Local Hive poster</figcaption>
+        </figure>
         <p>
           I was proud that in just ten weeks, we transformed a vague idea of strengthening communities into a robust prototype that many people tried out. With more time, we would have liked to pilot the app in a real community for ecological validity and develop a minimum viable product for an international launch. Nevertheless, we were pleased with our progress in such a short timeframe.
         </p>

@@ -30,15 +30,14 @@ const STRIVR_DEMO_VIDEO_URL = 'https://www.youtube.com/embed/_ipX7W_qqlY?si=IoZp
 const Strivr = () => {
   const [refs, setRefs] = useState([]);
 
-  // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
-    generateRefsFunction();  // Call the function that scans the DOM and sets the refs
+    generateRefsFunction();
   };
 
   return (
     <PageTemplate
-      refs={refs} 
-      setRefs={setRefs} 
+      refs={refs}
+      setRefs={setRefs}
       generateRefsFromDOM={generateRefsFromDOM}
     >
       <div className="section" id='overview'>
@@ -99,36 +98,18 @@ const Strivr = () => {
             </li></ul>
           </li>
         </ol>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={oldAcclimationImageUrl}
-              alt="Old Acclimation"
-              style={{ width: '70%', display: 'inline-block'}}
-            />
-            <figcaption>Floating text and images</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={oldLobby1ImageUrl}
-              alt="Old Lobby"
-              style={{ width: '70%', display: 'inline-block'}}
-            />
-            <figcaption>Gray environment throughout the platform</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={oldButtonImageUrl}
-              alt="Old Button Interaction"
-              style={{ width: '60%', display: 'inline-block'}}
-            />
-            <figcaption>Reactive tilt-shifting buttons</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={oldAcclimationImageUrl} alt="Old Acclimation" style={{ maxWidth: '70%' }} />
+          <figcaption>Floating text and images</figcaption>
+        </figure>
+        <figure>
+          <img src={oldLobby1ImageUrl} alt="Old Lobby" style={{ maxWidth: '70%' }} />
+          <figcaption>Gray environment throughout the platform</figcaption>
+        </figure>
+        <figure>
+          <img src={oldButtonImageUrl} alt="Old Button Interaction" style={{ maxWidth: '60%' }} />
+          <figcaption>Reactive tilt-shifting buttons</figcaption>
+        </figure>
         <p>
           Extrapolating outward from these concrete issues, we broke our problem down into three "How Might We" (HMW) statements:
         </p>
@@ -178,7 +159,7 @@ const Strivr = () => {
           </li>
         </ul>
         <p>
-          Through these three tenets, we investigated the state of landing screen UI/UX in a competitive analysis of 
+          Through these three tenets, we investigated the state of landing screen UI/UX in a competitive analysis of
           similar VR applications with content libraries. Our takeaways from this market research were to implement the following:
         </p>
         <ul>
@@ -202,71 +183,57 @@ const Strivr = () => {
       <hr className="solid"></hr>
       <div className="section" id='experience-prototypes'>
         <h2>Experience Prototypes</h2>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-            <figure>
-              <img
-                src={experiencePrototypeImage1Url}
-                alt="Experience Prototype 1"
-                style={{ width: '70%', display: 'inline-block', marginRight: '2%' }}
-              />
-              <figcaption>EP #1: "Free Roam"</figcaption>
-            </figure>
-            <figure>
-              <img
-                src={experiencePrototypeImage2Url}
-                alt="Experience Prototype 2"
-                style={{ width: '70%', display: 'inline-block' }}
-              />
-              <figcaption>EP #2: "Rotate"</figcaption>
-            </figure>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-            <figure>
-              <img
-                src={experiencePrototypeImage3Url}
-                alt="Experience Prototype 3"
-                style={{ width: '60%', display: 'inline-block' }}
-              />
-              <figcaption>EP #3: "Teleport"</figcaption>
-            </figure>
-          </div>
-          <p>
-            We investigated three experience prototypes for the environment:
-          </p>
-          <ol type="1">
-            <li>
-              <b>Free roam</b>
-              <ul><li>
-                (+) Users can freely roam throughout the environment by translating across the virtual space with their controllers.
-              </li></ul>
-              <ul><li>
-                (-) Encouraging virtual translation can inadvertently cause users to bump into real-world obstacles.
-              </li></ul>
-            </li>
-            <li>
-              <b>Rotate</b>
-              <ul><li>
-                (+) We surround users with content in a 360&deg; circle.
-              </li></ul>
-              <ul><li>
-                (-) Forcing users to rotate their heads beyond a 180&deg; field of view may force them to get up from their chairs—they would likely be seated for the majority of our immersive experiences—to view all of the interactable content.
-              </li></ul>
-            </li>
-            <li>
-              <b>Teleport</b>
-              <ul><li>
-                (+) There is minimal barrier to entry for new VR users.
-              </li></ul>
-              <ul><li>
-                (-) Freedom of movement is restricted for more advanced VR users.
-              </li></ul>
-            </li>
-          </ol>
-          <p>
-            Between our options for our new virtual environment, we landed on our <b>Teleport</b> experience prototype. Our rationale was that our users often had little to no experience in VR, so we wanted to prioritize their safety and comfort while reducing friction as much as possible between users putting on the headset and launching their first activity. By not overwhelming users with too much freedom of movement, they would have more bandwidth to focus on the training content while still enjoying the novelty of being in a virtual environment (<b>HMW #3</b>).
-          </p>
-          <p>
-            This design also lent itself to our previous discovery that we should display related content in a single container (<b>HMWs #1 and #2</b>). Since our users would be constrained to their field of view, the content should be contained to a central "screen" in front of them.
+        <div className="img-row">
+          <figure>
+            <img src={experiencePrototypeImage1Url} alt="Experience Prototype 1" />
+            <figcaption>EP #1: "Free Roam"</figcaption>
+          </figure>
+          <figure>
+            <img src={experiencePrototypeImage2Url} alt="Experience Prototype 2" />
+            <figcaption>EP #2: "Rotate"</figcaption>
+          </figure>
+        </div>
+        <figure>
+          <img src={experiencePrototypeImage3Url} alt="Experience Prototype 3" style={{ maxWidth: '60%' }} />
+          <figcaption>EP #3: "Teleport"</figcaption>
+        </figure>
+        <p>
+          We investigated three experience prototypes for the environment:
+        </p>
+        <ol type="1">
+          <li>
+            <b>Free roam</b>
+            <ul><li>
+              (+) Users can freely roam throughout the environment by translating across the virtual space with their controllers.
+            </li></ul>
+            <ul><li>
+              (-) Encouraging virtual translation can inadvertently cause users to bump into real-world obstacles.
+            </li></ul>
+          </li>
+          <li>
+            <b>Rotate</b>
+            <ul><li>
+              (+) We surround users with content in a 360&deg; circle.
+            </li></ul>
+            <ul><li>
+              (-) Forcing users to rotate their heads beyond a 180&deg; field of view may force them to get up from their chairs—they would likely be seated for the majority of our immersive experiences—to view all of the interactable content.
+            </li></ul>
+          </li>
+          <li>
+            <b>Teleport</b>
+            <ul><li>
+              (+) There is minimal barrier to entry for new VR users.
+            </li></ul>
+            <ul><li>
+              (-) Freedom of movement is restricted for more advanced VR users.
+            </li></ul>
+          </li>
+        </ol>
+        <p>
+          Between our options for our new virtual environment, we landed on our <b>Teleport</b> experience prototype. Our rationale was that our users often had little to no experience in VR, so we wanted to prioritize their safety and comfort while reducing friction as much as possible between users putting on the headset and launching their first activity. By not overwhelming users with too much freedom of movement, they would have more bandwidth to focus on the training content while still enjoying the novelty of being in a virtual environment (<b>HMW #3</b>).
+        </p>
+        <p>
+          This design also lent itself to our previous discovery that we should display related content in a single container (<b>HMWs #1 and #2</b>). Since our users would be constrained to their field of view, the content should be contained to a central "screen" in front of them.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -276,72 +243,42 @@ const Strivr = () => {
           We worked on two prototypes: one for the new UI and one for the virtual environment.
         </p>
         <h3>New UI</h3>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={wireframesImageUrl}
-              alt="Wireframes"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>UI wireframes</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={wireframesImageUrl} alt="Wireframes" />
+          <figcaption>UI wireframes</figcaption>
+        </figure>
         <p>
           We created wireframes of the UI components, which included a new set of buttons, placards, and menu containers to present learning content (<b>HMW #1</b>).
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={figmaClickthroughImageUrl}
-              alt="Figma Clickthrough"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Figma clickthrough</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={figmaClickthroughImageUrl} alt="Figma Clickthrough" />
+          <figcaption>Figma clickthrough</figcaption>
+        </figure>
         <p>
           We also created a Figma clickthrough to test the user flows during the acclimation scene, the home scene, the transitions between both scenes, and the transition into the learning content. We wanted to validate that our users could navigate through the acclimation and the lobby into an activity, all while only using the trigger button on their VR controller (<b>HMW #2</b>).
         </p>
         <h3>Virtual Environment</h3>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={newAcclimationEnvironmentImageUrl}
-              alt="New Acclimation Environment"
-              style={{ width: '50%', display: 'inline-block' }}
-            />
-            <figcaption>New acclimation environment</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={newAcclimationEnvironmentImageUrl} alt="New Acclimation Environment" style={{ maxWidth: '50%' }} />
+          <figcaption>New acclimation environment</figcaption>
+        </figure>
         <p>
           We imagined our users entering the lobby from the acclimation flow, which would take place in a dark environment so that they would not be distracted while receiving important usage instructions (<b>HMW #2</b>).
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={lobbyLayoutImageUrl}
-              alt="Lobby Layout Prototype"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Lobby layout prototype</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={lobbyLayoutImageUrl} alt="Lobby Layout Prototype" />
+          <figcaption>Lobby layout prototype</figcaption>
+        </figure>
         <p>
-          Our vision for the virtual lobby environment was a CG-designed home with an open lobby where users could interact with our main menu and content. 
+          Our vision for the virtual lobby environment was a CG-designed home with an open lobby where users could interact with our main menu and content.
         </p>
         <p>
           Once they completed the acclimation flow, they would enter a warm, inviting space where they could feel relaxed and ready to engage with immersive content. We designed the open layout of the lobby to create the illusion of being in a bigger space. Poorly designed VR can feel constricting, especially with heavy hardware and limited freedom of movement, so we wanted to alleviate that discomfort by bringing users into an open area (<b>HMW #3</b>).
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={xLayoutImageUrl}
-              alt="X-shape for lobby"
-              style={{ width: '50%', display: 'inline-block' }}
-            />
-            <figcaption>X-shape for lobby</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={xLayoutImageUrl} alt="X-shape for lobby" style={{ maxWidth: '50%' }} />
+          <figcaption>X-shape for lobby</figcaption>
+        </figure>
         <p>
           We also designed the layout of the virtual home to have visible and distinct destinations (pinpointed by the pink dots in the "X" diagram from the lobby layout prototype). Each of these areas in the virtual home was designed with a unique ambiance to match the content accessible to users when they teleport to that hotspot. This would enable us to categorize different information displays within the lobby while leaning into existing mental models of compartmentalization by location.
         </p>
@@ -368,13 +305,12 @@ const Strivr = () => {
         <div className="video-youtube">
           <iframe className="responsive-iframe" src={STRIVR_DEMO_VIDEO_URL} title="Strivr Lobby Demo" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <br />
         <i style={{ display: 'flex', justifyContent: 'center' }}>New acclimation and lobby featured in Strivr's "Get Started" demo</i>
         <p>
           Once we finalized the development of our new acclimation and lobby, we were able to answer our three HMW statements from before:
         </p>
         <ol>
-        <li>
+          <li>
             We created an intuitive UI system for users with minimal VR experience by:
             <ul><li>
               <b>Developing a new UI system that is inspired by everyday real-world screen interactions.</b>
@@ -401,66 +337,30 @@ const Strivr = () => {
             </li></ul>
           </li>
         </ol>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={newAcclimationImageUrl}
-              alt="New Acclimation"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>New acclimation with encapsulated text and images</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={lobbyMenuToolbarImageUrl}
-              alt="Lobby menu and toolbar"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Lobby with encapsulated content menu and toolbar</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={lobbyTeleportHotspot1ImageUrl}
-              alt="Lobby teleport hotspot"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Teleport hotspot to the left of the user</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={lobbyTeleportHotspot2ImageUrl}
-              alt="Patio hot spot"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Teleport hotspot on the patio</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={lobbyTeleportHotspot3ImageUrl}
-              alt="Entryway hotspot"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Teleport hotspot by the entryway</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={lobbyTeleportHotspot4ImageUrl}
-              alt="Behind the user hotspot"
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Teleport hotspot behind the user</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={newAcclimationImageUrl} alt="New Acclimation" />
+          <figcaption>New acclimation with encapsulated text and images</figcaption>
+        </figure>
+        <figure>
+          <img src={lobbyMenuToolbarImageUrl} alt="Lobby menu and toolbar" />
+          <figcaption>Lobby with encapsulated content menu and toolbar</figcaption>
+        </figure>
+        <figure>
+          <img src={lobbyTeleportHotspot1ImageUrl} alt="Lobby teleport hotspot" />
+          <figcaption>Teleport hotspot to the left of the user</figcaption>
+        </figure>
+        <figure>
+          <img src={lobbyTeleportHotspot2ImageUrl} alt="Patio hot spot" />
+          <figcaption>Teleport hotspot on the patio</figcaption>
+        </figure>
+        <figure>
+          <img src={lobbyTeleportHotspot3ImageUrl} alt="Entryway hotspot" />
+          <figcaption>Teleport hotspot by the entryway</figcaption>
+        </figure>
+        <figure>
+          <img src={lobbyTeleportHotspot4ImageUrl} alt="Behind the user hotspot" />
+          <figcaption>Teleport hotspot behind the user</figcaption>
+        </figure>
         <p>
           In future iterations of our lobby, we would easily be able to instantiate new UI to provide users with even more content diversity in these teleport hotspots, thanks to our intentional design and component-based implementation.
         </p>

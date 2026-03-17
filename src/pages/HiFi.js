@@ -18,22 +18,22 @@ const HIFI_CONTENT_SCRIPTS_URL = 'https://github.com/search?q=repo%3Aelisa-lj11%
 const HiFi = () => {
   const [refs, setRefs] = useState([]);
 
-  // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
-    generateRefsFunction();  // Call the function that scans the DOM and sets the refs
+    generateRefsFunction();
   };
 
   return (
     <PageTemplate
-      refs={refs} 
-      setRefs={setRefs} 
+      refs={refs}
+      setRefs={setRefs}
       generateRefsFromDOM={generateRefsFromDOM}
     >
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h1>High Fidelity: Content Prototyping</h1>
-        <img src={hifiOverviewImageUrl} alt='Hifi Overview' width='100%'/>
-        <br></br>
+        <figure>
+          <img src={hifiOverviewImageUrl} alt='Hifi Overview' />
+        </figure>
         <p>
           I worked as an intern and later as a software engineer at <a target='_blank' rel='noopener noreferrer' href={HIFI_WIKI_URL}>High Fidelity</a>, a startup that formerly focused on social virtual reality. I was part of the Content Prototyping team, where we created new experiences to showcase the potential of the metaverse. Our goal was to inspire users with engaging content while empowering developers through accessible APIs that allowed them to integrate their own creations easily.
         </p>
@@ -44,7 +44,9 @@ const HiFi = () => {
       <hr className="solid"></hr>
       <div className="section" id='clara'>
         <h2>Clara.io Integration</h2>
-        <img src={claraImageUrl} alt='Clara.io in Hifi' width='100%'/>
+        <figure>
+          <img src={claraImageUrl} alt='Clara.io in Hifi' />
+        </figure>
         <p>
           I developed an integration to download 3D entities from an external asset library directly through High Fidelity's interface. My project allowed users to access <a target='_blank' rel='noopener noreferrer' href={CLARA_URL}>Clara.io</a> from in-world to pick a model and directly add it to their domain without leaving the application.
         </p>
@@ -78,30 +80,14 @@ const HiFi = () => {
         </p>
         <h3>Use Case</h3>
         <ol>
-          <li>
-            Launch High Fidelity and enter the virtual world
-          </li>
-          <li>
-            Open "Marketplace" within High Fidelity
-          </li>
-          <li>
-            Use the status bar to switch between Marketplace and Clara.io via the “marketplace” of marketplaces
-          </li>
-          <li>
-            Log onto Clara.io within High Fidelity
-          </li>
-          <li>
-            Select a featured model or search for a specific model through Clara's interface
-          </li>
-          <li>
-            Download the .fbx format of the model
-          </li>
-          <li>
-            Save with a searchable filename to High Fidelity's built-in Asset Browser
-          </li>
-          <li>
-            Upload to the virtual world from the Asset Browser
-          </li>
+          <li>Launch High Fidelity and enter the virtual world</li>
+          <li>Open "Marketplace" within High Fidelity</li>
+          <li>Use the status bar to switch between Marketplace and Clara.io via the "marketplace" of marketplaces</li>
+          <li>Log onto Clara.io within High Fidelity</li>
+          <li>Select a featured model or search for a specific model through Clara's interface</li>
+          <li>Download the .fbx format of the model</li>
+          <li>Save with a searchable filename to High Fidelity's built-in Asset Browser</li>
+          <li>Upload to the virtual world from the Asset Browser</li>
         </ol>
         <p>
           The Clara.io integration script is available on my <a target='_blank' rel='noopener noreferrer' href={CLARA_SCRIPT_URL}>GitHub</a>.
@@ -113,7 +99,6 @@ const HiFi = () => {
         <div className="video-youtube">
           <iframe className="responsive-iframe" src={POLY_EMBED_URL} title="Google Poly Integration" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <br></br>
         <i style={{ display: 'flex', justifyContent: 'center' }}>High Fidelity featured at 1:20</i>
         <p>
           After the success of the Clara.io integration, I integrated an API that surfaced asset import functionality from <a target='_blank' rel='noopener noreferrer' href={POLY_URL}>Google Poly</a>, a 3D object and scene website. The integration of this asset library to High Fidelity was significantly streamlined by the foundation established through the Clara.io integration. With direct access to Google Poly's extensive collection of user-generated models, High Fidelity users could create a wide variety of environments and virtual worlds to share.
@@ -130,7 +115,6 @@ const HiFi = () => {
             <source src={pillVideoUrl} type="video/mp4" />
           </video>
         </div>
-        <br></br>
         <i style={{ display: 'flex', justifyContent: 'center' }}>"FX Pill" demo</i>
         <p>
           I scripted virtual pinatas, animated emojis, graphics effect "pills," music visualizers, and other playful content that you may not be able to find in the real world. This content was available on High Fidelity's "Marketplace," allowing users to download models freely and incorporate them in their virtual spaces. The scripts for this content were also open-source, allowing other developers to experiment with and build upon them.

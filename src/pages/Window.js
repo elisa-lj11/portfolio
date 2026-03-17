@@ -43,22 +43,22 @@ const WINDOW_GITHUB_URL = 'https://github.com/elisa-lj11/Window';
 const Window = () => {
   const [refs, setRefs] = useState([]);
 
-  // Function to be used in PageTemplate and passed down
   const generateRefsFromDOM = (generateRefsFunction) => {
-    generateRefsFunction();  // Call the function that scans the DOM and sets the refs
+    generateRefsFunction();
   };
 
   return (
     <PageTemplate
-      refs={refs} 
-      setRefs={setRefs} 
+      refs={refs}
+      setRefs={setRefs}
       generateRefsFromDOM={generateRefsFromDOM}
     >
       <div className="section" id='overview'>
         <h2 style={{ display: 'none' }}>Overview</h2>
         <h1>"Window": An AR Clothes Shopping App</h1>
-        <img src={hiFiPrototypeScreenshotImageUrl} alt='Window Hi-Fi prototype' width='40%'/>
-        <br></br>
+        <figure>
+          <img src={hiFiPrototypeScreenshotImageUrl} alt='Window Hi-Fi prototype' style={{ maxWidth: '40%' }} />
+        </figure>
         <p>
           "Window" uses augmented reality on a mobile platform to place a personalized mannequin in a storefront window so users can easily view a store's offering.
         </p>
@@ -69,16 +69,10 @@ const Window = () => {
       <hr className="solid"></hr>
       <div className="section" id='first-section'>
         <h2>Needfinding</h2>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={needfindingMapImageUrl}
-              alt='Initial needfinding map'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Initial needfinding map</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={needfindingMapImageUrl} alt='Initial needfinding map' style={{ maxWidth: '80%' }} />
+          <figcaption>Initial needfinding map</figcaption>
+        </figure>
         <p>
           When our group first came together, we began with some initial needfinding to define the direction of our project. We created an empathy map (seen above), which revealed that informative visualization could serve as a solid foundation for our application. Focusing on the shopping experience, we conducted additional needfinding interviews at the Stanford Shopping Center. We spoke with a diverse group of people, including a mother from Hawaii, a man from Sweden, and a group of eighth-grade girls, all of whom expressed similar frustrations with shopping.
         </p>
@@ -101,18 +95,12 @@ const Window = () => {
           </li>
         </ol>
         <p>
-          These conversations highlighted key issues, including the time wasted on unproductive shopping. Based on these insights, we drafted several “How Might We” (HMW) statements to address our interviewees' gripes with shopping:
+          These conversations highlighted key issues, including the time wasted on unproductive shopping. Based on these insights, we drafted several "How Might We" (HMW) statements to address our interviewees' gripes with shopping:
         </p>
         <ol type='1'>
-          <li>
-            <b>How might we make it easier for people to find clothes online that fit them?</b>
-          </li>
-          <li>
-            <b>How might we make shopping more enjoyable by gamifying the experience?</b>
-          </li>
-          <li>
-            <b>How might we help customers find items in stores more easily?</b>
-          </li>
+          <li><b>How might we make it easier for people to find clothes online that fit them?</b></li>
+          <li><b>How might we make shopping more enjoyable by gamifying the experience?</b></li>
+          <li><b>How might we help customers find items in stores more easily?</b></li>
         </ol>
         <p>
           From here, we developed three experience prototypes, which are explained in the next section.
@@ -121,34 +109,20 @@ const Window = () => {
       <hr className="solid"></hr>
       <div className="section" id='experience-prototypes'>
         <h2>Experience Prototypes</h2>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
-              <img
-              src={ep1ImageUrl}
-              alt='Experience prototype 1'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
-            />
+            <img src={ep1ImageUrl} alt='Experience prototype 1' />
             <figcaption>EP #1: Sharing virtual clothes from a closet with friends</figcaption>
           </figure>
           <figure>
-            <img
-              src={ep2ImageUrl}
-              alt='Experience prototype 2'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
+            <img src={ep2ImageUrl} alt='Experience prototype 2' />
             <figcaption>EP #2: Trying on virtual clothes from a store</figcaption>
           </figure>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={ep3ImageUrl}
-              alt='Experience prototype 3'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>EP #3: Using an AR mannequin to display outfits</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={ep3ImageUrl} alt='Experience prototype 3' style={{ maxWidth: '80%' }} />
+          <figcaption>EP #3: Using an AR mannequin to display outfits</figcaption>
+        </figure>
         <p>
           We created three different experience prototypes to explore various aspects of the shopping experience (seen above). These included a virtual closet where users could add their clothes for friends to view, trying on virtual clothes from a store, and using an AR mannequin to display outfits. We conducted field testing with users, and after several rounds of iteration, we chose to move forward with EP #3: the AR mannequin prototype. It was the most intuitive option, and one of our users, without prompting, mentioned she would love to use something like it, reinforcing our decision.
         </p>
@@ -163,53 +137,29 @@ const Window = () => {
           We branded ourselves as <b>Window</b>, and we defined our mission/problem/solution/value proposition:
         </p>
         <ul>
-          <li>
-            <b>Mission:</b> See where your style takes you.
-          </li>
-          <li>
-            <b>Problem:</b> Shopping is frustrating when hours of searching yield nothing appealing.
-          </li>
-          <li>
-            <b>Solution:</b> Using augmented reality, we place a custom mannequin in the storefront window to easily showcase a store's offerings.
-          </li>
-          <li>
-            <b>Value Proposition:</b> Window shopping made easier.
-          </li>
+          <li><b>Mission:</b> See where your style takes you.</li>
+          <li><b>Problem:</b> Shopping is frustrating when hours of searching yield nothing appealing.</li>
+          <li><b>Solution:</b> Using augmented reality, we place a custom mannequin in the storefront window to easily showcase a store's offerings.</li>
+          <li><b>Value Proposition:</b> Window shopping made easier.</li>
         </ul>
         <h3>Concept Sketches</h3>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
-              <img
-              src={conceptSketchHeadsetImageUrl}
-              alt='Concept sketch: headset'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
-            />
+            <img src={conceptSketchHeadsetImageUrl} alt='Concept sketch: headset' />
             <figcaption>Concept sketch: headset</figcaption>
           </figure>
           <figure>
-            <img
-              src={conceptSketchStoreImageUrl}
-              alt='Concept sketch: store projector'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
+            <img src={conceptSketchStoreImageUrl} alt='Concept sketch: store projector' />
             <figcaption>Concept sketch: store projector</figcaption>
           </figure>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
-              <img
-              src={conceptSketchWearableImageUrl}
-              alt='Concept sketch: wearable'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
-            />
+            <img src={conceptSketchWearableImageUrl} alt='Concept sketch: wearable' />
             <figcaption>Concept sketch: wearable</figcaption>
           </figure>
           <figure>
-            <img
-              src={conceptSketchMobileImageUrl}
-              alt='Concept sketch: mobile'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
+            <img src={conceptSketchMobileImageUrl} alt='Concept sketch: mobile' />
             <figcaption>Concept sketch: mobile</figcaption>
           </figure>
         </div>
@@ -220,106 +170,57 @@ const Window = () => {
           After reviewing these initial sketches, we decided to proceed with a mobile application for three reasons:
         </p>
         <ol>
-          <li>
-            Smartphones are exponentially more accessible than our other options.
-          </li>
-          <li>
-            Smartphones have more AR support than other devices.
-          </li>
-          <li>
-            Smartphones lend themselves to social features that the other mediums do not.
-          </li>
+          <li>Smartphones are exponentially more accessible than our other options.</li>
+          <li>Smartphones have more AR support than other devices.</li>
+          <li>Smartphones lend themselves to social features that the other mediums do not.</li>
         </ol>
         <h3>Task Flows</h3>
         <p>
           We then designed three tasks of varying complexities:
         </p>
         <ol>
-          <li>
-            <b>Simple Task: Browsing for clothes</b>—scanning a storefront and viewing their selection.
-          </li>
-          <li>
-            <b>Moderate Task: Looking for a new outfit</b>—specifying style and price range.
-          </li>
-          <li>
-            <b>Complex Task: Shopping for someone else and asking for opinions</b>—customizing an outfit and sharing with friends.
-          </li>
+          <li><b>Simple Task: Browsing for clothes</b>—scanning a storefront and viewing their selection.</li>
+          <li><b>Moderate Task: Looking for a new outfit</b>—specifying style and price range.</li>
+          <li><b>Complex Task: Shopping for someone else and asking for opinions</b>—customizing an outfit and sharing with friends.</li>
         </ol>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={lowFiSimpleTaskFlowImageUrl}
-              alt='Low-fi Simple Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Low-fi simple task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={lowFiModerateTaskFlowImageUrl}
-              alt='Low-fi Moderate Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Low-fi moderate task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={lowFiComplexTaskFlowImageUrl}
-              alt='Low-fi Complex Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Low-fi complex task flow</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={lowFiSimpleTaskFlowImageUrl} alt='Low-fi Simple Task Flow' style={{ maxWidth: '70%' }} />
+          <figcaption>Low-fi simple task flow</figcaption>
+        </figure>
+        <figure>
+          <img src={lowFiModerateTaskFlowImageUrl} alt='Low-fi Moderate Task Flow' style={{ maxWidth: '70%' }} />
+          <figcaption>Low-fi moderate task flow</figcaption>
+        </figure>
+        <figure>
+          <img src={lowFiComplexTaskFlowImageUrl} alt='Low-fi Complex Task Flow' style={{ maxWidth: '70%' }} />
+          <figcaption>Low-fi complex task flow</figcaption>
+        </figure>
         <h3>Concept Video</h3>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={storyboardImageUrl}
-              alt='Concept video storyboard'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Concept video storyboard</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={storyboardImageUrl} alt='Concept video storyboard' style={{ maxWidth: '80%' }} />
+          <figcaption>Concept video storyboard</figcaption>
+        </figure>
         <p>
           We also produced a concept video for Window.
         </p>
         <div className="video-youtube">
           <iframe className="responsive-iframe" src={WINDOW_CONCEPT_VIDEO_EMBED_URL} title="Window Concept Video" frameBorder="0" allow="autoplay; encrypted-media;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <br />
         <h3>Low-Fidelity Prototype Screens</h3>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={lowFiPrototypeImageUrl}
-              alt='Low-fi prototype'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Low-fi prototype</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={lowFiPrototypeImageUrl} alt='Low-fi prototype' style={{ maxWidth: '80%' }} />
+          <figcaption>Low-fi prototype</figcaption>
+        </figure>
         <p>
           We developed our low-fidelity prototype using paper screens and cut-out printed clothing options. Users began by scanning a store name, which led them to a home screen where they could start shopping or filter options. After selecting how to browse, the app displayed a mannequin in augmented reality through the camera. Users swiped through clothing, viewed item details, added articles to their virtual closet, or shared outfits with friends. Clicking on an item revealed sizing, prices, availability, and brand information, along with a barcode for quick identification at checkout. Additionally, swiping from the left opened a navigation drawer to access their virtual closet, friends, settings, and logout options.
         </p>
         <p>
           We designed each screen to flow through our three user tasks to conduct our first round of user testing.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={lowFiFlowImageUrl}
-              alt='Low-fi example flow'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Low-fi example flow</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={lowFiFlowImageUrl} alt='Low-fi example flow' style={{ maxWidth: '80%' }} />
+          <figcaption>Low-fi example flow</figcaption>
+        </figure>
         <h3>User Testing</h3>
         <p>
           After completing our low-fidelity prototype, we returned to the Stanford Shopping Center to let random shoppers test our application. We assigned them our three tasks and allowed them to navigate the app independently, assisting only when they initiated a click since the paper prototype required manual screen changes.
@@ -330,27 +231,15 @@ const Window = () => {
         <ul>
           <li>
             The original process of scanning a store name and clicking it to start shopping confused them, as they preferred immediate access to AR.
-            <ul>
-              <li>
-                Users needed quicker access to the AR viewport.
-              </li>
-            </ul>
+            <ul><li>Users needed quicker access to the AR viewport.</li></ul>
           </li>
           <li>
             Users often clicked arrows instead of swiping to see more clothing options.
-            <ul>
-              <li>
-                Swiping on clothing options should be more intuitive.
-              </li>
-            </ul>
+            <ul><li>Swiping on clothing options should be more intuitive.</li></ul>
           </li>
           <li>
             The closet feature was misunderstood as a purchasing mechanism instead of a "favoriting" tool.
-            <ul>
-              <li>
-                The closet feature should be distinguished from making a purchase.
-              </li>
-            </ul>
+            <ul><li>The closet feature should be distinguished from making a purchase.</li></ul>
           </li>
         </ul>
         <p>
@@ -361,51 +250,27 @@ const Window = () => {
       <div className="section" id='med-fi-prototype'>
         <h2>Medium-Fidelity Prototype</h2>
         <p>
-          We developed our medium-fidelity prototype using <a target='_blank' rel='noopener noreferrer' href={SKETCH_URL}>Sketch</a> for graphic design and <a target='_blank' rel='noopener noreferrer' href={INVISION_URL}>InVision</a> for mobile prototyping, enabling seamless navigation between screens based on user input. We incorporated feedback from user testing to implement design changes, including direct access to AR shopping when clicking “Start Shopping,” a slide-up menu for filters and custom measurements, and a simplified closet feature represented by a plus button. Additionally, we added the option for users to customize their mannequin measurements as requested. Below are the updated task flows for our medium-fidelity prototype.
+          We developed our medium-fidelity prototype using <a target='_blank' rel='noopener noreferrer' href={SKETCH_URL}>Sketch</a> for graphic design and <a target='_blank' rel='noopener noreferrer' href={INVISION_URL}>InVision</a> for mobile prototyping, enabling seamless navigation between screens based on user input. We incorporated feedback from user testing to implement design changes, including direct access to AR shopping when clicking "Start Shopping," a slide-up menu for filters and custom measurements, and a simplified closet feature represented by a plus button. Additionally, we added the option for users to customize their mannequin measurements as requested. Below are the updated task flows for our medium-fidelity prototype.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={medFiSimpleTaskFlowImageUrl}
-              alt='Med-fi Simple Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Med-fi simple task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={medFiModerateTaskFlowImageUrl}
-              alt='Med-fi Moderate Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Med-fi moderate task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={medFiComplexTaskFlowImageUrl}
-              alt='Med-fi Complex Task Flow'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Med-fi complex task flow</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={medFiSimpleTaskFlowImageUrl} alt='Med-fi Simple Task Flow' style={{ maxWidth: '70%' }} />
+          <figcaption>Med-fi simple task flow</figcaption>
+        </figure>
+        <figure>
+          <img src={medFiModerateTaskFlowImageUrl} alt='Med-fi Moderate Task Flow' style={{ maxWidth: '70%' }} />
+          <figcaption>Med-fi moderate task flow</figcaption>
+        </figure>
+        <figure>
+          <img src={medFiComplexTaskFlowImageUrl} alt='Med-fi Complex Task Flow' style={{ maxWidth: '70%' }} />
+          <figcaption>Med-fi complex task flow</figcaption>
+        </figure>
         <h3>Website</h3>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={windowWebsiteImageUrl}
-              alt='Window website'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Window website</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={windowWebsiteImageUrl} alt='Window website' style={{ maxWidth: '80%' }} />
+          <figcaption>Window website</figcaption>
+        </figure>
         <p>
-          We also deployed a <a target='_blank' rel='noopener noreferrer' href={WINDOW_WEBSITE_URL}>website</a> for Window to demonstrate our progress through the iterative design process. We uploaded our med-fi prototype to our website to collect heuristic evaluations from our classmates. 
+          We also deployed a <a target='_blank' rel='noopener noreferrer' href={WINDOW_WEBSITE_URL}>website</a> for Window to demonstrate our progress through the iterative design process. We uploaded our med-fi prototype to our website to collect heuristic evaluations from our classmates.
         </p>
       </div>
       <hr className="solid"></hr>
@@ -415,47 +280,21 @@ const Window = () => {
           In this phase, four evaluators tested our InVision prototype, identifying 37 heuristic violations across ten categories:
         </p>
         <ol>
-          <li>
-            Visibility of Status
-          </li>
-          <li>
-            Match System & World
-          </li>
-          <li>
-            User Control
-          </li>
-          <li>
-            Consistency
-          </li>
-          <li>
-            Error Prevention
-          </li>
-          <li>
-            Recognition not Recall
-          </li>
-          <li>
-            Efficiency of Use
-          </li>
-          <li>
-            Minimalist Design
-          </li>
-          <li>
-            Help Users with Errors
-          </li>
-          <li>
-            Documentation
-          </li>
+          <li>Visibility of Status</li>
+          <li>Match System &amp; World</li>
+          <li>User Control</li>
+          <li>Consistency</li>
+          <li>Error Prevention</li>
+          <li>Recognition not Recall</li>
+          <li>Efficiency of Use</li>
+          <li>Minimalist Design</li>
+          <li>Help Users with Errors</li>
+          <li>Documentation</li>
         </ol>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={heuristicViolationsImageUrl}
-              alt='Heuristic Violations Summary'
-              style={{ width: '60%', display: 'inline-block' }}
-            />
-            <figcaption>Heuristic violations summary</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={heuristicViolationsImageUrl} alt='Heuristic Violations Summary' style={{ maxWidth: '60%' }} />
+          <figcaption>Heuristic violations summary</figcaption>
+        </figure>
         <p>
           An example of feedback received:
         </p>
@@ -464,12 +303,10 @@ const Window = () => {
             <b>[H3: User Control][Severity: 3]</b>
             <br />
             <i>Evaluators: 1, 2, 3, 4</i>
-            <br />
-            <br />
+            <br /><br />
             I'm confused about what the "plus" button does. Is there a quick way to star or favorite an item and come back to it? If it adds to the closet, make it clear that that is what it's doing.
-            <br />
-            <br />
-            Fix: Pop-up text that the item has been added to your closet, or just an overlayed icon. Be more intentional about the iconography. 
+            <br /><br />
+            Fix: Pop-up text that the item has been added to your closet, or just an overlayed icon. Be more intentional about the iconography.
           </p>
         </div>
         <p>
@@ -496,39 +333,20 @@ const Window = () => {
           We carefully considered each of the 37 violations and designated action items to incorporate into our high-fidelity prototype. Our main changes were the following:
         </p>
         <ul>
-          <li>
-            Users no longer need to log in to access AR functionality.
-          </li>
-          <li>
-            The closet feature was temporarily removed due to user confusion about its purpose.
-          </li>
-          <li>
-            Filtering options were added to the main shopping screen for quick adjustments.
-          </li>
-          <li>
-            Users could share outfit images by text directly from the app.
-          </li>
-          <li>
-            One-time profile creation was introduced to streamline user measurements.
-          </li>
+          <li>Users no longer need to log in to access AR functionality.</li>
+          <li>The closet feature was temporarily removed due to user confusion about its purpose.</li>
+          <li>Filtering options were added to the main shopping screen for quick adjustments.</li>
+          <li>Users could share outfit images by text directly from the app.</li>
+          <li>One-time profile creation was introduced to streamline user measurements.</li>
         </ul>
-        <p>
-
-        </p>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='hi-fi-prototype'>
         <h2>High-Fidelity Prototype</h2>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hiFiPrototypeMarkerImageUrl}
-              alt='Hi-fi prototype labeled'
-              style={{ width: '70%', display: 'inline-block' }}
-            />
-            <figcaption>Hi-fi prototype with marker</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={hiFiPrototypeMarkerImageUrl} alt='Hi-fi prototype labeled' style={{ maxWidth: '70%' }} />
+          <figcaption>Hi-fi prototype with marker</figcaption>
+        </figure>
         <p>
           Our hi-fi prototype was developed in <a target='_blank' rel='noopener noreferrer' href={XCODE_URL}>XCode</a> using Objective-C due to constraints from the <a target='_blank' rel='noopener noreferrer' href={ARTOOLKIT_URL}>ARToolkit SDK</a> (no longer supported). 3D models for clothing items were generated with <a target='_blank' rel='noopener noreferrer' href={MAYA_URL}>Maya</a>. ARToolKit SDK was used for marker detection and rendering 3D objects based on marker location, though it had limitations in detecting touch on 3D models and loading complex ones. A Wizard of Oz technique was used for interactions, faking Optical Character Recognition (OCR) and simulating touch interactions on the screen. Hard-coded data was used for user profiles, store maps, filtering options, and 3D object loading, instead of dynamic generation. The project faced issues with ARToolKit's OpenGL wrappers and limitations in accurately detecting user taps on 3D objects.
         </p>
@@ -538,56 +356,26 @@ const Window = () => {
         <p>
           Our updated task flows using our hi-fi prototype are below.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hiFiSimpleTaskFlowImageUrl}
-              alt='Hi-fi simple task flow'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Hi-fi simple task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hiFiModerateTaskFlow1ImageUrl}
-              alt='Hi-fi moderate task flow 1'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Hi-fi moderate task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hiFiModerateTaskFlow2ImageUrl}
-              alt='Hi-fi moderate task flow 2'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Hi-fi moderate task flow (cont.)</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hiFiComplexTaskFlow1ImageUrl}
-              alt='Hi-fi complex task flow 1'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Hi-fi complex task flow</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={hiFiComplexTaskFlow2ImageUrl}
-              alt='Hi-fi complex task flow 2'
-              style={{ width: '80%', display: 'inline-block' }}
-            />
-            <figcaption>Hi-fi complex task flow (cont.)</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={hiFiSimpleTaskFlowImageUrl} alt='Hi-fi simple task flow' style={{ maxWidth: '80%' }} />
+          <figcaption>Hi-fi simple task flow</figcaption>
+        </figure>
+        <figure>
+          <img src={hiFiModerateTaskFlow1ImageUrl} alt='Hi-fi moderate task flow 1' style={{ maxWidth: '80%' }} />
+          <figcaption>Hi-fi moderate task flow</figcaption>
+        </figure>
+        <figure>
+          <img src={hiFiModerateTaskFlow2ImageUrl} alt='Hi-fi moderate task flow 2' style={{ maxWidth: '80%' }} />
+          <figcaption>Hi-fi moderate task flow (cont.)</figcaption>
+        </figure>
+        <figure>
+          <img src={hiFiComplexTaskFlow1ImageUrl} alt='Hi-fi complex task flow 1' style={{ maxWidth: '80%' }} />
+          <figcaption>Hi-fi complex task flow</figcaption>
+        </figure>
+        <figure>
+          <img src={hiFiComplexTaskFlow2ImageUrl} alt='Hi-fi complex task flow 2' style={{ maxWidth: '80%' }} />
+          <figcaption>Hi-fi complex task flow (cont.)</figcaption>
+        </figure>
         <p>
           Due to time constraints leading up to our end-of-quarter project fair, we could not implement everything we had planned. Custom clothing measurements, which would allow users to see how items fit different body types, had to be left out of the high-fidelity prototype. We also set aside store scanning features, which would require collaboration with stores and recognition technology, to focus on core functionality. Finally, our "virtual closet" concept, intended for favoriting and revisiting items across store locations, was postponed.
         </p>
@@ -601,16 +389,10 @@ const Window = () => {
         <p>
           We delivered a 30-second pitch at the CS 147 project fair alongside 44 other project teams. We also ran a demo table for attendees to try our prototype and learn about our process.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-              <img
-              src={windowPosterImageUrl}
-              alt='Window poster'
-              style={{ width: '60%', display: 'inline-block' }}
-            />
-            <figcaption>Window poster</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img src={windowPosterImageUrl} alt='Window poster' style={{ maxWidth: '60%' }} />
+          <figcaption>Window poster</figcaption>
+        </figure>
         <p>
           After ten weeks of late nights and constant iteration, we were proud to take our AR window shopping concept from a paper prototype to a functional app. It was an intense but rewarding process, where we gained experience in design strategies, teamwork, marketing, and collaborative coding.
         </p>
@@ -624,7 +406,7 @@ const Window = () => {
             <ul>
               <li>
                 Initially, I hesitated to approach strangers for feedback on our app, but I was pleasantly surprised by how willing many were to help. Engaging with people outside of my bubble provided valuable insights into diverse use cases for our app.
-              </li>  
+              </li>
             </ul>
           </li>
           <li>
@@ -632,7 +414,7 @@ const Window = () => {
             <ul>
               <li>
                 We invested too much time trying to refine our "Closet" feature for better user understanding, rather than asking users whether it would be useful to them. If we had prioritized gathering feedback on this feature earlier, we might have recognized its lack of appeal sooner and avoided the frustration of attempting to improve something that users didn't want.
-              </li>  
+              </li>
             </ul>
           </li>
           <li>

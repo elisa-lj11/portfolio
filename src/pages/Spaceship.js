@@ -72,16 +72,13 @@ const Spaceship = () => {
   }, []);
 
   const cadModelFallbackImage = (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-      <figure>
-        <img
-          src={commandDeckCadModelImageUrl}
-          alt='Command deck CAD model'
-          style={{ width: '100%', display: 'inline-block' }}
-        />
-        <figcaption>Command deck CAD model</figcaption>
-      </figure>
-    </div>
+    <figure>
+      <img
+        src={commandDeckCadModelImageUrl}
+        alt='Command deck CAD model'
+      />
+      <figcaption>Command deck CAD model</figcaption>
+    </figure>
   );
 
   // Function to be used in PageTemplate and passed down
@@ -132,26 +129,22 @@ const Spaceship = () => {
         <p>
           Since the hotel room we were assigned was quite large, we divided the room into nine different sections (see wireframes below), each with its own "toxicity alchemization" tasks.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={roomWireframeImageUrl}
-              alt='Hotel room blueprint'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
-            <figcaption>Hotel room blueprint</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={roomInteractionsWireframeImageUrl}
-              alt='Interactions wireframe'
-              style={{ width: '75%', display: 'inline-block' }}
-            />
-            <figcaption>Interactions wireframe</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={roomWireframeImageUrl}
+            alt='Hotel room blueprint'
+            style={{ maxWidth: '90%' }}
+          />
+          <figcaption>Hotel room blueprint</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={roomInteractionsWireframeImageUrl}
+            alt='Interactions wireframe'
+            style={{ maxWidth: '75%' }}
+          />
+          <figcaption>Interactions wireframe</figcaption>
+        </figure>
         <p>
           We then split into smaller teams to focus on each section, with the command deck (team of 7) and Unity program (team of 2) being the two areas I worked on.
         </p>
@@ -159,29 +152,25 @@ const Spaceship = () => {
         <p>
           We planned to use the living room as the primary space for our spaceship experience, as it was the largest and most open area that would permit multiple visitors to interact concurrently with our command deck. Then, we identified the components that our spaceship would need to operate—a control console, an inner hull, a backdrop material, and a projector—and mapped them to the physical space of the living room.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={commandDeckWireframeImageUrl}
-              alt='Command deck wireframe'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
-            <figcaption>Command deck wireframe</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={commandDeckWireframeImageUrl}
+            alt='Command deck wireframe'
+            style={{ maxWidth: '90%' }}
+          />
+          <figcaption>Command deck wireframe</figcaption>
+        </figure>
         <p>
           We then sketched out the command deck, which would be the primary interface for visitors to interact with our spaceship. The command deck would feature a plane yoke to control the spaceship's pitch and roll, embedded screens to display the ship's status, a projector to display the virtual alien planet that would eventually be rendered by the Unity program, and a series of buttons to change the appearance of the alien environment. We designed the command deck to wrap slightly around the pilot so that multiple visitors could be in the cockpit at once and introduce an element of chaos by smashing random buttons to see what would happen.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={commandDeckConceptImageUrl}
-              alt='Command deck wireframe'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
-            <figcaption>Command deck concept</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={commandDeckConceptImageUrl}
+            alt='Command deck wireframe'
+            style={{ maxWidth: '90%' }}
+          />
+          <figcaption>Command deck concept</figcaption>
+        </figure>
         <h3>Unity Program Ideation</h3>
         <p>
           Since we expected to have hundreds of visitors pass through our room each day, we decided to constrain the spaceship-flying experience to around two minutes. We also wanted to promote the storyline that we needed to escape the planet, so we broke the flying experience into four stages:
@@ -291,39 +280,30 @@ const Spaceship = () => {
         <p>
           We took our initial command deck sketch and modified it to include various components we wanted to incorporate into the final design. Below is a partial list of components that we wanted to match to the diagram of the command deck. We picked out components that we thought would be fun to interact with and straightforward to process through a Teensy microcontroller or MIDI input.   
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={commandDeckLabelsImageUrl}
-              alt='Labeled command deck'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Command deck diagram</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={componentListImageUrl}
-              alt='Component list'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Partial list of components to match to labels</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={commandDeckLabelsImageUrl}
+            alt='Labeled command deck'
+          />
+          <figcaption>Command deck diagram</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={componentListImageUrl}
+            alt='Component list'
+          />
+          <figcaption>Partial list of components to match to labels</figcaption>
+        </figure>
         <p>
           From this schematic, we built a low-fidelity prototype of the command deck with cardboard. This prototype allowed us to test the deck's ergonomics and adjust the design before moving on to the high-fidelity prototype.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={commandDeckLowFiPrototypeImageUrl}
-              alt='Command deck low-fidelity prototype'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Command deck low-fidelity prototype</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={commandDeckLowFiPrototypeImageUrl}
+            alt='Command deck low-fidelity prototype'
+          />
+          <figcaption>Command deck low-fidelity prototype</figcaption>
+        </figure>
         <h3>High-Fidelity Prototype</h3>
         <p>
           Once we verified our low-fidelity prototype could accommodate all of our components, we moved on to building the high-fidelity prototype. We modeled the command deck in Fusion 360, laser-cut the panels out of half-inch plywood, and surfaced the deck with a white vinyl wrap and laser-cut acrylic.
@@ -335,7 +315,7 @@ const Spaceship = () => {
             <div className='interaction-instructions'>
               Drag and zoom to interact with the model below
             </div>
-            <div style={{ border: '2px solid #706EF5', padding: '10px', borderRadius: '5px', margin: '20px 0' }}>
+            <div className="model-viewer">
               <ErrorBoundary>
                 <Canvas 
                   ref={canvasRef}
@@ -386,26 +366,20 @@ const Spaceship = () => {
             </div>
           </>
         )}
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={commandDeckLaserCutImageUrl}
-              alt='Laser-cut command deck based on model'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Laser-cut command deck based on model</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={commandDeckAcrylicImageUrl}
-              alt='Acrylic surface on the command deck'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Vinyl wrap and acrylic surface on the command deck</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={commandDeckLaserCutImageUrl}
+            alt='Laser-cut command deck based on model'
+          />
+          <figcaption>Laser-cut command deck based on model</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={commandDeckAcrylicImageUrl}
+            alt='Acrylic surface on the command deck'
+          />
+          <figcaption>Vinyl wrap and acrylic surface on the command deck</figcaption>
+        </figure>
         <p>
           When the command deck frame was assembled, we placed the components into their corresponding slots. We used the following components in the final design:
         </p>
@@ -447,12 +421,11 @@ const Spaceship = () => {
         <p>
           The orb dock component was custom-designed to initiate the spaceship's launch sequence when an orb was placed in the dock. The orb and the dock were 3D-printed and fitted with Arduinos, NeoPixel LED rings, and near-field communication transmitters.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
+        <div className="img-row">
           <figure>
             <img
               src={orbArduinoImageUrl}
               alt='Orb with Arduinos'
-              style={{ width: '90%', display: 'inline-block', marginRight: '2%' }}
             />
             <figcaption>Orb with Arduinos</figcaption>
           </figure>
@@ -460,41 +433,32 @@ const Spaceship = () => {
             <img
               src={orbDockImageUrl}
               alt='Orb with dock'
-              style={{ width: '90%', display: 'inline-block' }}
             />
             <figcaption>Orb with dock</figcaption>
           </figure>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={solderImageUrl}
-              alt='Soldering components together'
-              style={{ width: '40%', display: 'inline-block' }}
-            />
-            <figcaption>Soldering components together</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={componentPlacementImageUrl}
-              alt='Component placement'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Component placement</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={teensyWiringImageUrl}
-              alt='Teensy wiring'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Teensy wiring</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={solderImageUrl}
+            alt='Soldering components together'
+            style={{ maxWidth: '40%' }}
+          />
+          <figcaption>Soldering components together</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={componentPlacementImageUrl}
+            alt='Component placement'
+          />
+          <figcaption>Component placement</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={teensyWiringImageUrl}
+            alt='Teensy wiring'
+          />
+          <figcaption>Teensy wiring</figcaption>
+        </figure>
         <p>
           We powered the components using a multiplexer hooked into a 5-volt power supply. We processed the analog input through three Teensy microcontrollers (one for each command deck section) connected to the desktop running the Unity program. Some components (e.g., LED strips, NeoTrellis, and sliders) were directly processed by the Teensy, which had Arduino code flashed onto it to handle more of the simple input processing.
         </p>
@@ -523,46 +487,35 @@ const Spaceship = () => {
         <br />
         <i style={{ display: 'flex', justifyContent: 'center' }}>Flight in action!</i>
         <br />
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={roomSetupImageUrl}
-              alt='Full experience setup'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Full experience setup</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={fullCommandDeckImageUrl}
-              alt='Full command deck setup'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Full command deck setup</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={fullCommandDeckLitImageUrl}
-              alt='Full command deck setup (low lighting)'
-              style={{ width: '100%', display: 'inline-block' }}
-            />
-            <figcaption>Full command deck setup (low lighting)</figcaption>
-          </figure>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', textAlign: 'center' }}>
-          <figure>
-            <img
-              src={roomPlacardImageUrl}
-              alt='Experience placard'
-              style={{ width: '90%', display: 'inline-block' }}
-            />
-            <figcaption>Experience placard</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <img
+            src={roomSetupImageUrl}
+            alt='Full experience setup'
+          />
+          <figcaption>Full experience setup</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={fullCommandDeckImageUrl}
+            alt='Full command deck setup'
+          />
+          <figcaption>Full command deck setup</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={fullCommandDeckLitImageUrl}
+            alt='Full command deck setup (low lighting)'
+          />
+          <figcaption>Full command deck setup (low lighting)</figcaption>
+        </figure>
+        <figure>
+          <img
+            src={roomPlacardImageUrl}
+            alt='Experience placard'
+            style={{ maxWidth: '90%' }}
+          />
+          <figcaption>Experience placard</figcaption>
+        </figure>
       </div>
       <hr className="solid"></hr>
       <div className="section" id='reflections'>
