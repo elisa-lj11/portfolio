@@ -61,7 +61,7 @@ const WhoAmI = () => {
         <img src={spacedOutImageUrl} alt='Spaced Out' width='50%'/>
         <br></br>
         <p>
-          I'm a bit of a night owl. When I'm not outside gazing at the stars, wondering how we ended up as these little sentient specks on this vast cosmic canvas floating aimlessly in the ether, I'm up late daydreaming of unconventional ways to make sense of our existence.
+          I'm a night owl. When I'm not outside gazing at the stars, wondering how we ended up as these little sentient specks on this vast cosmic canvas floating aimlessly in the ether, I'm up late daydreaming of unconventional ways to make sense of our existence.
         </p>
         <p>
           I've dabbled in a lot of things: I'm an engineer, a singer, a designer, a festival-goer, a teacher, a pianist, a petsitter, a student, a gaymer, a writer, a long furby enthusiast (not in any particular order). I ask myself "Who am I?" every day, and I wish I could give you a better answer. I guess, in the most abstract sense, I am whoever I am at this exact moment, and any artifacts that remain from my past are just echoes of who I used to be. Maybe a better question is "Who do I want to become?" Now for this, I can give a relatively short answer:
