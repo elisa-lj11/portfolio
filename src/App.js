@@ -11,6 +11,7 @@ import LocalHive from './pages/LocalHive';
 import HiFi from './pages/HiFi';
 import ImmersiveMedia from './pages/ImmersiveMedia';
 import Window from './pages/Window';
+import MentalMeter from './pages/MentalMeter';
 
 // No node visible
 import DecolonizeSpace from './pages/DecolonizeSpace';
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/hifi" element={< HiFi />} />
           <Route path="/immersive-media" element={< ImmersiveMedia />} />
           <Route path="/window" element={< Window />} />
+          <Route path="/mental-meter" element={< MentalMeter />} />
           <Route path="/decolonize-space" element={< DecolonizeSpace />} />
           {/* About Me page */}
           <Route path="/who-am-i" element={< WhoAmI />} />

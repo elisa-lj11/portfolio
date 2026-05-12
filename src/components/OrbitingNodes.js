@@ -36,11 +36,19 @@ class OrbitingNodes {
         color: 0x2d3cdc,
       },
       {
+        id: 'mental-meter',
+        title: '"Mental Meter": Cognitive Energy Awareness for Sustainable Work',
+        titleMobile: 'Cal: Mental Meter',
+        nodeRadius: 0.3,
+        finalRadius: 3.5,
+        color: 0xa855f7,
+      },
+      {
         id: 'orgasmr',
         title: '"orgASMR": A Head-Scratching Musical Interface',
         titleMobile: 'Stanford: "orgASMR"',
         nodeRadius: 0.3,
-        finalRadius: 3.5,
+        finalRadius: 6.0,
         color: 0xe6a063,
       },
       {
@@ -67,7 +75,7 @@ class OrbitingNodes {
         finalRadius: 6.0,
         color: 0x7ba177,
       },
-      {
+      /*{
         id: 'window',
         title: '"Window": An AR Clothes Shopping App',
         titleMobile: 'Stanford: "Window"',
@@ -75,7 +83,6 @@ class OrbitingNodes {
         finalRadius: 6.0,
         color: 0x6561e0,
       },
-      /*
       {
         id: 'decolonize-space',
         title: 'Prophylactic Photogrammetry Toward Decolonization of Space',

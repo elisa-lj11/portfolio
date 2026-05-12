@@ -6,6 +6,7 @@ import PageTemplate from '../components/PageTemplate';
 import flowImageUrl from '../assets/images/accessible/flow.png';
 import spaceshipImageUrl from '../assets/images/accessible/spaceship.jpg';
 import strivrImageUrl from '../assets/images/accessible/strivr.png';
+import mentalMeterImageUrl from '../assets/images/accessible/mental-meter.png';
 import orgasmrImageUrl from '../assets/images/accessible/orgasmr.jpg';
 import localHiveImageUrl from '../assets/images/accessible/local-hive.png';
 import hifiImageUrl from '../assets/images/accessible/hifi.png';
@@ -26,11 +27,12 @@ const Accessible = () => {
     { id: 'flow', title: '"flow": An Embodied, Healing Interactive Experience', imageUrl: flowImageUrl },
     { id: 'spaceship', title: '"Scavenger\'s Gain": From Hotel Room to Spaceship Adventure', imageUrl: spaceshipImageUrl },
     { id: 'strivr', title: 'Strivr: "Immersive Lobby" Upgrade', imageUrl: strivrImageUrl },
+    { id: 'mental-meter', title: '"Mental Meter": Cognitive Energy Awareness for Sustainable Work', imageUrl: mentalMeterImageUrl },
     { id: 'orgasmr', title: '"orgASMR": A Head-Scratching Musical Interface', imageUrl: orgasmrImageUrl },
     { id: 'local-hive', title: '"Local Hive": A Human-Centered AI Project', imageUrl: localHiveImageUrl },
     { id: 'hifi', title: 'High Fidelity: Content Prototyping', imageUrl: hifiImageUrl },
     { id: 'immersive-media', title: 'Immersive Media: An Exploration of 360° Video Experiences', imageUrl: immersiveMediaImageUrl },
-    { id: 'window', title: '"Window": An AR Clothes Shopping App', imageUrl: windowImageUrl },
+    //{ id: 'window', title: '"Window": An AR Clothes Shopping App', imageUrl: windowImageUrl },
   ];
 
   const handleNavigate = (id) => {
