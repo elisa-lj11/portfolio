@@ -14,10 +14,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.28.6",
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.5",
-    "@babel/preset-react": "^7.28.5",
+    "@babel/cli": "^7.29.7",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
     "babel-loader": "^10.1.1",
     "copy-webpack-plugin": "^14.0.0",
     "cross-env": "^10.1.0",
@@ -25,9 +25,12 @@
     "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.7",
     "style-loader": "^4.0.0",
-    "webpack": "^5.106.2",
+    "webpack": "^5.107.2",
     "webpack-cli": "^7.0.2",
     "webpack-dev-server": "^5.2.4"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -35,7 +38,7 @@
     "http-proxy-middleware": "^4.0.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-router-dom": "^7.15.0",
+    "react-router-dom": "^7.15.1",
     "three": "^0.184.0",
     "three-stdlib": "^2.36.1",
     "use-error-boundary": "^2.0.6"
