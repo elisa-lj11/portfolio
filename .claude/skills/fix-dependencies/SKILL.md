@@ -25,15 +25,21 @@ npx npm-check-updates -u
 
 This rewrites version ranges in `package.json`. Then check `git diff package.json`:
 
-- If there's no diff, everything is already up to date — report that and stop here (no install/build/deploy needed).
+- A missing diff does **not** mean there's nothing to do: transitive vulnerabilities live only in `package-lock.json`, which `npm-check-updates` never touches. Continue to step 2 regardless.
 
-## 2. Install
+## 2. Install and patch transitive vulnerabilities
 
 ```
 npm install
+npm audit fix
 ```
 
-If this fails (peer dependency conflicts, registry errors, etc.):
+`npm audit fix` bumps transitive packages to patched versions within their existing ranges (lockfile only). This is what closes most Dependabot alerts — a top-level bump alone leaves them open.
+
+- **Never run `npm audit fix --force`.** For advisories with no patched release, `npm audit` proposes "fixes" that downgrade direct dependencies by major versions (e.g. `webpack-dev-server@1.x`, `gh-pages@6.1.1`). Leave those alerts and mention them in the report.
+- If neither `package.json` nor `package-lock.json` changed after this step (`git diff --quiet package.json package-lock.json`), everything is already current — report that and stop here (no build/deploy needed).
+
+If either command fails (peer dependency conflicts, registry errors, etc.):
 - Run `git checkout -- package.json package-lock.json` to revert.
 - Report the failure output to the user and stop. Do not proceed to build/commit/deploy.
 
@@ -60,7 +66,12 @@ npm start
 - Run this with `run_in_background: true` (Bash) since it's a long-running process.
 - Poll `http://localhost:5000/` (port from `webpack.config.js` `devServer.port`) with `curl -sS -o /dev/null -w "%{http_code}"` until it returns `200` or ~30s elapses.
 - Confirm the response body contains the app's root mount point (e.g. `id="root"`) and a reference to a bundled script — this is a static-shell check, not a rendered-page check, since the app is a client-side `HashRouter` SPA and this environment has no headless browser. It's a proxy for "the server is up and serving the built shell," not proof every route renders — step 3's build success is what actually catches broken pages/imports.
-- Stop the background dev-server process once the check completes (success or failure) — don't leave it running.
+- Stop the dev server once the check completes (success or failure) — don't leave it running. On Windows, stopping the background task only kills the `npm` wrapper; the `webpack-dev-server` node child keeps listening. Kill whatever listens on port 5000, then confirm the port is free:
+
+  ```powershell
+  Get-NetTCPConnection -LocalPort 5000 -State Listen -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Confirm:$false }
+  if (Get-NetTCPConnection -LocalPort 5000 -State Listen -ErrorAction SilentlyContinue) { "still listening" } else { "port 5000 free" }
+  ```
 
 If the server never comes up or returns a non-200:
 - Run `git checkout -- package.json package-lock.json` and `npm install` to restore.
@@ -81,4 +92,4 @@ npm run deploy
 
 ## 6. Report
 
-Summarize: which packages were updated (from the `package.json` diff) and old → new versions, that the build and smoke test passed, and confirm the push + deploy completed.
+Summarize: which packages were updated (from the `package.json` diff) and old → new versions, which transitive packages `npm audit fix` patched, any advisories left with no patched release, that the build and smoke test passed, and confirm the push + deploy completed.
